@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Force light mode — override system dark mode preference */
+:root {
+  color-scheme: light;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+  background-color: #ffffff !important;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  background-color: #ffffff;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Gradient text — pure indigo */
+.gradient-text {
+  background: linear-gradient(135deg, #4338ca 0%, #4f46e5 50%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shimmer animated gradient text */
+@keyframes shimmer {
+  0%   { background-position: -300% center; }
+  100% { background-position:  300% center; }
+}
+.shimmer-text {
+  background: linear-gradient(90deg, #4338ca 0%, #6366f1 25%, #818cf8 50%, #6366f1 75%, #4338ca 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 5s linear infinite;
+}
+
+/* Float animation for mockup badges */
+@keyframes float-up   { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes float-down { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+.float-up   { animation: float-up   4s ease-in-out infinite; }
+.float-down { animation: float-down 5s ease-in-out infinite; }
+
+/* Blob shape morph */
+@keyframes blob {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50%       { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+.blob { animation: blob 9s ease-in-out infinite; }
+
+/* Subtle dot-grid for hero background */
+.dot-grid {
+  background-image: radial-gradient(circle, #a5b4fc 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Card hover lift */
+.card-hover {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -8px rgba(0,0,0,0.12);
+}
