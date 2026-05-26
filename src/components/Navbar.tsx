@@ -1,16 +1,23 @@
 import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ArrowRight } from 'lucide-react'
 
 const links = [
-  { label: 'How it works', href: '#how-it-works' },
-  { label: 'Features', href: '#features' },
-  { label: 'Pricing', href: '#pricing' },
+  { label: 'How it works', anchor: 'how-it-works' },
+  { label: 'Features',     anchor: 'features' },
+  { label: 'Pricing',      anchor: 'pricing' },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const { pathname } = useLocation()
+  const isHome = pathname === '/'
+
+  // On home → in-page anchor; off home → route to home with anchor
+  const hrefFor = (anchor: string) => isHome ? `#${anchor}` : `/#${anchor}`
+  const waitlistHref = hrefFor('waitlist')
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 10)
@@ -31,14 +38,14 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5">
+        <a href="/" className="flex items-center gap-2.5">
           <img src="/logo/full_logo.svg" alt="Clinekt" className="h-9 w-auto" />
         </a>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1">
           {links.map(l => (
-            <a key={l.href} href={l.href}
+            <a key={l.anchor} href={hrefFor(l.anchor)}
               className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all">
               {l.label}
             </a>
@@ -47,10 +54,10 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <a href="#waitlist" className="text-sm font-medium text-gray-600 hover:text-gray-900 px-4 py-2 transition-colors">
+          <a href={waitlistHref} className="text-sm font-medium text-gray-600 hover:text-gray-900 px-4 py-2 transition-colors">
             Sign in
           </a>
-          <a href="#waitlist"
+          <a href={waitlistHref}
             className="inline-flex items-center gap-1.5 text-sm font-semibold px-5 py-2.5 rounded-xl bg-gray-950 text-white hover:bg-gray-800 shadow-sm transition-all">
             Join waitlist
             <ArrowRight size={14} />
@@ -73,13 +80,13 @@ export default function Navbar() {
           >
             <div className="px-5 py-4 flex flex-col gap-1">
               {links.map(l => (
-                <a key={l.href} href={l.href} onClick={() => setOpen(false)}
+                <a key={l.anchor} href={hrefFor(l.anchor)} onClick={() => setOpen(false)}
                   className="px-4 py-3 text-gray-700 font-medium hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all">
                   {l.label}
                 </a>
               ))}
               <div className="mt-3 pt-3 border-t border-gray-100">
-                <a href="#waitlist" onClick={() => setOpen(false)}
+                <a href={waitlistHref} onClick={() => setOpen(false)}
                   className="flex items-center justify-center gap-1.5 font-semibold px-5 py-3 rounded-xl bg-gray-950 text-white">
                   Join waitlist <ArrowRight size={14} />
                 </a>
