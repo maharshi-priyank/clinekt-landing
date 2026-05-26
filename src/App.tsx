@@ -5,7 +5,11 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import ScrollToTop from './components/ScrollToTop'
 
-const GstInvoiceGenerator = lazy(() => import('./pages/tools/GstInvoiceGenerator'))
+const GstInvoiceGenerator   = lazy(() => import('./pages/tools/GstInvoiceGenerator'))
+const GstCalculator         = lazy(() => import('./pages/tools/GstCalculator'))
+const TdsCalculator         = lazy(() => import('./pages/tools/TdsCalculator'))
+const HourlyRateCalculator  = lazy(() => import('./pages/tools/HourlyRateCalculator'))
+const IncomeTaxCalculator   = lazy(() => import('./pages/tools/IncomeTaxCalculator'))
 
 function PageFallback() {
   return (
@@ -23,8 +27,12 @@ export default function App() {
         <Navbar />
         <Suspense fallback={<PageFallback />}>
           <Routes>
-            <Route path="/"                            element={<Home />} />
-            <Route path="/tools/gst-invoice-generator" element={<GstInvoiceGenerator />} />
+            <Route path="/"                              element={<Home />} />
+            <Route path="/tools/gst-invoice-generator"   element={<GstInvoiceGenerator />} />
+            <Route path="/tools/gst-calculator"          element={<GstCalculator />} />
+            <Route path="/tools/tds-calculator"          element={<TdsCalculator />} />
+            <Route path="/tools/hourly-rate-calculator"  element={<HourlyRateCalculator />} />
+            <Route path="/tools/income-tax-calculator"   element={<IncomeTaxCalculator />} />
           </Routes>
         </Suspense>
         <Footer />
