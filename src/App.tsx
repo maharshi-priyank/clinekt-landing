@@ -9,7 +9,8 @@ const GstInvoiceGenerator   = lazy(() => import('./pages/tools/GstInvoiceGenerat
 const GstCalculator         = lazy(() => import('./pages/tools/GstCalculator'))
 const TdsCalculator         = lazy(() => import('./pages/tools/TdsCalculator'))
 const HourlyRateCalculator  = lazy(() => import('./pages/tools/HourlyRateCalculator'))
-const IncomeTaxCalculator   = lazy(() => import('./pages/tools/IncomeTaxCalculator'))
+const IncomeTaxCalculator        = lazy(() => import('./pages/tools/IncomeTaxCalculator'))
+const FreelanceContractGenerator = lazy(() => import('./pages/tools/FreelanceContractGenerator'))
 
 function PageFallback() {
   return (
@@ -32,7 +33,8 @@ export default function App() {
             <Route path="/tools/gst-calculator"          element={<GstCalculator />} />
             <Route path="/tools/tds-calculator"          element={<TdsCalculator />} />
             <Route path="/tools/hourly-rate-calculator"  element={<HourlyRateCalculator />} />
-            <Route path="/tools/income-tax-calculator"   element={<IncomeTaxCalculator />} />
+            <Route path="/tools/income-tax-calculator"         element={<IncomeTaxCalculator />} />
+            <Route path="/tools/freelance-contract-generator"  element={<FreelanceContractGenerator />} />
           </Routes>
         </Suspense>
         <Footer />
