@@ -5,12 +5,15 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import ScrollToTop from './components/ScrollToTop'
 
-const GstInvoiceGenerator   = lazy(() => import('./pages/tools/GstInvoiceGenerator'))
-const GstCalculator         = lazy(() => import('./pages/tools/GstCalculator'))
-const TdsCalculator         = lazy(() => import('./pages/tools/TdsCalculator'))
-const HourlyRateCalculator  = lazy(() => import('./pages/tools/HourlyRateCalculator'))
+const GstInvoiceGenerator        = lazy(() => import('./pages/tools/GstInvoiceGenerator'))
+const GstCalculator              = lazy(() => import('./pages/tools/GstCalculator'))
+const TdsCalculator              = lazy(() => import('./pages/tools/TdsCalculator'))
+const HourlyRateCalculator       = lazy(() => import('./pages/tools/HourlyRateCalculator'))
 const IncomeTaxCalculator        = lazy(() => import('./pages/tools/IncomeTaxCalculator'))
 const FreelanceContractGenerator = lazy(() => import('./pages/tools/FreelanceContractGenerator'))
+const QuoteGenerator             = lazy(() => import('./pages/tools/QuoteGenerator'))
+const InvoiceNumberGenerator     = lazy(() => import('./pages/tools/InvoiceNumberGenerator'))
+const ToolsIndex                 = lazy(() => import('./pages/ToolsIndex'))
 
 function PageFallback() {
   return (
@@ -35,6 +38,9 @@ export default function App() {
             <Route path="/tools/hourly-rate-calculator"  element={<HourlyRateCalculator />} />
             <Route path="/tools/income-tax-calculator"         element={<IncomeTaxCalculator />} />
             <Route path="/tools/freelance-contract-generator"  element={<FreelanceContractGenerator />} />
+            <Route path="/tools/quote-generator"               element={<QuoteGenerator />} />
+            <Route path="/tools/invoice-number-generator"      element={<InvoiceNumberGenerator />} />
+            <Route path="/tools"                               element={<ToolsIndex />} />
           </Routes>
         </Suspense>
         <Footer />
