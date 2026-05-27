@@ -1,15 +1,19 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Zap } from 'lucide-react'
+import { submitWaitlist } from '../lib/waitlist'
+import { useWaitlistCount } from '../hooks/useWaitlistCount'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
 const perks = [
   'Free plan forever',
-  'Early bird price ₹299/mo — locked for life',
+  'Early bird ₹299/mo — locked for life',
   'Vote on features we build next',
   'No credit card required',
 ]
+
+const FOUNDING_CAP = 100
 
 export default function WaitlistSection() {
   const ref = useRef(null)
@@ -17,20 +21,29 @@ export default function WaitlistSection() {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const count = useWaitlistCount()
+
+  const spotsLeft = count !== null ? Math.max(0, FOUNDING_CAP - count) : null
+  const foundingFull = spotsLeft !== null && spotsLeft <= 0
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!email) return
     setLoading(true)
-    await new Promise(r => setTimeout(r, 900))
-    setLoading(false)
-    setSubmitted(true)
+    setError('')
+    try {
+      await submitWaitlist(email)
+      setSubmitted(true)
+    } catch {
+      setError('Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
     <section id="waitlist" className="py-24 bg-white relative overflow-hidden" ref={ref}>
-      {/* Background gradient */}
-      <div className="absolute inset-0 pointer-events-none" />
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-indigo-100/50 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-3xl mx-auto px-5 text-center relative z-10">
@@ -50,9 +63,25 @@ export default function WaitlistSection() {
             <br className="hidden sm:block" />
             <span className="gradient-text">Start getting paid.</span>
           </h2>
-          <p className="text-gray-500 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-            Join 500+ Indian freelancers already on the waitlist.
-            Early bird pricing at ₹299/mo — locked for life.
+
+          {/* Founding member urgency banner */}
+          {!foundingFull && (
+            <div className="inline-flex items-center gap-2.5 bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 mb-8">
+              <Zap size={15} className="text-amber-500 shrink-0" />
+              <p className="text-sm text-amber-800 font-medium text-left">
+                <strong>Founding member offer:</strong> First {FOUNDING_CAP} signups lock ₹299/mo for life
+                {spotsLeft !== null && spotsLeft > 0 && (
+                  <span className="ml-1 font-bold text-amber-900">— {spotsLeft} spot{spotsLeft === 1 ? '' : 's'} left</span>
+                )}
+              </p>
+            </div>
+          )}
+
+          <p className="text-gray-500 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+            {count !== null
+              ? <><strong className="text-gray-900">{count.toLocaleString('en-IN')}</strong> Indian freelancers already on the waitlist. Early bird pricing at ₹299/mo — locked for life.</>
+              : <>Join Indian freelancers on the waitlist. Early bird pricing at ₹299/mo — locked for life.</>
+            }
           </p>
 
           {submitted ? (
@@ -72,20 +101,23 @@ export default function WaitlistSection() {
               </p>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-                type="email" value={email} onChange={e => setEmail(e.target.value)}
-                placeholder="your@email.com" required
-                className="flex-1 px-5 py-4 rounded-2xl bg-white border border-gray-200 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent shadow-sm text-sm"
-              />
-              <button type="submit" disabled={loading}
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl bg-gray-950 text-white font-semibold text-sm hover:bg-gray-800 disabled:opacity-60 transition-all flex-shrink-0 shadow-sm">
-                {loading
-                  ? <span className="w-4 h-4 rounded-full border-2 border-white/40 border-t-white animate-spin" />
-                  : <><span>Get early access</span><ArrowRight size={16} /></>
-                }
-              </button>
-            </form>
+            <>
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input
+                  type="email" value={email} onChange={e => setEmail(e.target.value)}
+                  placeholder="your@email.com" required
+                  className="flex-1 px-5 py-4 rounded-2xl bg-white border border-gray-200 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent shadow-sm text-sm"
+                />
+                <button type="submit" disabled={loading}
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl bg-gray-950 text-white font-semibold text-sm hover:bg-gray-800 disabled:opacity-60 transition-all flex-shrink-0 shadow-sm">
+                  {loading
+                    ? <span className="w-4 h-4 rounded-full border-2 border-white/40 border-t-white animate-spin" />
+                    : <><span>Get early access</span><ArrowRight size={16} /></>
+                  }
+                </button>
+              </form>
+              {error && <p className="text-sm text-red-500 mt-2">{error}</p>}
+            </>
           )}
 
           {/* Perks */}
@@ -101,7 +133,7 @@ export default function WaitlistSection() {
           {/* Numbers */}
           <div className="flex flex-wrap justify-center gap-10 mt-14 pt-10 border-t border-gray-100">
             {[
-              { val: '500+', label: 'on the waitlist' },
+              { val: count !== null ? count.toLocaleString('en-IN') : '—', label: 'on the waitlist' },
               { val: '₹299/mo', label: 'early bird price' },
               { val: '₹699/mo', label: 'launch price' },
             ].map(s => (

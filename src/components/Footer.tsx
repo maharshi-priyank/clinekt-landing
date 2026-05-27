@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom'
 import { Heart, MapPin } from 'lucide-react'
 
 const nav = {
   Product: ['How it works', 'Features', 'Pricing', 'Changelog'],
   Company:  ['About', 'Blog', 'ProductHunt', 'LinkedIn'],
-  Legal:    ['Privacy Policy', 'Terms of Service', 'GST Policy'],
+  Legal:    ['Privacy Policy', 'Terms of Service', 'Security'],
 }
 
 export default function Footer() {
@@ -35,7 +36,11 @@ export default function Footer() {
               <ul className="space-y-3">
                 {items.map(item => (
                   <li key={item}>
-                    <a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-medium">{item}</a>
+                    {item === 'Security' ? (
+                      <Link to="/security" className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-medium">{item}</Link>
+                    ) : (
+                      <a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-medium">{item}</a>
+                    )}
                   </li>
                 ))}
               </ul>

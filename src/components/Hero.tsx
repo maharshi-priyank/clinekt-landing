@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, CheckCircle2, Bell, IndianRupee, Pen, Star, ChevronRight } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Bell, IndianRupee, Pen, ChevronRight, Users } from 'lucide-react'
+import { useWaitlistCount } from '../hooks/useWaitlistCount'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
@@ -12,10 +13,9 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
 }
 
-const avatars = ['R', 'P', 'N', 'S', 'A']
-const avatarColors = ['bg-indigo-500', 'bg-indigo-400', 'bg-emerald-500', 'bg-indigo-600', 'bg-indigo-300']
-
 export default function Hero() {
+  const waitlistCount = useWaitlistCount()
+
   return (
     <section className="relative pt-28 pb-20 overflow-hidden bg-white">
       {/* Dot grid */}
@@ -85,19 +85,21 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.45 }}
-          className="flex justify-center items-center gap-3 mt-12"
+          className="flex justify-center items-center gap-2.5 mt-12"
         >
-          <div className="flex -space-x-2">
-            {avatars.map((a, i) => (
-              <div key={i} className={`w-8 h-8 rounded-full ${avatarColors[i]} flex items-center justify-center text-white text-xs font-bold border-2 border-white shadow-sm`}>
-                {a}
-              </div>
-            ))}
+          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-50 border border-emerald-100">
+            <Users size={14} className="text-emerald-600" />
           </div>
-          <div className="flex items-center gap-0.5">
-            {[...Array(5)].map((_, i) => <Star key={i} size={12} className="text-amber-400 fill-amber-400" />)}
-          </div>
-          <span className="text-sm text-gray-500 font-medium">500+ freelancers on the waitlist</span>
+          <span className="text-sm text-gray-500 font-medium">
+            {waitlistCount !== null
+              ? <><strong className="text-gray-900">{waitlistCount.toLocaleString('en-IN')}</strong> freelancers on the waitlist</>
+              : 'Indian freelancers on the waitlist'
+            }
+          </span>
+          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-100 text-xs font-semibold text-emerald-700">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            Early access open
+          </span>
         </motion.div>
 
         {/* Dashboard mockup */}

@@ -14,6 +14,7 @@ const FreelanceContractGenerator = lazy(() => import('./pages/tools/FreelanceCon
 const QuoteGenerator             = lazy(() => import('./pages/tools/QuoteGenerator'))
 const InvoiceNumberGenerator     = lazy(() => import('./pages/tools/InvoiceNumberGenerator'))
 const ToolsIndex                 = lazy(() => import('./pages/ToolsIndex'))
+const Security                   = lazy(() => import('./pages/Security'))
 
 function PageFallback() {
   return (
@@ -41,6 +42,7 @@ export default function App() {
             <Route path="/tools/quote-generator"               element={<QuoteGenerator />} />
             <Route path="/tools/invoice-number-generator"      element={<InvoiceNumberGenerator />} />
             <Route path="/tools"                               element={<ToolsIndex />} />
+            <Route path="/security"                            element={<Security />} />
           </Routes>
         </Suspense>
         <Footer />
