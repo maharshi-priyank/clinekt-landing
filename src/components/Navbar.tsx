@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ArrowRight } from 'lucide-react'
 
 const links = [
-  { label: 'How it works', anchor: 'how-it-works' },
-  { label: 'Features',     anchor: 'features' },
-  { label: 'Pricing',      anchor: 'pricing' },
+  { label: 'How it works', anchor: 'how-it-works', href: null },
+  { label: 'Features',     anchor: null,            href: '/features' },
+  { label: 'Pricing',      anchor: 'pricing',       href: null },
 ]
 
 export default function Navbar() {
@@ -44,12 +44,19 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1">
-          {links.map(l => (
-            <a key={l.anchor} href={hrefFor(l.anchor)}
-              className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all">
-              {l.label}
-            </a>
-          ))}
+          {links.map(l => l.href
+            ? (
+              <Link key={l.label} to={l.href}
+                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${pathname === l.href ? 'text-gray-900 bg-gray-100' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>
+                {l.label}
+              </Link>
+            ) : (
+              <a key={l.anchor!} href={hrefFor(l.anchor!)}
+                className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all">
+                {l.label}
+              </a>
+            )
+          )}
         </nav>
 
         {/* CTA */}
@@ -79,12 +86,19 @@ export default function Navbar() {
             className="md:hidden bg-white border-t border-gray-100 shadow-lg"
           >
             <div className="px-5 py-4 flex flex-col gap-1">
-              {links.map(l => (
-                <a key={l.anchor} href={hrefFor(l.anchor)} onClick={() => setOpen(false)}
-                  className="px-4 py-3 text-gray-700 font-medium hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all">
-                  {l.label}
-                </a>
-              ))}
+              {links.map(l => l.href
+                ? (
+                  <Link key={l.label} to={l.href} onClick={() => setOpen(false)}
+                    className="px-4 py-3 text-gray-700 font-medium hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all">
+                    {l.label}
+                  </Link>
+                ) : (
+                  <a key={l.anchor!} href={hrefFor(l.anchor!)} onClick={() => setOpen(false)}
+                    className="px-4 py-3 text-gray-700 font-medium hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all">
+                    {l.label}
+                  </a>
+                )
+              )}
               <div className="mt-3 pt-3 border-t border-gray-100">
                 <a href={waitlistHref} onClick={() => setOpen(false)}
                   className="flex items-center justify-center gap-1.5 font-semibold px-5 py-3 rounded-xl bg-gray-950 text-white">
