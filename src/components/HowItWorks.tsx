@@ -1,213 +1,344 @@
-import { useState, useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { useState, useRef, useEffect, useCallback } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { UserSearch, FileText, PenLine, Receipt, Globe, TrendingUp } from 'lucide-react'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
 const steps = [
   {
-    n: '01', icon: UserSearch, color: 'indigo',
+    id: 'leads',
+    n: '01',
+    icon: UserSearch,
+    color: 'indigo',
     title: 'Capture every lead',
-    desc: "Add leads from Instagram, LinkedIn, WhatsApp or referrals into one Kanban pipeline. Know exactly who's interested, what they want, and when to follow up.",
     pill: 'Lead CRM',
-    preview: {
-      title: 'New lead added',
-      rows: [
-        { k: 'Client', v: 'Rohan Sharma' },
-        { k: 'Source', v: 'LinkedIn DM' },
-        { k: 'Budget', v: '₹45,000' },
-        { k: 'Service', v: 'Brand identity' },
-        { k: 'Follow-up', v: 'In 2 days · auto-set' },
-      ],
-    },
+    desc: 'Add leads from Instagram, LinkedIn, WhatsApp or referrals. See pipeline value, follow-up dates, and win rate at a glance — all on your dashboard.',
+    screenshot: '/screenshots/screenshot-dashboard.png',
+    caption: 'Lead Pipeline & Dashboard overview',
+    callout: 'Lead Pipeline and Quick Actions visible below',
   },
   {
-    n: '02', icon: FileText, color: 'indigo',
+    id: 'proposals',
+    n: '02',
+    icon: FileText,
+    color: 'indigo',
     title: 'Send a tracked proposal',
-    desc: "Build a branded proposal with pricing table. Share as a tracked link — not a PDF. You'll know the exact second they open it.",
     pill: 'Proposals',
-    preview: {
-      title: 'Proposal opened',
-      rows: [
-        { k: 'Client', v: 'Priya Mehta' },
-        { k: 'Event', v: 'Opened just now' },
-        { k: 'Time on pricing', v: '4 min 32 sec' },
-        { k: 'Location', v: 'Mumbai, India' },
-        { k: 'Action', v: 'Call her now →' },
-      ],
-    },
+    desc: 'Build a branded proposal with scope, pricing, and timeline. Share as a tracked link — you get a push notification the second they open it.',
+    screenshot: '/screenshots/screenshot-proposal.png',
+    caption: 'Proposal builder — Cover, Pricing, Timeline tabs',
+    callout: 'Tabs at top switch between proposal sections',
   },
   {
-    n: '03', icon: PenLine, color: 'indigo',
+    id: 'contracts',
+    n: '03',
+    icon: PenLine,
+    color: 'indigo',
     title: 'E-sign the contract',
-    desc: 'One click converts your proposal into a contract. Client signs via OTP — IT Act 2000 compliant. No DocuSign, no printing, no back-and-forth.',
     pill: 'E-sign',
-    preview: {
-      title: 'Contract signed',
-      rows: [
-        { k: 'Client', v: 'Neha Kapoor' },
-        { k: 'Document', v: 'Website Redesign' },
-        { k: 'Signed at', v: '15 Jan · 3:42 PM' },
-        { k: 'Method', v: 'OTP verified' },
-        { k: 'Status', v: 'Legally valid ✓' },
-      ],
-    },
+    desc: 'One click converts your proposal into a contract. Client signs via OTP — legally valid under IT Act 2000. No DocuSign, no printing.',
+    screenshot: '/screenshots/screenshot-portal.png',
+    caption: 'Client Portal — Contract signed status',
+    callout: '"Signed" badge confirms legal e-signature via OTP',
   },
   {
-    n: '04', icon: Receipt, color: 'emerald',
+    id: 'invoices',
+    n: '04',
+    icon: Receipt,
+    color: 'emerald',
     title: 'Send a GST invoice',
-    desc: 'Auto-filled from your signed contract. CGST/SGST/IGST auto-calculated by client state. Razorpay link embedded — client pays in one tap.',
     pill: 'GST Invoice',
-    preview: {
-      title: 'INV-0042 · Sent',
-      rows: [
-        { k: 'Client', v: 'TechStart Inc' },
-        { k: 'Amount', v: '₹80,000 + GST' },
-        { k: 'IGST 18%', v: '₹14,400' },
-        { k: 'Total', v: '₹94,400' },
-        { k: 'Payment', v: 'UPI / Card / EMI →' },
-      ],
-    },
+    desc: 'Auto-filled from your contract. CGST/SGST/IGST calculated by client state. Razorpay payment link embedded — client pays in one tap.',
+    screenshot: '/screenshots/screenshot-invoice.png',
+    caption: 'Invoice list — status, amounts, due dates',
+    callout: 'Status badges: Draft, Sent, Overdue, Paid — all in one view',
   },
   {
-    n: '05', icon: Globe, color: 'indigo',
-    title: 'Client portal',
-    desc: 'Every client gets a branded portal — all proposals, contracts, invoices, and deliverables in one link. No more "send me the file again."',
+    id: 'portal',
+    n: '05',
+    icon: Globe,
+    color: 'indigo',
+    title: 'Client gets their portal',
     pill: 'Client Portal',
-    preview: {
-      title: 'portal.yourname.in',
-      rows: [
-        { k: 'Proposals', v: '3 sent · 2 accepted' },
-        { k: 'Contracts', v: '2 signed' },
-        { k: 'Invoices', v: '₹1,24,400 paid' },
-        { k: 'Overdue', v: '1 invoice' },
-        { k: 'Portal visits', v: '2 days ago' },
-      ],
-    },
+    desc: 'Every client gets a branded portal with all their proposals, contracts, and invoices in one link. Pay directly from the portal.',
+    screenshot: '/screenshots/screenshot-portal.png',
+    caption: 'Client Portal — Prashant\'s view',
+    callout: 'Client sees proposals, contracts, invoices — and can pay inline',
   },
   {
-    n: '06', icon: TrendingUp, color: 'emerald',
-    title: 'Get paid. Track everything.',
-    desc: 'Auto WhatsApp + email reminders at day 3, 7, 14 overdue. See MRR, pipeline value, and proposal conversion rate at a glance.',
-    pill: 'Dashboard',
-    preview: {
-      title: 'This month',
-      rows: [
-        { k: 'Collected', v: '₹2,34,000' },
-        { k: 'vs last month', v: '↑ 41%' },
-        { k: 'Pipeline', v: '₹5,60,000' },
-        { k: 'Auto-reminders', v: '3 sent today' },
-        { k: 'Overdue', v: '₹22,000' },
-      ],
-    },
+    id: 'automate',
+    n: '06',
+    icon: TrendingUp,
+    color: 'emerald',
+    title: 'Automate follow-ups',
+    pill: 'Automations',
+    desc: 'Set up WhatsApp + email reminders for overdue invoices, auto-send onboarding forms after signing, and more — all in a visual builder.',
+    screenshot: '/screenshots/screenshot-automation.png',
+    caption: 'Automation builder — Lead Follow-up flow',
+    callout: 'Visual drag-and-drop flow: trigger → condition → action',
   },
 ]
 
-const colorMap: Record<string, { icon: string; pill: string; row: string; accent: string; border: string }> = {
-  indigo:  { icon: 'bg-indigo-100 text-indigo-600',   pill: 'bg-indigo-50 text-indigo-700 border-indigo-200',   row: 'border-indigo-50 hover:bg-indigo-50',   accent: 'text-indigo-600',   border: 'border-l-indigo-400' },
-  emerald: { icon: 'bg-emerald-100 text-emerald-600', pill: 'bg-emerald-50 text-emerald-700 border-emerald-200', row: 'border-emerald-50 hover:bg-emerald-50', accent: 'text-emerald-600', border: 'border-l-emerald-400' },
+const colorMap: Record<string, { dot: string; pill: string; number: string; border: string; iconBg: string; iconText: string }> = {
+  indigo:  { dot: 'bg-indigo-500',  pill: 'bg-indigo-50 text-indigo-700 border-indigo-100',  number: 'text-indigo-400', border: 'border-indigo-400', iconBg: 'bg-indigo-100',  iconText: 'text-indigo-600'  },
+  emerald: { dot: 'bg-emerald-500', pill: 'bg-emerald-50 text-emerald-700 border-emerald-100', number: 'text-emerald-400', border: 'border-emerald-400', iconBg: 'bg-emerald-100', iconText: 'text-emerald-600' },
 }
 
 export default function HowItWorks() {
   const [active, setActive] = useState(0)
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
-  const c = colorMap[steps[active].color]
+  const stepRefs = useRef<(HTMLDivElement | null)[]>([])
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const rafRef = useRef<number | null>(null)
+  // Pause scroll-spy briefly after manual prev/next clicks so spy doesn't fight them
+  const pauseSpyUntil = useRef<number>(0)
+
+  const updateActive = useCallback(() => {
+    if (Date.now() < pauseSpyUntil.current) return
+    const viewportCenter = window.scrollY + window.innerHeight * 0.5
+    let closestIdx = 0
+    let closestDist = Infinity
+    stepRefs.current.forEach((el, i) => {
+      if (!el) return
+      const rect = el.getBoundingClientRect()
+      const elCenter = window.scrollY + rect.top + rect.height / 2
+      const dist = Math.abs(elCenter - viewportCenter)
+      if (dist < closestDist) { closestDist = dist; closestIdx = i }
+    })
+    setActive(closestIdx)
+  }, [])
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+      rafRef.current = requestAnimationFrame(updateActive)
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+    }
+  }, [updateActive])
+
+  // Click on a left-side step card — scroll page to that step
+  function scrollToStep(i: number) {
+    stepRefs.current[i]?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
+
+  // Prev/Next buttons — just swap screenshot, no page scroll
+  function goToStep(i: number) {
+    pauseSpyUntil.current = Date.now() + 1200
+    setActive(i)
+  }
+
+  const s = steps[active]
+  const c = colorMap[s.color]
 
   return (
-    <section id="how-it-works" className="py-24 bg-white" ref={ref}>
-      <div className="max-w-6xl mx-auto px-5">
+    <section id="how-it-works" ref={sectionRef} className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-5 lg:px-8">
+
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 28 }} animate={inView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, ease }}
-          className="text-center mb-14"
+          className="text-center mb-20"
         >
           <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-white border border-gray-200 text-gray-500 shadow-sm mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
             The workflow
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
             Lead to payment.{' '}
             <span className="gradient-text">In one tool.</span>
           </h2>
-          <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
-            Click each step to see exactly what Clinekt does.
+          <p className="text-gray-500 text-lg mt-4 max-w-lg mx-auto">
+            Scroll through each step to see exactly what Clinekt looks like in action.
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 32 }} animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.15, ease }}
-          className="grid grid-cols-1 lg:grid-cols-5 gap-6"
-        >
-          {/* Steps list */}
-          <div className="lg:col-span-3 space-y-2">
-            {steps.map((s, i) => {
-              const sc = colorMap[s.color]
+        {/* Scroll-spy layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-16 items-start">
+
+          {/* ── Left: step list (scrollable) ── */}
+          <div className="space-y-3">
+            {steps.map((step, i) => {
+              const sc = colorMap[step.color]
               const isActive = active === i
               return (
-                <button key={s.n} onClick={() => setActive(i)}
-                  className={`w-full text-left p-4 rounded-2xl border transition-all duration-250 cursor-pointer ${
+                <div
+                  key={step.id}
+                  ref={el => { stepRefs.current[i] = el }}
+                  onClick={() => scrollToStep(i)}
+                  className={`cursor-pointer rounded-2xl border p-5 transition-all duration-300 ${
                     isActive
-                      ? `bg-white border-gray-200 shadow-md border-l-4 ${sc.border}`
-                      : 'bg-gray-50/60 border-transparent hover:bg-white hover:border-gray-200 hover:shadow-sm'
+                      ? `bg-white border-gray-200 shadow-lg border-l-[3px] ${sc.border}`
+                      : 'bg-gray-50/50 border-transparent hover:bg-white hover:border-gray-200 hover:shadow-sm'
                   }`}
                 >
-                  <div className="flex items-center gap-4">
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-all ${isActive ? sc.icon : 'bg-gray-100 text-gray-400'}`}>
-                      <s.icon size={18} />
+                  <div className="flex items-start gap-4">
+                    {/* Icon */}
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all ${
+                      isActive ? sc.iconBg : 'bg-gray-100'
+                    }`}>
+                      <step.icon size={18} className={isActive ? sc.iconText : 'text-gray-400'} />
                     </div>
+
                     <div className="flex-1 min-w-0">
+                      {/* Number + title + pill */}
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className={`text-xs font-bold ${isActive ? sc.accent : 'text-gray-400'}`}>{s.n}</span>
-                        <span className={`font-semibold text-sm ${isActive ? 'text-gray-900' : 'text-gray-600'}`}>{s.title}</span>
+                        <span className={`text-xs font-bold tabular-nums ${isActive ? sc.number : 'text-gray-300'}`}>{step.n}</span>
+                        <span className={`text-sm font-bold ${isActive ? 'text-gray-900' : 'text-gray-500'}`}>{step.title}</span>
                         {isActive && (
-                          <span className={`text-xs px-2 py-0.5 rounded-full border font-semibold ${sc.pill}`}>{s.pill}</span>
+                          <motion.span
+                            initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }}
+                            className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${sc.pill}`}
+                          >
+                            {step.pill}
+                          </motion.span>
                         )}
                       </div>
-                      {isActive && (
-                        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}
-                          className="text-sm text-gray-500 mt-1.5 leading-relaxed">
-                          {s.desc}
-                        </motion.p>
-                      )}
+
+                      {/* Description — only when active */}
+                      <AnimatePresence>
+                        {isActive && (
+                          <motion.p
+                            initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.35, ease }}
+                            className="text-sm text-gray-500 mt-2 leading-relaxed overflow-hidden"
+                          >
+                            {step.desc}
+                          </motion.p>
+                        )}
+                      </AnimatePresence>
                     </div>
+
+                    {/* Active indicator dot */}
+                    <div className={`w-2 h-2 rounded-full shrink-0 mt-1 transition-all ${isActive ? sc.dot : 'bg-gray-200'}`} />
                   </div>
-                </button>
+                </div>
               )
             })}
           </div>
 
-          {/* Preview card */}
-          <div className="lg:col-span-2 lg:sticky lg:top-24 h-fit">
-            <motion.div
-              key={active}
-              initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.35, ease }}
-              className="rounded-2xl bg-white border border-gray-200 shadow-lg overflow-hidden"
-            >
-              {/* Card header */}
-              <div className={`px-5 py-4 border-b border-gray-100 flex items-center gap-3`}>
-                <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${c.icon}`}>
-                  {(() => { const Icon = steps[active].icon; return <Icon size={17} /> })()}
+          {/* ── Right: sticky screenshot ── */}
+          <div className="hidden lg:block sticky top-24">
+            {/* Step progress indicator */}
+            <div className="flex items-center gap-1.5 mb-4">
+              {steps.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => goToStep(i)}
+                  className={`h-1 rounded-full transition-all duration-500 ${
+                    active === i ? `${colorMap[steps[i].color].dot} w-6` : 'bg-gray-200 w-2'
+                  }`}
+                />
+              ))}
+              <span className="ml-2 text-xs text-gray-400 font-medium">{active + 1} / {steps.length}</span>
+            </div>
+
+            {/* Browser frame */}
+            <div className="rounded-2xl border border-gray-200 shadow-2xl shadow-gray-200/60 overflow-hidden bg-white">
+              {/* Chrome */}
+              <div className="flex items-center gap-2 px-4 py-2.5 bg-gray-50/90 border-b border-gray-100">
+                <div className="flex gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#28CA41]" />
                 </div>
-                <div>
-                  <div className="font-bold text-gray-900 text-sm">{steps[active].preview.title}</div>
-                  <div className={`text-xs font-semibold ${c.accent}`}>{steps[active].pill}</div>
-                </div>
-              </div>
-              {/* Preview rows */}
-              <div className="p-5 space-y-1">
-                {steps[active].preview.rows.map((row, i) => (
-                  <div key={i} className={`flex items-center justify-between px-3 py-2.5 rounded-lg border transition-colors ${c.row}`}>
-                    <span className="text-xs text-gray-400 font-semibold uppercase tracking-wide">{row.k}</span>
-                    <span className="text-sm text-gray-800 font-semibold">{row.v}</span>
+                <div className="flex-1 mx-3">
+                  <div className="max-w-52 mx-auto h-5 bg-white rounded border border-gray-200 flex items-center justify-center gap-1.5">
+                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    <span className="text-[10px] text-gray-400">app.clinekt.io</span>
                   </div>
-                ))}
+                </div>
               </div>
-            </motion.div>
+
+              {/* Screenshot with crossfade */}
+              <div className="relative overflow-hidden bg-gray-50" style={{ minHeight: 340 }}>
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={active}
+                    src={s.screenshot}
+                    alt={s.caption}
+                    className="w-full block"
+                    initial={{ opacity: 0, y: 20, scale: 1.025 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -12, scale: 0.975 }}
+                    transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  />
+                </AnimatePresence>
+
+                {/* Gradient fade at bottom */}
+                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white/80 to-transparent pointer-events-none" />
+              </div>
+
+              {/* Caption bar */}
+              <div className="px-4 py-3 bg-gray-50/80 border-t border-gray-100 flex items-start gap-2.5 min-h-[52px]">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={active}
+                    initial={{ opacity: 0, x: 8 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -8 }}
+                    transition={{ duration: 0.45, ease }}
+                    className="flex items-start gap-2.5 w-full"
+                  >
+                    <div className={`w-1.5 h-1.5 rounded-full shrink-0 mt-1.5 ${c.dot}`} />
+                    <div>
+                      <p className="text-xs font-semibold text-gray-700">{s.caption}</p>
+                      <p className="text-[11px] text-gray-400 mt-0.5">{s.callout}</p>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
+
+            {/* Nav arrows */}
+            <div className="flex justify-between mt-4">
+              <button
+                onClick={() => goToStep(Math.max(0, active - 1))}
+                disabled={active === 0}
+                className="text-xs font-semibold text-gray-400 hover:text-gray-700 disabled:opacity-30 transition-colors px-3 py-1.5 rounded-lg hover:bg-gray-100"
+              >
+                ← Previous
+              </button>
+              <button
+                onClick={() => goToStep(Math.min(steps.length - 1, active + 1))}
+                disabled={active === steps.length - 1}
+                className="text-xs font-semibold text-gray-400 hover:text-gray-700 disabled:opacity-30 transition-colors px-3 py-1.5 rounded-lg hover:bg-gray-100"
+              >
+                Next →
+              </button>
+            </div>
           </div>
-        </motion.div>
+
+          {/* Mobile: show screenshot inline below each active step */}
+          <div className="lg:hidden">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active}
+                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
+                transition={{ duration: 0.3, ease }}
+                className="rounded-2xl border border-gray-200 shadow-lg overflow-hidden"
+              >
+                <div className="flex items-center gap-2 px-3 py-2 bg-gray-50 border-b border-gray-100">
+                  <div className="flex gap-1.5">
+                    <div className="w-2 h-2 rounded-full bg-[#FF5F57]" />
+                    <div className="w-2 h-2 rounded-full bg-[#FFBD2E]" />
+                    <div className="w-2 h-2 rounded-full bg-[#28CA41]" />
+                  </div>
+                </div>
+                <img src={s.screenshot} alt={s.caption} className="w-full block" />
+                <div className="px-3 py-2.5 bg-gray-50 border-t border-gray-100">
+                  <p className="text-[11px] font-semibold text-gray-600">{s.caption}</p>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+        </div>
       </div>
     </section>
   )
