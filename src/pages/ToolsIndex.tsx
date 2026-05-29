@@ -71,7 +71,7 @@ const TOOLS = [
 
 export default function ToolsIndex() {
   useSeo(
-    'Free Tools for Indian Freelancers — GST, TDS, Tax, Contracts | Clinekt',
+    'Free Tools for Indian Freelancers — GST, TDS, Tax, Contracts | Rupway',
     'Eight free tools built for Indian freelancers: GST invoice generator, quote generator, freelance contract generator, TDS calculator, income tax calculator, and more.',
   )
 
@@ -164,7 +164,7 @@ export default function ToolsIndex() {
           <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-3">One platform</p>
           <h2 className="text-3xl font-bold mb-4">Connect all these workflows in one place.</h2>
           <p className="text-gray-400 mb-8 text-base max-w-xl mx-auto">
-            These tools are standalone, but Clinekt connects them — send a quote, convert it to a contract, collect e-signature, raise a GST invoice, collect Razorpay payment, all in one workflow.
+            These tools are standalone, but Rupway connects them — send a quote, convert it to a contract, collect e-signature, raise a GST invoice, collect Razorpay payment, all in one workflow.
           </p>
           <a
             href="/#waitlist"
@@ -179,13 +179,13 @@ export default function ToolsIndex() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'CollectionPage',
-        name: 'Free Tools for Indian Freelancers — Clinekt',
+        name: 'Free Tools for Indian Freelancers — Rupway',
         description: 'Eight free browser-based tools: GST invoice generator, quote generator, freelance contract, TDS calculator, income tax calculator, hourly rate calculator, and invoice number generator.',
-        url: 'https://clinekt.io/tools',
+        url: 'https://rupway.in/tools',
         hasPart: TOOLS.map(t => ({
           '@type': 'SoftwareApplication',
           name: t.title,
-          url: `https://clinekt.io${t.href}`,
+          url: `https://rupway.in${t.href}`,
           applicationCategory: 'BusinessApplication',
           offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
         })),

@@ -75,7 +75,7 @@ const SECTIONS: TdsSection[] = [
   },
 ]
 
-const STORAGE_KEY = 'clinekt-tds-calc-state'
+const STORAGE_KEY = 'rupway-tds-calc-state'
 
 interface TdsInput {
   amount:       string
@@ -98,7 +98,7 @@ function loadState(): TdsInput {
 
 export default function TdsCalculator() {
   useSeo(
-    'Free TDS Calculator (India) — 194J / 194C / freelance | Clinekt',
+    'Free TDS Calculator (India) — 194J / 194C / freelance | Rupway',
     'Calculate TDS deduction for Indian freelancers and contractors. Section 194J, 194C, 194JA and more. Free, instant, no signup.',
   )
 
@@ -353,7 +353,7 @@ function Hero() {
 
 function Upsell() {
   const reasons = [
-    { title: 'TDS auto-calculated on every invoice',     desc: 'Clinekt picks the right section and rate for your work, applies it correctly, and shows the net you\'ll actually receive — no calculator needed.' },
+    { title: 'TDS auto-calculated on every invoice',     desc: 'Rupway picks the right section and rate for your work, applies it correctly, and shows the net you\'ll actually receive — no calculator needed.' },
     { title: 'Form 16A reconciliation',                  desc: 'Track which clients have deposited the TDS they deducted. Match against your Form 26AS at filing time. Save your CA hours of grunt work.' },
     { title: 'Quarter-end TDS summary',                  desc: 'One-click export of all TDS deducted from you this quarter, by section and by client. CA-ready PDF.' },
     { title: 'Send invoices that show TDS clearly',      desc: 'Clients see "Gross ₹50,000 − TDS ₹5,000 = Net ₹45,000" right on the invoice. No confusion, no follow-ups.' },
@@ -372,7 +372,7 @@ function Upsell() {
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             Stop calculating TDS by hand.
             <br />
-            <span className="text-gray-400">Clinekt does it on every invoice automatically.</span>
+            <span className="text-gray-400">Rupway does it on every invoice automatically.</span>
           </h2>
         </div>
 
@@ -397,7 +397,7 @@ function Upsell() {
             to="/#waitlist"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-gray-950 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
           >
-            Try Clinekt free
+            Try Rupway free
             <ArrowRight size={15} />
           </Link>
           <p className="text-xs text-gray-500 mt-3">Free forever plan. No credit card needed.</p>

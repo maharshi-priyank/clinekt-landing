@@ -22,7 +22,7 @@ export default function FounderNote() {
 
           <div className="bg-gray-50 rounded-2xl border border-gray-100 p-8 sm:p-10 pl-10 sm:pl-12">
             <p className="text-gray-700 text-base sm:text-lg leading-relaxed font-medium">
-              We built Clinekt because we ran a small design studio for four years
+              We built Rupway because we ran a small design studio for four years
               and spent more time chasing payments and fixing GST errors than actually
               designing. Every tool we tried was built for the US — wrong currency,
               wrong tax system, no Razorpay, no WhatsApp.
@@ -44,7 +44,7 @@ export default function FounderNote() {
                 ))}
               </div>
               <div>
-                <p className="text-sm font-bold text-gray-900">The Clinekt team</p>
+                <p className="text-sm font-bold text-gray-900">The Rupway team</p>
                 <p className="text-xs text-gray-400">Freelancers building for freelancers · Bengaluru, India</p>
               </div>
             </div>

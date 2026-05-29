@@ -9,7 +9,7 @@ const plans = [
     name: 'Free',
     monthly: 0, annual: 0,
     desc: 'Try before you buy. No card needed.',
-    features: ['3 active projects', '3 proposals / month', 'GST invoice generator', 'Basic e-sign', 'Clinekt watermark on docs', 'Community support'],
+    features: ['3 active projects', '3 proposals / month', 'GST invoice generator', 'Basic e-sign', 'Rupway watermark on docs', 'Community support'],
     cta: 'Get started free',
     ctaClass: 'bg-gray-900 text-white hover:bg-gray-800',
     highlight: false,
@@ -27,7 +27,7 @@ const plans = [
       'Auto payment reminders',
       'Client portal (branded)',
       'Revenue dashboard',
-      'Remove Clinekt watermark',
+      'Remove Rupway watermark',
       'Email support',
     ],
     cta: 'Join waitlist',
@@ -57,7 +57,7 @@ const plans = [
 ]
 
 const benchmarks = [
-  { name: 'Clinekt Solo', price: '₹699/mo', note: 'Full India workflow ✓', good: true },
+  { name: 'Rupway Solo', price: '₹699/mo', note: 'Full India workflow ✓', good: true },
   { name: 'Bonsai Essential', price: '₹1,600/mo', note: 'No GST, no India support', good: false },
   { name: 'HoneyBook Starter', price: '₹3,000/mo', note: 'Blocked in India', good: false },
   { name: 'Dubsado Basic', price: '₹2,500/mo', note: 'No Razorpay, USD only', good: false },
@@ -179,7 +179,7 @@ export default function PricingSection() {
           <div className="rounded-2xl bg-white border border-gray-200 shadow-sm p-6">
             <div className="flex items-center gap-2 mb-5">
               <Zap size={16} className="text-indigo-600" />
-              <span className="font-bold text-gray-900 text-sm">Why Clinekt wins on price</span>
+              <span className="font-bold text-gray-900 text-sm">Why Rupway wins on price</span>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {benchmarks.map(b => (

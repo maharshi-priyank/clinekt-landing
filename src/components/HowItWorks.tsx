@@ -153,7 +153,7 @@ export default function HowItWorks() {
             <span className="gradient-text">In one tool.</span>
           </h2>
           <p className="text-gray-500 text-lg mt-4 max-w-lg mx-auto">
-            Scroll through each step to see exactly what Clinekt looks like in action.
+            Scroll through each step to see exactly what Rupway looks like in action.
           </p>
         </motion.div>
 
@@ -250,7 +250,7 @@ export default function HowItWorks() {
                 <div className="flex-1 mx-3">
                   <div className="max-w-52 mx-auto h-5 bg-white rounded border border-gray-200 flex items-center justify-center gap-1.5">
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                    <span className="text-[10px] text-gray-400">app.clinekt.io</span>
+                    <span className="text-[10px] text-gray-400">app.rupway.in</span>
                   </div>
                 </div>
               </div>

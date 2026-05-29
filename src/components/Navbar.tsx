@@ -38,8 +38,10 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2.5">
-          <img src="/logo/full_logo.svg" alt="Clinekt" className="h-9 w-auto" />
+        <a href="/" className="flex items-center">
+          <span style={{ fontFamily: "'Roca Two', serif", fontWeight: 700, fontSize: 38, letterSpacing: '-0.06em', color: '#0f172a', lineHeight: 1 }}>
+            Rupway
+          </span>
         </a>
 
         {/* Desktop nav */}

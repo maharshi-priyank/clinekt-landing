@@ -37,7 +37,7 @@ function ScreenshotFrame({ tabs, activeTab, onTabChange }: {
         <div className="flex-1 mx-3">
           <div className="max-w-48 mx-auto h-5 bg-white rounded border border-gray-200 flex items-center justify-center gap-1.5">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            <span className="text-[10px] text-gray-400">app.clinekt.io</span>
+            <span className="text-[10px] text-gray-400">app.rupway.in</span>
           </div>
         </div>
       </div>
@@ -63,7 +63,7 @@ function ScreenshotFrame({ tabs, activeTab, onTabChange }: {
           <motion.img
             key={activeTab}
             src={tabs.find(t => t.id === activeTab)!.src}
-            alt={`Clinekt ${activeTab}`}
+            alt={`Rupway ${activeTab}`}
             className="w-full block"
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
@@ -147,7 +147,22 @@ function Pillar({
 
   const screenshot = (
     <FadeIn delay={0.2}>
-      <ScreenshotFrame tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
+      <div className="relative" style={{ perspective: 1000 }}>
+        {/* Glow behind frame */}
+        <div className="absolute -inset-4 bg-indigo-100/50 rounded-3xl blur-2xl pointer-events-none" />
+        {/* Tilted frame */}
+        <motion.div
+          animate={{ y: [0, -6, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+          style={{ transform: `perspective(900px) rotateY(${flip ? '5deg' : '-5deg'}) rotateX(2deg)` }}
+          className="relative"
+        >
+          <ScreenshotFrame tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
+          {/* Reflection sheen */}
+          <div className="absolute inset-0 pointer-events-none rounded-2xl"
+            style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.07) 0%, transparent 60%)' }} />
+        </motion.div>
+      </div>
     </FadeIn>
   )
 

@@ -12,7 +12,7 @@ import {
   type IpTransfer, type ScheduleType,
 } from '../../lib/contractPdf'
 
-const STORAGE_KEY = 'clinekt-contract-gen-state'
+const STORAGE_KEY = 'rupway-contract-gen-state'
 
 function uid() { return Math.random().toString(36).slice(2, 9) }
 
@@ -71,7 +71,7 @@ const IP_OPTIONS: { value: IpTransfer; label: string; hint: string }[] = [
 
 export default function FreelanceContractGenerator() {
   useSeo(
-    'Free Freelance Contract Generator (India) — Download PDF | Clinekt',
+    'Free Freelance Contract Generator (India) — Download PDF | Rupway',
     'Generate a legally-worded freelance contract for Indian freelancers. IP clause, payment terms, confidentiality, IT Act. Free, no signup, instant PDF download.',
   )
 
@@ -651,7 +651,7 @@ function ContractPreview({ input }: { input: ContractInput }) {
         </div>
 
         <p className="text-[10px] text-gray-300 text-center pt-2">
-          Generated free with Clinekt — clinekt.io
+          Generated free with Rupway — rupway.in
         </p>
       </div>
     </div>
@@ -709,9 +709,9 @@ function Hero() {
 
 function Upsell() {
   const reasons = [
-    { title: 'One click from proposal to contract',   desc: 'In Clinekt, a client accepting your proposal auto-generates the contract — pre-filled with scope, amount, and client details. No copy-paste, no Word doc.' },
+    { title: 'One click from proposal to contract',   desc: 'In Rupway, a client accepting your proposal auto-generates the contract — pre-filled with scope, amount, and client details. No copy-paste, no Word doc.' },
     { title: 'E-sign with OTP (IT Act 2000)',          desc: 'Client signs the contract with a 6-digit OTP sent to their email. Legally binding under India\'s IT Act 2000. Timestamped audit trail PDF auto-generated.' },
-    { title: 'Auto-invoice on contract milestones',   desc: 'Set a milestone in the contract, and Clinekt creates and sends the invoice automatically on the due date — no manual chasing.' },
+    { title: 'Auto-invoice on contract milestones',   desc: 'Set a milestone in the contract, and Rupway creates and sends the invoice automatically on the due date — no manual chasing.' },
     { title: 'Client portal for all docs',            desc: 'Every client gets a branded portal link with their contract, invoices, and project status. No more "can you resend the contract?".' },
     { title: 'Track if they opened it',               desc: 'You\'ll know the second a client opens the contract to sign. Perfect timing for a WhatsApp follow-up.' },
     { title: 'Everything in one place',               desc: 'Lead → Proposal → Contract → Invoice → Payment — the whole workflow, linked together, in one tool built for Indian freelancers.' },
@@ -728,7 +728,7 @@ function Upsell() {
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             Good contracts get signed.
             <br />
-            <span className="text-gray-400">Clinekt makes the whole process automatic.</span>
+            <span className="text-gray-400">Rupway makes the whole process automatic.</span>
           </h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
@@ -748,7 +748,7 @@ function Upsell() {
         </div>
         <div className="text-center">
           <Link to="/#waitlist" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-gray-950 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg">
-            Try Clinekt free <ArrowRight size={15} />
+            Try Rupway free <ArrowRight size={15} />
           </Link>
           <p className="text-xs text-gray-500 mt-3">Free forever plan. No credit card needed.</p>
         </div>

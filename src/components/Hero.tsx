@@ -99,87 +99,155 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* ── Right: Product screenshot ── */}
+          {/* ── Right: 3D product mockup ── */}
           <motion.div
-            initial={{ opacity: 0, x: 48, scale: 0.97 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2, ease }}
-            className="relative hidden lg:flex items-end justify-end pb-0"
+            initial={{ opacity: 0, x: 60, rotateY: -15 }}
+            animate={{ opacity: 1, x: 0, rotateY: 0 }}
+            transition={{ duration: 1.1, delay: 0.15, ease }}
+            className="relative hidden lg:flex items-center justify-center"
+            style={{ perspective: 1200 }}
           >
-            {/* Screenshot glow */}
-            <div className="absolute inset-0 -bottom-8 bg-indigo-100/40 blur-3xl rounded-full pointer-events-none" />
+            {/* Multi-layer glows */}
+            <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-indigo-200/50 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-1/4 right-1/4 w-60 h-60 bg-violet-200/40 rounded-full blur-3xl pointer-events-none" />
 
-            {/* Browser frame */}
-            <div className="relative w-full rounded-tl-2xl rounded-tr-2xl shadow-2xl shadow-indigo-900/10 border border-gray-200 border-b-0 bg-white overflow-hidden"
-              style={{ marginRight: '-2rem' }}>
+            {/* Browser frame — tilted 3D */}
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+              className="relative w-full rounded-2xl shadow-2xl shadow-indigo-900/15 border border-gray-200 bg-white overflow-hidden"
+              style={{
+                transform: 'perspective(1000px) rotateY(-6deg) rotateX(3deg)',
+                transformOrigin: 'center center',
+                marginRight: '-1.5rem',
+              }}
+            >
               {/* Browser chrome */}
-              <div className="flex items-center gap-2 px-4 py-3 bg-gray-50/90 border-b border-gray-150">
+              <div className="flex items-center gap-2 px-4 py-2.5 bg-gray-50/90 border-b border-gray-100">
                 <div className="flex gap-1.5">
                   <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
                   <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
                   <div className="w-2.5 h-2.5 rounded-full bg-[#28CA41]" />
                 </div>
                 <div className="flex-1 mx-3">
-                  <div className="max-w-52 mx-auto h-6 bg-white rounded-md border border-gray-200 flex items-center justify-center gap-1.5">
+                  <div className="max-w-52 mx-auto h-5 bg-white rounded border border-gray-200 flex items-center justify-center gap-1.5">
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                    <span className="text-[11px] text-gray-400 font-medium">app.clinekt.io/dashboard</span>
+                    <span className="text-[10px] text-gray-400 font-medium">app.rupway.in/dashboard</span>
                   </div>
                 </div>
               </div>
-
-              {/* Dashboard screenshot */}
               <img
                 src="/screenshots/screenshot-dashboard.png"
-                alt="Clinekt dashboard — lead pipeline, revenue, invoice status"
+                alt="Rupway dashboard"
                 className="w-full block"
                 loading="eager"
               />
-            </div>
-
-            {/* Floating: payment received */}
-            <motion.div
-              animate={{ y: [0, -7, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute top-8 -left-4 flex items-center gap-2.5 px-4 py-3 bg-white rounded-2xl shadow-xl shadow-gray-200/70 border border-gray-100 z-10"
-            >
-              <div className="w-9 h-9 bg-emerald-50 rounded-xl flex items-center justify-center shrink-0">
-                <IndianRupee size={15} className="text-emerald-600" />
-              </div>
-              <div>
-                <div className="text-xs font-bold text-gray-900">₹29,500 received</div>
-                <div className="text-[11px] text-gray-400 mt-0.5">Paid via Razorpay · just now</div>
-              </div>
+              {/* Subtle edge reflection */}
+              <div className="absolute inset-0 pointer-events-none rounded-2xl"
+                style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 50%)' }} />
             </motion.div>
 
-            {/* Floating: proposal opened */}
+            {/* ── Floating card: Payment received ── */}
             <motion.div
-              animate={{ y: [0, 7, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1.2 }}
-              className="absolute bottom-16 -left-6 flex items-center gap-2.5 px-4 py-3 bg-white rounded-2xl shadow-xl shadow-gray-200/70 border border-gray-100 z-10"
+              initial={{ opacity: 0, scale: 0.8, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.5, ease }}
             >
-              <div className="w-9 h-9 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0">
-                <Bell size={15} className="text-indigo-600" />
-              </div>
-              <div>
-                <div className="text-xs font-bold text-gray-900">Prashant opened your proposal</div>
-                <div className="text-[11px] text-gray-400 mt-0.5">4 min on pricing page</div>
-              </div>
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0 }}
+                className="absolute -top-4 -left-8 z-20 flex items-center gap-3 px-4 py-3 bg-white rounded-2xl border border-gray-100 shadow-xl shadow-gray-200/60"
+                style={{ backdropFilter: 'blur(12px)' }}
+              >
+                <div className="w-9 h-9 bg-emerald-50 rounded-xl flex items-center justify-center shrink-0">
+                  <IndianRupee size={15} className="text-emerald-600" />
+                </div>
+                <div>
+                  <div className="text-[11px] font-bold text-gray-900">₹29,500 received</div>
+                  <div className="text-[10px] text-gray-400 mt-0.5">Razorpay · just now</div>
+                </div>
+                <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+              </motion.div>
             </motion.div>
 
-            {/* Floating: contract signed */}
+            {/* ── Floating card: Proposal opened ── */}
             <motion.div
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 2.5 }}
-              className="absolute top-1/2 -translate-y-1/2 -right-2 flex items-center gap-2.5 px-4 py-3 bg-white rounded-2xl shadow-xl shadow-gray-200/70 border border-gray-100 z-10"
+              initial={{ opacity: 0, scale: 0.8, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ delay: 0.85, duration: 0.5, ease }}
             >
-              <div className="w-9 h-9 bg-orange-50 rounded-xl flex items-center justify-center shrink-0">
-                <Pen size={15} className="text-orange-500" />
-              </div>
-              <div>
-                <div className="text-xs font-bold text-gray-900">Contract signed</div>
-                <div className="text-[11px] text-gray-400 mt-0.5">Prashant · 2 min ago</div>
-              </div>
+              <motion.div
+                animate={{ y: [0, 9, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+                className="absolute bottom-20 -left-10 z-20 flex items-center gap-3 px-4 py-3 bg-white rounded-2xl border border-gray-100 shadow-xl shadow-gray-200/60"
+              >
+                <div className="w-9 h-9 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0">
+                  <Bell size={15} className="text-indigo-600" />
+                </div>
+                <div>
+                  <div className="text-[11px] font-bold text-gray-900">Prashant opened your proposal</div>
+                  <div className="text-[10px] text-gray-400 mt-0.5">4 min on pricing page</div>
+                </div>
+              </motion.div>
             </motion.div>
+
+            {/* ── Floating card: Contract signed ── */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, x: 10 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ delay: 1.05, duration: 0.5, ease }}
+            >
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+                className="absolute top-1/3 -right-4 z-20 flex items-center gap-3 px-4 py-3 bg-white rounded-2xl border border-gray-100 shadow-xl shadow-gray-200/60"
+              >
+                <div className="w-9 h-9 bg-orange-50 rounded-xl flex items-center justify-center shrink-0">
+                  <Pen size={15} className="text-orange-500" />
+                </div>
+                <div>
+                  <div className="text-[11px] font-bold text-gray-900">Contract signed</div>
+                  <div className="text-[10px] text-gray-400 mt-0.5">Prashant · 2 min ago</div>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* ── Floating badge: GST auto-calc ── */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.7 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.2, duration: 0.4, ease }}
+            >
+              <motion.div
+                animate={{ y: [0, 7, 0], rotate: [0, 2, 0] }}
+                transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+                className="absolute bottom-8 right-2 z-20 flex flex-col items-center justify-center w-20 h-20 bg-white rounded-2xl border border-gray-100 shadow-xl shadow-indigo-100/50 gap-1"
+              >
+                <div className="w-8 h-8 bg-indigo-50 rounded-xl flex items-center justify-center">
+                  <IndianRupee size={14} className="text-indigo-600" />
+                </div>
+                <span className="text-[9px] font-bold text-gray-500 text-center leading-tight">GST Auto-calc</span>
+              </motion.div>
+            </motion.div>
+
+            {/* ── Floating badge: E-sign ── */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.7 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.35, duration: 0.4, ease }}
+            >
+              <motion.div
+                animate={{ y: [0, -5, 0], rotate: [0, -1.5, 0] }}
+                transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
+                className="absolute top-6 right-8 z-20 flex flex-col items-center justify-center w-20 h-20 bg-white rounded-2xl border border-gray-100 shadow-xl shadow-violet-100/50 gap-1"
+              >
+                <div className="w-8 h-8 bg-violet-50 rounded-xl flex items-center justify-center">
+                  <Pen size={14} className="text-violet-600" />
+                </div>
+                <span className="text-[9px] font-bold text-gray-500 text-center leading-tight">E-sign</span>
+              </motion.div>
+            </motion.div>
+
           </motion.div>
 
         </div>

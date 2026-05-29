@@ -14,7 +14,9 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-10 mb-12">
           <div className="col-span-2">
             <div className="flex items-center mb-4">
-              <img src="/logo/full_logo.svg" alt="Clinekt" className="h-9 w-auto" />
+              <span style={{ fontFamily: "'Roca Two', serif", fontWeight: 700, fontSize: 36, letterSpacing: '-0.06em', color: '#0f172a', lineHeight: 1 }}>
+                Rupway
+              </span>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
               India's all-in-one client workflow for freelancers and agencies.
@@ -49,7 +51,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-3 pt-8 border-t border-gray-200">
-          <p className="text-sm text-gray-400">© 2026 Clinekt</p>
+          <p className="text-sm text-gray-400">© 2026 Rupway</p>
           <p className="text-xs text-gray-400">Built for 15M Indian freelancers who deserve better tools.</p>
         </div>
       </div>

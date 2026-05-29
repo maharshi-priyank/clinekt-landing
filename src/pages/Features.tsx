@@ -209,7 +209,7 @@ const USE_CASES = [
     type: 'Solo Freelancer',
     tagline: 'From first enquiry to paid invoice — solo.',
     color: 'indigo',
-    desc: 'You wear every hat. Clinekt keeps the admin invisible so you can focus on your craft and grow your income.',
+    desc: 'You wear every hat. Rupway keeps the admin invisible so you can focus on your craft and grow your income.',
     highlights: [
       'Lead pipeline to never miss a DM enquiry',
       'Proposals that convert — with open tracking',
@@ -224,7 +224,7 @@ const USE_CASES = [
     type: 'Small Agency',
     tagline: 'Manage clients, projects, and your team\'s time.',
     color: 'violet',
-    desc: 'Multiple clients, multiple projects running at once. Clinekt keeps everything in one place so nothing falls through the cracks.',
+    desc: 'Multiple clients, multiple projects running at once. Rupway keeps everything in one place so nothing falls through the cracks.',
     highlights: [
       'Projects that group proposals, contracts, invoices, time',
       'Client portal — each client sees only their docs',
@@ -239,7 +239,7 @@ const USE_CASES = [
     type: 'Consultant / Coach',
     tagline: 'Retainers, sessions, and recurring billing — handled.',
     color: 'emerald',
-    desc: 'Your business runs on recurring relationships. Clinekt handles the paperwork so you show up as a professional every time.',
+    desc: 'Your business runs on recurring relationships. Rupway handles the paperwork so you show up as a professional every time.',
     highlights: [
       'Recurring invoices for monthly retainers',
       'Intake forms to qualify leads before the first call',
@@ -280,7 +280,7 @@ export default function Features() {
               <span className="gradient-text">Nothing they don't.</span>
             </h1>
             <p className="mt-5 text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
-              Clinekt replaces 6+ tools with one platform built specifically for Indian freelancers and small agencies — GST-ready, Razorpay-connected, and designed to get out of your way.
+              Rupway replaces 6+ tools with one platform built specifically for Indian freelancers and small agencies — GST-ready, Razorpay-connected, and designed to get out of your way.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <a href="/#waitlist"
@@ -355,24 +355,36 @@ export default function Features() {
                     </ul>
                   </div>
 
-                  {/* Screenshot */}
+                  {/* Screenshot — 3D tilted */}
                   <div className={flip ? 'lg:col-start-1 lg:row-start-1' : ''}>
-                    <div className={`rounded-2xl border ${c.border} shadow-xl ${c.glow} overflow-hidden bg-white`}>
-                      {/* Browser chrome */}
-                      <div className="flex items-center gap-2 px-4 py-2.5 bg-gray-50/90 border-b border-gray-100">
-                        <div className="flex gap-1.5">
-                          <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
-                          <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
-                          <div className="w-2.5 h-2.5 rounded-full bg-[#28CA41]" />
-                        </div>
-                        <div className="flex-1 mx-3">
-                          <div className="max-w-44 mx-auto h-5 bg-white rounded border border-gray-200 flex items-center justify-center gap-1.5">
-                            <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                            <span className="text-[10px] text-gray-400">app.clinekt.io</span>
+                    <div className="relative" style={{ perspective: 1000 }}>
+                      {/* Glow */}
+                      <div className={`absolute -inset-4 ${c.bg} rounded-3xl blur-2xl opacity-70 pointer-events-none`} />
+                      <motion.div
+                        animate={{ y: [0, -6, 0] }}
+                        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: i * 0.4 }}
+                        style={{ transform: `perspective(900px) rotateY(${flip ? '5deg' : '-5deg'}) rotateX(2deg)` }}
+                        className="relative"
+                      >
+                        <div className={`rounded-2xl border ${c.border} shadow-xl overflow-hidden bg-white`}>
+                          <div className="flex items-center gap-2 px-4 py-2.5 bg-gray-50/90 border-b border-gray-100">
+                            <div className="flex gap-1.5">
+                              <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
+                              <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
+                              <div className="w-2.5 h-2.5 rounded-full bg-[#28CA41]" />
+                            </div>
+                            <div className="flex-1 mx-3">
+                              <div className="max-w-44 mx-auto h-5 bg-white rounded border border-gray-200 flex items-center justify-center gap-1.5">
+                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                                <span className="text-[10px] text-gray-400">app.rupway.in</span>
+                              </div>
+                            </div>
                           </div>
+                          <img src={mod.screenshot} alt={mod.label} className="w-full block" loading="lazy" />
+                          <div className="absolute inset-0 pointer-events-none rounded-2xl"
+                            style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 55%)' }} />
                         </div>
-                      </div>
-                      <img src={mod.screenshot} alt={mod.label} className="w-full block" loading="lazy" />
+                      </motion.div>
                     </div>
                   </div>
 
@@ -396,7 +408,7 @@ export default function Features() {
               <span className="text-indigo-400">Not six.</span>
             </h2>
             <p className="mt-4 text-gray-400 text-base max-w-lg mx-auto leading-relaxed">
-              Most Indian freelancers cobble together Notion + DocuSign + Zoho + Calendly + Zapier + WhatsApp. Clinekt does all of it — at a fraction of the cost.
+              Most Indian freelancers cobble together Notion + DocuSign + Zoho + Calendly + Zapier + WhatsApp. Rupway does all of it — at a fraction of the cost.
             </p>
           </FadeIn>
 
@@ -406,8 +418,8 @@ export default function Features() {
               {/* Header */}
               <div className="grid grid-cols-[1fr_auto_auto] bg-white/5 border-b border-white/10 px-5 py-3">
                 <span className="text-xs font-bold uppercase tracking-widest text-white/30">Feature</span>
-                <span className="text-xs font-bold text-white/80 text-center w-28">Clinekt</span>
-                <span className="text-xs font-bold text-white/30 text-center w-36">Without Clinekt</span>
+                <span className="text-xs font-bold text-white/80 text-center w-28">Rupway</span>
+                <span className="text-xs font-bold text-white/30 text-center w-36">Without Rupway</span>
               </div>
 
               {COMPARISON_FEATURES.map((row, i) => (
@@ -457,7 +469,7 @@ export default function Features() {
               Works for how <span className="gradient-text">you work</span>
             </h2>
             <p className="mt-4 text-gray-500 text-base max-w-xl mx-auto">
-              Whether you're a solo designer or a 5-person agency, Clinekt adapts to your workflow — not the other way around.
+              Whether you're a solo designer or a 5-person agency, Rupway adapts to your workflow — not the other way around.
             </p>
           </FadeIn>
 
@@ -527,7 +539,7 @@ export default function Features() {
               { icon: BarChart3,     color: 'emerald',title: 'Revenue reports',          desc: 'Monthly revenue, outstanding, collected, GST breakdown. Export-ready for your CA.' },
               { icon: FolderKanban,  color: 'amber',  title: 'Project management',       desc: 'Group proposals, contracts, invoices, time, and expenses under one project umbrella.' },
               { icon: Shield,        color: 'rose',   title: 'Secure & compliant',       desc: 'Data hosted on Supabase (SOC 2). E-sign under IT Act 2000. HTTPS everywhere.' },
-              { icon: RefreshCw,     color: 'orange', title: 'Recurring invoices',       desc: 'Set it once — Clinekt auto-generates and sends invoices monthly for retainer clients.' },
+              { icon: RefreshCw,     color: 'orange', title: 'Recurring invoices',       desc: 'Set it once — Rupway auto-generates and sends invoices monthly for retainer clients.' },
               { icon: TrendingUp,    color: 'indigo', title: 'Business digest',          desc: 'Weekly and monthly email summaries of your revenue, pipeline, and overdue invoices.' },
               { icon: MessageSquare, color: 'violet', title: 'WhatsApp automations',     desc: '98% open rate. Send payment reminders, onboarding messages, and follow-ups via WA.' },
             ].map((item, i) => {

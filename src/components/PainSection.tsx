@@ -69,7 +69,7 @@ export default function PainSection() {
             <div className="h-full rounded-2xl bg-white border border-gray-200 shadow-sm overflow-hidden">
               <div className="px-6 py-4 bg-red-50 border-b border-red-100 flex items-center gap-2">
                 <X size={15} className="text-red-500" strokeWidth={2.5} />
-                <span className="font-bold text-red-600 text-sm">Before Clinekt — the chaos</span>
+                <span className="font-bold text-red-600 text-sm">Before Rupway — the chaos</span>
               </div>
               <div className="p-5 space-y-3">
                 {before.map((tool, i) => (
@@ -98,7 +98,7 @@ export default function PainSection() {
             <div className="h-full rounded-2xl bg-white border border-gray-200 shadow-sm overflow-hidden">
               <div className="px-6 py-4 bg-emerald-50 border-b border-emerald-100 flex items-center gap-2">
                 <Check size={15} className="text-emerald-600" strokeWidth={2.5} />
-                <span className="font-bold text-emerald-700 text-sm">After Clinekt — one tool, done</span>
+                <span className="font-bold text-emerald-700 text-sm">After Rupway — one tool, done</span>
               </div>
               <div className="p-5 space-y-3">
                 {after.map((label, i) => (

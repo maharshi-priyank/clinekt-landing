@@ -49,7 +49,7 @@ export default function MobileAppSection() {
                 <div className="absolute top-3 left-1/2 -translate-x-1/2 w-20 h-5 bg-gray-900 rounded-full z-10" />
                 <img
                   src="/screenshots/screenshot-mobile.png"
-                  alt="Clinekt mobile web app"
+                  alt="Rupway mobile web app"
                   className="w-full block"
                 />
               </div>
@@ -75,7 +75,7 @@ export default function MobileAppSection() {
             </h2>
 
             <p className="text-gray-400 text-base mt-4 leading-relaxed max-w-md">
-              Clinekt is a web app that installs directly on your phone — no App Store, no Play Store.
+              Rupway is a web app that installs directly on your phone — no App Store, no Play Store.
               Just open it in your browser and add it to your home screen in seconds.
             </p>
 

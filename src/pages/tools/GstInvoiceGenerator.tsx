@@ -11,7 +11,7 @@ import {
 } from '../../lib/gst'
 import { generateInvoicePdf } from '../../lib/invoicePdf'
 
-const STORAGE_KEY = 'clinekt-gst-invoice-draft'
+const STORAGE_KEY = 'rupway-gst-invoice-draft'
 
 const emptyItem: InvoiceItem = { description: '', hsnSac: '', quantity: 1, rate: 0 }
 
@@ -74,7 +74,7 @@ function useSeo(title: string, description: string) {
 
 export default function GstInvoiceGenerator() {
   useSeo(
-    'Free GST Invoice Generator (India) — CGST/SGST/IGST auto-split | Clinekt',
+    'Free GST Invoice Generator (India) — CGST/SGST/IGST auto-split | Rupway',
     'Generate a GST-compliant invoice PDF in seconds. Free, no signup. Auto CGST/SGST/IGST split by state. Built for Indian freelancers and small businesses.',
   )
 
@@ -429,7 +429,7 @@ function InvoicePreview({ input, totals }: { input: InvoiceInput; totals: Return
         )}
 
         <p className="mt-6 text-[10px] text-gray-300 text-center">
-          Generated free with Clinekt — clinekt.io
+          Generated free with Rupway — rupway.in
         </p>
       </div>
     </div>
@@ -510,7 +510,7 @@ function Upsell() {
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             Stop generating invoices one by one.
             <br />
-            <span className="text-gray-400">Run your whole business on Clinekt.</span>
+            <span className="text-gray-400">Run your whole business on Rupway.</span>
           </h2>
         </div>
 
@@ -535,7 +535,7 @@ function Upsell() {
             to="/#waitlist"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-gray-950 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
           >
-            Try Clinekt free
+            Try Rupway free
             <ArrowRight size={15} />
           </Link>
           <p className="text-xs text-gray-500 mt-3">Free forever plan. No credit card needed.</p>
@@ -574,7 +574,7 @@ const faqs = [
   },
   {
     q: 'Can I save invoices and send them automatically?',
-    a: 'Not with this free tool — it generates a PDF for you to download and send manually. If you want auto-saving, automatic Razorpay payment links inside the invoice, WhatsApp + email delivery, and follow-up reminders, sign up for Clinekt — there is a free plan.',
+    a: 'Not with this free tool — it generates a PDF for you to download and send manually. If you want auto-saving, automatic Razorpay payment links inside the invoice, WhatsApp + email delivery, and follow-up reminders, sign up for Rupway — there is a free plan.',
   },
 ] as const
 
