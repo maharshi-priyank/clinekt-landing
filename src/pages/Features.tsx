@@ -186,21 +186,21 @@ const COLOR_MAP: Record<string, { bg: string; icon: string; pill: string; border
 }
 
 const COMPARISON_FEATURES = [
-  { label: 'Lead CRM & pipeline',          clinekt: true,  others: 'Notion / spreadsheet' },
-  { label: 'Branded proposals',            clinekt: true,  others: 'Google Docs / Canva'  },
-  { label: 'Proposal open tracking',       clinekt: true,  others: false                  },
-  { label: 'OTP e-signature (IT Act 2000)',clinekt: true,  others: 'DocuSign ($$$)'       },
-  { label: 'GST invoice (CGST/SGST/IGST)', clinekt: true,  others: 'Zoho Invoice'         },
-  { label: 'Razorpay payment link',        clinekt: true,  others: 'Manual bank transfer' },
-  { label: 'TDS 194J/194C flagging',       clinekt: true,  others: false                  },
-  { label: 'Client portal',               clinekt: true,  others: false                  },
-  { label: 'WhatsApp payment reminders',   clinekt: true,  others: false                  },
-  { label: 'Time tracking',               clinekt: true,  others: 'Toggl (separate app)' },
-  { label: 'Expense tracking',            clinekt: true,  others: 'Separate app'         },
-  { label: 'Visual automation builder',   clinekt: true,  others: 'Zapier ($$$)'         },
-  { label: 'GST report for CA',           clinekt: true,  others: 'Manual export'        },
-  { label: 'Mobile web app (no install)', clinekt: true,  others: false                  },
-  { label: 'All of the above — one tool', clinekt: true,  others: '6+ tools, 6+ bills'  },
+  { label: 'Lead CRM & pipeline',          rupway: true,  others: 'Notion / spreadsheet' },
+  { label: 'Branded proposals',            rupway: true,  others: 'Google Docs / Canva'  },
+  { label: 'Proposal open tracking',       rupway: true,  others: false                  },
+  { label: 'OTP e-signature (IT Act 2000)',rupway: true,  others: 'DocuSign ($$$)'       },
+  { label: 'GST invoice (CGST/SGST/IGST)', rupway: true,  others: 'Zoho Invoice'         },
+  { label: 'Razorpay payment link',        rupway: true,  others: 'Manual bank transfer' },
+  { label: 'TDS 194J/194C flagging',       rupway: true,  others: false                  },
+  { label: 'Client portal',               rupway: true,  others: false                  },
+  { label: 'WhatsApp payment reminders',   rupway: true,  others: false                  },
+  { label: 'Time tracking',               rupway: true,  others: 'Toggl (separate app)' },
+  { label: 'Expense tracking',            rupway: true,  others: 'Separate app'         },
+  { label: 'Visual automation builder',   rupway: true,  others: 'Zapier ($$$)'         },
+  { label: 'GST report for CA',           rupway: true,  others: 'Manual export'        },
+  { label: 'Mobile web app (no install)', rupway: true,  others: false                  },
+  { label: 'All of the above — one tool', rupway: true,  others: '6+ tools, 6+ bills'  },
 ]
 
 const USE_CASES = [
@@ -429,7 +429,7 @@ export default function Features() {
                 >
                   <span className="text-[13px] text-gray-300 pr-4">{row.label}</span>
                   <div className="w-28 flex justify-center">
-                    {row.clinekt
+                    {row.rupway
                       ? <CheckCircle2 size={16} className="text-emerald-400" strokeWidth={2.5} />
                       : <X size={14} className="text-gray-600" />
                     }
