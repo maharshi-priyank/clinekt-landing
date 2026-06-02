@@ -71,6 +71,13 @@ export interface InvoiceInput {
   items:    InvoiceItem[]
   gstRate:  number
   notes:    string
+
+  // Bank / UPI (optional — shown at bottom of invoice)
+  bankName?:          string
+  bankAccountName?:   string
+  bankAccountNumber?: string
+  bankIfsc?:          string
+  upiId?:             string
 }
 
 export interface InvoiceTotals {

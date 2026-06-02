@@ -247,7 +247,28 @@ export default function GstInvoiceGenerator() {
 
               {/* Notes */}
               <Card title="Notes (optional)">
-                <textarea value={input.notes} onChange={e => set('notes', e.target.value)} rows={3} placeholder="Bank details, payment terms, thank-you note…" className={inputCls + ' resize-none'} />
+                <textarea value={input.notes} onChange={e => set('notes', e.target.value)} rows={3} placeholder="Payment terms, thank-you note…" className={inputCls + ' resize-none'} />
+              </Card>
+
+              {/* Bank / UPI */}
+              <Card title="Payment details (optional)">
+                <Grid cols={2}>
+                  <Field label="UPI ID">
+                    <input value={input.upiId ?? ''} onChange={e => set('upiId', e.target.value)} placeholder="yourname@okaxis" className={inputCls} />
+                  </Field>
+                  <Field label="Bank name">
+                    <input value={input.bankName ?? ''} onChange={e => set('bankName', e.target.value)} placeholder="HDFC Bank" className={inputCls} />
+                  </Field>
+                  <Field label="Account holder name">
+                    <input value={input.bankAccountName ?? ''} onChange={e => set('bankAccountName', e.target.value)} placeholder="Maharshi Vaghela" className={inputCls} />
+                  </Field>
+                  <Field label="Account number">
+                    <input value={input.bankAccountNumber ?? ''} onChange={e => set('bankAccountNumber', e.target.value)} placeholder="012345678901" className={inputCls + ' font-mono tracking-wider'} />
+                  </Field>
+                  <Field label="IFSC code">
+                    <input value={input.bankIfsc ?? ''} onChange={e => set('bankIfsc', e.target.value.toUpperCase())} placeholder="HDFC0001234" className={inputCls + ' font-mono uppercase'} />
+                  </Field>
+                </Grid>
               </Card>
 
               {/* Actions */}
@@ -425,6 +446,20 @@ function InvoicePreview({ input, totals }: { input: InvoiceInput; totals: Return
           <div className="mt-5 pt-4 border-t border-gray-100">
             <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Notes</p>
             <p className="text-gray-700 whitespace-pre-line">{input.notes}</p>
+          </div>
+        )}
+
+        {(input.bankAccountNumber || input.upiId) && (
+          <div className="mt-5 pt-4 border-t border-gray-100">
+            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Payment Details</p>
+            {input.upiId && (
+              <p className="text-gray-700"><span className="font-semibold">UPI:</span> {input.upiId}</p>
+            )}
+            {input.bankAccountNumber && (
+              <p className="text-gray-700 mt-0.5">
+                {[input.bankName, input.bankAccountName ? `A/C Name: ${input.bankAccountName}` : null, `A/C: ${input.bankAccountNumber}`, input.bankIfsc ? `IFSC: ${input.bankIfsc}` : null].filter(Boolean).join(' · ')}
+              </p>
+            )}
           </div>
         )}
 

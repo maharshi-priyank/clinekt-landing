@@ -181,6 +181,34 @@ export function generateInvoicePdf(input: InvoiceInput) {
     y += notesLines.length * 4.5 + 4
   }
 
+  // ── Bank / UPI ────────────────────────────────────────────────────────────
+  if (input.bankAccountNumber || input.upiId) {
+    doc.setDrawColor('#EAECF0').setLineWidth(0.3).line(M, y, PAGE_W - M, y)
+    y += 5
+
+    doc.setFont('helvetica', 'bold').setFontSize(9).setTextColor('#101828')
+    doc.text('Payment Details', M, y)
+    y += 5
+
+    doc.setFont('helvetica', 'normal').setFontSize(9).setTextColor('#475467')
+    if (input.upiId) {
+      doc.text(`UPI ID: ${input.upiId}`, M, y)
+      y += 4.5
+    }
+    if (input.bankAccountNumber) {
+      const bankLine = [
+        input.bankName,
+        input.bankAccountName ? `A/C Name: ${input.bankAccountName}` : null,
+        `A/C: ${input.bankAccountNumber}`,
+        input.bankIfsc ? `IFSC: ${input.bankIfsc}` : null,
+      ].filter(Boolean).join(' · ')
+      const bankLines = doc.splitTextToSize(bankLine, PAGE_W - 2 * M)
+      doc.text(bankLines, M, y)
+      y += bankLines.length * 4.5
+    }
+    y += 4
+  }
+
   // ── Footer ────────────────────────────────────────────────────────────────
   const pageH = doc.internal.pageSize.getHeight()
   doc.setFont('helvetica', 'normal').setFontSize(8).setTextColor('#98A2B3')
