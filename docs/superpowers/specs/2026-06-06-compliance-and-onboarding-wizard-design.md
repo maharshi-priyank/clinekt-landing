@@ -191,8 +191,105 @@ No "skip" on this step — user must choose one or close the tab. The three opti
 5. **Frontend: Settings → Profile** — add default HSN/SAC, LUT number, default currency, Razorpay key fields
 6. **Frontend: Invoice editor** — HSN/SAC per line item + currency selector + international mode UI
 7. **Frontend: Invoice PDF** — HSN/SAC column + LUT declaration block + currency display
-8. **Frontend: Onboarding wizard** — 5-step component wired to API + localStorage persistence
+8. **Frontend: Onboarding wizard** — 5-step component wired to API + localStorage persistence, split-panel layout, Framer Motion transitions, live right-panel preview per step, `canvas-confetti` graduation
 9. **Frontend: AppShell trigger** — show wizard when `!user.onboardingComplete`
+10. **Frontend: UI polish pass** — apply design system (typography hierarchy, empty states, skeleton consistency, micro-interactions) to Dashboard → Invoice editor → Client page in priority order
+
+---
+
+## Part 4: Premium UI/UX — Wizard as Gold Standard, Then App-Wide
+
+### Philosophy
+The wizard is the first thing every new user touches. It must feel like Linear, Stripe, or Notion's onboarding — not a form inside a modal. Once the wizard sets the bar, those same design principles are documented and applied progressively to the rest of the app. The goal: a user who sees Rupway for the first time should feel they're using a ₹999/month product, not a student project.
+
+---
+
+### Wizard: Premium Treatment
+
+**Layout — split panel**
+Full-screen, two-column layout (desktop):
+- **Left panel (40%)** — step form. Clean, generous padding, one focused input group at a time.
+- **Right panel (60%)** — live contextual preview that changes per step:
+  - Step 1 (Business Identity): shows a mini proposal header updating in real-time as they type their business name and upload their logo
+  - Step 2 (GST & Compliance): shows a mini invoice footer with their GSTIN and the HSN/SAC code populating as they type
+  - Step 3 (Get Paid): shows a mini invoice with a Razorpay "Pay Now" button and their UPI ID — making tangible what they're setting up
+  - Step 4 (Add Client): shows the client card as it will appear in the Clients list
+  - Step 5 (Graduation): shows the three document cards (Proposal/Contract/Invoice) as beautiful previews
+
+On mobile: single column, right panel hidden.
+
+**Step transitions**
+Steps slide in from the right using Framer Motion (`x: 40 → 0`, opacity `0 → 1`, duration 0.35s ease-out). Going back slides from left. No jarring snaps.
+
+**Progress indicator**
+Left panel top: numbered steps with labels. Current step shows filled indigo circle + bold label. Completed steps show a checkmark. Future steps are muted. Below: a thin progress bar animating between steps.
+
+**Micro-copy — warm and specific, not generic**
+Every label and placeholder is written as if talking to a freelancer:
+- "Business name" → *"Your trading name (what clients see on invoices)"*
+- "GSTIN" → *"Your GST registration number — starts with your state code"*
+- "UPI ID" → *"e.g. yourname@okicici — clients pay you directly here"*
+- Step titles use "Let's" and "You're": *"Let's set up your identity"*, *"You're almost ready to get paid"*
+- Error states are helpful: *"GSTIN should be 15 characters — e.g. 24AAAAA0000A1Z5"* not *"Invalid input"*
+
+**Graduation — celebratory moment**
+Step 5 triggers a confetti burst (using `canvas-confetti`, 3KB, free) when a document card is clicked. The three cards have a hover lift effect (`translateY(-4px)`, box-shadow deepens). Clicking a card animates it scaling to full-screen before navigating — giving a sense of transition rather than a hard cut.
+
+---
+
+### Design Principles (Applied App-Wide After Wizard)
+
+These are extracted from what makes the wizard feel premium and applied progressively to the rest of the app. Documented here so every future component is consistent.
+
+**1. Typography hierarchy**
+| Role | Size | Weight |
+|------|------|--------|
+| Page title | 22–24px | 800 |
+| Section header | 16–18px | 700 |
+| Card title | 14–15px | 600 |
+| Body / labels | 13px | 400–500 |
+| Helper / meta | 11–12px | 400 |
+
+Currently the app uses 13–14px for almost everything. Page titles need to be bigger and bolder to establish visual hierarchy.
+
+**2. Color usage**
+- **Background:** `#F4F6FB` (already correct — cool gray, not pure white)
+- **Cards:** `#FFFFFF` with `border border-[#EAECF0]` and `shadow-sm` (already correct)
+- **Primary action:** Indigo `#6366F1` — used *sparingly*, only for the one primary CTA per screen
+- **Deep navy `#0D1117`:** For primary buttons on light backgrounds (already used in sidebar) — conveys premium weight
+- **Avoid:** Multiple indigo elements competing on the same screen
+
+**3. Empty states — design moments, not afterthoughts**
+Every empty state (no clients, no invoices, no proposals) gets:
+- A centered illustration (simple SVG, not a stock image)
+- A bold 16px headline: *"No invoices yet"*
+- A 13px subline explaining the value: *"Create your first invoice and send a Razorpay payment link in under 2 minutes"*
+- One primary CTA button
+
+**4. Skeleton loading — everywhere, no spinners**
+Every list, card, and table shows skeleton placeholders while loading. The app has this in some places inconsistently. Standardise: `animate-pulse bg-[#F2F4F7] rounded-lg` for all loading states. No `<Loader2>` spinners for page-level content (only for button-level actions).
+
+**5. Micro-interactions**
+- Buttons: `active:scale-[0.97]` press feedback
+- Cards: `hover:shadow-md transition-shadow` on clickable cards
+- Modals: `scale(0.96) → scale(1)` spring-in animation (already present in some modals via `anim-modal-in` — standardise everywhere)
+- Form inputs: indigo ring on focus (`focus:ring-2 focus:ring-[#6366F1]/20 focus:border-[#6366F1]`) — already in place, ensure consistency
+
+**6. Density — breathe more**
+- Section padding: `p-5` minimum on cards, `p-6` on full-page sections
+- Table row height: at least 48px
+- Form field spacing: `space-y-4` minimum between fields
+
+---
+
+### Priority Surfaces to Upgrade (Post-Wizard)
+
+Applied in this order — highest user touchpoint first:
+
+1. **Dashboard** — add a proper "welcome back" header with the user's business name, revenue sparkline, and 3 action cards for the most common next actions (New Invoice / New Proposal / Add Client). Currently feels like a data dump.
+2. **Invoice editor** — biggest revenue touchpoint. Line item table needs to feel as polished as Stripe's invoice creator: clean rows, inline editing, totals that animate when values change.
+3. **Proposal editor** — tab completion system is good; make the preview panel feel like a real document renderer, not an iframe.
+4. **Client page** — the overview tab needs a "summary card" at the top (total billed, outstanding, last activity) before the tab list.
 
 ---
 
