@@ -77,8 +77,8 @@ export default function HubSpokeSection() {
   }, [])
 
   const linesOpacity  = useTransform(scrollYProgress, [T.scatterStart, T.centerOut], [1, 0], { clamp: true })
-  const centerOpacity = useTransform(scrollYProgress, [T.scatterStart, T.centerOut], [1, 0], { clamp: true })
-  const centerY       = useTransform(scrollYProgress, [T.scatterStart, T.centerOut], [0, -20], { clamp: true })
+  const centerOpacity = useTransform(scrollYProgress, [T.scatterStart, T.campaignTrigger], [1, 0], { clamp: true })
+  const centerY       = useTransform(scrollYProgress, [T.scatterStart, T.campaignTrigger], [0, -20], { clamp: true })
   const hintOpacity   = useTransform(scrollYProgress, [0, T.hintFade], [1, 0], { clamp: true })
 
   const lineSegments = ICONS.map(ic => {
@@ -126,15 +126,8 @@ export default function HubSpokeSection() {
         </FadeIn>
 
         <FadeIn delay={0.26}>
-          <div style={{ borderRadius: '12px 12px 0 0', overflow: 'hidden', boxShadow: '0 -4px 40px rgba(15,23,42,0.10)', border: '1px solid #E5E7EB', borderBottom: 'none', background: '#fff' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 12px', background: '#F8F9FA', borderBottom: '1px solid #EAECF0' }}>
-              <div style={{ display: 'flex', gap: 4 }}>
-                <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#FF5F57' }} />
-                <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#FFBD2E' }} />
-                <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#28CA41' }} />
-              </div>
-            </div>
-            <img src="/screenshots/screenshot-dashboard.png" alt="ClearWork dashboard" style={{ width: '100%', display: 'block' }} loading="lazy" />
+          <div style={{ borderRadius: '12px 12px 0 0', overflow: 'hidden', boxShadow: '0 -4px 40px rgba(15,23,42,0.10)', border: '1px solid rgba(0,0,0,0.07)', borderBottom: 'none' }}>
+            <img src="/screenshots/dashboard-reveal.png" alt="ClearWork dashboard" style={{ width: '100%', display: 'block' }} loading="lazy" />
           </div>
         </FadeIn>
 
@@ -172,18 +165,20 @@ export default function HubSpokeSection() {
           <AppIcon key={i} def={ic} index={i} scrollYProgress={scrollYProgress} vpW={dims.w} vpH={dims.h} />
         ))}
 
-        {/* Center question text */}
-        <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', zIndex: 12, pointerEvents: 'none' }}>
-          <motion.div style={{ opacity: centerOpacity, y: centerY, textAlign: 'center' }}>
-            <div style={{ position: 'absolute', width: 330, height: 330, borderRadius: '50%', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', background: 'radial-gradient(circle, rgba(237,240,255,1) 0%, rgba(242,244,255,0.75) 40%, transparent 72%)', pointerEvents: 'none' }} />
-            <div style={{ position: 'relative', zIndex: 1, maxWidth: 260, margin: '0 auto', padding: '0 8px' }}>
-              <p style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 400, fontSize: 'clamp(19px, 2vw, 26px)', color: '#111827', lineHeight: 1.38, letterSpacing: '-0.025em', margin: 0 }}>
-                Your work is spread across{' '}
-                <strong style={{ fontWeight: 800 }}>too many places?</strong>
-              </p>
-            </div>
-          </motion.div>
-        </div>
+        {/* Center question text — hidden once campaign triggers */}
+        {!campaignVisible && (
+          <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', zIndex: 12, pointerEvents: 'none' }}>
+            <motion.div style={{ opacity: centerOpacity, y: centerY, textAlign: 'center' }}>
+              <div style={{ position: 'absolute', width: 330, height: 330, borderRadius: '50%', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', background: 'radial-gradient(circle, rgba(237,240,255,1) 0%, rgba(242,244,255,0.75) 40%, transparent 72%)', pointerEvents: 'none' }} />
+              <div style={{ position: 'relative', zIndex: 1, maxWidth: 260, margin: '0 auto', padding: '0 8px' }}>
+                <p style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 400, fontSize: 'clamp(19px, 2vw, 26px)', color: '#111827', lineHeight: 1.38, letterSpacing: '-0.025em', margin: 0 }}>
+                  Your work is spread across{' '}
+                  <strong style={{ fontWeight: 800 }}>too many places?</strong>
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        )}
 
         {/* ── CAMPAIGN — headline + dashboard in one grouped container ── */}
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end', zIndex: 22, pointerEvents: 'none' }}>
@@ -212,21 +207,8 @@ export default function HubSpokeSection() {
             style={{ width: 'min(920px, 90vw)', transformOrigin: 'bottom center' }}
           >
             <div style={{ position: 'absolute', inset: '-16px -24px', borderRadius: 36, background: 'radial-gradient(ellipse at 50% 70%, rgba(99,102,241,0.10) 0%, transparent 65%)', filter: 'blur(14px)', pointerEvents: 'none' }} />
-            <div style={{ borderRadius: '16px 16px 0 0', overflow: 'hidden', boxShadow: '0 -4px 60px rgba(15,23,42,0.12), 0 0 0 1px rgba(0,0,0,0.06)', border: '1px solid #E5E7EB', borderBottom: 'none', background: '#fff', position: 'relative' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '9px 16px', background: '#F8F9FA', borderBottom: '1px solid #EAECF0' }}>
-                <div style={{ display: 'flex', gap: 5 }}>
-                  <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#FF5F57' }} />
-                  <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#FFBD2E' }} />
-                  <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#28CA41' }} />
-                </div>
-                <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 5, background: '#fff', border: '1px solid #E5E7EB', borderRadius: 6, padding: '3px 14px', fontSize: 10, color: '#9CA3AF', fontFamily: '"DM Sans", sans-serif' }}>
-                    <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#10B981' }} />
-                    app.clearwork.in
-                  </div>
-                </div>
-              </div>
-              <img src="/screenshots/screenshot-dashboard.png" alt="ClearWork dashboard" style={{ width: '100%', display: 'block', maxHeight: '62vh', objectFit: 'cover', objectPosition: 'top' }} loading="lazy" />
+            <div style={{ borderRadius: '16px 16px 0 0', overflow: 'hidden', boxShadow: '0 -4px 60px rgba(15,23,42,0.12), 0 0 0 1px rgba(0,0,0,0.06)', position: 'relative' }}>
+              <img src="/screenshots/dashboard-reveal.png" alt="ClearWork dashboard" style={{ width: '100%', display: 'block', maxHeight: '62vh', objectFit: 'cover', objectPosition: 'top' }} loading="lazy" />
             </div>
           </motion.div>
         </div>
