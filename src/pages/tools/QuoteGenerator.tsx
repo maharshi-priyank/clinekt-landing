@@ -11,7 +11,7 @@ import {
   type QuoteInput, type QuoteItem,
 } from '../../lib/quotePdf'
 
-const STORAGE_KEY = 'rupway-quote-gen-state'
+const STORAGE_KEY = 'clearwork-quote-gen-state'
 
 function newItem(): QuoteItem {
   return { description: '', quantity: '1', rate: '' }
@@ -99,7 +99,7 @@ function Textarea({
 
 export default function QuoteGenerator() {
   useSeo(
-    'Free Quote / Estimate Generator for Indian Freelancers | Rupway',
+    'Free Quote / Estimate Generator for Indian Freelancers | ClearWork',
     'Create professional quotations and estimates in minutes. Add line items, auto-calculate GST, set validity period, and download a clean PDF. Free, no signup.',
   )
 
@@ -529,7 +529,7 @@ export default function QuoteGenerator() {
           <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-3">Want more?</p>
           <h2 className="text-3xl font-bold mb-4">Stop juggling tabs. Run your freelance business in one place.</h2>
           <p className="text-gray-400 mb-8 text-base max-w-xl mx-auto">
-            Rupway goes beyond quotes — send proposals, collect e-signatures on contracts, generate GST invoices, and collect Razorpay payments. Built for Indian freelancers.
+            ClearWork goes beyond quotes — send proposals, collect e-signatures on contracts, generate GST invoices, and collect Razorpay payments. Built for Indian freelancers.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
@@ -552,12 +552,12 @@ export default function QuoteGenerator() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'SoftwareApplication',
-        name: 'Free Quote Generator for Indian Freelancers — Rupway',
+        name: 'Free Quote Generator for Indian Freelancers — ClearWork',
         applicationCategory: 'BusinessApplication',
         operatingSystem: 'Web',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
         description: 'Create professional quotations with line items, GST, validity period and download a PDF. Free, no signup.',
-        url: 'https://rupway.in/tools/quote-generator',
+        url: 'https://clearwork.in/tools/quote-generator',
       }) }} />
     </div>
   )

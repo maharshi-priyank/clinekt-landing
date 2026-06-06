@@ -9,7 +9,7 @@ import { useSeo } from '../../lib/useSeo'
 
 type Mode = 'monthly' | 'annual'
 
-const STORAGE_KEY = 'rupway-hourly-rate-state'
+const STORAGE_KEY = 'clearwork-hourly-rate-state'
 
 interface Input {
   mode:           Mode
@@ -43,7 +43,7 @@ function loadState(): Input {
 
 export default function HourlyRateCalculator() {
   useSeo(
-    'Hourly Rate Calculator for Indian freelancers — Free | Rupway',
+    'Hourly Rate Calculator for Indian freelancers — Free | ClearWork',
     'Find your ideal hourly rate based on your income target. Accounts for non-billable time, GST, and TDS. Built for Indian freelancers.',
   )
 
@@ -361,7 +361,7 @@ function Upsell() {
   const reasons = [
     { title: 'Lock in your rate, never re-quote',    desc: 'Save your hourly rate once. Every proposal you write auto-prices itself based on hours estimated. Less anchoring on past lowballs.' },
     { title: 'Track time against the rate',          desc: 'Built-in time tracker tags every minute to a project. End of month, see if you actually hit your hourly target.' },
-    { title: 'Project profitability, not just hours',desc: 'Rupway shows realised hourly rate per project — accounting for time spent, expenses, and what was actually paid. The truth your gut never tells you.' },
+    { title: 'Project profitability, not just hours',desc: 'ClearWork shows realised hourly rate per project — accounting for time spent, expenses, and what was actually paid. The truth your gut never tells you.' },
     { title: 'Charge upfront retainers easily',      desc: 'Generate a recurring monthly invoice for retainer clients in two clicks. Hours bank rolls over automatically.' },
     { title: 'Quote with confidence',                desc: 'Proposals show line-item rates, total hours, and total cost. Clients see clear value, not a single big number to negotiate down.' },
     { title: 'Send via WhatsApp, get paid via UPI',  desc: 'Indian-first workflow — invoice and payment link in one WhatsApp message. No more "did you receive my email?".' },
@@ -378,7 +378,7 @@ function Upsell() {
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             Charging it consistently is step 2.
             <br />
-            <span className="text-gray-400">Rupway makes both effortless.</span>
+            <span className="text-gray-400">ClearWork makes both effortless.</span>
           </h2>
         </div>
 
@@ -403,7 +403,7 @@ function Upsell() {
             to="/#waitlist"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-gray-950 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
           >
-            Try Rupway free
+            Try ClearWork free
             <ArrowRight size={15} />
           </Link>
           <p className="text-xs text-gray-500 mt-3">Free forever plan. No credit card needed.</p>
@@ -438,7 +438,7 @@ const faqs = [
   },
   {
     q: 'Should I price by the hour or by the project?',
-    a: 'For client-facing quotes, almost always project-priced. Clients hate hourly because it caps your speed/efficiency at exactly what hurts them. But internally, you must know your effective hourly rate per project — that is the single number that tells you if a project was profitable. Quote project, track hours, evaluate by hour. Rupway does this automatically.',
+    a: 'For client-facing quotes, almost always project-priced. Clients hate hourly because it caps your speed/efficiency at exactly what hurts them. But internally, you must know your effective hourly rate per project — that is the single number that tells you if a project was profitable. Quote project, track hours, evaluate by hour. ClearWork does this automatically.',
   },
   {
     q: 'I am a beginner — should I undercharge to win clients?',

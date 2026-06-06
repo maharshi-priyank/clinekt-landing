@@ -53,7 +53,7 @@ const moments = [
     iconColor: 'text-indigo-600',
     accentBorder: 'border-t-2 border-t-indigo-500',
     title: 'You wake up. It already happened.',
-    story: 'Client accepted the proposal at 11 PM. Rupway auto-generated the contract, sent it for signature, and queued the first invoice. By morning, the contract is signed and payment is on the way. You did nothing.',
+    story: 'Client accepted the proposal at 11 PM. ClearWork auto-generated the contract, sent it for signature, and queued the first invoice. By morning, the contract is signed and payment is on the way. You did nothing.',
     outcome: 'This is what "configured once" feels like.',
     outcomeColor: 'text-indigo-600',
   },

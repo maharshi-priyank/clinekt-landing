@@ -39,9 +39,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="/" className="flex items-center">
-          <span style={{ fontFamily: "'Roca Two', serif", fontWeight: 700, fontSize: 38, letterSpacing: '-0.06em', color: '#0f172a', lineHeight: 1 }}>
-            Rupway
-          </span>
+          <img src="/logo/clearwork_full_dark.png" alt="ClearWork" style={{ height: 40, width: 'auto', display: 'block' }} />
         </a>
 
         {/* Desktop nav */}

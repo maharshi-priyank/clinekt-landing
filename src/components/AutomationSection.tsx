@@ -170,7 +170,7 @@ export default function AutomationSection() {
             <p className="text-center text-xs text-gray-400 mt-4">
               <span className="inline-flex items-center gap-1.5">
                 <span className="w-3 h-3 rounded bg-indigo-600 inline-block" />
-                Handled automatically by Rupway
+                Handled automatically by ClearWork
               </span>
               <span className="mx-3 text-gray-200">|</span>
               <span className="inline-flex items-center gap-1.5">

@@ -10,7 +10,7 @@ import { compute, type ComputeResult, type OldRegimeDeductions, type Regime } fr
 
 type Mode = 'new' | 'old' | 'compare'
 
-const STORAGE_KEY = 'rupway-income-tax-state'
+const STORAGE_KEY = 'clearwork-income-tax-state'
 
 interface Input {
   mode:   Mode
@@ -59,7 +59,7 @@ function asDeductions(input: Input): OldRegimeDeductions {
 
 export default function IncomeTaxCalculator() {
   useSeo(
-    'Income Tax Calculator FY 2025-26 — Old vs New Regime | Rupway',
+    'Income Tax Calculator FY 2025-26 — Old vs New Regime | ClearWork',
     'Calculate income tax for FY 2025-26 (AY 2026-27). Compare old and new regime side-by-side. Free, instant, no signup. Built for Indian freelancers and salaried professionals.',
   )
 
@@ -387,7 +387,7 @@ function Hero() {
 
 function Upsell() {
   const reasons = [
-    { title: 'Track GST + TDS as you earn',           desc: 'Rupway logs every invoice and the GST + TDS breakdown. At year-end, your taxable income is already tallied — no spreadsheet archaeology.' },
+    { title: 'Track GST + TDS as you earn',           desc: 'ClearWork logs every invoice and the GST + TDS breakdown. At year-end, your taxable income is already tallied — no spreadsheet archaeology.' },
     { title: 'Quarterly GST returns made easy',       desc: 'Auto-aggregated GSTR-1-ready summary by quarter. Export to your CA in one click — they will love you for it.' },
     { title: 'See what you owe, before you owe it',   desc: 'Dashboard shows running tax liability, GST collected, and TDS already deducted. No surprises in March.' },
     { title: 'Form 26AS reconciliation',              desc: 'Track every TDS deduction your clients should have deposited. Match against your 26AS at filing time without spreadsheets.' },
@@ -406,7 +406,7 @@ function Upsell() {
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             Run your year so April is boring.
             <br />
-            <span className="text-gray-400">Rupway keeps your books clean as you work.</span>
+            <span className="text-gray-400">ClearWork keeps your books clean as you work.</span>
           </h2>
         </div>
 
@@ -431,7 +431,7 @@ function Upsell() {
             to="/#waitlist"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-gray-950 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
           >
-            Try Rupway free
+            Try ClearWork free
             <ArrowRight size={15} />
           </Link>
           <p className="text-xs text-gray-500 mt-3">Free forever plan. No credit card needed.</p>

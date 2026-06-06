@@ -8,7 +8,7 @@ import { INDIAN_STATES, GST_RATES, fmtINR } from '../../lib/gst'
 
 type Mode = 'add' | 'remove'
 
-const STORAGE_KEY = 'rupway-gst-calc-state'
+const STORAGE_KEY = 'clearwork-gst-calc-state'
 
 interface CalcInput {
   mode:        Mode
@@ -59,7 +59,7 @@ function useSeo(title: string, description: string) {
 
 export default function GstCalculator() {
   useSeo(
-    'Free GST Calculator (India) — CGST/SGST/IGST instant split | Rupway',
+    'Free GST Calculator (India) — CGST/SGST/IGST instant split | ClearWork',
     'Calculate GST instantly in India. Add or remove GST from any amount. CGST/SGST/IGST auto-split by state. Free, no signup, works offline.',
   )
 
@@ -398,12 +398,12 @@ function Hero() {
 
 function Upsell() {
   const reasons = [
-    { title: 'Calculate AND invoice in one click',  desc: 'Skip the calculator entirely — Rupway auto-applies GST when you generate any invoice, including the right CGST/SGST/IGST split.' },
+    { title: 'Calculate AND invoice in one click',  desc: 'Skip the calculator entirely — ClearWork auto-applies GST when you generate any invoice, including the right CGST/SGST/IGST split.' },
     { title: 'GSTIN once, never again',             desc: 'Save your GSTIN, address, and state once. Every invoice for every client auto-fills the right tax structure.' },
     { title: 'Quarter-end GST report for your CA',  desc: 'One-click GST summary export — CGST, SGST, IGST collected, GSTR-1 ready format. Saves hours every quarter.' },
     { title: 'TDS handled too',                     desc: 'Indian freelancer-specific: 194J/194C TDS auto-calculated on invoices. CA-friendly.' },
     { title: 'See your tax liability live',         desc: 'Dashboard shows running GST collected this quarter so you know what to set aside. No surprises at filing time.' },
-    { title: 'Razorpay + UPI built-in',             desc: 'Send invoice with embedded payment link. Client pays via UPI, card, or net banking — and Rupway auto-marks paid.' },
+    { title: 'Razorpay + UPI built-in',             desc: 'Send invoice with embedded payment link. Client pays via UPI, card, or net banking — and ClearWork auto-marks paid.' },
   ]
 
   return (
@@ -417,7 +417,7 @@ function Upsell() {
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             Stop calculating. Start sending.
             <br />
-            <span className="text-gray-400">Rupway does the math, the invoice, and the chase-ups.</span>
+            <span className="text-gray-400">ClearWork does the math, the invoice, and the chase-ups.</span>
           </h2>
         </div>
 
@@ -442,7 +442,7 @@ function Upsell() {
             to="/#waitlist"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-gray-950 font-semibold text-sm hover:bg-gray-100 transition-colors shadow-lg"
           >
-            Try Rupway free
+            Try ClearWork free
             <ArrowRight size={15} />
           </Link>
           <p className="text-xs text-gray-500 mt-3">Free forever plan. No credit card needed.</p>
@@ -480,8 +480,8 @@ const faqs = [
     a: 'Yes — the math is straightforward percentage arithmetic, identical to what your accounting software or CA would do. For your actual GST return filing (GSTR-1, GSTR-3B), use the values from your invoices, not from this calculator. This tool is for quick estimates while quoting or invoicing.',
   },
   {
-    q: 'Does Rupway do this automatically inside invoices?',
-    a: 'Yes — Rupway auto-applies GST on every invoice you create, picks CGST/SGST/IGST based on your state and the client\'s state, embeds a Razorpay UPI payment link, and ships the invoice via email + WhatsApp. There is a free plan. Sign up via the home page.',
+    q: 'Does ClearWork do this automatically inside invoices?',
+    a: 'Yes — ClearWork auto-applies GST on every invoice you create, picks CGST/SGST/IGST based on your state and the client\'s state, embeds a Razorpay UPI payment link, and ships the invoice via email + WhatsApp. There is a free plan. Sign up via the home page.',
   },
 ] as const
 

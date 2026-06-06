@@ -188,7 +188,7 @@ export function generateQuotePdf(input: QuoteInput) {
     doc.setPage(p)
     doc.setFont('helvetica', 'normal').setFontSize(7.5).setTextColor('#98A2B3')
     doc.text(`Page ${p} of ${totalPages}`, PAGE_W / 2, 292, { align: 'center' })
-    doc.text('Generated free with Rupway — rupway.in/tools/quote-generator', PAGE_W / 2, 296, { align: 'center' })
+    doc.text('Generated free with ClearWork — clearwork.in/tools/quote-generator', PAGE_W / 2, 296, { align: 'center' })
   }
 
   const filename = `Quote-${input.quoteNumber || 'draft'}.pdf`

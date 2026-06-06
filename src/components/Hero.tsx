@@ -132,13 +132,13 @@ export default function Hero() {
                 <div className="flex-1 mx-3">
                   <div className="max-w-52 mx-auto h-5 bg-white rounded border border-gray-200 flex items-center justify-center gap-1.5">
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                    <span className="text-[10px] text-gray-400 font-medium">app.rupway.in/dashboard</span>
+                    <span className="text-[10px] text-gray-400 font-medium">app.clearwork.in/dashboard</span>
                   </div>
                 </div>
               </div>
               <img
                 src="/screenshots/screenshot-dashboard.png"
-                alt="Rupway dashboard"
+                alt="ClearWork dashboard"
                 className="w-full block"
                 loading="eager"
               />

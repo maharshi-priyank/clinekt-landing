@@ -37,7 +37,7 @@ function ScreenshotFrame({ tabs, activeTab, onTabChange }: {
         <div className="flex-1 mx-3">
           <div className="max-w-48 mx-auto h-5 bg-white rounded border border-gray-200 flex items-center justify-center gap-1.5">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            <span className="text-[10px] text-gray-400">app.rupway.in</span>
+            <span className="text-[10px] text-gray-400">app.clearwork.in</span>
           </div>
         </div>
       </div>
@@ -63,7 +63,7 @@ function ScreenshotFrame({ tabs, activeTab, onTabChange }: {
           <motion.img
             key={activeTab}
             src={tabs.find(t => t.id === activeTab)!.src}
-            alt={`Rupway ${activeTab}`}
+            alt={`ClearWork ${activeTab}`}
             className="w-full block"
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}

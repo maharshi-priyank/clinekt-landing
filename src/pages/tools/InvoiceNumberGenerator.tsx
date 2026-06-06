@@ -5,7 +5,7 @@ import {
 } from 'lucide-react'
 import { useSeo } from '../../lib/useSeo'
 
-const STORAGE_KEY = 'rupway-inv-num-gen-state'
+const STORAGE_KEY = 'clearwork-inv-num-gen-state'
 
 type Separator = '-' | '/' | '_' | ''
 type YearFormat = 'YYYY' | 'YY' | 'none'
@@ -88,7 +88,7 @@ function CopyBtn({ text }: { text: string }) {
 
 export default function InvoiceNumberGenerator() {
   useSeo(
-    'Invoice Number Generator — Create GST-Compliant Invoice Numbers | Rupway',
+    'Invoice Number Generator — Create GST-Compliant Invoice Numbers | ClearWork',
     'Generate professional invoice numbers for Indian freelancers. Customise prefix, year, month, and sequence padding. Preview and copy instantly. Free, no signup.',
   )
 
@@ -437,7 +437,7 @@ export default function InvoiceNumberGenerator() {
           <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-3">Want more?</p>
           <h2 className="text-3xl font-bold mb-4">Auto-generate invoice numbers in your billing workflow.</h2>
           <p className="text-gray-400 mb-8 text-base max-w-xl mx-auto">
-            Rupway auto-assigns the next invoice number when you create an invoice — no more manual tracking. Plus GST invoicing, Razorpay payments, and client portal.
+            ClearWork auto-assigns the next invoice number when you create an invoice — no more manual tracking. Plus GST invoicing, Razorpay payments, and client portal.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
@@ -460,12 +460,12 @@ export default function InvoiceNumberGenerator() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'SoftwareApplication',
-        name: 'Invoice Number Generator for Indian Freelancers — Rupway',
+        name: 'Invoice Number Generator for Indian Freelancers — ClearWork',
         applicationCategory: 'BusinessApplication',
         operatingSystem: 'Web',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
         description: 'Generate custom invoice number formats with prefix, year, month, separator and sequence padding. Preview and export as CSV. Free.',
-        url: 'https://rupway.in/tools/invoice-number-generator',
+        url: 'https://clearwork.in/tools/invoice-number-generator',
       }) }} />
     </div>
   )

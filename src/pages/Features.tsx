@@ -186,21 +186,21 @@ const COLOR_MAP: Record<string, { bg: string; icon: string; pill: string; border
 }
 
 const COMPARISON_FEATURES = [
-  { label: 'Lead CRM & pipeline',          rupway: true,  others: 'Notion / spreadsheet' },
-  { label: 'Branded proposals',            rupway: true,  others: 'Google Docs / Canva'  },
-  { label: 'Proposal open tracking',       rupway: true,  others: false                  },
-  { label: 'OTP e-signature (IT Act 2000)',rupway: true,  others: 'DocuSign ($$$)'       },
-  { label: 'GST invoice (CGST/SGST/IGST)', rupway: true,  others: 'Zoho Invoice'         },
-  { label: 'Razorpay payment link',        rupway: true,  others: 'Manual bank transfer' },
-  { label: 'TDS 194J/194C flagging',       rupway: true,  others: false                  },
-  { label: 'Client portal',               rupway: true,  others: false                  },
-  { label: 'WhatsApp payment reminders',   rupway: true,  others: false                  },
-  { label: 'Time tracking',               rupway: true,  others: 'Toggl (separate app)' },
-  { label: 'Expense tracking',            rupway: true,  others: 'Separate app'         },
-  { label: 'Visual automation builder',   rupway: true,  others: 'Zapier ($$$)'         },
-  { label: 'GST report for CA',           rupway: true,  others: 'Manual export'        },
-  { label: 'Mobile web app (no install)', rupway: true,  others: false                  },
-  { label: 'All of the above — one tool', rupway: true,  others: '6+ tools, 6+ bills'  },
+  { label: 'Lead CRM & pipeline',          clearwork: true,  others: 'Notion / spreadsheet' },
+  { label: 'Branded proposals',            clearwork: true,  others: 'Google Docs / Canva'  },
+  { label: 'Proposal open tracking',       clearwork: true,  others: false                  },
+  { label: 'OTP e-signature (IT Act 2000)',clearwork: true,  others: 'DocuSign ($$$)'       },
+  { label: 'GST invoice (CGST/SGST/IGST)', clearwork: true,  others: 'Zoho Invoice'         },
+  { label: 'Razorpay payment link',        clearwork: true,  others: 'Manual bank transfer' },
+  { label: 'TDS 194J/194C flagging',       clearwork: true,  others: false                  },
+  { label: 'Client portal',               clearwork: true,  others: false                  },
+  { label: 'WhatsApp payment reminders',   clearwork: true,  others: false                  },
+  { label: 'Time tracking',               clearwork: true,  others: 'Toggl (separate app)' },
+  { label: 'Expense tracking',            clearwork: true,  others: 'Separate app'         },
+  { label: 'Visual automation builder',   clearwork: true,  others: 'Zapier ($$$)'         },
+  { label: 'GST report for CA',           clearwork: true,  others: 'Manual export'        },
+  { label: 'Mobile web app (no install)', clearwork: true,  others: false                  },
+  { label: 'All of the above — one tool', clearwork: true,  others: '6+ tools, 6+ bills'  },
 ]
 
 const USE_CASES = [
@@ -209,7 +209,7 @@ const USE_CASES = [
     type: 'Solo Freelancer',
     tagline: 'From first enquiry to paid invoice — solo.',
     color: 'indigo',
-    desc: 'You wear every hat. Rupway keeps the admin invisible so you can focus on your craft and grow your income.',
+    desc: 'You wear every hat. ClearWork keeps the admin invisible so you can focus on your craft and grow your income.',
     highlights: [
       'Lead pipeline to never miss a DM enquiry',
       'Proposals that convert — with open tracking',
@@ -224,7 +224,7 @@ const USE_CASES = [
     type: 'Small Agency',
     tagline: 'Manage clients, projects, and your team\'s time.',
     color: 'violet',
-    desc: 'Multiple clients, multiple projects running at once. Rupway keeps everything in one place so nothing falls through the cracks.',
+    desc: 'Multiple clients, multiple projects running at once. ClearWork keeps everything in one place so nothing falls through the cracks.',
     highlights: [
       'Projects that group proposals, contracts, invoices, time',
       'Client portal — each client sees only their docs',
@@ -239,7 +239,7 @@ const USE_CASES = [
     type: 'Consultant / Coach',
     tagline: 'Retainers, sessions, and recurring billing — handled.',
     color: 'emerald',
-    desc: 'Your business runs on recurring relationships. Rupway handles the paperwork so you show up as a professional every time.',
+    desc: 'Your business runs on recurring relationships. ClearWork handles the paperwork so you show up as a professional every time.',
     highlights: [
       'Recurring invoices for monthly retainers',
       'Intake forms to qualify leads before the first call',
@@ -280,7 +280,7 @@ export default function Features() {
               <span className="gradient-text">Nothing they don't.</span>
             </h1>
             <p className="mt-5 text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
-              Rupway replaces 6+ tools with one platform built specifically for Indian freelancers and small agencies — GST-ready, Razorpay-connected, and designed to get out of your way.
+              ClearWork replaces 6+ tools with one platform built specifically for Indian freelancers and small agencies — GST-ready, Razorpay-connected, and designed to get out of your way.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <a href="/#waitlist"
@@ -376,7 +376,7 @@ export default function Features() {
                             <div className="flex-1 mx-3">
                               <div className="max-w-44 mx-auto h-5 bg-white rounded border border-gray-200 flex items-center justify-center gap-1.5">
                                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                                <span className="text-[10px] text-gray-400">app.rupway.in</span>
+                                <span className="text-[10px] text-gray-400">app.clearwork.in</span>
                               </div>
                             </div>
                           </div>
@@ -408,7 +408,7 @@ export default function Features() {
               <span className="text-indigo-400">Not six.</span>
             </h2>
             <p className="mt-4 text-gray-400 text-base max-w-lg mx-auto leading-relaxed">
-              Most Indian freelancers cobble together Notion + DocuSign + Zoho + Calendly + Zapier + WhatsApp. Rupway does all of it — at a fraction of the cost.
+              Most Indian freelancers cobble together Notion + DocuSign + Zoho + Calendly + Zapier + WhatsApp. ClearWork does all of it — at a fraction of the cost.
             </p>
           </FadeIn>
 
@@ -418,8 +418,8 @@ export default function Features() {
               {/* Header */}
               <div className="grid grid-cols-[1fr_auto_auto] bg-white/5 border-b border-white/10 px-5 py-3">
                 <span className="text-xs font-bold uppercase tracking-widest text-white/30">Feature</span>
-                <span className="text-xs font-bold text-white/80 text-center w-28">Rupway</span>
-                <span className="text-xs font-bold text-white/30 text-center w-36">Without Rupway</span>
+                <span className="text-xs font-bold text-white/80 text-center w-28">ClearWork</span>
+                <span className="text-xs font-bold text-white/30 text-center w-36">Without ClearWork</span>
               </div>
 
               {COMPARISON_FEATURES.map((row, i) => (
@@ -429,7 +429,7 @@ export default function Features() {
                 >
                   <span className="text-[13px] text-gray-300 pr-4">{row.label}</span>
                   <div className="w-28 flex justify-center">
-                    {row.rupway
+                    {row.clearwork
                       ? <CheckCircle2 size={16} className="text-emerald-400" strokeWidth={2.5} />
                       : <X size={14} className="text-gray-600" />
                     }
@@ -469,7 +469,7 @@ export default function Features() {
               Works for how <span className="gradient-text">you work</span>
             </h2>
             <p className="mt-4 text-gray-500 text-base max-w-xl mx-auto">
-              Whether you're a solo designer or a 5-person agency, Rupway adapts to your workflow — not the other way around.
+              Whether you're a solo designer or a 5-person agency, ClearWork adapts to your workflow — not the other way around.
             </p>
           </FadeIn>
 
@@ -539,7 +539,7 @@ export default function Features() {
               { icon: BarChart3,     color: 'emerald',title: 'Revenue reports',          desc: 'Monthly revenue, outstanding, collected, GST breakdown. Export-ready for your CA.' },
               { icon: FolderKanban,  color: 'amber',  title: 'Project management',       desc: 'Group proposals, contracts, invoices, time, and expenses under one project umbrella.' },
               { icon: Shield,        color: 'rose',   title: 'Secure & compliant',       desc: 'Data hosted on Supabase (SOC 2). E-sign under IT Act 2000. HTTPS everywhere.' },
-              { icon: RefreshCw,     color: 'orange', title: 'Recurring invoices',       desc: 'Set it once — Rupway auto-generates and sends invoices monthly for retainer clients.' },
+              { icon: RefreshCw,     color: 'orange', title: 'Recurring invoices',       desc: 'Set it once — ClearWork auto-generates and sends invoices monthly for retainer clients.' },
               { icon: TrendingUp,    color: 'indigo', title: 'Business digest',          desc: 'Weekly and monthly email summaries of your revenue, pipeline, and overdue invoices.' },
               { icon: MessageSquare, color: 'violet', title: 'WhatsApp automations',     desc: '98% open rate. Send payment reminders, onboarding messages, and follow-ups via WA.' },
             ].map((item, i) => {

@@ -1,6 +1,6 @@
 import Hero from '../components/Hero'
 import TrustStrip from '../components/TrustStrip'
-import PainSection from '../components/PainSection'
+import HubSpokeSection from '../components/HubSpokeSection'
 import FeaturePillars from '../components/FeaturePillars'
 import HowItWorks from '../components/HowItWorks'
 import MobileAppSection from '../components/MobileAppSection'
@@ -14,7 +14,7 @@ export default function Home() {
     <main>
       <Hero />
       <TrustStrip />
-      <PainSection />
+      <HubSpokeSection />
       <FeaturePillars />
       <HowItWorks />
       <MobileAppSection />

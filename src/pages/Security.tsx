@@ -46,7 +46,7 @@ const sections = [
     bg: 'bg-rose-50',
     items: [
       'Your data is private to your account. Other users cannot see your clients, invoices, or documents.',
-      'Rupway staff access data only when required to resolve support issues, with your explicit consent.',
+      'ClearWork staff access data only when required to resolve support issues, with your explicit consent.',
       'We do not sell, rent, or share your data with any third party for marketing purposes.',
       'Third-party integrations (Razorpay, Google Calendar) receive only the minimum data required.',
     ],
@@ -79,8 +79,8 @@ const sections = [
 
 export default function Security() {
   useSeo(
-    'Security & Privacy — Rupway',
-    'How Rupway protects your data: AES-256 encryption, Indian servers, IT Act 2000 e-sign, DPDP Act compliance, and your rights as a user.',
+    'Security & Privacy — ClearWork',
+    'How ClearWork protects your data: AES-256 encryption, Indian servers, IT Act 2000 e-sign, DPDP Act compliance, and your rights as a user.',
   )
 
   return (
@@ -151,10 +151,10 @@ export default function Security() {
               If you have any security concerns, want to report a vulnerability, or want to exercise your data rights, email us directly. We respond within 48 hours.
             </p>
             <a
-              href="mailto:security@rupway.in"
+              href="mailto:security@clearwork.in"
               className="inline-flex items-center gap-2 bg-white text-gray-900 rounded-xl px-5 py-2.5 text-sm font-semibold hover:bg-gray-100 transition-colors"
             >
-              security@rupway.in
+              security@clearwork.in
             </a>
           </div>
 
