@@ -34,8 +34,8 @@ export default function Navbar() {
     >
       <div className={`transition-all duration-500 ${
         scrolled
-          ? 'max-w-5xl mx-auto px-5 h-14 rounded-2xl bg-white/80 backdrop-blur-2xl shadow-lg shadow-gray-900/8 border border-gray-200/70'
-          : 'max-w-6xl mx-auto px-5 h-16'
+          ? 'max-w-5xl mx-auto px-6 h-[56px] rounded-2xl bg-white/85 backdrop-blur-2xl shadow-lg shadow-gray-900/10 border border-gray-200/80'
+          : 'max-w-6xl mx-auto px-6 h-[68px]'
       } flex items-center justify-between`}>
         {/* Logo */}
         <a href="/" className="flex items-center">
@@ -43,16 +43,16 @@ export default function Navbar() {
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden md:flex items-center gap-0.5">
           {links.map(l => l.href
             ? (
               <Link key={l.label} to={l.href}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${pathname === l.href ? 'text-gray-900 bg-gray-100' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>
+                className={`px-4 py-2 text-sm font-medium rounded-full transition-all ${pathname === l.href ? 'text-gray-900 bg-gray-100' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>
                 {l.label}
               </Link>
             ) : (
               <a key={l.anchor!} href={hrefFor(l.anchor!)}
-                className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all">
+                className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-full transition-all">
                 {l.label}
               </a>
             )
@@ -60,8 +60,8 @@ export default function Navbar() {
         </nav>
 
         {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
-          <a href={waitlistHref} className="text-sm font-medium text-gray-600 hover:text-gray-900 px-4 py-2 transition-colors">
+        <div className="hidden md:flex items-center gap-2">
+          <a href={waitlistHref} className="text-sm font-medium text-gray-600 hover:text-gray-900 px-4 py-2 rounded-full hover:bg-gray-100/60 transition-all">
             Sign in
           </a>
           <a href={waitlistHref}
@@ -89,12 +89,12 @@ export default function Navbar() {
               {links.map(l => l.href
                 ? (
                   <Link key={l.label} to={l.href} onClick={() => setOpen(false)}
-                    className="px-4 py-3 text-gray-700 font-medium hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all">
+                    className="px-4 py-3 text-gray-700 font-medium hover:text-gray-900 hover:bg-gray-50 rounded-full transition-all">
                     {l.label}
                   </Link>
                 ) : (
                   <a key={l.anchor!} href={hrefFor(l.anchor!)} onClick={() => setOpen(false)}
-                    className="px-4 py-3 text-gray-700 font-medium hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all">
+                    className="px-4 py-3 text-gray-700 font-medium hover:text-gray-900 hover:bg-gray-50 rounded-full transition-all">
                     {l.label}
                   </a>
                 )
