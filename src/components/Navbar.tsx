@@ -30,13 +30,13 @@ export default function Navbar() {
       initial={{ y: -64, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? 'bg-white/70 backdrop-blur-2xl backdrop-saturate-200 shadow-sm border-b border-gray-200/60'
-          : 'bg-white/40 backdrop-blur-xl backdrop-saturate-150 border-b border-white/20'
-      }`}
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? 'px-5 pt-3' : ''}`}
     >
-      <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+      <div className={`transition-all duration-500 ${
+        scrolled
+          ? 'max-w-5xl mx-auto px-5 h-14 rounded-2xl bg-white/80 backdrop-blur-2xl shadow-lg shadow-gray-900/8 border border-gray-200/70'
+          : 'max-w-6xl mx-auto px-5 h-16'
+      } flex items-center justify-between`}>
         {/* Logo */}
         <a href="/" className="flex items-center">
           <img src="/logo/clearwork_full_dark.png" alt="ClearWork" style={{ height: 40, width: 'auto', display: 'block' }} />
@@ -65,7 +65,7 @@ export default function Navbar() {
             Sign in
           </a>
           <a href={waitlistHref}
-            className="inline-flex items-center gap-1.5 text-sm font-semibold px-5 py-2.5 rounded-xl bg-gray-950 text-white hover:bg-gray-800 shadow-sm transition-all">
+            className="inline-flex items-center gap-1.5 text-sm font-semibold px-5 py-2.5 rounded-full bg-gray-950 text-white hover:bg-gray-800 shadow-sm transition-all">
             Join waitlist
             <ArrowRight size={14} />
           </a>
