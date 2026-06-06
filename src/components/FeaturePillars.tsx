@@ -235,7 +235,7 @@ function Pillar({
 
 export default function FeaturePillars() {
   return (
-    <section id="features-pillars" className="py-24" style={{ background: '#f5f1ea' }}>
+    <section id="features-pillars" className="py-24" style={{ background: '#faf8f4' }}>
       <div className="max-w-7xl mx-auto px-5 lg:px-8 space-y-28">
 
         <Pillar

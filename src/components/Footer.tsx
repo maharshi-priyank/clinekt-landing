@@ -3,19 +3,19 @@ import { Heart, MapPin } from 'lucide-react'
 
 const nav = {
   Product: ['How it works', 'Features', 'Pricing', 'Changelog'],
-  Company:  ['About', 'Blog', 'ProductHunt', 'LinkedIn'],
-  Legal:    ['Privacy Policy', 'Terms of Service', 'Security'],
+  Company: ['About', 'Blog', 'ProductHunt', 'LinkedIn'],
+  Legal:   ['Privacy Policy', 'Terms of Service', 'Security'],
 }
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 border-t border-gray-100 pt-16 pb-10">
-      <div className="max-w-6xl mx-auto px-5">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 mb-12">
+    <footer className="px-4 pb-4" style={{ background: '#ccd8e2' }}>
+      <div className="max-w-6xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-sm px-8 sm:px-10 pt-10 pb-8">
+
+        {/* Top grid */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 mb-10">
           <div className="col-span-2">
-            <div className="flex items-center mb-4">
-              <img src="/logo/clearwork_full_dark.png" alt="ClearWork" style={{ height: 32, width: 'auto', display: 'block' }} />
-            </div>
+            <img src="/logo/clearwork_full_dark.png" alt="ClearWork" style={{ height: 28, width: 'auto', display: 'block', marginBottom: 16 }} />
             <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
               India's all-in-one client workflow for freelancers and agencies.
               Proposal → Contract → GST Invoice → Payment. All connected.
@@ -48,10 +48,12 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 pt-8 border-t border-gray-200">
+        {/* Bottom bar — inside the card */}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 pt-6 border-t border-gray-100">
           <p className="text-sm text-gray-400">© 2026 ClearWork</p>
           <p className="text-xs text-gray-400">Built for 15M Indian freelancers who deserve better tools.</p>
         </div>
+
       </div>
     </footer>
   )

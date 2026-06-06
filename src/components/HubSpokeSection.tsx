@@ -99,7 +99,7 @@ export default function HubSpokeSection() {
       <div ref={stickyRef} style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden' }}>
 
         {/* Backgrounds */}
-        <div style={{ position: 'absolute', inset: 0, background: '#f0ebe1' }} />
+        <div style={{ position: 'absolute', inset: 0, background: '#f7f4ef' }} />
         <div style={{ position: 'absolute', inset: 0, zIndex: 1, backgroundImage: 'radial-gradient(circle, #C9CDD6 1.2px, transparent 1.2px)', backgroundSize: '30px 30px', opacity: 0.28 }} />
         <div style={{ position: 'absolute', zIndex: 1, left: '50%', top: '50%', transform: 'translate(-50%,-50%)', width: '55vw', height: '55vw', maxWidth: 800, maxHeight: 800, borderRadius: '50%', background: 'radial-gradient(circle, rgba(230,235,255,0.55) 0%, rgba(245,247,255,0.25) 50%, transparent 70%)', pointerEvents: 'none' }} />
         {/* Soft edge vignette — reduced opacity so edge icons stay visible */}

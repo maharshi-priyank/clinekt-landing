@@ -20,7 +20,7 @@ export default function TrustStrip() {
   const inView = useInView(ref, { once: true, margin: '-40px' })
 
   return (
-    <section ref={ref} className="py-10 px-5 relative overflow-hidden" style={{ background: '#ede8dc' }}>
+    <section ref={ref} className="py-10 px-5 relative overflow-hidden" style={{ background: '#f5f2ed' }}>
       {/* Noise texture — matches Hero */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
