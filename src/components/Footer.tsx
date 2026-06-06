@@ -13,12 +13,11 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-sm px-8 sm:px-10 pt-10 pb-8">
 
         {/* Top grid */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 mb-10">
-          <div className="col-span-2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 md:gap-10 mb-10">
+          <div className="col-span-2 sm:col-span-3 md:col-span-2">
             <img src="/logo/clearwork_full_dark.png" alt="ClearWork" style={{ height: 28, width: 'auto', display: 'block', marginBottom: 16 }} />
             <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
-              India's all-in-one client workflow for freelancers and agencies.
-              Proposal → Contract → GST Invoice → Payment. All connected.
+              Your favourite business management software. Built for early startup founders.
             </p>
             <div className="mt-5">
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-100 text-xs font-semibold text-amber-700">

@@ -116,7 +116,7 @@ export default function PricingSection() {
             <FadeIn key={plan.name} delay={i * 0.08}>
               <div className={`relative h-full rounded-2xl flex flex-col p-6 transition-all duration-300 ${
                 plan.highlight
-                  ? 'bg-white border-2 border-indigo-500 shadow-2xl shadow-indigo-100 scale-[1.02]'
+                  ? 'bg-white border-2 border-indigo-500 shadow-2xl shadow-indigo-100 md:scale-[1.02]'
                   : 'bg-white border border-gray-200 shadow-sm'
               }`}>
                 {plan.highlight && (

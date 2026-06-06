@@ -48,7 +48,7 @@ export default function WaitlistSection() {
     <section
       id="waitlist"
       className="py-24 relative overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #f2ede6 0%, #e8e0d6 40%, #d8dbd5 75%, #ccd8e2 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #f0ece6 0%, #e6dfd5 40%, #d8dbd5 75%, #ccd8e2 100%)' }}
       ref={ref}
     >
       {/* Noise texture — matches Hero */}
@@ -81,7 +81,7 @@ export default function WaitlistSection() {
           {/* Founding member urgency banner */}
           {!foundingFull && (
             <div
-              className="inline-flex items-center gap-2.5 rounded-xl px-4 py-3 mb-8 border border-white/70"
+              className="flex items-start gap-2.5 rounded-xl px-4 py-3 mb-8 border border-white/70 max-w-md mx-auto text-left"
               style={{ background: 'rgba(255,255,255,0.55)', backdropFilter: 'blur(8px)' }}
             >
               <Zap size={15} className="text-amber-500 shrink-0" />

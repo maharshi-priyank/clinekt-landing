@@ -228,14 +228,22 @@ function Pillar({
 
   return (
     <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${flip ? 'lg:grid-flow-dense' : ''}`}>
-      {flip ? <>{screenshot}<div className="lg:col-start-2">{copy}</div></> : <>{copy}{screenshot}</>}
+      {flip ? (
+        <>
+          {/* copy always first in DOM so it appears first on mobile */}
+          <div className="lg:col-start-2">{copy}</div>
+          {screenshot}
+        </>
+      ) : (
+        <>{copy}{screenshot}</>
+      )}
     </div>
   )
 }
 
 export default function FeaturePillars() {
   return (
-    <section id="features-pillars" className="py-24" style={{ background: '#faf8f4' }}>
+    <section id="features-pillars" className="py-24" style={{ background: '#f8f6f3' }}>
       <div className="max-w-7xl mx-auto px-5 lg:px-8 space-y-28">
 
         <Pillar

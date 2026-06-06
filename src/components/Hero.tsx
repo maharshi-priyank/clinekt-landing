@@ -25,13 +25,13 @@ export default function Hero() {
   return (
     <section
       className="relative overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #bdd8e6 0%, #cdd4c4 42%, #dccdb8 68%, #e8dfd0 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #c3daea 0%, #ccdce8 50%, #d6dce2 72%, #dedad4 100%)' }}
     >
       {/* Subtle noise texture overlay */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\'/%3E%3C/svg%3E")' }} />
 
-      <div className="relative z-10 pt-36 pb-0 px-5">
+      <div className="relative z-10 pt-24 sm:pt-36 pb-0 px-4 sm:px-5">
 
         {/* ── Centered text stack ── */}
         <motion.div
@@ -107,39 +107,20 @@ export default function Hero() {
           )}
         </motion.div>
 
-        {/* ── Dashboard mockup — scroll-driven tilt ── */}
+        {/* ── Dashboard mockup — scroll-driven tilt, no browser chrome ── */}
         <motion.div
           initial={{ opacity: 0, y: 64 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0, delay: 0.45, ease }}
-          className="relative mx-auto mt-16"
-          style={{ maxWidth: 1080, perspective: 1200, perspectiveOrigin: '50% -10%' }}
+          className="relative mx-auto mt-10 sm:mt-16 px-4 sm:px-10 lg:px-20"
+          style={{ maxWidth: 1180, perspective: 1200, perspectiveOrigin: '50% -10%' }}
         >
           <motion.div style={{ rotateX, scale, y: dashY, opacity, transformOrigin: 'top center' }}>
             <div style={{
-              borderRadius: '16px 16px 0 0',
+              borderRadius: 20,
               overflow: 'hidden',
-              boxShadow: '0 -4px 80px rgba(15,23,42,0.16), 0 0 0 1px rgba(255,255,255,0.6)',
-              border: '1px solid rgba(255,255,255,0.75)',
-              borderBottom: 'none',
-              background: '#fff',
+              boxShadow: '0 4px 48px rgba(15,23,42,0.10), 0 0 0 1px rgba(0,0,0,0.07)',
             }}>
-              {/* Browser chrome */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 16px', background: '#F8F9FA', borderBottom: '1px solid #EAECF0' }}>
-                <div style={{ display: 'flex', gap: 5 }}>
-                  <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#FF5F57' }} />
-                  <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#FFBD2E' }} />
-                  <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#28CA41' }} />
-                </div>
-                <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 5, background: '#fff', border: '1px solid #E5E7EB', borderRadius: 6, padding: '3px 14px', fontSize: 10, color: '#9CA3AF', fontFamily: '"DM Sans", sans-serif' }}>
-                    <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#10B981' }} />
-                    app.clearwork.in
-                  </div>
-                </div>
-              </div>
-
-              {/* Screenshot */}
               <img
                 src="/screenshots/screenshot-dashboard.png"
                 alt="ClearWork dashboard"

@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import { motion, useScroll, useTransform, useMotionValueEvent, type MotionValue } from 'framer-motion'
+import { FadeIn } from './ui/FadeIn'
 
 interface IconDef {
   label: string; src: string; fallbackBg: string; fallbackInitial: string
@@ -95,11 +96,57 @@ export default function HubSpokeSection() {
   })
 
   return (
-    <section ref={sectionRef} style={{ height: '300vh' }}>
+    <>
+    {/* ── Mobile: static fallback (300vh scroll is unusable on phones) ── */}
+    <div className="md:hidden py-16 px-5 relative overflow-hidden" style={{ background: '#f4f2ef' }}>
+      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, #C9CDD6 1.2px, transparent 1.2px)', backgroundSize: '30px 30px', opacity: 0.28 }} />
+      <div className="relative z-10 max-w-sm mx-auto">
+
+        <FadeIn className="text-center mb-8">
+          <p style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 400, fontSize: 22, color: '#111827', lineHeight: 1.38, letterSpacing: '-0.025em' }}>
+            Your work is spread across{' '}
+            <strong style={{ fontWeight: 800 }}>too many places?</strong>
+          </p>
+        </FadeIn>
+
+        <FadeIn delay={0.1}>
+          <div className="grid grid-cols-4 gap-3 justify-items-center mb-10">
+            {ICONS.map((ic, i) => (
+              <img key={i} src={ic.src} alt={ic.label} width={52} height={52}
+                style={{ objectFit: 'contain', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.12))' }} />
+            ))}
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.18} className="text-center mb-8">
+          <h2 style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 900, fontSize: 36, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.0, margin: 0 }}>
+            Say hi to{' '}<span style={{ color: '#4F46E5' }}>ClearWork.</span>
+          </h2>
+          <p style={{ marginTop: 8, fontSize: 14, color: '#6B7280' }}>Your freelance operating system.</p>
+        </FadeIn>
+
+        <FadeIn delay={0.26}>
+          <div style={{ borderRadius: '12px 12px 0 0', overflow: 'hidden', boxShadow: '0 -4px 40px rgba(15,23,42,0.10)', border: '1px solid #E5E7EB', borderBottom: 'none', background: '#fff' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 12px', background: '#F8F9FA', borderBottom: '1px solid #EAECF0' }}>
+              <div style={{ display: 'flex', gap: 4 }}>
+                <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#FF5F57' }} />
+                <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#FFBD2E' }} />
+                <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#28CA41' }} />
+              </div>
+            </div>
+            <img src="/screenshots/screenshot-dashboard.png" alt="ClearWork dashboard" style={{ width: '100%', display: 'block' }} loading="lazy" />
+          </div>
+        </FadeIn>
+
+      </div>
+    </div>
+
+    {/* ── Desktop: full 300vh scroll-driven animation ── */}
+    <section ref={sectionRef} className="hidden md:block" style={{ height: '300vh' }}>
       <div ref={stickyRef} style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden' }}>
 
         {/* Backgrounds */}
-        <div style={{ position: 'absolute', inset: 0, background: '#f7f4ef' }} />
+        <div style={{ position: 'absolute', inset: 0, background: '#f4f2ef' }} />
         <div style={{ position: 'absolute', inset: 0, zIndex: 1, backgroundImage: 'radial-gradient(circle, #C9CDD6 1.2px, transparent 1.2px)', backgroundSize: '30px 30px', opacity: 0.28 }} />
         <div style={{ position: 'absolute', zIndex: 1, left: '50%', top: '50%', transform: 'translate(-50%,-50%)', width: '55vw', height: '55vw', maxWidth: 800, maxHeight: 800, borderRadius: '50%', background: 'radial-gradient(circle, rgba(230,235,255,0.55) 0%, rgba(245,247,255,0.25) 50%, transparent 70%)', pointerEvents: 'none' }} />
         {/* Soft edge vignette — reduced opacity so edge icons stay visible */}
@@ -194,5 +241,6 @@ export default function HubSpokeSection() {
 
       </div>
     </section>
+    </>
   )
 }

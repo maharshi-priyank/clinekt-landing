@@ -29,13 +29,13 @@ export default function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="fixed top-0 inset-x-0 z-50 px-4 pt-4"
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? 'px-4 pt-3' : ''}`}
     >
-      {/* Always-floating pill */}
-      <div className={`max-w-5xl mx-auto px-5 h-[58px] rounded-2xl flex items-center justify-between transition-all duration-500 ${
+      {/* Pill appears on scroll; transparent at top */}
+      <div className={`flex items-center justify-between transition-all duration-500 ${
         scrolled
-          ? 'bg-white/92 backdrop-blur-2xl shadow-lg shadow-gray-900/10 border border-gray-200/80'
-          : 'bg-white/60 backdrop-blur-xl border border-white/75 shadow-sm'
+          ? 'max-w-5xl mx-auto px-6 h-[58px] rounded-2xl bg-white/92 backdrop-blur-2xl shadow-lg shadow-gray-900/10 border border-gray-200/80'
+          : 'max-w-6xl mx-auto px-6 h-[68px]'
       }`}>
 
         {/* Logo */}
