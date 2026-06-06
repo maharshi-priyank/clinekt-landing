@@ -1,25 +1,11 @@
-import { useState, useRef } from 'react'
-import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import {
   Users, FileText, PenLine, Receipt, Globe, Zap,
   CheckCircle2, TrendingUp, Bell, Calculator, MessageSquare,
   Monitor, Smartphone,
 } from 'lucide-react'
-
-const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
-
-function FadeIn({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
-  return (
-    <motion.div ref={ref} className={className}
-      initial={{ opacity: 0, y: 28 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay, ease }}>
-      {children}
-    </motion.div>
-  )
-}
+import { FadeIn } from './ui/FadeIn'
 
 // ─── Device frame component with Desktop / Mobile toggle ─────────────────────
 
@@ -249,7 +235,7 @@ function Pillar({
 
 export default function FeaturePillars() {
   return (
-    <section id="features-pillars" className="py-24 bg-white">
+    <section id="features-pillars" className="py-24" style={{ background: '#f5f1ea' }}>
       <div className="max-w-7xl mx-auto px-5 lg:px-8 space-y-28">
 
         <Pillar
