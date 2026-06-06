@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { FadeIn } from './ui/FadeIn'
 import { UserSearch, FileText, PenLine, Receipt, Globe, TrendingUp } from 'lucide-react'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
@@ -138,12 +139,7 @@ export default function HowItWorks() {
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6, ease }}
-          className="text-center mb-20"
-        >
+        <FadeIn className="text-center mb-20">
           <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-white border border-gray-200 text-gray-500 shadow-sm mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
             The workflow
@@ -155,7 +151,7 @@ export default function HowItWorks() {
           <p className="text-gray-500 text-lg mt-4 max-w-lg mx-auto">
             Scroll through each step to see exactly what ClearWork looks like in action.
           </p>
-        </motion.div>
+        </FadeIn>
 
         {/* Scroll-spy layout */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-16 items-start">
