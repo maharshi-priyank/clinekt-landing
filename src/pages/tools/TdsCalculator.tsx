@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import { fmtINR } from '../../lib/gst'
 import { useSeo } from '../../lib/useSeo'
+import { useSchemaOrg, breadcrumbSchema } from '../../lib/useSchemaOrg'
 
 interface TdsSection {
   code:        string
@@ -102,6 +103,11 @@ export default function TdsCalculator() {
     'Calculate TDS deduction for Indian freelancers and contractors. Section 194J, 194C, 194JA and more. Free, instant, no signup.',
     'https://getclearwork.in/tools/tds-calculator',
   )
+  useSchemaOrg(breadcrumbSchema([
+    { name: 'Home',       item: 'https://getclearwork.in/' },
+    { name: 'Free Tools', item: 'https://getclearwork.in/tools' },
+    { name: 'TDS Calculator', item: 'https://getclearwork.in/tools/tds-calculator' },
+  ]))
 
   const [input, setInput] = useState<TdsInput>(loadState)
 

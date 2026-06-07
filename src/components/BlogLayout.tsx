@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowLeft, Clock, Calendar } from 'lucide-react'
+import { useSchemaOrg } from '../lib/useSchemaOrg'
 
 export interface BlogMeta {
   title: string
@@ -16,6 +17,37 @@ interface Props {
 }
 
 export default function BlogLayout({ meta, children }: Props) {
+  useSchemaOrg({
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: meta.title,
+    description: meta.description,
+    url: meta.canonical,
+    datePublished: '2026-06-08',
+    dateModified: '2026-06-08',
+    inLanguage: 'en-IN',
+    author: {
+      '@type': 'Organization',
+      name: 'ClearWork',
+      url: 'https://getclearwork.in',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'ClearWork',
+      url: 'https://getclearwork.in',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://getclearwork.in/logo/full_logo.svg',
+        width: 200,
+        height: 60,
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': meta.canonical,
+    },
+  })
+
   return (
     <div className="bg-white min-h-screen">
       {/* Hero */}

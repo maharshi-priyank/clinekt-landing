@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import { INDIAN_STATES, GST_RATES, fmtINR } from '../../lib/gst'
 import { useSeo } from '../../lib/useSeo'
+import { useSchemaOrg, breadcrumbSchema } from '../../lib/useSchemaOrg'
 
 type Mode = 'add' | 'remove'
 
@@ -45,6 +46,11 @@ export default function GstCalculator() {
     'Calculate GST instantly in India. Add or remove GST from any amount. CGST/SGST/IGST auto-split by state. Free, no signup, works offline.',
     'https://getclearwork.in/tools/gst-calculator',
   )
+  useSchemaOrg(breadcrumbSchema([
+    { name: 'Home',       item: 'https://getclearwork.in/' },
+    { name: 'Free Tools', item: 'https://getclearwork.in/tools' },
+    { name: 'GST Calculator', item: 'https://getclearwork.in/tools/gst-calculator' },
+  ]))
 
   const [input, setInput] = useState<CalcInput>(loadState)
 

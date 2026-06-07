@@ -5,6 +5,7 @@ import {
   FileText, RotateCcw, ChevronDown,
 } from 'lucide-react'
 import { useSeo } from '../../lib/useSeo'
+import { useSchemaOrg, breadcrumbSchema } from '../../lib/useSchemaOrg'
 import { fmtINR, GST_RATES } from '../../lib/gst'
 import {
   generateQuotePdf, calcQuoteTotals,
@@ -103,6 +104,11 @@ export default function QuoteGenerator() {
     'Create professional quotations and estimates in minutes. Add line items, auto-calculate GST, set validity period, and download a clean PDF. Free, no signup.',
     'https://getclearwork.in/tools/quote-generator',
   )
+  useSchemaOrg(breadcrumbSchema([
+    { name: 'Home',       item: 'https://getclearwork.in/' },
+    { name: 'Free Tools', item: 'https://getclearwork.in/tools' },
+    { name: 'Quote Generator', item: 'https://getclearwork.in/tools/quote-generator' },
+  ]))
 
   const [form, setForm] = useState<QuoteInput>(loadState)
   const [showGstOptions, setShowGstOptions] = useState(false)

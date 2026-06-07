@@ -11,6 +11,7 @@ import {
 } from '../../lib/gst'
 import { generateInvoicePdf } from '../../lib/invoicePdf'
 import { useSeo } from '../../lib/useSeo'
+import { useSchemaOrg, breadcrumbSchema } from '../../lib/useSchemaOrg'
 
 const STORAGE_KEY = 'clearwork-gst-invoice-draft'
 
@@ -53,6 +54,11 @@ export default function GstInvoiceGenerator() {
     'Generate a GST-compliant invoice PDF in seconds. Free, no signup. Auto CGST/SGST/IGST split by state. Built for Indian freelancers and small businesses.',
     'https://getclearwork.in/tools/gst-invoice-generator',
   )
+  useSchemaOrg(breadcrumbSchema([
+    { name: 'Home',       item: 'https://getclearwork.in/' },
+    { name: 'Free Tools', item: 'https://getclearwork.in/tools' },
+    { name: 'GST Invoice Generator', item: 'https://getclearwork.in/tools/gst-invoice-generator' },
+  ]))
 
   const [input, setInput] = useState<InvoiceInput>(loadDraft)
 

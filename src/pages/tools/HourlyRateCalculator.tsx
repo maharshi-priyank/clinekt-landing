@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import { fmtINR } from '../../lib/gst'
 import { useSeo } from '../../lib/useSeo'
+import { useSchemaOrg, breadcrumbSchema } from '../../lib/useSchemaOrg'
 
 type Mode = 'monthly' | 'annual'
 
@@ -47,6 +48,11 @@ export default function HourlyRateCalculator() {
     'Find your ideal hourly rate based on your income target. Accounts for non-billable time, GST, and TDS. Built for Indian freelancers.',
     'https://getclearwork.in/tools/hourly-rate-calculator',
   )
+  useSchemaOrg(breadcrumbSchema([
+    { name: 'Home',       item: 'https://getclearwork.in/' },
+    { name: 'Free Tools', item: 'https://getclearwork.in/tools' },
+    { name: 'Hourly Rate Calculator', item: 'https://getclearwork.in/tools/hourly-rate-calculator' },
+  ]))
 
   const [input, setInput] = useState<Input>(loadState)
 

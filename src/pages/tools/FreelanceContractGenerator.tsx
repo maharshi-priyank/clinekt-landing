@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import { INDIAN_STATES, fmtINR } from '../../lib/gst'
 import { useSeo } from '../../lib/useSeo'
+import { useSchemaOrg, breadcrumbSchema } from '../../lib/useSchemaOrg'
 import {
   generateContractPdf,
   type ContractInput, type Milestone,
@@ -75,6 +76,11 @@ export default function FreelanceContractGenerator() {
     'Generate a legally-worded freelance contract for Indian freelancers. IP clause, payment terms, confidentiality, IT Act. Free, no signup, instant PDF download.',
     'https://getclearwork.in/tools/freelance-contract-generator',
   )
+  useSchemaOrg(breadcrumbSchema([
+    { name: 'Home',       item: 'https://getclearwork.in/' },
+    { name: 'Free Tools', item: 'https://getclearwork.in/tools' },
+    { name: 'Freelance Contract Generator', item: 'https://getclearwork.in/tools/freelance-contract-generator' },
+  ]))
 
   const [input,   setInput]   = useState<ContractInput>(load)
   const [section, setSection] = useState(0)

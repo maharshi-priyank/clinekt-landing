@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import { fmtINR } from '../../lib/gst'
 import { useSeo } from '../../lib/useSeo'
+import { useSchemaOrg, breadcrumbSchema } from '../../lib/useSchemaOrg'
 import { compute, type ComputeResult, type OldRegimeDeductions, type Regime } from '../../lib/incomeTax'
 
 type Mode = 'new' | 'old' | 'compare'
@@ -63,6 +64,11 @@ export default function IncomeTaxCalculator() {
     'Calculate income tax for FY 2025-26 (AY 2026-27). Compare old and new regime side-by-side. Free, instant, no signup. Built for Indian freelancers and salaried professionals.',
     'https://getclearwork.in/tools/income-tax-calculator',
   )
+  useSchemaOrg(breadcrumbSchema([
+    { name: 'Home',       item: 'https://getclearwork.in/' },
+    { name: 'Free Tools', item: 'https://getclearwork.in/tools' },
+    { name: 'Income Tax Calculator', item: 'https://getclearwork.in/tools/income-tax-calculator' },
+  ]))
 
   const [input, setInput] = useState<Input>(loadState)
 

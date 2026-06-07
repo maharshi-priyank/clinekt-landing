@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { useSeo } from '../lib/useSeo'
+import { useSchemaOrg, breadcrumbSchema } from '../lib/useSchemaOrg'
 
 const TOOLS = [
   {
@@ -75,6 +76,10 @@ export default function ToolsIndex() {
     'Eight free tools built for Indian freelancers: GST invoice generator, quote generator, freelance contract generator, TDS calculator, income tax calculator, and more.',
     'https://getclearwork.in/tools',
   )
+  useSchemaOrg(breadcrumbSchema([
+    { name: 'Home',       item: 'https://getclearwork.in/' },
+    { name: 'Free Tools', item: 'https://getclearwork.in/tools' },
+  ]))
 
   return (
     <div className="min-h-screen bg-[#F4F6FB] pt-16">

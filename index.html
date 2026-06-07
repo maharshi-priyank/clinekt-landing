@@ -13,6 +13,7 @@
     <title>ClearWork — GST Invoices, Contracts &amp; Proposals for Indian Freelancers</title>
     <meta name="description" content="ClearWork — India's all-in-one client workflow. GST invoices, e-signed contracts, Razorpay payments, and proposals in one tool. Built for Indian freelancers and agencies." />
     <link rel="canonical" href="https://getclearwork.in/" />
+    <meta name="keywords" content="GST invoice generator India, freelance contract India, TDS calculator freelancer, e-sign contract India, GST calculator CGST SGST, income tax calculator FY 2025-26, invoice generator free India, freelance tools India" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -20,10 +21,15 @@
     <meta property="og:title" content="ClearWork — GST Invoices, Contracts &amp; Proposals for Indian Freelancers" />
     <meta property="og:description" content="GST invoices, e-signed contracts, UPI payments, WhatsApp reminders — all in one place. Built for Indian freelancers." />
     <meta property="og:image" content="https://getclearwork.in/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="ClearWork" />
     <meta property="og:locale" content="en_IN" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@getclearwork" />
+    <meta name="twitter:creator" content="@getclearwork" />
     <meta name="twitter:title" content="ClearWork — GST Invoices, Contracts &amp; Proposals for Indian Freelancers" />
     <meta name="twitter:description" content="GST invoices, e-signed contracts, UPI payments, WhatsApp reminders — all in one place." />
     <meta name="twitter:image" content="https://getclearwork.in/og-image.png" />
@@ -42,7 +48,33 @@
         "height": 60
       },
       "description": "India's all-in-one client workflow for freelancers and agencies. Proposals, contracts, GST invoices, and Razorpay payments in one platform.",
-      "address": { "@type": "PostalAddress", "addressCountry": "IN" }
+      "address": { "@type": "PostalAddress", "addressCountry": "IN" },
+      "sameAs": [
+        "https://twitter.com/getclearwork",
+        "https://www.linkedin.com/company/clearwork-india",
+        "https://www.producthunt.com/products/clearwork",
+        "https://www.indiegogo.com"
+      ]
+    }
+    </script>
+
+    <!-- Structured data: WebSite + SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "ClearWork",
+      "url": "https://getclearwork.in",
+      "description": "Free tools for Indian freelancers: GST invoice generator, freelance contract generator, TDS calculator, income tax calculator, quote generator and more.",
+      "inLanguage": "en-IN",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://getclearwork.in/tools?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
     }
     </script>
 
@@ -65,6 +97,9 @@
       "audience": { "@type": "Audience", "audienceType": "Indian freelancers and agencies" }
     }
     </script>
+
+    <!-- Preload hero image for LCP -->
+    <link rel="preload" as="image" href="/screenshots/screenshot-dashboard.png" fetchpriority="high" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
