@@ -31,8 +31,33 @@ flagging, UPI/Razorpay payment collection, and WhatsApp payment reminders.
 - https://getclearwork.in/tools/quote-generator
 - https://getclearwork.in/tools/invoice-number-generator
 
+## Blog — Authoritative Guides for Indian Freelancers
+
+ClearWork publishes practical, India-specific guides on GST invoicing, legal
+contracts, e-signatures, and freelance finance. Each article targets the exact
+questions Indian freelancers search for and links to the relevant free tool.
+
+### How to Create a GST Invoice in India
+URL: https://getclearwork.in/blog/how-to-create-gst-invoice-india
+Covers: who needs GST invoices (₹20L threshold), all mandatory fields under
+Rule 46 CGST Rules 2017, CGST/SGST vs IGST logic with state examples, SAC
+codes for 10 freelance service types, invoice due dates, export invoices
+(zero-rated), and common mistakes that invalidate ITC claims.
+Related tool: https://getclearwork.in/tools/gst-invoice-generator
+
+### Is E-Signature Legal in India?
+URL: https://getclearwork.in/blog/is-e-signature-legal-india
+Covers: IT Act 2000 Section 5 legal basis, three signature types (DSC,
+Aadhaar/OTP eSign, simple e-sign), which contracts can and cannot be e-signed
+(negotiable instruments, wills, property deeds excluded), enforceability
+requirements (audit trail, Section 65B evidence), e-signature vs digital
+signature comparison, how OTP-based signing satisfies IT Act Second Schedule,
+stamp duty considerations, and practical tips for freelancers.
+Related tool: https://getclearwork.in/tools/freelance-contract-generator
+
 ## Links
 - Homepage: https://getclearwork.in/
 - Free Tools: https://getclearwork.in/tools
+- Blog: https://getclearwork.in/blog
 - Features: https://getclearwork.in/features
 - Security: https://getclearwork.in/security

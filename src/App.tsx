@@ -16,6 +16,9 @@ const InvoiceNumberGenerator     = lazy(() => import('./pages/tools/InvoiceNumbe
 const ToolsIndex                 = lazy(() => import('./pages/ToolsIndex'))
 const Security                   = lazy(() => import('./pages/Security'))
 const FeaturesPage               = lazy(() => import('./pages/Features'))
+const BlogIndex                  = lazy(() => import('./pages/blog/BlogIndex'))
+const GstInvoiceGuide            = lazy(() => import('./pages/blog/GstInvoiceGuide'))
+const ESignatureLegalIndia       = lazy(() => import('./pages/blog/ESignatureLegalIndia'))
 
 function PageFallback() {
   return (
@@ -45,6 +48,9 @@ export default function App() {
             <Route path="/tools"                               element={<ToolsIndex />} />
             <Route path="/security"                            element={<Security />} />
             <Route path="/features"                            element={<FeaturesPage />} />
+            <Route path="/blog"                                element={<BlogIndex />} />
+            <Route path="/blog/how-to-create-gst-invoice-india" element={<GstInvoiceGuide />} />
+            <Route path="/blog/is-e-signature-legal-india"     element={<ESignatureLegalIndia />} />
           </Routes>
         </Suspense>
         <Footer />

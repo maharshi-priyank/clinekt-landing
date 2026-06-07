@@ -19,7 +19,10 @@
     { "source": "/tools/quote-generator",               "destination": "/index.html" },
     { "source": "/tools/invoice-number-generator",      "destination": "/index.html" },
     { "source": "/security",                            "destination": "/index.html" },
-    { "source": "/features",                            "destination": "/index.html" }
+    { "source": "/features",                            "destination": "/index.html" },
+    { "source": "/blog",                                "destination": "/index.html" },
+    { "source": "/blog/how-to-create-gst-invoice-india", "destination": "/index.html" },
+    { "source": "/blog/is-e-signature-legal-india",     "destination": "/index.html" }
   ],
   "headers": [
     {

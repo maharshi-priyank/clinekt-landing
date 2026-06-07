@@ -15,6 +15,9 @@ const PRERENDER_ROUTES = [
   '/tools/invoice-number-generator',
   '/security',
   '/features',
+  '/blog',
+  '/blog/how-to-create-gst-invoice-india',
+  '/blog/is-e-signature-legal-india',
 ]
 
 export default defineConfig({
