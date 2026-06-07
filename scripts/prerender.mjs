@@ -32,6 +32,9 @@ const ROUTES = [
   '/blog',
   '/blog/how-to-create-gst-invoice-india',
   '/blog/is-e-signature-legal-india',
+  '/blog/tds-on-freelance-income-194j-194c-india',
+  '/blog/how-to-write-freelance-contract-india',
+  '/blog/old-vs-new-tax-regime-freelancer-india',
 ]
 
 // Resolve browser launch options — use @sparticuz/chromium on Vercel

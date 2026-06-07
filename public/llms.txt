@@ -55,6 +55,36 @@ signature comparison, how OTP-based signing satisfies IT Act Second Schedule,
 stamp duty considerations, and practical tips for freelancers.
 Related tool: https://getclearwork.in/tools/freelance-contract-generator
 
+### TDS on Freelance Income: Section 194J vs 194C Explained
+URL: https://getclearwork.in/blog/tds-on-freelance-income-194j-194c-india
+Covers: why Section 194J (10%) applies to most Indian freelancers rather than
+194C, TDS rates and ₹30,000 threshold, who must deduct (companies/firms/audit-
+liable individuals), how to verify deductions in Form 26AS, claiming TDS refund
+in ITR by reporting gross income, Form 15G/15H eligibility, and obtaining Form
+16A from clients. FAQ covers GST+TDS on same invoice.
+Related tool: https://getclearwork.in/tools/tds-calculator
+
+### How to Write a Freelance Contract in India (That Actually Protects You)
+URL: https://getclearwork.in/blog/how-to-write-freelance-contract-india
+Covers: 8 essential clauses — scope of work + change request clause, payment
+terms with 30-50% advance + late payment interest, IP ownership transferring
+only on full payment, revision policy, termination kill fee (30%), mutual NDA,
+arbitration vs civil court jurisdiction, and OTP e-sign under IT Act 2000
+Second Schedule. Highlights common mistakes: using Western templates, missing
+TDS clause, leaving jurisdiction blank, no advance before final delivery.
+Related tool: https://getclearwork.in/tools/freelance-contract-generator
+
+### Old vs New Tax Regime for Freelancers in India (2026): Which One Saves More?
+URL: https://getclearwork.in/blog/old-vs-new-tax-regime-freelancer-india
+Covers: Budget 2025 new regime slabs (nil up to ₹4L, effective zero-tax limit
+₹12.75L via 87A rebate + ₹75K standard deduction), old regime slabs with 80C/
+80D/HRA deductions, deductions table, three worked examples at ₹8L/₹15L/₹25L
+all showing new regime winning, Section 44ADA presumptive taxation (50% of
+receipts, ₹75L cap, ITR-4 Sugam), ITR form selection table, Form 10-IEA
+switching deadline 31 July 2026, and when old regime still makes sense
+(HRA > ₹2L or total deductions > ₹3.75L).
+Related tool: https://getclearwork.in/tools/income-tax-calculator
+
 ## Links
 - Homepage: https://getclearwork.in/
 - Free Tools: https://getclearwork.in/tools

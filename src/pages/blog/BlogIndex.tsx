@@ -23,11 +23,42 @@ const POSTS = [
     toolHref: '/tools/freelance-contract-generator',
     toolLabel: 'Free Contract Generator',
   },
+  {
+    slug: 'tds-on-freelance-income-194j-194c-india',
+    title: 'TDS on Freelance Income: Section 194J vs 194C Explained',
+    description: 'TDS at 10% under Section 194J applies to most Indian freelancers — not 194C. Learn rates, thresholds, Form 26AS, refund claims, and how to handle TDS on invoices.',
+    date: 'June 2026',
+    readTime: '7 min',
+    category: 'Tax & TDS',
+    toolHref: '/tools/tds-calculator',
+    toolLabel: 'Free TDS Calculator',
+  },
+  {
+    slug: 'how-to-write-freelance-contract-india',
+    title: 'How to Write a Freelance Contract in India (That Actually Protects You)',
+    description: '8 essential clauses every Indian freelance contract needs: scope, payment terms, IP ownership, revision policy, kill fee, NDA, dispute resolution, and e-sign under IT Act 2000.',
+    date: 'June 2026',
+    readTime: '7 min',
+    category: 'Legal & Contracts',
+    toolHref: '/tools/freelance-contract-generator',
+    toolLabel: 'Free Contract Generator',
+  },
+  {
+    slug: 'old-vs-new-tax-regime-freelancer-india',
+    title: 'Old vs New Tax Regime for Freelancers in India (2026): Which One Saves More?',
+    description: 'New vs old tax regime FY 2025-26: updated slabs, 3 worked examples at ₹8L/₹15L/₹25L, Section 44ADA explained, ITR-3 vs ITR-4, and when to file Form 10-IEA.',
+    date: 'June 2026',
+    readTime: '8 min',
+    category: 'Tax & TDS',
+    toolHref: '/tools/income-tax-calculator',
+    toolLabel: 'Income Tax Calculator',
+  },
 ]
 
 const CATEGORY_COLORS: Record<string, string> = {
   'GST & Invoicing':  'bg-indigo-50 text-indigo-700',
   'Legal & Contracts': 'bg-emerald-50 text-emerald-700',
+  'Tax & TDS':        'bg-amber-50 text-amber-700',
 }
 
 export default function BlogIndex() {

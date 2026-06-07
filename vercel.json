@@ -24,8 +24,11 @@
     { "source": "/security",                            "destination": "/index.html" },
     { "source": "/features",                            "destination": "/index.html" },
     { "source": "/blog",                                "destination": "/index.html" },
-    { "source": "/blog/how-to-create-gst-invoice-india", "destination": "/index.html" },
-    { "source": "/blog/is-e-signature-legal-india",     "destination": "/index.html" }
+    { "source": "/blog/how-to-create-gst-invoice-india",          "destination": "/index.html" },
+    { "source": "/blog/is-e-signature-legal-india",               "destination": "/index.html" },
+    { "source": "/blog/tds-on-freelance-income-194j-194c-india",  "destination": "/index.html" },
+    { "source": "/blog/how-to-write-freelance-contract-india",    "destination": "/index.html" },
+    { "source": "/blog/old-vs-new-tax-regime-freelancer-india",   "destination": "/index.html" }
   ],
   "headers": [
     {

@@ -19,6 +19,9 @@ const FeaturesPage               = lazy(() => import('./pages/Features'))
 const BlogIndex                  = lazy(() => import('./pages/blog/BlogIndex'))
 const GstInvoiceGuide            = lazy(() => import('./pages/blog/GstInvoiceGuide'))
 const ESignatureLegalIndia       = lazy(() => import('./pages/blog/ESignatureLegalIndia'))
+const TdsGuide                   = lazy(() => import('./pages/blog/TdsGuide'))
+const FreelanceContractGuide     = lazy(() => import('./pages/blog/FreelanceContractGuide'))
+const TaxRegimeGuide             = lazy(() => import('./pages/blog/TaxRegimeGuide'))
 
 function PageFallback() {
   return (
@@ -49,8 +52,11 @@ export default function App() {
             <Route path="/security"                            element={<Security />} />
             <Route path="/features"                            element={<FeaturesPage />} />
             <Route path="/blog"                                element={<BlogIndex />} />
-            <Route path="/blog/how-to-create-gst-invoice-india" element={<GstInvoiceGuide />} />
-            <Route path="/blog/is-e-signature-legal-india"     element={<ESignatureLegalIndia />} />
+            <Route path="/blog/how-to-create-gst-invoice-india"        element={<GstInvoiceGuide />} />
+            <Route path="/blog/is-e-signature-legal-india"            element={<ESignatureLegalIndia />} />
+            <Route path="/blog/tds-on-freelance-income-194j-194c-india" element={<TdsGuide />} />
+            <Route path="/blog/how-to-write-freelance-contract-india"  element={<FreelanceContractGuide />} />
+            <Route path="/blog/old-vs-new-tax-regime-freelancer-india" element={<TaxRegimeGuide />} />
           </Routes>
         </Suspense>
         <Footer />
