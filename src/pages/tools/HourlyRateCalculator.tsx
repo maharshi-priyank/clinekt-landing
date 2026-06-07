@@ -45,6 +45,7 @@ export default function HourlyRateCalculator() {
   useSeo(
     'Hourly Rate Calculator for Indian freelancers — Free | ClearWork',
     'Find your ideal hourly rate based on your income target. Accounts for non-billable time, GST, and TDS. Built for Indian freelancers.',
+    'https://getclearwork.in/tools/hourly-rate-calculator',
   )
 
   const [input, setInput] = useState<Input>(loadState)

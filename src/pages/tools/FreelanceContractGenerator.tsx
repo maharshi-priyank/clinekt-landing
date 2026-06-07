@@ -73,6 +73,7 @@ export default function FreelanceContractGenerator() {
   useSeo(
     'Free Freelance Contract Generator (India) — Download PDF | ClearWork',
     'Generate a legally-worded freelance contract for Indian freelancers. IP clause, payment terms, confidentiality, IT Act. Free, no signup, instant PDF download.',
+    'https://getclearwork.in/tools/freelance-contract-generator',
   )
 
   const [input,   setInput]   = useState<ContractInput>(load)

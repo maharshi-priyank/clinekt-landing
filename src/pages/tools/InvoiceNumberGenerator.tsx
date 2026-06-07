@@ -90,6 +90,7 @@ export default function InvoiceNumberGenerator() {
   useSeo(
     'Invoice Number Generator — Create GST-Compliant Invoice Numbers | ClearWork',
     'Generate professional invoice numbers for Indian freelancers. Customise prefix, year, month, and sequence padding. Preview and copy instantly. Free, no signup.',
+    'https://getclearwork.in/tools/invoice-number-generator',
   )
 
   const [cfg, setCfg] = useState<Config>(loadState)

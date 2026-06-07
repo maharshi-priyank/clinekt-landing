@@ -10,6 +10,7 @@ import {
   type InvoiceInput, type InvoiceItem,
 } from '../../lib/gst'
 import { generateInvoicePdf } from '../../lib/invoicePdf'
+import { useSeo } from '../../lib/useSeo'
 
 const STORAGE_KEY = 'clearwork-gst-invoice-draft'
 
@@ -46,36 +47,11 @@ function loadDraft(): InvoiceInput {
   return defaultInput()
 }
 
-// ── SEO helper: set head tags client-side (no react-helmet dep needed) ──────
-function useSeo(title: string, description: string) {
-  useEffect(() => {
-    const prevTitle = document.title
-    document.title = title
-
-    function setMeta(name: string, content: string, attr: 'name' | 'property' = 'name') {
-      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null
-      if (!el) {
-        el = document.createElement('meta')
-        el.setAttribute(attr, name)
-        document.head.appendChild(el)
-      }
-      el.content = content
-    }
-
-    setMeta('description', description)
-    setMeta('og:title', title, 'property')
-    setMeta('og:description', description, 'property')
-    setMeta('twitter:title', title)
-    setMeta('twitter:description', description)
-
-    return () => { document.title = prevTitle }
-  }, [title, description])
-}
-
 export default function GstInvoiceGenerator() {
   useSeo(
     'Free GST Invoice Generator (India) — CGST/SGST/IGST auto-split | ClearWork',
     'Generate a GST-compliant invoice PDF in seconds. Free, no signup. Auto CGST/SGST/IGST split by state. Built for Indian freelancers and small businesses.',
+    'https://getclearwork.in/tools/gst-invoice-generator',
   )
 
   const [input, setInput] = useState<InvoiceInput>(loadDraft)

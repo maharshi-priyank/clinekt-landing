@@ -61,6 +61,7 @@ export default function IncomeTaxCalculator() {
   useSeo(
     'Income Tax Calculator FY 2025-26 — Old vs New Regime | ClearWork',
     'Calculate income tax for FY 2025-26 (AY 2026-27). Compare old and new regime side-by-side. Free, instant, no signup. Built for Indian freelancers and salaried professionals.',
+    'https://getclearwork.in/tools/income-tax-calculator',
   )
 
   const [input, setInput] = useState<Input>(loadState)

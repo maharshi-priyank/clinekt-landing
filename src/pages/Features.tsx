@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { useSeo } from '../lib/useSeo'
 import { motion, useInView } from 'framer-motion'
 import {
   Users, FileText, PenLine, Receipt, Globe, Zap, BarChart3, Clock,
@@ -265,6 +266,11 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 // ─── Page ──────────────────────────────────────────────────────────────────────
 
 export default function Features() {
+  useSeo(
+    'Features — GST Invoices, E-sign Contracts & Proposals | ClearWork',
+    'Explore ClearWork features: GST-compliant invoicing, OTP e-signed contracts, proposal tracking, Razorpay UPI payments, and WhatsApp reminders. Built for Indian freelancers.',
+    'https://getclearwork.in/features',
+  )
   return (
     <div className="bg-white">
 

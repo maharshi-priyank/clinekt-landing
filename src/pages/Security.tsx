@@ -81,6 +81,7 @@ export default function Security() {
   useSeo(
     'Security & Privacy — ClearWork',
     'How ClearWork protects your data: AES-256 encryption, Indian servers, IT Act 2000 e-sign, DPDP Act compliance, and your rights as a user.',
+    'https://getclearwork.in/security',
   )
 
   return (

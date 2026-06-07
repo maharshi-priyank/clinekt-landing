@@ -1,11 +1,6 @@
 import { useEffect } from 'react'
 
-/**
- * Lightweight per-route SEO meta tag setter (no react-helmet dependency).
- * Sets <title>, description, OG, and Twitter card tags. Restores previous
- * title on unmount.
- */
-export function useSeo(title: string, description: string) {
+export function useSeo(title: string, description: string, canonical?: string) {
   useEffect(() => {
     const prev = document.title
     document.title = title
@@ -26,6 +21,16 @@ export function useSeo(title: string, description: string) {
     setMeta('twitter:title', title)
     setMeta('twitter:description', description)
 
+    if (canonical) {
+      let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
+      if (!link) {
+        link = document.createElement('link')
+        link.rel = 'canonical'
+        document.head.appendChild(link)
+      }
+      link.href = canonical
+    }
+
     return () => { document.title = prev }
-  }, [title, description])
+  }, [title, description, canonical])
 }
