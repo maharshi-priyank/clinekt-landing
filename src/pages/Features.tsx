@@ -376,7 +376,7 @@ export default function Features() {
                             <div className="flex-1 mx-3">
                               <div className="max-w-44 mx-auto h-5 bg-white rounded border border-gray-200 flex items-center justify-center gap-1.5">
                                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                                <span className="text-[10px] text-gray-400">app.clearwork.in</span>
+                                <span className="text-[10px] text-gray-400">app.getclearwork.in</span>
                               </div>
                             </div>
                           </div>

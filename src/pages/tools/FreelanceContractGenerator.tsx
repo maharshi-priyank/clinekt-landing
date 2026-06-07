@@ -651,7 +651,7 @@ function ContractPreview({ input }: { input: ContractInput }) {
         </div>
 
         <p className="text-[10px] text-gray-300 text-center pt-2">
-          Generated free with ClearWork — clearwork.in
+          Generated free with ClearWork — getclearwork.in
         </p>
       </div>
     </div>

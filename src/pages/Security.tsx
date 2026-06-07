@@ -151,10 +151,10 @@ export default function Security() {
               If you have any security concerns, want to report a vulnerability, or want to exercise your data rights, email us directly. We respond within 48 hours.
             </p>
             <a
-              href="mailto:security@clearwork.in"
+              href="mailto:security@getclearwork.in"
               className="inline-flex items-center gap-2 bg-white text-gray-900 rounded-xl px-5 py-2.5 text-sm font-semibold hover:bg-gray-100 transition-colors"
             >
-              security@clearwork.in
+              security@getclearwork.in
             </a>
           </div>
 

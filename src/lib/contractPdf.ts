@@ -87,7 +87,7 @@ class DocWriter {
       doc.setPage(p)
       doc.setFont('helvetica', 'normal').setFontSize(7.5).setTextColor('#98A2B3')
       doc.text(`Page ${p} of ${totalPages}`, PAGE_W / 2, PAGE_H - 8, { align: 'center' })
-      doc.text('Generated free with ClearWork — clearwork.in/tools/freelance-contract-generator', PAGE_W / 2, PAGE_H - 4, { align: 'center' })
+      doc.text('Generated free with ClearWork — getclearwork.in/tools/freelance-contract-generator', PAGE_W / 2, PAGE_H - 4, { align: 'center' })
     }
   }
 

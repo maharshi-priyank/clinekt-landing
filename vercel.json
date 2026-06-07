@@ -1,8 +1,36 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.getclearwork.in" }],
+      "destination": "https://getclearwork.in/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/",                                    "destination": "/index.html" },
+    { "source": "/tools",                               "destination": "/index.html" },
+    { "source": "/tools/gst-invoice-generator",         "destination": "/index.html" },
+    { "source": "/tools/gst-calculator",                "destination": "/index.html" },
+    { "source": "/tools/tds-calculator",                "destination": "/index.html" },
+    { "source": "/tools/hourly-rate-calculator",        "destination": "/index.html" },
+    { "source": "/tools/income-tax-calculator",         "destination": "/index.html" },
+    { "source": "/tools/freelance-contract-generator",  "destination": "/index.html" },
+    { "source": "/tools/quote-generator",               "destination": "/index.html" },
+    { "source": "/tools/invoice-number-generator",      "destination": "/index.html" },
+    { "source": "/security",                            "destination": "/index.html" },
+    { "source": "/features",                            "destination": "/index.html" }
   ],
   "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Frame-Options",        "value": "DENY" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy",        "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy",     "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    },
     {
       "source": "/sitemap.xml",
       "headers": [{ "key": "Content-Type", "value": "application/xml" }]

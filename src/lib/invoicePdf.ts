@@ -213,7 +213,7 @@ export function generateInvoicePdf(input: InvoiceInput) {
   const pageH = doc.internal.pageSize.getHeight()
   doc.setFont('helvetica', 'normal').setFontSize(8).setTextColor('#98A2B3')
   doc.text(
-    'Generated free with ClearWork — clearwork.in/tools/gst-invoice-generator',
+    'Generated free with ClearWork — getclearwork.in/tools/gst-invoice-generator',
     PAGE_W / 2,
     pageH - 8,
     { align: 'center' },

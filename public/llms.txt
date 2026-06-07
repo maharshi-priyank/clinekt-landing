@@ -1,0 +1,38 @@
+# ClearWork
+
+> ClearWork is India's all-in-one client workflow platform for freelancers and
+> small agencies — proposals, contracts, GST invoices, and Razorpay payments
+> connected in a single tool.
+
+Built for 15 million Indian independent professionals who need CGST/SGST/IGST
+auto-split invoicing, OTP e-signatures valid under IT Act 2000, TDS 194J/194C
+flagging, UPI/Razorpay payment collection, and WhatsApp payment reminders.
+
+## Core Features
+- GST invoices: CGST/SGST intra-state, IGST inter-state, auto-detected by client state
+- E-sign contracts: OTP-based, legally valid under Information Technology Act 2000
+- Proposals: open tracking, time-spent-per-section analytics, one-click contract conversion
+- Client portal: single link, no login required for clients
+- WhatsApp automations: payment reminders at 3, 7, 14 days overdue
+- Free tools: GST calculator, TDS calculator, invoice generator, contract generator
+
+## Pricing
+- Free forever plan (no credit card)
+- Paid plans from ₹699/month
+- No transaction fees
+
+## Free Tools
+- https://getclearwork.in/tools/gst-invoice-generator
+- https://getclearwork.in/tools/freelance-contract-generator
+- https://getclearwork.in/tools/tds-calculator
+- https://getclearwork.in/tools/gst-calculator
+- https://getclearwork.in/tools/hourly-rate-calculator
+- https://getclearwork.in/tools/income-tax-calculator
+- https://getclearwork.in/tools/quote-generator
+- https://getclearwork.in/tools/invoice-number-generator
+
+## Links
+- Homepage: https://getclearwork.in/
+- Free Tools: https://getclearwork.in/tools
+- Features: https://getclearwork.in/features
+- Security: https://getclearwork.in/security

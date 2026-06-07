@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://clinekt.io/sitemap.xml
+Sitemap: https://getclearwork.in/sitemap.xml

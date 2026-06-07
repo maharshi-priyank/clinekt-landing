@@ -557,7 +557,7 @@ export default function QuoteGenerator() {
         operatingSystem: 'Web',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
         description: 'Create professional quotations with line items, GST, validity period and download a PDF. Free, no signup.',
-        url: 'https://clearwork.in/tools/quote-generator',
+        url: 'https://getclearwork.in/tools/quote-generator',
       }) }} />
     </div>
   )

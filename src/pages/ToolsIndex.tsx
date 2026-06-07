@@ -181,11 +181,11 @@ export default function ToolsIndex() {
         '@type': 'CollectionPage',
         name: 'Free Tools for Indian Freelancers — ClearWork',
         description: 'Eight free browser-based tools: GST invoice generator, quote generator, freelance contract, TDS calculator, income tax calculator, hourly rate calculator, and invoice number generator.',
-        url: 'https://clearwork.in/tools',
+        url: 'https://getclearwork.in/tools',
         hasPart: TOOLS.map(t => ({
           '@type': 'SoftwareApplication',
           name: t.title,
-          url: `https://clearwork.in${t.href}`,
+          url: `https://getclearwork.in${t.href}`,
           applicationCategory: 'BusinessApplication',
           offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
         })),

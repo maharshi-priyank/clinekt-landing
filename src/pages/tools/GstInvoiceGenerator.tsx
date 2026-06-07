@@ -464,7 +464,7 @@ function InvoicePreview({ input, totals }: { input: InvoiceInput; totals: Return
         )}
 
         <p className="mt-6 text-[10px] text-gray-300 text-center">
-          Generated free with ClearWork — clearwork.in
+          Generated free with ClearWork — getclearwork.in
         </p>
       </div>
     </div>

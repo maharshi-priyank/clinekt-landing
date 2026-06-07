@@ -465,7 +465,7 @@ export default function InvoiceNumberGenerator() {
         operatingSystem: 'Web',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
         description: 'Generate custom invoice number formats with prefix, year, month, separator and sequence padding. Preview and export as CSV. Free.',
-        url: 'https://clearwork.in/tools/invoice-number-generator',
+        url: 'https://getclearwork.in/tools/invoice-number-generator',
       }) }} />
     </div>
   )
