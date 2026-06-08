@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, CheckCircle2, ChevronRight, Users } from 'lucide-react'
+import { CheckCircle2, ChevronRight, Users } from 'lucide-react'
 import { useWaitlistCount } from '../hooks/useWaitlistCount'
 import { ContainerScroll } from './ui/container-scroll-animation'
 
@@ -31,7 +31,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 pt-24 sm:pt-36">
+      <div className="relative z-10 pt-12 sm:pt-20">
         <ContainerScroll
           titleComponent={
             <motion.div
@@ -72,8 +72,8 @@ export default function Hero() {
                 From first contract to final invoice, we've got your back.
               </motion.p>
 
-              {/* CTA */}
-              <motion.div variants={item} className="mt-9">
+              {/* CTA — hidden for now, using navbar join waitlist button instead */}
+              {/* <motion.div variants={item} className="mt-9">
                 <a
                   href="#waitlist"
                   className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gray-950 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-lg shadow-gray-950/20"
@@ -81,7 +81,7 @@ export default function Hero() {
                   Join the waitlist — it's free
                   <ArrowRight size={15} />
                 </a>
-              </motion.div>
+              </motion.div> */}
 
               {/* Trust micro-row */}
               <motion.div variants={item} className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6">
@@ -110,7 +110,7 @@ export default function Hero() {
           <img
             src="/screenshots/screenshot-dashboard.png"
             alt="ClearWork dashboard"
-            className="mx-auto w-full h-full object-cover object-top rounded-2xl"
+            className="w-full h-auto block"
             loading="eager"
             draggable={false}
           />
