@@ -72,20 +72,14 @@ export default function Hero() {
                 From first contract to final invoice, we've got your back.
               </motion.p>
 
-              {/* CTAs */}
-              <motion.div variants={item} className="flex flex-col sm:flex-row gap-3 mt-9">
+              {/* CTA */}
+              <motion.div variants={item} className="mt-9">
                 <a
                   href="#waitlist"
                   className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gray-950 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-lg shadow-gray-950/20"
                 >
                   Join the waitlist — it's free
                   <ArrowRight size={15} />
-                </a>
-                <a
-                  href="#how-it-works"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white/55 backdrop-blur-sm text-gray-800 font-semibold text-sm border border-white/80 hover:bg-white/75 transition-all"
-                >
-                  See how it works
                 </a>
               </motion.div>
 
