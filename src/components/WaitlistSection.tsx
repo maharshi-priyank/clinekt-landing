@@ -48,7 +48,7 @@ export default function WaitlistSection() {
     <section
       id="waitlist"
       className="py-24 relative overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #f0ece6 0%, #e6dfd5 40%, #d8dbd5 75%, #ccd8e2 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #f7f4f1 0%, #f0ece6 40%, #eaecef 75%, #e4ecf4 100%)' }}
       ref={ref}
     >
       {/* Noise texture — matches Hero */}

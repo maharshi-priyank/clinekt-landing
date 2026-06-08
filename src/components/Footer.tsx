@@ -9,7 +9,7 @@ const nav = {
 
 export default function Footer() {
   return (
-    <footer className="px-4 pb-4" style={{ background: '#ccd8e2' }}>
+    <footer className="px-4 pb-4" style={{ background: '#e4ecf4' }}>
       <div className="max-w-6xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-sm px-8 sm:px-10 pt-10 pb-8">
 
         {/* Top grid */}

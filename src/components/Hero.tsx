@@ -20,7 +20,7 @@ export default function Hero() {
   return (
     <section
       className="relative overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #c3daea 0%, #ccdce8 50%, #d6dce2 72%, #dedad4 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #deeaf4 0%, #e4ecf4 50%, #eaecf0 72%, #edeae6 100%)' }}
     >
       {/* Subtle noise texture overlay */}
       <div

@@ -21,7 +21,7 @@ export default function Home() {
       <Hero />
       <TrustStrip />
       <HubSpokeSection />
-      <FeaturePillars />
+      {/* <FeaturePillars /> */}
       <HowItWorks />
       <MobileAppSection />
       <FeaturesSection />
