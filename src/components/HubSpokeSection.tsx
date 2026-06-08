@@ -20,7 +20,7 @@ const ICONS: IconDef[] = [
 // Scroll thresholds (section=300vh → 200vh scroll range)
 // Hub phase: visible from 0 → 0.25 (50vh hold), then scatter 0.25→0.60
 // Campaign: TRIGGERED (not scroll-driven) once progress hits 0.38 — plays via animation
-const T = { scatterStart: 0.25, scatterEnd: 0.60, centerOut: 0.48, campaignTrigger: 0.38, hintFade: 0.22 }
+const T = { scatterStart: 0.25, scatterEnd: 0.60, centerOut: 0.48, campaignTrigger: 0.38 }
 const GAP_CENTER = 165
 const GAP_ICON   = 42
 
@@ -79,7 +79,6 @@ export default function HubSpokeSection() {
   const linesOpacity  = useTransform(scrollYProgress, [T.scatterStart, T.centerOut], [1, 0], { clamp: true })
   const centerOpacity = useTransform(scrollYProgress, [T.scatterStart, T.campaignTrigger], [1, 0], { clamp: true })
   const centerY       = useTransform(scrollYProgress, [T.scatterStart, T.campaignTrigger], [0, -20], { clamp: true })
-  const hintOpacity   = useTransform(scrollYProgress, [0, T.hintFade], [1, 0], { clamp: true })
 
   const lineSegments = ICONS.map(ic => {
     const cx = dims.w * 0.5, cy = dims.h * 0.5
@@ -213,13 +212,6 @@ export default function HubSpokeSection() {
           </motion.div>
         </div>
 
-        {/* Scroll hint */}
-        <motion.div style={{ position: 'absolute', bottom: 28, left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 7, opacity: hintOpacity, zIndex: 30, pointerEvents: 'none' }}>
-          <span style={{ fontSize: 10, color: '#9CA3AF', fontWeight: 500, letterSpacing: '0.09em', textTransform: 'uppercase', fontFamily: '"DM Sans", sans-serif' }}>scroll to reveal</span>
-          <motion.div animate={{ y: [0, 5, 0] }} transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }} style={{ width: 18, height: 28, borderRadius: 9, border: '1.5px solid #D1D5DB', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: 4 }}>
-            <div style={{ width: 3, height: 7, borderRadius: 2, background: '#C4C9D4' }} />
-          </motion.div>
-        </motion.div>
 
       </div>
     </section>
