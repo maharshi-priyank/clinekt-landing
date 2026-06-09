@@ -4,9 +4,11 @@ import { useScroll, useTransform, motion, type MotionValue } from 'framer-motion
 export const ContainerScroll = ({
   titleComponent,
   children,
+  floatingElements,
 }: {
   titleComponent: string | React.ReactNode
   children: React.ReactNode
+  floatingElements?: React.ReactNode
 }) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({ target: containerRef })
@@ -32,7 +34,7 @@ export const ContainerScroll = ({
     >
       <div className="py-10 md:py-40 w-full relative" style={{ perspective: '1000px' }}>
         <Header translate={translate} titleComponent={titleComponent} />
-        <Card rotate={rotate} translate={translate} scale={scale}>
+        <Card rotate={rotate} translate={translate} scale={scale} floatingElements={floatingElements}>
           {children}
         </Card>
       </div>
@@ -55,11 +57,13 @@ export const Card = ({
   rotate,
   scale,
   children,
+  floatingElements,
 }: {
   rotate: MotionValue<number>
   scale: MotionValue<number>
   translate: MotionValue<number>
   children: React.ReactNode
+  floatingElements?: React.ReactNode
 }) => {
   return (
     <motion.div
@@ -72,8 +76,9 @@ export const Card = ({
       }}
       className="max-w-5xl mt-8 mx-auto w-full border border-white/[0.08] p-1.5 rounded-[30px] shadow-2xl"
     >
-      <div className="w-full overflow-hidden rounded-[26px] bg-white">
+      <div className="w-full overflow-hidden rounded-[26px] bg-white relative">
         {children}
+        {floatingElements}
       </div>
     </motion.div>
   )
