@@ -22,6 +22,41 @@ export default function Hero() {
       className="relative overflow-hidden"
       style={{ background: 'linear-gradient(180deg, #deeaf4 0%, #e4ecf4 50%, #eaecf0 72%, #edeae6 100%)' }}
     >
+      {/* Radial glow orbs — ambient breathing light */}
+      <motion.div
+        className="absolute pointer-events-none"
+        style={{
+          top: '-10%', left: '-8%',
+          width: '55%', height: '60%',
+          background: 'radial-gradient(ellipse at center, rgba(99,102,241,0.20) 0%, transparent 68%)',
+          filter: 'blur(72px)',
+        }}
+        animate={{ scale: [1, 1.18, 1], x: [0, 18, 0], y: [0, -14, 0] }}
+        transition={{ duration: 10, ease: 'easeInOut', repeat: Infinity, repeatType: 'mirror' }}
+      />
+      <motion.div
+        className="absolute pointer-events-none"
+        style={{
+          top: '-8%', right: '-6%',
+          width: '48%', height: '55%',
+          background: 'radial-gradient(ellipse at center, rgba(251,146,60,0.16) 0%, transparent 68%)',
+          filter: 'blur(80px)',
+        }}
+        animate={{ scale: [1, 1.14, 1], x: [0, -22, 0], y: [0, 16, 0] }}
+        transition={{ duration: 13, ease: 'easeInOut', repeat: Infinity, repeatType: 'mirror', delay: 1.5 }}
+      />
+      <motion.div
+        className="absolute pointer-events-none"
+        style={{
+          top: '28%', left: '25%',
+          width: '50%', height: '40%',
+          background: 'radial-gradient(ellipse at center, rgba(244,114,182,0.10) 0%, transparent 65%)',
+          filter: 'blur(90px)',
+        }}
+        animate={{ scale: [1, 1.22, 1], x: [0, 12, 0], y: [0, -20, 0] }}
+        transition={{ duration: 16, ease: 'easeInOut', repeat: Infinity, repeatType: 'mirror', delay: 3 }}
+      />
+
       {/* Grain texture overlay */}
       <div
         className="absolute inset-0 pointer-events-none"
