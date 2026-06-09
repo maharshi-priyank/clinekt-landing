@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useRef, useState } from 'react'
+import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'framer-motion'
 import { FadeIn } from './ui/FadeIn'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
@@ -15,8 +15,16 @@ export default function MobileAppSection() {
   const [active, setActive] = useState<DeviceId>('mobile')
   const current = devices.find(d => d.id === active)!
 
+  const sectionRef = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'center center'],
+  })
+  const rawScale = useTransform(scrollYProgress, [0, 1], [1.08, 1.0])
+  const scale = useSpring(rawScale, { stiffness: 80, damping: 20 })
+
   return (
-    <section className="py-24 overflow-hidden" style={{ background: '#f8f6f3' }}>
+    <section ref={sectionRef} className="py-24 overflow-hidden" style={{ background: '#f8f6f3' }}>
       <div className="max-w-4xl mx-auto px-5">
 
         {/* Eyebrow */}
@@ -35,8 +43,8 @@ export default function MobileAppSection() {
           </h2>
         </FadeIn>
 
-        {/* Image card */}
-        <FadeIn delay={0.16}>
+        {/* Image card — scroll-driven zoom in → zoom out */}
+        <motion.div style={{ scale }}>
           <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-gray-900/10 border border-gray-200/60" style={{ aspectRatio: '16/10', margin: '0 auto' }}>
 
             {/* Switching image */}
@@ -72,7 +80,7 @@ export default function MobileAppSection() {
             </div>
 
           </div>
-        </FadeIn>
+        </motion.div>
 
       </div>
     </section>

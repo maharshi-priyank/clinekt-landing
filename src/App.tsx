@@ -1,5 +1,6 @@
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Lenis from 'lenis'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -32,6 +33,20 @@ function PageFallback() {
 }
 
 export default function App() {
+  useEffect(() => {
+    const lenis = new Lenis({ duration: 1.2, smoothWheel: true })
+    let raf: number
+    function loop(time: number) {
+      lenis.raf(time)
+      raf = requestAnimationFrame(loop)
+    }
+    raf = requestAnimationFrame(loop)
+    return () => {
+      cancelAnimationFrame(raf)
+      lenis.destroy()
+    }
+  }, [])
+
   return (
     <BrowserRouter>
       <ScrollToTop />
