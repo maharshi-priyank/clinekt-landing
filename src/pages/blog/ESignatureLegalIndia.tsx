@@ -3,6 +3,8 @@ import BlogLayout, {
   type BlogMeta,
 } from '../../components/BlogLayout'
 import { useSeo } from '../../lib/useSeo'
+import { useScrollDepth } from '../../hooks/useScrollDepth'
+import { trackBlogRead } from '../../lib/analytics'
 
 const meta: BlogMeta = {
   title: 'Is E-Signature Legal in India? Everything Freelancers Need to Know',
@@ -242,4 +244,6 @@ export default function ESignatureLegalIndia() {
 
     </BlogLayout>
   )
+  useScrollDepth('is-e-signature-legal-india')
+  trackBlogRead('is-e-signature-legal-india')
 }

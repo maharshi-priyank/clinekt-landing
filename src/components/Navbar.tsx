@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ArrowRight } from 'lucide-react'
+import { trackCTAClick } from '../lib/analytics'
 
 const links = [
   { label: 'How it works', anchor: 'how-it-works', href: null },
@@ -66,6 +67,7 @@ export default function Navbar() {
             Sign in
           </a>
           <a href={waitlistHref}
+            onClick={() => trackCTAClick('join_waitlist', 'navbar')}
             className="inline-flex items-center gap-1.5 text-sm font-semibold px-5 py-2.5 rounded-full bg-gray-950 text-white hover:bg-gray-800 shadow-sm transition-all">
             Join waitlist
             <ArrowRight size={14} />
@@ -102,7 +104,7 @@ export default function Navbar() {
                 )
               )}
               <div className="mt-2 pt-3 border-t border-gray-100">
-                <a href={waitlistHref} onClick={() => setOpen(false)}
+                <a href={waitlistHref} onClick={() => { setOpen(false); trackCTAClick('join_waitlist', 'navbar_mobile') }}
                   className="flex items-center justify-center gap-1.5 font-semibold px-5 py-3 rounded-full bg-gray-950 text-white">
                   Join waitlist <ArrowRight size={14} />
                 </a>

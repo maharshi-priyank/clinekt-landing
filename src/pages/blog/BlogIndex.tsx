@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Clock, Calendar } from 'lucide-react'
 import { useSeo } from '../../lib/useSeo'
+import { useScrollDepth } from '../../hooks/useScrollDepth'
+import { trackBlogRead } from '../../lib/analytics'
 
 const POSTS = [
   {
@@ -67,6 +69,8 @@ export default function BlogIndex() {
     'Practical guides for Indian freelancers: GST invoicing, e-sign contracts, TDS, income tax, and getting paid on time. Free tools included.',
     'https://getclearwork.in/blog',
   )
+  useScrollDepth('blog')
+  trackBlogRead('blog')
 
   return (
     <div className="bg-white min-h-screen">

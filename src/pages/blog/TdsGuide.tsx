@@ -3,6 +3,8 @@ import BlogLayout, {
   type BlogMeta,
 } from '../../components/BlogLayout'
 import { useSeo } from '../../lib/useSeo'
+import { useScrollDepth } from '../../hooks/useScrollDepth'
+import { trackBlogRead } from '../../lib/analytics'
 
 const meta: BlogMeta = {
   title: 'TDS on Freelance Income: Section 194J vs 194C Explained',
@@ -202,4 +204,6 @@ export default function TdsGuide() {
 
     </BlogLayout>
   )
+  useScrollDepth('tds-on-freelance-income-194j-194c-india')
+  trackBlogRead('tds-on-freelance-income-194j-194c-india')
 }

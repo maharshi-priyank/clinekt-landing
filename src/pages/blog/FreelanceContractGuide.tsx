@@ -3,6 +3,8 @@ import BlogLayout, {
   type BlogMeta,
 } from '../../components/BlogLayout'
 import { useSeo } from '../../lib/useSeo'
+import { useScrollDepth } from '../../hooks/useScrollDepth'
+import { trackBlogRead } from '../../lib/analytics'
 
 const meta: BlogMeta = {
   title: 'How to Write a Freelance Contract in India (That Actually Protects You)',
@@ -173,4 +175,6 @@ export default function FreelanceContractGuide() {
 
     </BlogLayout>
   )
+  useScrollDepth('how-to-write-freelance-contract-india')
+  trackBlogRead('how-to-write-freelance-contract-india')
 }

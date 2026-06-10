@@ -3,6 +3,8 @@ import BlogLayout, {
   type BlogMeta,
 } from '../../components/BlogLayout'
 import { useSeo } from '../../lib/useSeo'
+import { useScrollDepth } from '../../hooks/useScrollDepth'
+import { trackBlogRead } from '../../lib/analytics'
 
 const meta: BlogMeta = {
   title: 'How to Create a GST Invoice in India: Complete Guide for Freelancers',
@@ -231,4 +233,6 @@ export default function GstInvoiceGuide() {
 
     </BlogLayout>
   )
+  useScrollDepth('how-to-create-gst-invoice-india')
+  trackBlogRead('how-to-create-gst-invoice-india')
 }

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { CheckCircle2, ChevronRight, Users } from 'lucide-react'
 import { useWaitlistCount } from '../hooks/useWaitlistCount'
+import { trackCTAClick } from '../lib/analytics'
 import { ContainerScroll } from './ui/container-scroll-animation'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
@@ -82,6 +83,7 @@ export default function Hero() {
               <motion.div variants={item} className="mb-8">
                 <a
                   href="#waitlist"
+                  onClick={() => trackCTAClick('early_access_badge', 'hero')}
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/70 bg-white/50 backdrop-blur-sm shadow-sm text-sm font-medium text-gray-700 hover:bg-white/70 transition-colors group"
                 >
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />

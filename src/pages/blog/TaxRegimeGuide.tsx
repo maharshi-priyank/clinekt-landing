@@ -3,6 +3,8 @@ import BlogLayout, {
   type BlogMeta,
 } from '../../components/BlogLayout'
 import { useSeo } from '../../lib/useSeo'
+import { useScrollDepth } from '../../hooks/useScrollDepth'
+import { trackBlogRead } from '../../lib/analytics'
 
 const meta: BlogMeta = {
   title: 'Old vs New Tax Regime for Freelancers in India (2026): Which One Saves More?',
@@ -219,4 +221,6 @@ export default function TaxRegimeGuide() {
 
     </BlogLayout>
   )
+  useScrollDepth('old-vs-new-tax-regime-freelancer-india')
+  trackBlogRead('old-vs-new-tax-regime-freelancer-india')
 }

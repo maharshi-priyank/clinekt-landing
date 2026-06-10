@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion'
 import { ArrowRight, CheckCircle2, Zap } from 'lucide-react'
 import { submitWaitlist } from '../lib/waitlist'
 import { useWaitlistCount } from '../hooks/useWaitlistCount'
+import { trackWaitlistClick } from '../lib/analytics'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
@@ -37,6 +38,7 @@ export default function WaitlistSection() {
     try {
       await submitWaitlist(email)
       setSubmitted(true)
+      trackWaitlistClick('waitlist_section')
     } catch {
       setError('Something went wrong. Please try again.')
     } finally {

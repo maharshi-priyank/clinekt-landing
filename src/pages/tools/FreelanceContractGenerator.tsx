@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import { INDIAN_STATES, fmtINR } from '../../lib/gst'
 import { useSeo } from '../../lib/useSeo'
+import { trackToolUsed } from '../../lib/analytics'
 import { useSchemaOrg, breadcrumbSchema } from '../../lib/useSchemaOrg'
 import {
   generateContractPdf,
@@ -76,6 +77,7 @@ export default function FreelanceContractGenerator() {
     'Generate a legally-worded freelance contract for Indian freelancers. IP clause, payment terms, confidentiality, IT Act. Free, no signup, instant PDF download.',
     'https://getclearwork.in/tools/freelance-contract-generator',
   )
+  useEffect(() => { trackToolUsed('freelance_contract_generator') }, [])
   useSchemaOrg(breadcrumbSchema([
     { name: 'Home',       item: 'https://getclearwork.in/' },
     { name: 'Free Tools', item: 'https://getclearwork.in/tools' },

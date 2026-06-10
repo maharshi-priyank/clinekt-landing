@@ -4,6 +4,7 @@ import {
   ArrowRight, Copy, Check, Download, ChevronDown, Hash, Zap, Shield,
 } from 'lucide-react'
 import { useSeo } from '../../lib/useSeo'
+import { trackToolUsed } from '../../lib/analytics'
 import { useSchemaOrg, breadcrumbSchema } from '../../lib/useSchemaOrg'
 
 const STORAGE_KEY = 'clearwork-inv-num-gen-state'
@@ -93,6 +94,7 @@ export default function InvoiceNumberGenerator() {
     'Generate professional invoice numbers for Indian freelancers. Customise prefix, year, month, and sequence padding. Preview and copy instantly. Free, no signup.',
     'https://getclearwork.in/tools/invoice-number-generator',
   )
+  useEffect(() => { trackToolUsed('invoice_number_generator') }, [])
   useSchemaOrg(breadcrumbSchema([
     { name: 'Home',       item: 'https://getclearwork.in/' },
     { name: 'Free Tools', item: 'https://getclearwork.in/tools' },

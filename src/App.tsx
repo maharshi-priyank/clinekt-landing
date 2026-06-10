@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { trackPageview } from './lib/analytics'
 import Lenis from 'lenis'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -23,6 +24,14 @@ const ESignatureLegalIndia       = lazy(() => import('./pages/blog/ESignatureLeg
 const TdsGuide                   = lazy(() => import('./pages/blog/TdsGuide'))
 const FreelanceContractGuide     = lazy(() => import('./pages/blog/FreelanceContractGuide'))
 const TaxRegimeGuide             = lazy(() => import('./pages/blog/TaxRegimeGuide'))
+
+function RouteTracker() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    trackPageview(pathname)
+  }, [pathname])
+  return null
+}
 
 function PageFallback() {
   return (
@@ -50,6 +59,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <RouteTracker />
       <div className="bg-white min-h-screen">
         <Navbar />
         <Suspense fallback={<PageFallback />}>
