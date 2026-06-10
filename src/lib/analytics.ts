@@ -1,4 +1,4 @@
-const GA_ID = 'G-NEGSZC249H'
+const GA_ID = import.meta.env.VITE_GA_MEASUREMENT_ID as string
 
 declare global {
   interface Window {
