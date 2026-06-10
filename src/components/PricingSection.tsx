@@ -4,60 +4,88 @@ import { Check, Star, Zap } from 'lucide-react'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
+const APP_URL = 'https://app.getclearwork.in/register'
+
+const CURRENCIES = [
+  { code: 'INR', symbol: '₹', rate: 1,    label: '₹ INR' },
+  { code: 'USD', symbol: '$', rate: 84,   label: '$ USD' },
+  { code: 'EUR', symbol: '€', rate: 91,   label: '€ EUR' },
+  { code: 'GBP', symbol: '£', rate: 107,  label: '£ GBP' },
+  { code: 'AED', symbol: 'AED', rate: 23, label: 'AED' },
+] as const
+
+type CurrencyCode = typeof CURRENCIES[number]['code']
+
+function formatPrice(inr: number, currency: typeof CURRENCIES[number]): string {
+  if (currency.code === 'INR') return `${currency.symbol}${inr.toLocaleString('en-IN')}`
+  const converted = inr / currency.rate
+  const rounded = converted < 5 ? Math.ceil(converted * 10) / 10 : Math.round(converted)
+  if (currency.code === 'AED') return `AED ${rounded}`
+  return `${currency.symbol}${rounded}`
+}
+
 const plans = [
   {
     name: 'Free',
-    monthly: 0, annual: 0,
+    monthly: 0,
+    foundingPrice: null,
+    regularPrice: null,
     desc: 'Try before you buy. No card needed.',
     features: ['3 active projects', '3 proposals / month', 'GST invoice generator', 'Basic e-sign', 'ClearWork watermark on docs', 'Community support'],
     cta: 'Get started free',
+    ctaHref: APP_URL,
     ctaClass: 'bg-gray-900 text-white hover:bg-gray-800',
     highlight: false,
   },
   {
     name: 'Solo',
-    monthly: 699, annual: 6999,
+    monthly: 149,
+    foundingPrice: 149,
+    regularPrice: 299,
     desc: 'For solo freelancers earning ₹30k+/mo.',
     features: [
+      'Up to 25 clients',
       'Unlimited projects & leads',
-      'Proposal tracking + WhatsApp alerts',
       'E-sign contract (IT Act 2000)',
       'GST invoice + TDS flagging',
       'Razorpay + UPI in invoices',
       'Auto payment reminders',
-      'Client portal (branded)',
+      'Client portal',
       'Revenue dashboard',
-      'Remove ClearWork watermark',
+      'AI proposal drafter',
       'Email support',
     ],
-    cta: 'Join waitlist',
+    cta: 'Get started free',
+    ctaHref: APP_URL,
     ctaClass: 'bg-gray-950 text-white hover:bg-gray-800 shadow-sm',
     highlight: true,
   },
   {
     name: 'Studio',
-    monthly: 1799, annual: 17999,
+    monthly: 349,
+    foundingPrice: 349,
+    regularPrice: 699,
     desc: 'For agencies with 2–10 team members.',
     features: [
       'Everything in Solo',
-      '5 team members',
-      'White-label portal domain',
-      'AI follow-up message drafter',
-      'WhatsApp bot for lead capture',
-      'Automation builder',
-      'Team inbox',
+      'Unlimited clients',
+      '1 team member seat',
+      'White-label documents (no "Powered by ClearWork")',
+      'White-label client portal',
       'Multi-currency invoicing',
       'GST report export',
-      'Priority WhatsApp support',
+      'AI proposal drafter',
+      'Priority email support',
     ],
-    cta: 'Join waitlist',
+    cta: 'Get started free',
+    ctaHref: APP_URL,
     ctaClass: 'bg-white border border-gray-200 text-gray-900 hover:bg-gray-50 hover:border-gray-300',
     highlight: false,
   },
 ]
 
 const benchmarks = [
-  { name: 'ClearWork Solo', price: '₹699/mo', note: 'Full India workflow ✓', good: true },
+  { name: 'ClearWork Solo', price: '₹149/mo', note: 'Full India workflow ✓', good: true },
   { name: 'Bonsai Essential', price: '₹1,600/mo', note: 'No GST, no India support', good: false },
   { name: 'HoneyBook Starter', price: '₹3,000/mo', note: 'Blocked in India', good: false },
   { name: 'Dubsado Basic', price: '₹2,500/mo', note: 'No Razorpay, USD only', good: false },
@@ -77,7 +105,8 @@ function FadeIn({ children, delay = 0, className = '' }: { children: React.React
 }
 
 export default function PricingSection() {
-  const [annual, setAnnual] = useState(false)
+  const [currencyCode, setCurrencyCode] = useState<CurrencyCode>('INR')
+  const currency = CURRENCIES.find(c => c.code === currencyCode)!
 
   return (
     <section id="pricing" className="py-24 bg-gray-50">
@@ -96,18 +125,33 @@ export default function PricingSection() {
             not by taking a cut of your work.
           </p>
 
-          {/* Toggle */}
-          <div className="flex items-center justify-center gap-3 mt-8">
-            <span className={`text-sm font-semibold transition-colors ${!annual ? 'text-gray-900' : 'text-gray-400'}`}>Monthly</span>
-            <button onClick={() => setAnnual(!annual)}
-              className={`relative w-11 h-6 rounded-full transition-colors duration-300 ${annual ? 'bg-indigo-600' : 'bg-gray-200'}`}>
-              <span className={`absolute top-0.5 w-5 h-5 bg-white rounded-full shadow-sm transition-all duration-300 ${annual ? 'left-5.5' : 'left-0.5'}`} style={{ left: annual ? '22px' : '2px' }} />
-            </button>
-            <span className={`text-sm font-semibold transition-colors ${annual ? 'text-gray-900' : 'text-gray-400'}`}>
-              Annual{' '}
-              <span className="text-emerald-600 font-bold">save 17%</span>
-            </span>
+          {/* Founding badge */}
+          <div className="inline-flex items-center gap-2 mt-8 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-sm font-semibold">
+            <Star size={13} className="fill-amber-500 text-amber-500" />
+            Founding pricing active — ends Aug 31, 2026
           </div>
+
+          {/* Currency selector */}
+          <div className="flex items-center justify-center gap-1.5 mt-5">
+            {CURRENCIES.map(c => (
+              <button
+                key={c.code}
+                onClick={() => setCurrencyCode(c.code)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+                  currencyCode === c.code
+                    ? 'bg-gray-900 text-white'
+                    : 'bg-white border border-gray-200 text-gray-500 hover:border-gray-400 hover:text-gray-700'
+                }`}
+              >
+                {c.label}
+              </button>
+            ))}
+          </div>
+          {currencyCode !== 'INR' && (
+            <p className="text-xs text-gray-400 mt-2">
+              Approximate · Billing always in ₹ INR
+            </p>
+          )}
         </FadeIn>
 
         {/* Cards */}
@@ -139,23 +183,27 @@ export default function PricingSection() {
                   ) : (
                     <div>
                       <div className="flex items-baseline gap-1">
-                        <span className="text-4xl font-bold text-gray-900">
-                          ₹{annual
-                            ? Math.round(plan.annual / 12).toLocaleString('en-IN')
-                            : plan.monthly.toLocaleString('en-IN')}
+                        <span className="text-4xl font-bold text-gray-900 tabular-nums">
+                          {formatPrice(plan.monthly, currency)}
                         </span>
                         <span className="text-gray-400 text-sm font-medium">/mo</span>
                       </div>
-                      {annual && (
-                        <p className="text-xs text-emerald-600 font-semibold mt-1">
-                          ₹{plan.annual.toLocaleString('en-IN')} billed annually
+                      {plan.regularPrice && (
+                        <p className="text-xs text-gray-400 mt-1">
+                          <span className="line-through">{formatPrice(plan.regularPrice, currency)}/mo</span>
+                          {' '}after Aug 31
+                        </p>
+                      )}
+                      {currencyCode !== 'INR' && (
+                        <p className="text-[11px] text-gray-400 mt-0.5">
+                          ₹{plan.monthly.toLocaleString('en-IN')}/mo · approx.
                         </p>
                       )}
                     </div>
                   )}
                 </div>
 
-                <a href="#waitlist"
+                <a href={plan.ctaHref}
                   className={`block text-center py-3 px-5 rounded-xl font-bold text-sm transition-all duration-200 mb-6 ${plan.ctaClass}`}>
                   {plan.cta}
                 </a>
