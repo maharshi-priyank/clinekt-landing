@@ -116,7 +116,7 @@ export function generateQuotePdf(input: QuoteInput) {
 
   autoTable(doc, {
     startY: y,
-    head: [['#', 'Description / Service', 'Qty', 'Rate (₹)', 'Amount (₹)']],
+    head: [['#', 'Description / Service', 'Qty', 'Rate (Rs.)', 'Amount (Rs.)']],
     body: rows.length ? rows : [['1', '—', '—', '—', '—']],
     margin: { left: M, right: M },
     styles: { fontSize: 9, cellPadding: 3, textColor: '#344054' },
@@ -147,14 +147,14 @@ export function generateQuotePdf(input: QuoteInput) {
     y += bold ? 6 : 5
   }
 
-  totRow('Subtotal', `₹ ${fmtINR(totals.subtotal)}`)
+  totRow('Subtotal', `Rs. ${fmtINR(totals.subtotal)}`)
   if (input.applyGst && input.gstRate > 0) {
-    totRow(`GST @ ${input.gstRate}%`, `₹ ${fmtINR(totals.gstAmount)}`)
+    totRow(`GST @ ${input.gstRate}%`, `Rs. ${fmtINR(totals.gstAmount)}`)
   }
 
   doc.setDrawColor('#EAECF0').setLineWidth(0.2).line(totX, y - 1, valX, y - 1)
   y += 2
-  totRow('TOTAL', `₹ ${fmtINR(totals.total)}`, true)
+  totRow('TOTAL', `Rs. ${fmtINR(totals.total)}`, true)
 
   y += 2
   doc.setFont('helvetica', 'italic').setFontSize(8.5).setTextColor('#98A2B3')

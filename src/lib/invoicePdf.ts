@@ -145,13 +145,13 @@ export function generateInvoicePdf(input: InvoiceInput) {
     y += opts?.size ? opts.size / 2.2 : 5
   }
 
-  totalLine('Subtotal', `₹${fmtINR(totals.subtotal)}`)
+  totalLine('Subtotal', `Rs. ${fmtINR(totals.subtotal)}`)
 
   if (totals.sameState) {
-    totalLine(`CGST @ ${input.gstRate / 2}%`, `₹${fmtINR(totals.cgstAmount)}`)
-    totalLine(`SGST @ ${input.gstRate / 2}%`, `₹${fmtINR(totals.sgstAmount)}`)
+    totalLine(`CGST @ ${input.gstRate / 2}%`, `Rs. ${fmtINR(totals.cgstAmount)}`)
+    totalLine(`SGST @ ${input.gstRate / 2}%`, `Rs. ${fmtINR(totals.sgstAmount)}`)
   } else {
-    totalLine(`IGST @ ${input.gstRate}%`, `₹${fmtINR(totals.igstAmount)}`)
+    totalLine(`IGST @ ${input.gstRate}%`, `Rs. ${fmtINR(totals.igstAmount)}`)
   }
 
   y += 1
@@ -159,7 +159,7 @@ export function generateInvoicePdf(input: InvoiceInput) {
   doc.line(labelX, y, valueX, y)
   y += 5
 
-  totalLine('Total', `₹${fmtINR(totals.total)}`, { bold: true, size: 12 })
+  totalLine('Total', `Rs. ${fmtINR(totals.total)}`, { bold: true, size: 12 })
 
   y += 4
   doc.setFont('helvetica', 'italic').setFontSize(9).setTextColor('#667085')
