@@ -1,3 +1,4 @@
+import OtherToolsSection from '../../components/OtherToolsSection'
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
@@ -274,6 +275,7 @@ export default function TdsCalculator() {
 
       <Upsell />
       <FAQ />
+      <OtherToolsSection currentHref="/tools/tds-calculator" />
     </>
   )
 }

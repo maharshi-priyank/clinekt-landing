@@ -11,7 +11,7 @@ const NOISE = "data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www
 
 const perks = [
   'Free plan forever',
-  'Early bird ₹299/mo — locked for life',
+  'Founding price ₹149/mo — locked for life',
   'Vote on features we build next',
   'No credit card required',
 ]
@@ -88,7 +88,7 @@ export default function WaitlistSection() {
             >
               <Zap size={15} className="text-amber-500 shrink-0" />
               <p className="text-sm text-amber-800 font-medium text-left">
-                <strong>Founding member offer:</strong> First {FOUNDING_CAP} signups lock ₹299/mo for life
+                <strong>Founding member offer:</strong> First {FOUNDING_CAP} signups lock ₹149/mo for life
                 {spotsLeft !== null && spotsLeft > 0 && (
                   <span className="ml-1 font-bold text-amber-900">— {spotsLeft} spot{spotsLeft === 1 ? '' : 's'} left</span>
                 )}
@@ -98,8 +98,8 @@ export default function WaitlistSection() {
 
           <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
             {count !== null
-              ? <><strong className="text-gray-900">{count.toLocaleString('en-IN')}</strong> Indian freelancers already on the waitlist. Early bird pricing at ₹299/mo — locked for life.</>
-              : <>Join Indian freelancers on the waitlist. Early bird pricing at ₹299/mo — locked for life.</>
+              ? <><strong className="text-gray-900">{count.toLocaleString('en-IN')}</strong> Indian freelancers already signed up. Founding pricing at ₹149/mo — locked for life.</>
+              : <>Join Indian freelancers. Founding pricing at ₹149/mo — locked for life until Aug 31.</>
             }
           </p>
 
@@ -154,8 +154,8 @@ export default function WaitlistSection() {
           <div className="flex flex-wrap justify-center gap-10 mt-14 pt-10 border-t border-white/40">
             {[
               { val: count !== null ? count.toLocaleString('en-IN') : '—', label: 'on the waitlist' },
-              { val: '₹299/mo', label: 'early bird price' },
-              { val: '₹699/mo', label: 'launch price' },
+              { val: '₹149/mo', label: 'founding price' },
+              { val: '₹299/mo', label: 'after Aug 31' },
             ].map(s => (
               <div key={s.label} className="text-center">
                 <div className="text-2xl font-bold text-gray-900">{s.val}</div>

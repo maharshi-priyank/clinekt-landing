@@ -1,3 +1,4 @@
+import OtherToolsSection from '../../components/OtherToolsSection'
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
@@ -214,6 +215,7 @@ export default function HourlyRateCalculator() {
 
       <Upsell />
       <FAQ />
+      <OtherToolsSection currentHref="/tools/hourly-rate-calculator" />
     </>
   )
 }

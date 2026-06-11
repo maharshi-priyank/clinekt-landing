@@ -1,3 +1,4 @@
+import OtherToolsSection from '../../components/OtherToolsSection'
 import { useEffect, useState, useId } from 'react'
 import { Link } from 'react-router-dom'
 import {
@@ -466,6 +467,7 @@ export default function FreelanceContractGenerator() {
 
       <Upsell />
       <FAQ />
+      <OtherToolsSection currentHref="/tools/freelance-contract-generator" />
     </>
   )
 }

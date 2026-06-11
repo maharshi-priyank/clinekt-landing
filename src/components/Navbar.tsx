@@ -17,7 +17,8 @@ export default function Navbar() {
   const isHome = pathname === '/'
 
   const hrefFor = (anchor: string) => isHome ? `#${anchor}` : `/#${anchor}`
-  const waitlistHref = hrefFor('waitlist')
+  const registerHref = 'https://app.getclearwork.in/register'
+  const loginHref    = 'https://app.getclearwork.in'
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 10)
@@ -63,13 +64,13 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-2 shrink-0">
-          <a href={waitlistHref} className="text-sm font-medium text-gray-600 hover:text-gray-900 px-4 py-2 rounded-full hover:bg-black/5 transition-all">
+          <a href={loginHref} className="text-sm font-medium text-gray-600 hover:text-gray-900 px-4 py-2 rounded-full hover:bg-black/5 transition-all">
             Sign in
           </a>
-          <a href={waitlistHref}
-            onClick={() => trackCTAClick('join_waitlist', 'navbar')}
+          <a href={registerHref}
+            onClick={() => trackCTAClick('get_started', 'navbar')}
             className="inline-flex items-center gap-1.5 text-sm font-semibold px-5 py-2.5 rounded-full bg-gray-950 text-white hover:bg-gray-800 shadow-sm transition-all">
-            Join waitlist
+            Get started free
             <ArrowRight size={14} />
           </a>
         </div>
@@ -104,9 +105,9 @@ export default function Navbar() {
                 )
               )}
               <div className="mt-2 pt-3 border-t border-gray-100">
-                <a href={waitlistHref} onClick={() => { setOpen(false); trackCTAClick('join_waitlist', 'navbar_mobile') }}
+                <a href={registerHref} onClick={() => { setOpen(false); trackCTAClick('get_started', 'navbar_mobile') }}
                   className="flex items-center justify-center gap-1.5 font-semibold px-5 py-3 rounded-full bg-gray-950 text-white">
-                  Join waitlist <ArrowRight size={14} />
+                  Get started free <ArrowRight size={14} />
                 </a>
               </div>
             </div>

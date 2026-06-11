@@ -1,8 +1,30 @@
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { CheckCircle2, ChevronRight, Users } from 'lucide-react'
-import { useWaitlistCount } from '../hooks/useWaitlistCount'
+import { CheckCircle2, ChevronRight, Clock } from 'lucide-react'
 import { trackCTAClick } from '../lib/analytics'
 import { ContainerScroll } from './ui/container-scroll-animation'
+
+const FOUNDING_DEADLINE = new Date('2026-08-31T23:59:59+05:30')
+const APP_REGISTER = 'https://app.getclearwork.in/register'
+
+function getTimeLeft() {
+  const diff = FOUNDING_DEADLINE.getTime() - Date.now()
+  if (diff <= 0) return null
+  return {
+    days:    Math.floor(diff / (1000 * 60 * 60 * 24)),
+    hours:   Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+    minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
+  }
+}
+
+function useFoundingCountdown() {
+  const [timeLeft, setTimeLeft] = useState(getTimeLeft)
+  useEffect(() => {
+    const id = setInterval(() => setTimeLeft(getTimeLeft()), 60_000)
+    return () => clearInterval(id)
+  }, [])
+  return timeLeft
+}
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
@@ -16,7 +38,7 @@ const item = {
 }
 
 export default function Hero() {
-  const waitlistCount = useWaitlistCount()
+  const countdown = useFoundingCountdown()
 
   return (
     <section
@@ -82,7 +104,7 @@ export default function Hero() {
               {/* Badge */}
               <motion.div variants={item} className="mb-8">
                 <a
-                  href="#waitlist"
+                  href={APP_REGISTER}
                   onClick={() => trackCTAClick('early_access_badge', 'hero')}
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/70 bg-white/50 backdrop-blur-sm shadow-sm text-sm font-medium text-gray-700 hover:bg-white/70 transition-colors group"
                 >
@@ -132,15 +154,27 @@ export default function Hero() {
                 ))}
               </motion.div>
 
-              {/* Waitlist count */}
-              {waitlistCount !== null && (
-                <motion.div variants={item} className="flex items-center gap-2 mt-4">
-                  <div className="flex items-center justify-center w-7 h-7 rounded-full bg-white/55 border border-white/80">
-                    <Users size={13} className="text-emerald-600" />
-                  </div>
-                  <span className="text-sm text-gray-500">
-                    <strong className="text-gray-800">{waitlistCount.toLocaleString('en-IN')}</strong> freelancers on the waitlist
-                  </span>
+              {/* Founding pricing countdown */}
+              {countdown !== null && (
+                <motion.div variants={item} className="mt-4">
+                  <a
+                    href="#pricing"
+                    className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+                  >
+                    <div className="flex items-center justify-center w-7 h-7 rounded-full bg-white/55 border border-white/80">
+                      <Clock size={13} className="text-amber-500" />
+                    </div>
+                    <span>
+                      Founding price ends in{' '}
+                      <strong className="text-gray-800 tabular-nums">
+                        {countdown.days > 7
+                          ? `${countdown.days}d`
+                          : `${countdown.days}d ${countdown.hours}h ${countdown.minutes}m`}
+                      </strong>
+                      {' '}·{' '}
+                      <span className="text-gray-400">₹149 → ₹299/mo after Aug 31</span>
+                    </span>
+                  </a>
                 </motion.div>
               )}
             </motion.div>

@@ -1,3 +1,4 @@
+import OtherToolsSection from '../../components/OtherToolsSection'
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
@@ -542,10 +543,10 @@ export default function QuoteGenerator() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="/#waitlist"
+              href="https://app.getclearwork.in/register"
               className="inline-flex items-center gap-2 bg-white text-gray-900 rounded-xl px-6 py-3 font-semibold text-sm hover:bg-gray-100 transition-colors"
             >
-              Join the Waitlist <ArrowRight size={16} />
+              Get started free <ArrowRight size={16} />
             </a>
             <Link
               to="/tools/freelance-contract-generator"
@@ -556,6 +557,8 @@ export default function QuoteGenerator() {
           </div>
         </div>
       </section>
+
+      <OtherToolsSection currentHref="/tools/quote-generator" />
 
       {/* ── JSON-LD ─────────────────────────────────────────────────────────── */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
