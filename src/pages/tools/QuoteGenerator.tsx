@@ -539,7 +539,7 @@ export default function QuoteGenerator() {
           <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-3">Want more?</p>
           <h2 className="text-3xl font-bold mb-4">Stop juggling tabs. Run your freelance business in one place.</h2>
           <p className="text-gray-400 mb-8 text-base max-w-xl mx-auto">
-            ClearWork goes beyond quotes — send proposals, collect e-signatures on contracts, generate GST invoices, and collect Razorpay payments. Built for Indian freelancers.
+            ClearWork goes beyond quotes — send proposals, collect e-signatures on contracts, generate GST invoices, and collect payments. Built for Indian freelancers.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a

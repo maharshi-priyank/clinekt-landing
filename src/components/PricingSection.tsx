@@ -48,7 +48,7 @@ const plans = [
       'Unlimited projects & leads',
       'E-sign contract (IT Act 2000)',
       'GST invoice + TDS flagging',
-      'Razorpay + UPI in invoices',
+      'UPI + card payment link in invoices',
       'Auto payment reminders',
       'Client portal',
       'Revenue dashboard',
@@ -88,7 +88,7 @@ const benchmarks = [
   { name: 'ClearWork Solo', price: '₹149/mo', note: 'Full India workflow ✓', good: true },
   { name: 'Bonsai Essential', price: '₹1,600/mo', note: 'No GST, no India support', good: false },
   { name: 'HoneyBook Starter', price: '₹3,000/mo', note: 'Blocked in India', good: false },
-  { name: 'Dubsado Basic', price: '₹2,500/mo', note: 'No Razorpay, USD only', good: false },
+  { name: 'Dubsado Basic', price: '₹2,500/mo', note: 'No UPI payments, USD only', good: false },
 ]
 
 function FadeIn({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {

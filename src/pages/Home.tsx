@@ -14,7 +14,7 @@ export default function Home() {
   useScrollDepth('home')
   useSeo(
     'ClearWork — GST Invoices, Contracts & Proposals for Indian Freelancers',
-    'ClearWork — India\'s all-in-one client workflow. GST invoices, e-signed contracts, Razorpay payments, and proposals in one tool. Built for Indian freelancers and agencies.',
+    'ClearWork — all-in-one client workflow for freelancers. GST invoices, e-signed contracts, online payments, and proposals in one tool.',
     'https://getclearwork.in/',
   )
   return (

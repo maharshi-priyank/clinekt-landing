@@ -396,7 +396,7 @@ function Upsell() {
     { title: 'Quarter-end GST report for your CA',  desc: 'One-click GST summary export — CGST, SGST, IGST collected, GSTR-1 ready format. Saves hours every quarter.' },
     { title: 'TDS handled too',                     desc: 'Indian freelancer-specific: 194J/194C TDS auto-calculated on invoices. CA-friendly.' },
     { title: 'See your tax liability live',         desc: 'Dashboard shows running GST collected this quarter so you know what to set aside. No surprises at filing time.' },
-    { title: 'Razorpay + UPI built-in',             desc: 'Send invoice with embedded payment link. Client pays via UPI, card, or net banking — and ClearWork auto-marks paid.' },
+    { title: 'UPI + card payments built-in',             desc: 'Send invoice with embedded payment link. Client pays via UPI, card, or net banking — and ClearWork auto-marks paid.' },
   ]
 
   return (
@@ -474,7 +474,7 @@ const faqs = [
   },
   {
     q: 'Does ClearWork do this automatically inside invoices?',
-    a: 'Yes — ClearWork auto-applies GST on every invoice you create, picks CGST/SGST/IGST based on your state and the client\'s state, embeds a Razorpay UPI payment link, and ships the invoice via email + WhatsApp. There is a free plan. Sign up via the home page.',
+    a: 'Yes — ClearWork auto-applies GST on every invoice you create, picks CGST/SGST/IGST based on your state and the client\'s state, embeds a UPI/card payment link, and ships the invoice via email + WhatsApp. There is a free plan. Sign up via the home page.',
   },
 ] as const
 

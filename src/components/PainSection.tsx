@@ -28,7 +28,7 @@ const after = [
   'Lead CRM — pipeline, follow-up, reminders',
   'Branded proposals with real-time open tracking',
   'GST invoice with CGST/SGST/IGST auto-split',
-  'Razorpay + UPI embedded — client pays in one tap',
+  'Online payments embedded — client pays in one tap',
   'Auto WhatsApp reminder for overdue invoices',
   'Client portal — all docs in one branded link',
 ]

@@ -26,7 +26,7 @@ const features: BentoFeature[] = [
   {
     icon: IndianRupee,
     iconBg: 'bg-emerald-100', iconColor: 'text-emerald-600', accent: 'from-emerald-50/50',
-    title: 'Razorpay + UPI embedded',
+    title: 'Online payments embedded',
     desc: 'Payment link inside every invoice. Client pays via UPI, card, net banking, or EMI in one tap.',
     span: 1,
   },
@@ -97,7 +97,7 @@ export default function FeaturesSection() {
             <span className="font-medium text-gray-400">Nothing you don't.</span>
           </h2>
           <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto leading-relaxed">
-            GST, Razorpay, WhatsApp — tools US platforms will never prioritise.
+            GST, UPI payments, WhatsApp — tools US platforms will never prioritise.
             We built every one.
           </p>
         </FadeIn>

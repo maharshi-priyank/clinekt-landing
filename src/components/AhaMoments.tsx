@@ -27,7 +27,7 @@ const moments = [
     iconColor: 'text-emerald-600',
     accentBorder: 'border-t-2 border-t-emerald-500',
     title: 'Paid in under 5 minutes',
-    story: 'You send an invoice. Client clicks Razorpay. Pays via UPI. You get a push notification. No bank-details copy-paste, no "did you receive it?" WhatsApp.',
+    story: 'You send an invoice. Client clicks the payment link. Pays via UPI. You get a push notification. No bank-details copy-paste, no "did you receive it?" WhatsApp.',
     outcome: 'You tell every freelancer you know.',
     outcomeColor: 'text-emerald-600',
   },

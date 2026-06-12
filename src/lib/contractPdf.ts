@@ -302,7 +302,7 @@ export function generateContractPdf(input: ContractInput) {
   )
   w.gap(2)
   w.body(
-    'Payments may be made by bank transfer (NEFT/RTGS/IMPS), UPI, or Razorpay payment link. ' +
+    'Payments may be made by bank transfer (NEFT/RTGS/IMPS), UPI, or payment link. ' +
     'Communication via WhatsApp or email constitutes valid official communication for payment-related matters.',
   )
   w.gap()

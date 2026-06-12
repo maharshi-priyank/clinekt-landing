@@ -369,7 +369,7 @@ function Upsell() {
     { title: 'Quarter-end TDS summary',                  desc: 'One-click export of all TDS deducted from you this quarter, by section and by client. CA-ready PDF.' },
     { title: 'Send invoices that show TDS clearly',      desc: 'Clients see "Gross ₹50,000 − TDS ₹5,000 = Net ₹45,000" right on the invoice. No confusion, no follow-ups.' },
     { title: 'GST and TDS together',                     desc: 'GST + CGST/SGST/IGST + TDS — all calculated correctly and reflected on the invoice. Indian-specific, none of the US tools handle this.' },
-    { title: 'Razorpay + UPI built in',                  desc: 'Send invoice with embedded payment link. Client pays the post-TDS amount directly via UPI, card, or net banking.' },
+    { title: 'UPI + card payments built in',                  desc: 'Send invoice with embedded payment link. Client pays the post-TDS amount directly via UPI, card, or net banking.' },
   ]
 
   return (

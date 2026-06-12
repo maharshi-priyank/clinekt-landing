@@ -25,7 +25,7 @@ export default function FounderNote() {
               We built ClearWork because we ran a small design studio for four years
               and spent more time chasing payments and fixing GST errors than actually
               designing. Every tool we tried was built for the US — wrong currency,
-              wrong tax system, no Razorpay, no WhatsApp.
+              wrong tax system, no UPI payments, no WhatsApp.
             </p>
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed mt-4">
               The fix didn't exist. So we built it ourselves — for the 15 million

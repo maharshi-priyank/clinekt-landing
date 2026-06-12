@@ -157,7 +157,7 @@ const pillar2Tabs = [
 ]
 const pillar2Bullets = [
   { icon: Receipt,       text: 'GST invoices with CGST/SGST/IGST auto-calculated by client state' },
-  { icon: Calculator,    text: 'Razorpay payment link embedded in every invoice — UPI, card, EMI' },
+  { icon: Calculator,    text: 'Payment link embedded in every invoice — UPI, card, net banking' },
   { icon: MessageSquare, text: 'Auto WhatsApp reminders at day 3, 7, 14 overdue — 98% open rate' },
   { icon: Globe,         text: 'White-label client portal — all proposals, contracts, invoices in one link' },
 ]
@@ -258,7 +258,7 @@ export default function FeaturePillars() {
           flip
           tag="Get paid without chasing"
           headline={<>GST invoices that<br /><span className="gradient-text">pay themselves.</span></>}
-          sub="Auto-calculated GST, Razorpay payment link inside every invoice, and WhatsApp reminders that actually get opened."
+          sub="Auto-calculated GST, payment link inside every invoice, and WhatsApp reminders that actually get opened."
           bullets={pillar2Bullets}
           tabs={pillar2Tabs}
         />

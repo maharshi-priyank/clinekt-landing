@@ -447,7 +447,7 @@ export default function InvoiceNumberGenerator() {
           <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-3">Want more?</p>
           <h2 className="text-3xl font-bold mb-4">Auto-generate invoice numbers in your billing workflow.</h2>
           <p className="text-gray-400 mb-8 text-base max-w-xl mx-auto">
-            ClearWork auto-assigns the next invoice number when you create an invoice — no more manual tracking. Plus GST invoicing, Razorpay payments, and client portal.
+            ClearWork auto-assigns the next invoice number when you create an invoice — no more manual tracking. Plus GST invoicing, online payments, and client portal.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a

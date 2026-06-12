@@ -146,7 +146,7 @@ export default function Hero() {
 
               {/* Trust micro-row */}
               <motion.div variants={item} className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6">
-                {['Free forever plan', 'No credit card', 'GST + Razorpay built-in'].map(t => (
+                {['Free forever plan', 'No credit card', 'GST + online payments built-in'].map(t => (
                   <span key={t} className="flex items-center gap-1.5 text-sm text-gray-500/90">
                     <CheckCircle2 size={13} className="text-emerald-600" strokeWidth={2.5} />
                     {t}

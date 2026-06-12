@@ -170,7 +170,7 @@ export default function ToolsIndex() {
           <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-3">One platform</p>
           <h2 className="text-3xl font-bold mb-4">Connect all these workflows in one place.</h2>
           <p className="text-gray-400 mb-8 text-base max-w-xl mx-auto">
-            These tools are standalone, but ClearWork connects them — send a quote, convert it to a contract, collect e-signature, raise a GST invoice, collect Razorpay payment, all in one workflow.
+            These tools are standalone, but ClearWork connects them — send a quote, convert it to a contract, collect e-signature, raise a GST invoice, collect payment, all in one workflow.
           </p>
           <a
             href="/#waitlist"

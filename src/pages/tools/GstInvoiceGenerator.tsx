@@ -513,9 +513,9 @@ function Hero() {
 function Upsell() {
   const reasons = [
     { title: 'Save invoices automatically',  desc: 'Every invoice you generate is stored and searchable. Pull up any past invoice in one click.' },
-    { title: 'Send via WhatsApp + email',    desc: 'One click sends the invoice to your client with a Razorpay UPI payment link embedded.' },
+    { title: 'Send via WhatsApp + email',    desc: 'One click sends the invoice to your client with a UPI/card payment link embedded.' },
     { title: 'See when clients open them',   desc: 'Get a notification the second your client opens the invoice — perfect timing for a follow-up.' },
-    { title: 'Track payments end-to-end',    desc: 'Razorpay + UPI + cards built in. Auto-mark as paid. Auto-reminder if overdue at day 3, 7, 14.' },
+    { title: 'Track payments end-to-end',    desc: 'UPI + cards + cards built in. Auto-mark as paid. Auto-reminder if overdue at day 3, 7, 14.' },
     { title: 'GST report for your CA',       desc: 'Quarter-wise GST summary export. CA-ready PDF you can share on WhatsApp. Saves hours every quarter.' },
     { title: 'Recurring clients pre-filled', desc: 'Save client details once. Next invoice for the same client auto-fills GSTIN, address, state.' },
   ]
@@ -595,7 +595,7 @@ const faqs = [
   },
   {
     q: 'Can I save invoices and send them automatically?',
-    a: 'Not with this free tool — it generates a PDF for you to download and send manually. If you want auto-saving, automatic Razorpay payment links inside the invoice, WhatsApp + email delivery, and follow-up reminders, sign up for ClearWork — there is a free plan.',
+    a: 'Not with this free tool — it generates a PDF for you to download and send manually. If you want auto-saving, automatic payment links inside the invoice, WhatsApp + email delivery, and follow-up reminders, sign up for ClearWork — there is a free plan.',
   },
 ] as const
 

@@ -36,7 +36,7 @@ const sections = [
       'Account info: name, email address, phone number (optional).',
       'Business data you create: leads, proposals, contracts, invoices, client records.',
       'Usage analytics: page views, feature usage (anonymised, no personal data in analytics).',
-      'We do NOT collect payment card data — all payments are handled by Razorpay (PCI-DSS certified).',
+      'We do NOT collect payment card data — all payments are handled by our PCI-DSS certified payment gateways.',
     ],
   },
   {
@@ -48,7 +48,7 @@ const sections = [
       'Your data is private to your account. Other users cannot see your clients, invoices, or documents.',
       'ClearWork staff access data only when required to resolve support issues, with your explicit consent.',
       'We do not sell, rent, or share your data with any third party for marketing purposes.',
-      'Third-party integrations (Razorpay, Google Calendar) receive only the minimum data required.',
+      'Third-party integrations (payment gateways, Google Calendar) receive only the minimum data required.',
     ],
   },
   {

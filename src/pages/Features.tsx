@@ -94,10 +94,10 @@ const MODULES = [
     color: 'emerald',
     label: 'GST Invoices',
     tagline: 'GST-compliant, payment-ready',
-    desc: 'Auto-filled from your contract. CGST/SGST/IGST calculated by client state. TDS 194J/194C flag included. Razorpay payment link embedded — client pays in one tap.',
+    desc: 'Auto-filled from your contract. CGST/SGST/IGST calculated by client state. TDS 194J/194C flag included. payment link embedded — client pays in one tap.',
     features: [
       { icon: Calculator,   text: 'CGST/SGST for same state, IGST for cross-state — auto-detected' },
-      { icon: IndianRupee,  text: 'Razorpay + UPI payment link embedded in every invoice' },
+      { icon: IndianRupee,  text: 'UPI + cards payment link embedded in every invoice' },
       { icon: Shield,       text: 'TDS 194J/194C flagging for professional services' },
       { icon: RefreshCw,    text: 'Recurring invoices for retainer clients' },
       { icon: Bell,         text: 'Auto reminders at 3, 7, 14 days overdue via WhatsApp + email' },
@@ -192,7 +192,7 @@ const COMPARISON_FEATURES = [
   { label: 'Proposal open tracking',       clearwork: true,  others: false                  },
   { label: 'OTP e-signature (IT Act 2000)',clearwork: true,  others: 'DocuSign ($$$)'       },
   { label: 'GST invoice (CGST/SGST/IGST)', clearwork: true,  others: 'Zoho Invoice'         },
-  { label: 'Razorpay payment link',        clearwork: true,  others: 'Manual bank transfer' },
+  { label: 'payment link',        clearwork: true,  others: 'Manual bank transfer' },
   { label: 'TDS 194J/194C flagging',       clearwork: true,  others: false                  },
   { label: 'Client portal',               clearwork: true,  others: false                  },
   { label: 'WhatsApp payment reminders',   clearwork: true,  others: false                  },
@@ -215,7 +215,7 @@ const USE_CASES = [
       'Lead pipeline to never miss a DM enquiry',
       'Proposals that convert — with open tracking',
       'Contracts signed in seconds, no printing',
-      'GST invoice + Razorpay in under 2 minutes',
+      'GST invoice + payment link in under 2 minutes',
       'Automated reminders chase late payments for you',
     ],
     stat: { val: '6 hrs', label: 'saved every week' },
@@ -268,7 +268,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 export default function Features() {
   useSeo(
     'Features — GST Invoices, E-sign Contracts & Proposals | ClearWork',
-    'Explore ClearWork features: GST-compliant invoicing, OTP e-signed contracts, proposal tracking, Razorpay UPI payments, and WhatsApp reminders. Built for Indian freelancers.',
+    'Explore ClearWork features: GST-compliant invoicing, OTP e-signed contracts, proposal tracking, UPI & card payments, and WhatsApp reminders. Built for freelancers worldwide.',
     'https://getclearwork.in/features',
   )
   return (
@@ -286,7 +286,7 @@ export default function Features() {
               <span className="gradient-text">Nothing they don't.</span>
             </h1>
             <p className="mt-5 text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
-              ClearWork replaces 6+ tools with one platform built specifically for Indian freelancers and small agencies — GST-ready, Razorpay-connected, and designed to get out of your way.
+              ClearWork replaces 6+ tools with one platform built specifically for Indian freelancers and small agencies — GST-ready, payment gateway-connected, and designed to get out of your way.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <a href="/#waitlist"
@@ -598,7 +598,7 @@ export default function Features() {
 
             {/* Trust signals */}
             <div className="flex flex-wrap justify-center gap-x-7 gap-y-2 mt-8">
-              {['Free forever plan', 'No credit card', 'Cancel anytime', 'GST + Razorpay built-in'].map(t => (
+              {['Free forever plan', 'No credit card', 'Cancel anytime', 'GST + online payments built-in'].map(t => (
                 <span key={t} className="flex items-center gap-1.5 text-sm text-gray-400">
                   <CheckCircle2 size={13} className="text-emerald-500" strokeWidth={2.5} />
                   {t}
