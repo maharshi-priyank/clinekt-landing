@@ -1,10 +1,34 @@
 import { Link } from 'react-router-dom'
 import { Heart, MapPin } from 'lucide-react'
 
-const nav = {
-  Product: ['How it works', 'Features', 'Pricing', 'Changelog'],
-  Company: ['About', 'Blog', 'ProductHunt', 'LinkedIn'],
-  Legal:   ['Privacy Policy', 'Terms of Service', 'Security'],
+type NavItem = { label: string; href: string; external?: boolean }
+
+const nav: Record<string, NavItem[]> = {
+  Product: [
+    { label: 'How it works', href: '/#how-it-works' },
+    { label: 'Features',     href: '/features' },
+    { label: 'Pricing',      href: '/#pricing' },
+    { label: 'Changelog',    href: '#' },
+  ],
+  Company: [
+    { label: 'About',        href: '#' },
+    { label: 'Blog',         href: '/blog' },
+    { label: 'ProductHunt',  href: '#', external: true },
+    { label: 'LinkedIn',     href: '#', external: true },
+  ],
+  Legal: [
+    { label: 'Privacy Policy',   href: '#' },
+    { label: 'Terms of Service', href: '#' },
+    { label: 'Security',         href: '/security' },
+  ],
+}
+
+function FooterLink({ item }: { item: NavItem }) {
+  const cls = 'text-sm text-gray-600 hover:text-gray-900 transition-colors font-medium'
+  if (item.href === '#') return <span className={`${cls} cursor-default opacity-50`}>{item.label}</span>
+  if (item.href.startsWith('/') && !item.href.startsWith('/#')) return <Link to={item.href} className={cls}>{item.label}</Link>
+  if (item.href.startsWith('http')) return <a href={item.href} target="_blank" rel="noopener noreferrer" className={cls}>{item.label}</a>
+  return <a href={item.href} className={cls}>{item.label}</a>
 }
 
 export default function Footer() {
@@ -34,12 +58,8 @@ export default function Footer() {
               <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">{section}</div>
               <ul className="space-y-3">
                 {items.map(item => (
-                  <li key={item}>
-                    {item === 'Security' ? (
-                      <Link to="/security" className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-medium">{item}</Link>
-                    ) : (
-                      <a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-medium">{item}</a>
-                    )}
+                  <li key={item.label}>
+                    <FooterLink item={item} />
                   </li>
                 ))}
               </ul>

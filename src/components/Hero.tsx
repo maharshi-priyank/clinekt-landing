@@ -5,7 +5,7 @@ import { trackCTAClick } from '../lib/analytics'
 import { ContainerScroll } from './ui/container-scroll-animation'
 
 const FOUNDING_DEADLINE = new Date('2026-08-31T23:59:59+05:30')
-const APP_REGISTER = 'https://app.getclearwork.in/register'
+const APP_REGISTER = 'https://app.getclearwork.in/signup'
 
 function getTimeLeft() {
   const diff = FOUNDING_DEADLINE.getTime() - Date.now()

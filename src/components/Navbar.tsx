@@ -17,8 +17,8 @@ export default function Navbar() {
   const isHome = pathname === '/'
 
   const hrefFor = (anchor: string) => isHome ? `#${anchor}` : `/#${anchor}`
-  const registerHref = 'https://app.getclearwork.in/register'
-  const loginHref    = 'https://app.getclearwork.in'
+  const registerHref = 'https://app.getclearwork.in/signup'
+  const loginHref    = 'https://app.getclearwork.in/login'
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 10)

@@ -4,7 +4,7 @@ import { Check, Star, Zap } from 'lucide-react'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
-const APP_URL = 'https://app.getclearwork.in/register'
+const APP_URL = 'https://app.getclearwork.in/signup'
 
 const CURRENCIES = [
   { code: 'INR', symbol: '₹', rate: 1,    label: '₹ INR' },

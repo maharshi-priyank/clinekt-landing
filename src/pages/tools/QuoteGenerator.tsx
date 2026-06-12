@@ -543,7 +543,7 @@ export default function QuoteGenerator() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="https://app.getclearwork.in/register"
+              href="https://app.getclearwork.in/signup"
               className="inline-flex items-center gap-2 bg-white text-gray-900 rounded-xl px-6 py-3 font-semibold text-sm hover:bg-gray-100 transition-colors"
             >
               Get started free <ArrowRight size={16} />
