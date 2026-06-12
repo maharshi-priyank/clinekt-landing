@@ -57,7 +57,7 @@ export default function PainSection() {
             across <span className="text-red-500">4 broken tools.</span>
           </h2>
           <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto leading-relaxed">
-            Every Indian freelancer runs the same chaotic workflow.
+            Every service business runs the same chaotic workflow.
             It costs 6+ hours a week — and deals along the way.
           </p>
         </FadeIn>

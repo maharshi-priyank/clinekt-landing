@@ -282,11 +282,11 @@ export default function Features() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
             <SectionLabel>All features</SectionLabel>
             <h1 className="mt-6 text-5xl md:text-6xl font-extrabold text-gray-950 tracking-tight leading-[1.05]">
-              Everything a freelancer needs.{' '}
+              Everything your service business needs.{' '}
               <span className="gradient-text">Nothing they don't.</span>
             </h1>
             <p className="mt-5 text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
-              ClearWork replaces 6+ tools with one platform built specifically for Indian freelancers and small agencies — GST-ready, payment gateway-connected, and designed to get out of your way.
+              ClearWork replaces 6+ tools with one platform built for freelancers, studios, and agencies worldwide — GST-ready, payment gateway-connected, and designed to get out of your way.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <a href="/#waitlist"
@@ -414,7 +414,7 @@ export default function Features() {
               <span className="text-indigo-400">Not six.</span>
             </h2>
             <p className="mt-4 text-gray-400 text-base max-w-lg mx-auto leading-relaxed">
-              Most Indian freelancers cobble together Notion + DocuSign + Zoho + Calendly + Zapier + WhatsApp. ClearWork does all of it — at a fraction of the cost.
+              Most service businesses cobble together Notion + DocuSign + Zoho + Calendly + Zapier + WhatsApp. ClearWork does all of it — at a fraction of the cost.
             </p>
           </FadeIn>
 
@@ -577,11 +577,11 @@ export default function Features() {
               Early access open
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
-              Ready to run your freelance{' '}
+              Ready to run your{' '}
               <span className="gradient-text">business properly?</span>
             </h2>
             <p className="mt-5 text-gray-500 text-base max-w-lg mx-auto leading-relaxed">
-              Join thousands of Indian freelancers on the waitlist. Free plan available — no credit card needed.
+              Join freelancers and agencies worldwide. Free plan available — no credit card needed.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <a href="/#waitlist"

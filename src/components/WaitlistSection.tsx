@@ -98,8 +98,8 @@ export default function WaitlistSection() {
 
           <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
             {count !== null
-              ? <><strong className="text-gray-900">{count.toLocaleString('en-IN')}</strong> Indian freelancers already signed up. Founding pricing at ₹149/mo — locked for life.</>
-              : <>Join Indian freelancers. Founding pricing at ₹149/mo — locked for life until Aug 31.</>
+              ? <><strong className="text-gray-900">{count.toLocaleString('en-IN')}</strong> freelancers & agencies already signed up. Founding pricing at ₹149/mo — locked for life.</>
+              : <>Join freelancers & agencies worldwide. Founding pricing at ₹149/mo — locked for life until Aug 31.</>
             }
           </p>
 
@@ -116,7 +116,7 @@ export default function WaitlistSection() {
                 We'll reach out at <strong className="text-gray-900">{email}</strong> when it's your turn.
               </p>
               <p className="text-sm text-gray-500">
-                Meanwhile, tell a fellow freelancer — they'll thank you for it.
+                Meanwhile, share with a fellow freelancer or agency — they'll thank you.
               </p>
             </motion.div>
           ) : (

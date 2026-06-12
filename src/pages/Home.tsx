@@ -13,8 +13,8 @@ import WaitlistSection from '../components/WaitlistSection'
 export default function Home() {
   useScrollDepth('home')
   useSeo(
-    'ClearWork — GST Invoices, Contracts & Proposals for Indian Freelancers',
-    'ClearWork — all-in-one client workflow for freelancers. GST invoices, e-signed contracts, online payments, and proposals in one tool.',
+    'ClearWork — Client Management Software for Freelancers & Agencies',
+    'ClearWork — client management software for freelancers, studios, and agencies. Proposals, contracts, invoices, and payments in one platform.',
     'https://getclearwork.in/',
   )
   return (

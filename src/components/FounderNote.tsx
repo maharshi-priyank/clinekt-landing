@@ -29,8 +29,8 @@ export default function FounderNote() {
             </p>
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed mt-4">
               The fix didn't exist. So we built it ourselves — for the 15 million
-              freelancers in India who deserve the same professional workflow that
-              agencies in New York and London take for granted.
+              freelancers and agencies who deserve the same professional workflow that
+              studios in New York and London take for granted.
             </p>
 
             <div className="mt-8 flex items-center gap-4 pt-6 border-t border-gray-200">

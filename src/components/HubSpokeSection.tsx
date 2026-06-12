@@ -121,7 +121,7 @@ export default function HubSpokeSection() {
           <h2 style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 900, fontSize: 36, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.0, margin: 0 }}>
             Say hi to{' '}<span style={{ color: '#4F46E5' }}>ClearWork.</span>
           </h2>
-          <p style={{ marginTop: 8, fontSize: 14, color: '#6B7280' }}>Your freelance operating system.</p>
+          <p style={{ marginTop: 8, fontSize: 14, color: '#6B7280' }}>Your client management platform.</p>
         </FadeIn>
 
         <FadeIn delay={0.26}>
@@ -194,7 +194,7 @@ export default function HubSpokeSection() {
               <span style={{ color: '#4F46E5' }}>ClearWork.</span>
             </h2>
             <p style={{ marginTop: 8, fontFamily: '"DM Sans", sans-serif', fontSize: 'clamp(13px, 1vw, 15px)', color: '#6B7280', fontWeight: 400 }}>
-              Your freelance operating system.
+              Your client management platform.
             </p>
           </motion.div>
 

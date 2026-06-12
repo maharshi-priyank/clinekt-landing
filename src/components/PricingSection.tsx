@@ -42,7 +42,7 @@ const plans = [
     monthly: 149,
     foundingPrice: 149,
     regularPrice: 299,
-    desc: 'For solo freelancers earning ₹30k+/mo.',
+    desc: 'For freelancers, consultants & solo studios.',
     features: [
       'Up to 25 clients',
       'Unlimited projects & leads',
@@ -65,7 +65,7 @@ const plans = [
     monthly: 349,
     foundingPrice: 349,
     regularPrice: 699,
-    desc: 'For agencies with 2–10 team members.',
+    desc: 'For growing agencies & creative teams.',
     features: [
       'Everything in Solo',
       'Unlimited clients',

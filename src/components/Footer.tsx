@@ -70,7 +70,7 @@ export default function Footer() {
         {/* Bottom bar — inside the card */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-3 pt-6 border-t border-gray-100">
           <p className="text-sm text-gray-400">© 2026 ClearWork</p>
-          <p className="text-xs text-gray-400">Built for 15M Indian freelancers who deserve better tools.</p>
+          <p className="text-xs text-gray-400">Client management software, built right.</p>
         </div>
 
       </div>

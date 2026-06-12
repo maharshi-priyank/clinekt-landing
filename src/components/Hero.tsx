@@ -120,7 +120,7 @@ export default function Hero() {
                 className="font-black leading-[1.02] tracking-tighter text-gray-950"
                 style={{ fontSize: 'clamp(52px, 7.5vw, 88px)' }}
               >
-                Run your freelance<br />business like a pro
+                Proposals to payments,<br />all in one place.
               </motion.h1>
 
               {/* Subtext */}
