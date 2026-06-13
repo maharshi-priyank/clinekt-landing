@@ -9,9 +9,9 @@ const NOISE = "data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www
 const badges = [
   { icon: IndianRupee, label: 'Online payments', sub: 'UPI · Cards · Net banking', color: 'text-blue-600', bg: 'bg-blue-50/80' },
   { icon: FileCheck,   label: 'GST e-invoice ready', sub: 'IRN & QR code spec', color: 'text-emerald-600', bg: 'bg-emerald-50/80' },
-  { icon: BadgeCheck,  label: 'IT Act 2000 e-sign', sub: 'Legally valid in India', color: 'text-indigo-600', bg: 'bg-indigo-50/80' },
+  { icon: BadgeCheck,  label: 'E-sign & contracts', sub: 'OTP-verified · Audit trail PDF', color: 'text-indigo-600', bg: 'bg-indigo-50/80' },
   { icon: Lock,        label: 'AES-256 encrypted', sub: 'Bank-grade data security', color: 'text-gray-700', bg: 'bg-gray-100/80' },
-  { icon: Landmark,    label: 'Hosted in India', sub: 'Data stays on Indian servers', color: 'text-orange-600', bg: 'bg-orange-50/80' },
+  { icon: Landmark,    label: '99.9% uptime SLA', sub: 'Reliable cloud infrastructure', color: 'text-orange-600', bg: 'bg-orange-50/80' },
   { icon: ShieldCheck, label: '30-day refund', sub: 'No questions asked', color: 'text-rose-600', bg: 'bg-rose-50/80' },
 ]
 
@@ -34,7 +34,7 @@ export default function TrustStrip() {
           transition={{ duration: 0.4 }}
           className="text-center text-xs font-semibold text-gray-500 uppercase tracking-widest mb-7"
         >
-          Built for India. Serious about trust.
+          Trusted by freelancers. Built to last.
         </motion.p>
 
         <div className="flex flex-wrap justify-center gap-3">

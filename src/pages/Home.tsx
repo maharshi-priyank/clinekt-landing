@@ -14,7 +14,7 @@ export default function Home() {
   useScrollDepth('home')
   useSeo(
     'ClearWork — Client CRM for Freelancers, Consultants & Agencies | Proposals, Invoices & Payments',
-    'The all-in-one client CRM for freelancers, consultants, and creative agencies. Send proposals, get contracts e-signed, raise GST invoices, and collect payments — one tool, zero spreadsheets.',
+    'The all-in-one client CRM for freelancers, consultants, and creative agencies. A smarter alternative to HoneyBook, Dubsado, and Bonsai — built for India with GST invoicing, UPI payments, and OTP e-sign. One tool, zero spreadsheets.',
     'https://getclearwork.in/',
   )
   return (

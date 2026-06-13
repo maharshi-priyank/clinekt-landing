@@ -90,15 +90,15 @@ export default function FeaturesSection() {
         <FadeIn className="text-center mb-16">
           <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-white border border-gray-200 text-gray-500 shadow-sm mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
-            Built for India
+            Built different
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-950 tracking-tight">
             Everything you need.{' '}
             <span className="font-medium text-gray-400">Nothing you don't.</span>
           </h2>
           <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto leading-relaxed">
-            GST, UPI payments, WhatsApp — tools US platforms will never prioritise.
-            We built every one.
+            GST invoicing, UPI payments, WhatsApp reminders — the features global CRMs
+            skip. We built every one.
           </p>
         </FadeIn>
 

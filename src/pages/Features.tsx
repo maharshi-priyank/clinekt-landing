@@ -268,7 +268,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 export default function Features() {
   useSeo(
     'ClearWork Features — Proposal Builder, E-sign Contracts, GST Invoicing & Client CRM',
-    'Everything ClearWork offers: smart proposal builder, OTP e-sign contracts, GST-compliant invoicing, UPI & card payments, project CRM, and WhatsApp automations. Built for freelancers, consultants, and agencies worldwide.',
+    'Everything ClearWork offers: smart proposal builder, OTP e-sign contracts, GST-compliant invoicing, UPI & card payments, project CRM, and WhatsApp automations. Replace your Notion + Zapier + DocuSign stack — or switch from Dubsado, HoneyBook, or Bonsai — with one tool built for freelancers and agencies.',
     'https://getclearwork.in/features',
   )
   return (
@@ -414,7 +414,7 @@ export default function Features() {
               <span className="text-indigo-400">Not six.</span>
             </h2>
             <p className="mt-4 text-gray-400 text-base max-w-lg mx-auto leading-relaxed">
-              Most service businesses cobble together Notion + DocuSign + Zoho + Calendly + Zapier + WhatsApp. ClearWork does all of it — at a fraction of the cost.
+              Most freelancers cobble together Notion + DocuSign + Zoho + Calendly + Zapier + WhatsApp — or pay for Bonsai, HoneyBook, or Dubsado only to hit a wall with GST and UPI. ClearWork replaces all of it, built for India, at a fraction of the cost.
             </p>
           </FadeIn>
 

@@ -91,7 +91,7 @@ export default function ToolsIndex() {
             🛠️ Free Tools
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold mb-4 leading-tight">
-            Free Tools for Indian Freelancers
+            Free Tools for Freelancers &amp; Agencies
           </h1>
           <p className="text-gray-400 text-base max-w-xl mx-auto">
             Eight free, browser-based tools to handle GST invoicing, contracts, tax calculations, and pricing — no signup, no data sent to servers.
@@ -144,7 +144,7 @@ export default function ToolsIndex() {
       {/* ── Why we built these ──────────────────────────────────────────── */}
       <section className="py-12 px-4 bg-white border-t border-gray-100">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Built for Indian Freelancers</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Built for Freelancers &amp; Service Businesses</h2>
           <p className="text-gray-500 text-center text-sm leading-relaxed max-w-xl mx-auto mb-8">
             Every tool here is designed specifically for the Indian freelance context — GST slabs, TDS sections, Indian numbering (lakh/crore), and the Income Tax rules for FY 2025-26.
           </p>
