@@ -102,8 +102,8 @@ function Textarea({
 
 export default function QuoteGenerator() {
   useSeo(
-    'Free Quote / Estimate Generator for Indian Freelancers | ClearWork',
-    'Create professional quotations and estimates in minutes. Add line items, auto-calculate GST, set validity period, and download a clean PDF. Free, no signup.',
+    'Free Quote & Estimate Generator for Freelancers | ClearWork',
+    'Create professional quotations and project estimates in minutes. Add line items, auto-calculate GST, set validity period, and download a clean PDF. Free, no signup.',
     'https://getclearwork.in/tools/quote-generator',
   )
   useEffect(() => { trackToolUsed('quote_generator') }, [])

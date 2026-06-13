@@ -72,8 +72,8 @@ const TOOLS = [
 
 export default function ToolsIndex() {
   useSeo(
-    'Free Tools for Indian Freelancers — GST, TDS, Tax, Contracts | ClearWork',
-    'Eight free tools built for Indian freelancers: GST invoice generator, quote generator, freelance contract generator, TDS calculator, income tax calculator, and more.',
+    'Free Tools for Freelancers & Agencies — GST Calculator, Invoice Generator, TDS, Contracts | ClearWork',
+    'Free tools for freelancers, consultants, and service businesses: GST invoice generator, quote generator, freelance contract generator, TDS calculator, hourly rate calculator, income tax calculator, and more.',
     'https://getclearwork.in/tools',
   )
   useSchemaOrg(breadcrumbSchema([

@@ -109,7 +109,7 @@ export default function Hero() {
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/70 bg-white/50 backdrop-blur-sm shadow-sm text-sm font-medium text-gray-700 hover:bg-white/70 transition-colors group"
                 >
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  Now accepting early access signups
+                  Client CRM for Freelancers & Agencies · Early Access
                   <ChevronRight size={14} className="text-gray-400 group-hover:translate-x-0.5 transition-transform" />
                 </a>
               </motion.div>
@@ -129,8 +129,8 @@ export default function Hero() {
                 className="mt-6 text-gray-600 leading-relaxed"
                 style={{ fontSize: 'clamp(16px, 1.35vw, 19px)', maxWidth: 520 }}
               >
-                All-in-one platform for managing clients, projects, and payments without the chaos.
-                From first contract to final invoice, we've got your back.
+                The client management software for freelancers, consultants, and growing agencies.
+                Proposals, contracts, invoices, and payments — one place, zero spreadsheets.
               </motion.p>
 
               {/* CTA — hidden for now, using navbar join waitlist button instead */}

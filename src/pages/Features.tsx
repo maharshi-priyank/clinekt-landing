@@ -267,8 +267,8 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 export default function Features() {
   useSeo(
-    'Features — GST Invoices, E-sign Contracts & Proposals | ClearWork',
-    'Explore ClearWork features: GST-compliant invoicing, OTP e-signed contracts, proposal tracking, UPI & card payments, and WhatsApp reminders. Built for freelancers worldwide.',
+    'ClearWork Features — Proposal Builder, E-sign Contracts, GST Invoicing & Client CRM',
+    'Everything ClearWork offers: smart proposal builder, OTP e-sign contracts, GST-compliant invoicing, UPI & card payments, project CRM, and WhatsApp automations. Built for freelancers, consultants, and agencies worldwide.',
     'https://getclearwork.in/features',
   )
   return (
