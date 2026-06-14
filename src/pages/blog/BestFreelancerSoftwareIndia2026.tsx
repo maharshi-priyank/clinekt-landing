@@ -6,6 +6,7 @@ const meta = {
   description:
     'The 6 best all-in-one freelancer tools for India in 2026 — compared on GST invoicing, UPI payments, e-sign, pricing in INR. ClearWork, Refrens, Bonsai, Zoho, and more.',
   canonical: 'https://getclearwork.in/blog/best-freelancer-software-india-2026',
+  date: 'June 2026',
   datePublished: '2026-06-14',
   category: 'Freelancer Tools',
   readTime: '8 min',

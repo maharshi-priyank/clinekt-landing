@@ -6,6 +6,7 @@ const meta = {
   description:
     'HoneyBook doesn\'t work in India. Compare ClearWork vs Bonsai vs Dubsado for Indian freelancers — GST, UPI payments, INR pricing. From ₹149/mo.',
   canonical: 'https://getclearwork.in/blog/honeybook-bonsai-dubsado-alternative-india',
+  date: 'June 2026',
   datePublished: '2026-06-14',
   category: 'Freelancer Tools',
   readTime: '10 min',
