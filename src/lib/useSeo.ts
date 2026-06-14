@@ -29,6 +29,7 @@ export function useSeo(title: string, description: string, canonical?: string) {
         document.head.appendChild(link)
       }
       link.href = canonical
+      setMeta('og:url', canonical, 'property')
     }
 
     return () => { document.title = prev }
