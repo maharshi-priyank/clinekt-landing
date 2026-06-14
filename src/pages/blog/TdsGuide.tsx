@@ -10,6 +10,7 @@ const meta: BlogMeta = {
   title: 'TDS on Freelance Income: Section 194J vs 194C Explained',
   description: 'TDS at 10% under Section 194J applies to most Indian freelancers — not 194C. Learn rates, thresholds, Form 26AS, refund claims, and how to handle TDS on invoices.',
   date: 'June 2026',
+  datePublished: '2026-06-14',
   readTime: '7 min',
   category: 'Tax & TDS',
   canonical: 'https://getclearwork.in/blog/tds-on-freelance-income-194j-194c-india',

@@ -10,6 +10,7 @@ const meta: BlogMeta = {
   title: 'How to Create a GST Invoice in India: Complete Guide for Freelancers',
   description: 'Step-by-step guide to creating GST-compliant invoices as a freelancer. Covers mandatory fields, CGST/SGST/IGST, SAC codes, due dates, and common mistakes.',
   date: 'June 2026',
+  datePublished: '2026-06-14',
   readTime: '8 min',
   category: 'GST & Invoicing',
   canonical: 'https://getclearwork.in/blog/how-to-create-gst-invoice-india',

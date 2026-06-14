@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ArrowRight } from 'lucide-react'
+import { Menu, X, ArrowRight, ChevronDown, BookOpen, Wrench } from 'lucide-react'
 import { trackCTAClick } from '../lib/analytics'
 
 const links = [
@@ -10,9 +10,17 @@ const links = [
   { label: 'Pricing',      anchor: 'pricing',       href: null },
 ]
 
+const resourceLinks = [
+  { label: 'Blog',  href: '/blog',  icon: BookOpen,  desc: 'Guides on GST, contracts & taxes' },
+  { label: 'Tools', href: '/tools', icon: Wrench,    desc: 'Free calculators & generators' },
+]
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const [resourcesOpen, setResourcesOpen] = useState(false)
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false)
+  const resourcesRef = useRef<HTMLDivElement>(null)
   const { pathname } = useLocation()
   const isHome = pathname === '/'
 
@@ -24,6 +32,16 @@ export default function Navbar() {
     const fn = () => setScrolled(window.scrollY > 10)
     window.addEventListener('scroll', fn)
     return () => window.removeEventListener('scroll', fn)
+  }, [])
+
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (resourcesRef.current && !resourcesRef.current.contains(e.target as Node)) {
+        setResourcesOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
   }, [])
 
   return (
@@ -60,6 +78,49 @@ export default function Navbar() {
               </a>
             )
           )}
+
+          {/* Resources dropdown */}
+          <div ref={resourcesRef} className="relative">
+            <button
+              onClick={() => setResourcesOpen(v => !v)}
+              className={`flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-full transition-all ${resourcesOpen ? 'text-gray-900 bg-gray-100' : 'text-gray-600 hover:text-gray-900 hover:bg-black/5'}`}
+            >
+              Resources
+              <ChevronDown size={13} className={`transition-transform duration-200 ${resourcesOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            <AnimatePresence>
+              {resourcesOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 6, scale: 0.97 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 6, scale: 0.97 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white rounded-2xl shadow-xl shadow-gray-900/10 border border-gray-100 overflow-hidden z-50"
+                >
+                  {resourceLinks.map(r => {
+                    const Icon = r.icon
+                    return (
+                      <Link
+                        key={r.href}
+                        to={r.href}
+                        onClick={() => setResourcesOpen(false)}
+                        className="flex items-start gap-3 px-4 py-3.5 hover:bg-gray-50 transition-colors group"
+                      >
+                        <div className="mt-0.5 w-7 h-7 rounded-lg bg-indigo-50 flex items-center justify-center shrink-0 group-hover:bg-indigo-100 transition-colors">
+                          <Icon size={14} className="text-indigo-600" />
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-gray-900">{r.label}</p>
+                          <p className="text-xs text-gray-400 mt-0.5">{r.desc}</p>
+                        </div>
+                      </Link>
+                    )
+                  })}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </nav>
 
         {/* CTA */}
@@ -104,6 +165,43 @@ export default function Navbar() {
                   </a>
                 )
               )}
+
+              {/* Mobile Resources */}
+              <button
+                onClick={() => setMobileResourcesOpen(v => !v)}
+                className="flex items-center justify-between px-4 py-3 text-gray-700 font-medium hover:text-gray-900 hover:bg-gray-50 rounded-full transition-all"
+              >
+                Resources
+                <ChevronDown size={14} className={`transition-transform duration-200 ${mobileResourcesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              <AnimatePresence>
+                {mobileResourcesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pl-4 flex flex-col gap-0.5 pb-1">
+                      {resourceLinks.map(r => {
+                        const Icon = r.icon
+                        return (
+                          <Link
+                            key={r.href}
+                            to={r.href}
+                            onClick={() => { setOpen(false); setMobileResourcesOpen(false) }}
+                            className="flex items-center gap-2.5 px-4 py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-xl transition-all"
+                          >
+                            <Icon size={14} className="text-indigo-500" />
+                            <span className="text-sm font-medium">{r.label}</span>
+                          </Link>
+                        )
+                      })}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
               <div className="mt-2 pt-3 border-t border-gray-100">
                 <a href={registerHref} onClick={() => { setOpen(false); trackCTAClick('get_started', 'navbar_mobile') }}
                   className="flex items-center justify-center gap-1.5 font-semibold px-5 py-3 rounded-full bg-gray-950 text-white">

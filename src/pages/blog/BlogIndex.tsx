@@ -55,12 +55,53 @@ const POSTS = [
     toolHref: '/tools/income-tax-calculator',
     toolLabel: 'Income Tax Calculator',
   },
+  {
+    slug: 'honeybook-alternative-india',
+    title: 'HoneyBook Alternative India — Why HoneyBook Doesn\'t Work for Indian Freelancers',
+    description: 'HoneyBook is not available in India — no GST, no UPI, Stripe-only payments. ClearWork is the India-ready alternative with GST invoicing, UPI payments, and e-sign contracts from ₹149/mo.',
+    date: 'June 2026',
+    readTime: '6 min',
+    category: 'Freelancer Tools',
+  },
+  {
+    slug: 'bonsai-alternative-india',
+    title: 'Bonsai Alternative India — Why Indian Freelancers Need More Than Bonsai',
+    description: 'Bonsai has no GST support, no UPI payment link, and costs $17/mo (₹1,400). ClearWork is the India-ready alternative with full GST invoicing, UPI payments, and WhatsApp reminders at ₹149/mo.',
+    date: 'June 2026',
+    readTime: '5 min',
+    category: 'Freelancer Tools',
+  },
+  {
+    slug: 'refrens-alternative-india',
+    title: 'Refrens Alternative India — ClearWork vs Refrens Compared (2026)',
+    description: 'Refrens is excellent for invoicing but has no proposals, no e-sign contracts, no CRM, and no client portal. ClearWork covers the full freelance workflow in one tool.',
+    date: 'June 2026',
+    readTime: '5 min',
+    category: 'Freelancer Tools',
+  },
+  {
+    slug: 'honeybook-bonsai-dubsado-alternative-india',
+    title: 'HoneyBook vs Bonsai vs Dubsado Alternative India — What Indian Freelancers Actually Need',
+    description: 'HoneyBook is blocked in India. Bonsai and Dubsado lack GST and UPI. Compare all three global tools vs ClearWork — the India-built alternative with GST invoicing, UPI payments, and IT Act e-sign from ₹149/mo.',
+    date: 'June 2026',
+    readTime: '10 min',
+    category: 'Freelancer Tools',
+  },
+  {
+    slug: 'best-freelancer-software-india-2026',
+    title: 'Best Freelancer Software India 2026 — Complete Comparison (All-in-One Tools)',
+    description: 'The 6 best freelancer tools for India in 2026 — compared on GST invoicing, UPI payments, e-sign, and INR pricing. ClearWork is the only tool that passes all India-specific criteria.',
+    date: 'June 2026',
+    readTime: '8 min',
+    category: 'Freelancer Tools',
+  },
 ]
 
 const CATEGORY_COLORS: Record<string, string> = {
-  'GST & Invoicing':  'bg-indigo-50 text-indigo-700',
+  'GST & Invoicing':   'bg-indigo-50 text-indigo-700',
   'Legal & Contracts': 'bg-emerald-50 text-emerald-700',
-  'Tax & TDS':        'bg-amber-50 text-amber-700',
+  'Tax & TDS':         'bg-amber-50 text-amber-700',
+  'Freelancer Tools':  'bg-violet-50 text-violet-700',
 }
 
 export default function BlogIndex() {
@@ -119,9 +160,11 @@ export default function BlogIndex() {
                       <Clock size={12} />
                       {post.readTime} read
                     </span>
-                    <span className="text-indigo-400 text-xs font-medium">
-                      Includes: {post.toolLabel}
-                    </span>
+                    {post.toolLabel && (
+                      <span className="text-indigo-400 text-xs font-medium">
+                        Includes: {post.toolLabel}
+                      </span>
+                    )}
                   </div>
                 </div>
 

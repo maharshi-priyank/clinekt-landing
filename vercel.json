@@ -28,7 +28,12 @@
     { "source": "/blog/is-e-signature-legal-india",               "destination": "/index.html" },
     { "source": "/blog/tds-on-freelance-income-194j-194c-india",  "destination": "/index.html" },
     { "source": "/blog/how-to-write-freelance-contract-india",    "destination": "/index.html" },
-    { "source": "/blog/old-vs-new-tax-regime-freelancer-india",   "destination": "/index.html" }
+    { "source": "/blog/old-vs-new-tax-regime-freelancer-india",   "destination": "/index.html" },
+    { "source": "/blog/honeybook-alternative-india",                    "destination": "/index.html" },
+    { "source": "/blog/bonsai-alternative-india",                       "destination": "/index.html" },
+    { "source": "/blog/refrens-alternative-india",                      "destination": "/index.html" },
+    { "source": "/blog/honeybook-bonsai-dubsado-alternative-india",     "destination": "/index.html" },
+    { "source": "/blog/best-freelancer-software-india-2026",            "destination": "/index.html" }
   ],
   "headers": [
     {

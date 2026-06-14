@@ -10,6 +10,7 @@ const meta: BlogMeta = {
   title: 'Old vs New Tax Regime for Freelancers in India (2026): Which One Saves More?',
   description: 'New vs old tax regime FY 2025-26: updated slabs, 3 worked examples at ₹8L/₹15L/₹25L, Section 44ADA explained, ITR-3 vs ITR-4, and when to file Form 10-IEA.',
   date: 'June 2026',
+  datePublished: '2026-06-14',
   readTime: '8 min',
   category: 'Tax & TDS',
   canonical: 'https://getclearwork.in/blog/old-vs-new-tax-regime-freelancer-india',

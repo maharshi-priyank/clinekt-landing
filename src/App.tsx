@@ -23,7 +23,12 @@ const GstInvoiceGuide            = lazy(() => import('./pages/blog/GstInvoiceGui
 const ESignatureLegalIndia       = lazy(() => import('./pages/blog/ESignatureLegalIndia'))
 const TdsGuide                   = lazy(() => import('./pages/blog/TdsGuide'))
 const FreelanceContractGuide     = lazy(() => import('./pages/blog/FreelanceContractGuide'))
-const TaxRegimeGuide             = lazy(() => import('./pages/blog/TaxRegimeGuide'))
+const TaxRegimeGuide               = lazy(() => import('./pages/blog/TaxRegimeGuide'))
+const HoneyBookAlternativeIndia              = lazy(() => import('./pages/blog/HoneyBookAlternativeIndia'))
+const BonsaiAlternativeIndia                 = lazy(() => import('./pages/blog/BonsaiAlternativeIndia'))
+const RefrensAlternativeIndia                = lazy(() => import('./pages/blog/RefrensAlternativeIndia'))
+const HoneyBookBonsaiDubsadoAlternativeIndia = lazy(() => import('./pages/blog/HoneyBookBonsaiDubsadoAlternativeIndia'))
+const BestFreelancerSoftwareIndia2026        = lazy(() => import('./pages/blog/BestFreelancerSoftwareIndia2026'))
 
 function RouteTracker() {
   const { pathname } = useLocation()
@@ -82,6 +87,11 @@ export default function App() {
             <Route path="/blog/tds-on-freelance-income-194j-194c-india" element={<TdsGuide />} />
             <Route path="/blog/how-to-write-freelance-contract-india"  element={<FreelanceContractGuide />} />
             <Route path="/blog/old-vs-new-tax-regime-freelancer-india" element={<TaxRegimeGuide />} />
+            <Route path="/blog/honeybook-alternative-india"                      element={<HoneyBookAlternativeIndia />} />
+            <Route path="/blog/bonsai-alternative-india"                       element={<BonsaiAlternativeIndia />} />
+            <Route path="/blog/refrens-alternative-india"                      element={<RefrensAlternativeIndia />} />
+            <Route path="/blog/honeybook-bonsai-dubsado-alternative-india"     element={<HoneyBookBonsaiDubsadoAlternativeIndia />} />
+            <Route path="/blog/best-freelancer-software-india-2026"            element={<BestFreelancerSoftwareIndia2026 />} />
           </Routes>
         </Suspense>
         <Footer />

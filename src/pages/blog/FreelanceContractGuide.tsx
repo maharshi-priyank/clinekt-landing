@@ -10,6 +10,7 @@ const meta: BlogMeta = {
   title: 'How to Write a Freelance Contract in India (That Actually Protects You)',
   description: '8 essential clauses every Indian freelance contract needs: scope, payment terms, IP ownership, revision policy, kill fee, NDA, dispute resolution, and e-sign under IT Act 2000.',
   date: 'June 2026',
+  datePublished: '2026-06-14',
   readTime: '7 min',
   category: 'Legal & Contracts',
   canonical: 'https://getclearwork.in/blog/how-to-write-freelance-contract-india',

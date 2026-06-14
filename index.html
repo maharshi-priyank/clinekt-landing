@@ -45,12 +45,35 @@
         "height": 60
       },
       "description": "India's all-in-one client workflow for freelancers and agencies. Proposals, contracts, GST invoices, and Razorpay payments in one platform.",
-      "address": { "@type": "PostalAddress", "addressCountry": "IN" },
+      "foundingDate": "2025",
+      "foundingLocation": {
+        "@type": "Place",
+        "addressCountry": "IN",
+        "addressLocality": "Bengaluru"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN",
+        "addressLocality": "Bengaluru",
+        "addressRegion": "Karnataka"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "hello@getclearwork.in",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      "knowsAbout": [
+        "GST invoicing India",
+        "Freelancer client management",
+        "E-sign contracts IT Act 2000",
+        "UPI payment integration",
+        "TDS tracking India"
+      ],
       "sameAs": [
         "https://twitter.com/getclearwork",
         "https://www.linkedin.com/company/clearwork-india",
-        "https://www.producthunt.com/products/clearwork",
-        "https://www.indiegogo.com"
+        "https://www.producthunt.com/products/clearwork"
       ]
     }
     </script>
@@ -82,16 +105,46 @@
       "@type": "SoftwareApplication",
       "name": "ClearWork",
       "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Client Management Software",
       "operatingSystem": "Web, iOS, Android",
-      "description": "Run your entire freelance business on one platform — GST invoices, e-signed contracts, UPI payments, WhatsApp reminders.",
+      "description": "Run your entire freelance business on one platform — GST invoices, e-signed contracts, UPI payments, WhatsApp reminders. Built for Indian freelancers and agencies.",
       "url": "https://getclearwork.in",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "INR",
-        "description": "Free forever plan available. Paid plans start at ₹699/month."
-      },
-      "audience": { "@type": "Audience", "audienceType": "Indian freelancers and agencies" }
+      "inLanguage": "en-IN",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free Plan",
+          "price": "0",
+          "priceCurrency": "INR",
+          "description": "3 projects, 3 proposals/month, basic invoicing. No credit card required."
+        },
+        {
+          "@type": "Offer",
+          "name": "Solo Plan",
+          "price": "149",
+          "priceCurrency": "INR",
+          "description": "Unlimited leads, proposals, contracts, GST invoicing, UPI payments. Founding price."
+        },
+        {
+          "@type": "Offer",
+          "name": "Studio Plan",
+          "price": "349",
+          "priceCurrency": "INR",
+          "description": "Everything in Solo plus team seats and multi-currency. Founding price."
+        }
+      ],
+      "featureList": [
+        "GST invoice generator with CGST/SGST/IGST auto-calculation",
+        "UPI payment links in invoices via Razorpay",
+        "OTP e-sign contracts valid under IT Act 2000",
+        "Proposal tracking with open notifications",
+        "WhatsApp invoice reminders at 3, 7, 14 days overdue",
+        "TDS tracking Section 194J and 194C",
+        "Client CRM with lead pipeline",
+        "Client portal",
+        "AI proposal drafter"
+      ],
+      "audience": { "@type": "Audience", "audienceType": "Indian freelancers, consultants, and creative agencies" }
     }
     </script>
 

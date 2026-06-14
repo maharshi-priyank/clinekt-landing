@@ -10,6 +10,7 @@ const meta: BlogMeta = {
   title: 'Is E-Signature Legal in India? Everything Freelancers Need to Know',
   description: 'E-signatures are fully legal in India under the IT Act 2000. Learn which contracts they cover, which they don\'t, how OTP-based signing works, and what makes your digital contract enforceable.',
   date: 'June 2026',
+  datePublished: '2026-06-14',
   readTime: '7 min',
   category: 'Legal & Contracts',
   canonical: 'https://getclearwork.in/blog/is-e-signature-legal-india',

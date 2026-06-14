@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom'
 import { ArrowLeft, Clock, Calendar } from 'lucide-react'
-import { useSchemaOrg } from '../lib/useSchemaOrg'
+import { useSchemaOrg, breadcrumbSchema } from '../lib/useSchemaOrg'
 
 export interface BlogMeta {
   title: string
   description: string
   date: string
+  /** ISO date string e.g. "2026-06-14" — used in schema and visible freshness signal */
+  datePublished: string
   readTime: string
   category: string
   canonical: string
@@ -17,36 +19,43 @@ interface Props {
 }
 
 export default function BlogLayout({ meta, children }: Props) {
-  useSchemaOrg({
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: meta.title,
-    description: meta.description,
-    url: meta.canonical,
-    datePublished: '2026-06-08',
-    dateModified: '2026-06-08',
-    inLanguage: 'en-IN',
-    author: {
-      '@type': 'Organization',
-      name: 'ClearWork',
-      url: 'https://getclearwork.in',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'ClearWork',
-      url: 'https://getclearwork.in',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://getclearwork.in/logo/full_logo.svg',
-        width: 200,
-        height: 60,
+  useSchemaOrg([
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: meta.title,
+      description: meta.description,
+      url: meta.canonical,
+      datePublished: meta.datePublished,
+      dateModified: meta.datePublished,
+      inLanguage: 'en-IN',
+      author: {
+        '@type': 'Organization',
+        name: 'ClearWork',
+        url: 'https://getclearwork.in',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'ClearWork',
+        url: 'https://getclearwork.in',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://getclearwork.in/logo/full_logo.svg',
+          width: 200,
+          height: 60,
+        },
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': meta.canonical,
       },
     },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': meta.canonical,
-    },
-  })
+    breadcrumbSchema([
+      { name: 'Home', item: 'https://getclearwork.in/' },
+      { name: 'Blog', item: 'https://getclearwork.in/blog' },
+      { name: meta.title, item: meta.canonical },
+    ]),
+  ])
 
   return (
     <div className="bg-white min-h-screen">
@@ -72,7 +81,7 @@ export default function BlogLayout({ meta, children }: Props) {
             {meta.description}
           </p>
 
-          <div className="flex items-center gap-5 text-sm text-gray-400">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-gray-400">
             <span className="flex items-center gap-1.5">
               <Calendar size={13} />
               {meta.date}
@@ -82,6 +91,17 @@ export default function BlogLayout({ meta, children }: Props) {
               {meta.readTime} read
             </span>
           </div>
+
+          <p className="mt-4 text-xs text-gray-400">
+            By{' '}
+            <a
+              href="https://getclearwork.in"
+              className="text-indigo-500 hover:underline font-medium"
+            >
+              ClearWork
+            </a>
+            {' '}— India's client management platform for freelancers
+          </p>
         </div>
       </div>
 
@@ -89,6 +109,23 @@ export default function BlogLayout({ meta, children }: Props) {
       <div className="max-w-3xl mx-auto px-5 py-10 md:py-14">
         <div className="prose-blog">
           {children}
+        </div>
+
+        {/* Author bio — E-E-A-T trust signal */}
+        <div className="mt-14 pt-8 border-t border-gray-100">
+          <div className="flex gap-4 items-start">
+            <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center shrink-0 text-indigo-600 font-bold text-sm">
+              CW
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-gray-900">Written by ClearWork</p>
+              <p className="text-sm text-gray-500 mt-0.5 leading-relaxed">
+                ClearWork is India's all-in-one client management platform for freelancers and agencies —
+                built by freelancers who got tired of juggling spreadsheets, WhatsApp, and broken invoice templates.{' '}
+                <a href="https://getclearwork.in" className="text-indigo-500 hover:underline">getclearwork.in</a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -35,6 +35,11 @@ const ROUTES = [
   '/blog/tds-on-freelance-income-194j-194c-india',
   '/blog/how-to-write-freelance-contract-india',
   '/blog/old-vs-new-tax-regime-freelancer-india',
+  '/blog/honeybook-alternative-india',
+  '/blog/bonsai-alternative-india',
+  '/blog/refrens-alternative-india',
+  '/blog/honeybook-bonsai-dubsado-alternative-india',
+  '/blog/best-freelancer-software-india-2026',
 ]
 
 // Resolve browser launch options — use @sparticuz/chromium on Vercel

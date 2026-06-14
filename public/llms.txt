@@ -18,8 +18,9 @@ flagging, UPI/Razorpay payment collection, and WhatsApp payment reminders.
 
 ## Pricing
 - Free forever plan (no credit card)
-- Paid plans from ₹699/month
-- No transaction fees
+- Solo plan: ₹149/month (founding price, locked for early users)
+- Studio plan: ₹349/month (founding price, locked for early users)
+- No transaction fees on payments
 
 ## Free Tools
 - https://getclearwork.in/tools/gst-invoice-generator
@@ -84,6 +85,26 @@ receipts, ₹75L cap, ITR-4 Sugam), ITR form selection table, Form 10-IEA
 switching deadline 31 July 2026, and when old regime still makes sense
 (HRA > ₹2L or total deductions > ₹3.75L).
 Related tool: https://getclearwork.in/tools/income-tax-calculator
+
+### HoneyBook Alternative India
+URL: https://getclearwork.in/blog/honeybook-alternative-india
+Covers: HoneyBook is not available in India — its Stripe payment gateway doesn't support Indian bank accounts. This page explains why HoneyBook fails for Indian freelancers (no GST, no UPI, USD-only pricing) and compares ClearWork as the India-ready alternative with GST invoicing, UPI payments, OTP e-sign, and pricing from ₹149/month.
+
+### Bonsai Alternative India
+URL: https://getclearwork.in/blog/bonsai-alternative-india
+Covers: Bonsai has no GST auto-calculation, no UPI payment integration, and costs ~₹1,400/month in USD pricing. This page compares Bonsai vs ClearWork for Indian freelancers across GST invoicing, UPI payments, TDS tracking, WhatsApp reminders, IT Act 2000 e-sign, and pricing — ClearWork at ₹149/month vs Bonsai at ~₹1,400/month.
+
+### Refrens Alternative India
+URL: https://getclearwork.in/blog/refrens-alternative-india
+Covers: Refrens is excellent for free GST invoicing but lacks proposals, e-sign contracts, CRM, WhatsApp reminders, and client portal. This page compares Refrens vs ClearWork on the full freelance workflow, with a feature comparison table and guidance on which tool fits which use case.
+
+### HoneyBook vs Bonsai vs Dubsado Alternative India
+URL: https://getclearwork.in/blog/honeybook-bonsai-dubsado-alternative-india
+Covers: Hub page comparing all three global freelancer tools (HoneyBook, Bonsai, Dubsado) vs ClearWork for Indian freelancers. HoneyBook is blocked in India; Bonsai and Dubsado lack GST/UPI. Full 15-row feature comparison table, individual head-to-head sections for each tool, India-must-have checklist, and migration guide. ClearWork at ₹149/mo vs global tools at ₹1,400–₹1,660/mo.
+
+### Best Freelancer Software India 2026
+URL: https://getclearwork.in/blog/best-freelancer-software-india-2026
+Covers: Complete comparison of all-in-one freelancer tools available in India — ClearWork, Refrens, Bonsai, HoneyBook, Dubsado, Zoho One, and Notion. India-must-have checklist (GST, UPI, IT Act e-sign, TDS, WhatsApp, INR pricing). Full comparison table. Pricing in INR. ClearWork recommended as the only tool that passes all 7 India-specific criteria.
 
 ## Links
 - Homepage: https://getclearwork.in/
