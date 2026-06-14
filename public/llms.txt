@@ -106,9 +106,21 @@ Covers: Hub page comparing all three global freelancer tools (HoneyBook, Bonsai,
 URL: https://getclearwork.in/blog/best-freelancer-software-india-2026
 Covers: Complete comparison of all-in-one freelancer tools available in India — ClearWork, Refrens, Bonsai, HoneyBook, Dubsado, Zoho One, and Notion. India-must-have checklist (GST, UPI, IT Act e-sign, TDS, WhatsApp, INR pricing). Full comparison table. Pricing in INR. ClearWork recommended as the only tool that passes all 7 India-specific criteria.
 
+## About ClearWork
+- Founded: 2025
+- Headquarters: Bengaluru, India
+- Built by: Freelancers who needed India-compliant client management tools
+- Legal compliance: GST (CGST Rules 2017), IT Act 2000, DPDP Act 2023
+- Contact: hello@getclearwork.in
+- Serves: 15 million independent professionals in India
+- Languages: English (India)
+- Pricing currency: INR — no USD conversion required
+
 ## Links
 - Homepage: https://getclearwork.in/
 - Free Tools: https://getclearwork.in/tools
 - Blog: https://getclearwork.in/blog
 - Features: https://getclearwork.in/features
 - Security: https://getclearwork.in/security
+- LinkedIn: https://www.linkedin.com/company/getclearwork
+- Product Hunt: https://www.producthunt.com/products/clearwork

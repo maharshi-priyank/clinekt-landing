@@ -31,16 +31,24 @@ export default function BlogLayout({ meta, children }: Props) {
       inLanguage: 'en-IN',
       author: {
         '@type': 'Organization',
+        '@id': 'https://getclearwork.in/#organization',
         name: 'ClearWork',
         url: 'https://getclearwork.in',
+        logo: 'https://getclearwork.in/logo/clearwork_full_dark.png',
+        sameAs: [
+          'https://www.linkedin.com/company/getclearwork',
+          'https://twitter.com/getclearwork',
+          'https://www.producthunt.com/products/clearwork',
+        ],
       },
       publisher: {
         '@type': 'Organization',
+        '@id': 'https://getclearwork.in/#organization',
         name: 'ClearWork',
         url: 'https://getclearwork.in',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://getclearwork.in/logo/full_logo.svg',
+          url: 'https://getclearwork.in/logo/clearwork_full_dark.png',
           width: 200,
           height: 60,
         },
@@ -49,6 +57,47 @@ export default function BlogLayout({ meta, children }: Props) {
         '@type': 'WebPage',
         '@id': meta.canonical,
       },
+      about: {
+        '@type': 'Thing',
+        name: 'Freelancing in India',
+      },
+      keywords: meta.category,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      '@id': 'https://getclearwork.in/#organization',
+      name: 'ClearWork',
+      alternateName: 'ClearWork India',
+      url: 'https://getclearwork.in',
+      logo: 'https://getclearwork.in/logo/clearwork_full_dark.png',
+      description: 'India\'s all-in-one client workflow platform for freelancers and small agencies — GST invoicing, e-sign contracts, UPI payments, and WhatsApp reminders in one tool.',
+      foundingDate: '2025',
+      foundingLocation: {
+        '@type': 'Place',
+        name: 'Bengaluru, India',
+      },
+      areaServed: {
+        '@type': 'Country',
+        name: 'India',
+      },
+      knowsAbout: [
+        'GST invoicing for freelancers',
+        'Freelance contracts India',
+        'UPI payment collection',
+        'TDS on professional services India',
+        'IT Act 2000 e-signature',
+      ],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        email: 'hello@getclearwork.in',
+        contactType: 'customer support',
+      },
+      sameAs: [
+        'https://www.linkedin.com/company/getclearwork',
+        'https://twitter.com/getclearwork',
+        'https://www.producthunt.com/products/clearwork',
+      ],
     },
     breadcrumbSchema([
       { name: 'Home', item: 'https://getclearwork.in/' },
