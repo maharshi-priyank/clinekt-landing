@@ -31,7 +31,7 @@ const plans = [
     foundingPrice: null,
     regularPrice: null,
     desc: 'Try before you buy. No card needed.',
-    features: ['3 active projects', '3 proposals / month', 'GST invoice generator', 'Basic e-sign', 'ClearWork watermark on docs', 'Community support'],
+    features: ['1 workspace', '3 active projects', '3 proposals / month', 'GST invoice generator', 'Basic e-sign', 'ClearWork watermark on docs', 'Community support'],
     cta: 'Get started free',
     ctaHref: APP_URL,
     ctaClass: 'bg-gray-900 text-white hover:bg-gray-800',
@@ -44,6 +44,7 @@ const plans = [
     regularPrice: 299,
     desc: 'For freelancers, consultants & solo studios.',
     features: [
+      '2 workspaces',
       'Up to 25 clients',
       'Unlimited projects & leads',
       'E-sign contract (IT Act 2000)',
@@ -68,6 +69,7 @@ const plans = [
     desc: 'For growing agencies & creative teams.',
     features: [
       'Everything in Solo',
+      '5 workspaces',
       'Unlimited clients',
       '1 team member seat',
       'White-label documents (no "Powered by ClearWork")',
