@@ -18,6 +18,8 @@ const InvoiceNumberGenerator     = lazy(() => import('./pages/tools/InvoiceNumbe
 const ToolsIndex                 = lazy(() => import('./pages/ToolsIndex'))
 const Security                   = lazy(() => import('./pages/Security'))
 const FeaturesPage               = lazy(() => import('./pages/Features'))
+const Privacy                    = lazy(() => import('./pages/Privacy'))
+const Terms                      = lazy(() => import('./pages/Terms'))
 const BlogIndex                  = lazy(() => import('./pages/blog/BlogIndex'))
 const GstInvoiceGuide            = lazy(() => import('./pages/blog/GstInvoiceGuide'))
 const ESignatureLegalIndia       = lazy(() => import('./pages/blog/ESignatureLegalIndia'))
@@ -80,6 +82,8 @@ export default function App() {
             <Route path="/tools/invoice-number-generator"      element={<InvoiceNumberGenerator />} />
             <Route path="/tools"                               element={<ToolsIndex />} />
             <Route path="/security"                            element={<Security />} />
+            <Route path="/privacy"                             element={<Privacy />} />
+            <Route path="/terms"                               element={<Terms />} />
             <Route path="/features"                            element={<FeaturesPage />} />
             <Route path="/blog"                                element={<BlogIndex />} />
             <Route path="/blog/how-to-create-gst-invoice-india"        element={<GstInvoiceGuide />} />

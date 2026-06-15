@@ -28,6 +28,8 @@ const ROUTES = [
   '/tools/quote-generator',
   '/tools/invoice-number-generator',
   '/security',
+  '/privacy',
+  '/terms',
   '/features',
   '/blog',
   '/blog/how-to-create-gst-invoice-india',
