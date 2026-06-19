@@ -42,6 +42,10 @@ const ROUTES = [
   '/blog/refrens-alternative-india',
   '/blog/honeybook-bonsai-dubsado-alternative-india',
   '/blog/best-freelancer-software-india-2026',
+  '/blog/free-invoice-software-india',
+  '/blog/free-client-management-software-india',
+  '/blog/freelancer-billing-software-india',
+  '/blog/how-to-manage-clients-freelancer-india',
 ]
 
 // Resolve browser launch options — use @sparticuz/chromium on Vercel
