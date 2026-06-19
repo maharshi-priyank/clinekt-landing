@@ -10,10 +10,10 @@ const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 const NOISE = "data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"
 
 const perks = [
-  'Free plan forever',
-  'Founding price ₹149/mo — locked for life',
+  'Full Studio access — free right now',
   'Vote on features we build next',
   'No credit card required',
+  'Early pricing locked before public launch',
 ]
 
 const FOUNDING_CAP = 100
@@ -80,17 +80,17 @@ export default function WaitlistSection() {
             <span className="gradient-text">Start getting paid.</span>
           </h2>
 
-          {/* Founding member urgency banner */}
+          {/* Early access banner */}
           {!foundingFull && (
             <div
               className="flex items-start gap-2.5 rounded-xl px-4 py-3 mb-8 border border-white/70 max-w-md mx-auto text-left"
               style={{ background: 'rgba(255,255,255,0.55)', backdropFilter: 'blur(8px)' }}
             >
-              <Zap size={15} className="text-amber-500 shrink-0" />
-              <p className="text-sm text-amber-800 font-medium text-left">
-                <strong>Founding member offer:</strong> First {FOUNDING_CAP} signups lock ₹149/mo for life
+              <Zap size={15} className="text-emerald-500 shrink-0" />
+              <p className="text-sm text-emerald-800 font-medium text-left">
+                <strong>Early access is free:</strong> Full Studio plan at no cost while we build with you.
                 {spotsLeft !== null && spotsLeft > 0 && (
-                  <span className="ml-1 font-bold text-amber-900">— {spotsLeft} spot{spotsLeft === 1 ? '' : 's'} left</span>
+                  <span className="ml-1 font-bold text-emerald-900">— {spotsLeft} spot{spotsLeft === 1 ? '' : 's'} left</span>
                 )}
               </p>
             </div>
@@ -98,8 +98,8 @@ export default function WaitlistSection() {
 
           <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
             {count !== null
-              ? <><strong className="text-gray-900">{count.toLocaleString('en-IN')}</strong> freelancers & agencies already signed up. Founding pricing at ₹149/mo — locked for life.</>
-              : <>Join freelancers & agencies worldwide. Founding pricing at ₹149/mo — locked for life until Aug 31.</>
+              ? <><strong className="text-gray-900">{count.toLocaleString('en-IN')}</strong> freelancers & agencies already using ClearWork. Free during early access — no credit card required.</>
+              : <>Join Indian freelancers & agencies. Free during early access — use everything, no credit card required.</>
             }
           </p>
 
@@ -153,9 +153,9 @@ export default function WaitlistSection() {
           {/* Stats */}
           <div className="flex flex-wrap justify-center gap-10 mt-14 pt-10 border-t border-white/40">
             {[
-              { val: count !== null ? count.toLocaleString('en-IN') : '—', label: 'on the waitlist' },
-              { val: '₹149/mo', label: 'founding price' },
-              { val: '₹299/mo', label: 'after Aug 31' },
+              { val: count !== null ? count.toLocaleString('en-IN') : '—', label: 'using ClearWork' },
+              { val: '₹0', label: 'cost right now' },
+              { val: '100%', label: 'features included' },
             ].map(s => (
               <div key={s.label} className="text-center">
                 <div className="text-2xl font-bold text-gray-900">{s.val}</div>

@@ -1,30 +1,9 @@
-import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { CheckCircle2, ChevronRight, Clock } from 'lucide-react'
+import { CheckCircle2, ChevronRight } from 'lucide-react'
 import { trackCTAClick } from '../lib/analytics'
 import { ContainerScroll } from './ui/container-scroll-animation'
 
-const FOUNDING_DEADLINE = new Date('2026-08-31T23:59:59+05:30')
 const APP_REGISTER = 'https://app.getclearwork.in/signup'
-
-function getTimeLeft() {
-  const diff = FOUNDING_DEADLINE.getTime() - Date.now()
-  if (diff <= 0) return null
-  return {
-    days:    Math.floor(diff / (1000 * 60 * 60 * 24)),
-    hours:   Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-    minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
-  }
-}
-
-function useFoundingCountdown() {
-  const [timeLeft, setTimeLeft] = useState(getTimeLeft)
-  useEffect(() => {
-    const id = setInterval(() => setTimeLeft(getTimeLeft()), 60_000)
-    return () => clearInterval(id)
-  }, [])
-  return timeLeft
-}
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
@@ -38,8 +17,6 @@ const item = {
 }
 
 export default function Hero() {
-  const countdown = useFoundingCountdown()
-
   return (
     <section
       className="relative overflow-hidden"
@@ -109,7 +86,7 @@ export default function Hero() {
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/70 bg-white/50 backdrop-blur-sm shadow-sm text-sm font-medium text-gray-700 hover:bg-white/70 transition-colors group"
                 >
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  Client CRM for Freelancers & Agencies · Early Access
+                  Free during Early Access · No credit card needed
                   <ChevronRight size={14} className="text-gray-400 group-hover:translate-x-0.5 transition-transform" />
                 </a>
               </motion.div>
@@ -133,50 +110,27 @@ export default function Hero() {
                 Proposals, contracts, invoices, and payments — one place, zero spreadsheets.
               </motion.p>
 
-              {/* CTA — hidden for now, using navbar join waitlist button instead */}
-              {/* <motion.div variants={item} className="mt-9">
+              {/* CTA */}
+              <motion.div variants={item} className="mt-9">
                 <a
-                  href="#waitlist"
+                  href={APP_REGISTER}
+                  onClick={() => trackCTAClick('hero_cta', 'hero')}
                   className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gray-950 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-lg shadow-gray-950/20"
                 >
-                  Join the waitlist — it's free
-                  <ArrowRight size={15} />
+                  Get started free
+                  <ChevronRight size={15} />
                 </a>
-              </motion.div> */}
+              </motion.div>
 
               {/* Trust micro-row */}
               <motion.div variants={item} className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6">
-                {['Free forever plan', 'No credit card', 'GST + online payments built-in'].map(t => (
+                {['Completely free right now', 'No credit card', 'GST + UPI payments built-in'].map(t => (
                   <span key={t} className="flex items-center gap-1.5 text-sm text-gray-500/90">
                     <CheckCircle2 size={13} className="text-emerald-600" strokeWidth={2.5} />
                     {t}
                   </span>
                 ))}
               </motion.div>
-
-              {/* Founding pricing countdown */}
-              {countdown !== null && (
-                <motion.div variants={item} className="mt-4">
-                  <a
-                    href="#pricing"
-                    className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
-                  >
-                    <div className="flex items-center justify-center w-7 h-7 rounded-full bg-white/55 border border-white/80">
-                      <Clock size={13} className="text-amber-500" />
-                    </div>
-                    <span>
-                      Founding price ends in{' '}
-                      <strong className="text-gray-800 tabular-nums">
-                        {countdown.days > 7
-                          ? `${countdown.days}d`
-                          : `${countdown.days}d ${countdown.hours}h ${countdown.minutes}m`}
-                      </strong>
-                      {' '}·{' '}
-                      <span className="text-gray-400">₹149 → ₹299/mo after Aug 31</span>
-                    </span>
-                  </a>
-                </motion.div>
-              )}
             </motion.div>
           }
         >

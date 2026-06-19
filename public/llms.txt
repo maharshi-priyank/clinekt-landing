@@ -17,9 +17,9 @@ flagging, UPI/Razorpay payment collection, and WhatsApp payment reminders.
 - Free tools: GST calculator, TDS calculator, invoice generator, contract generator
 
 ## Pricing
-- Free forever plan (no credit card)
-- Solo plan: ₹149/month (founding price, locked for early users)
-- Studio plan: ₹349/month (founding price, locked for early users)
+- Currently free during early access — full Studio plan at no cost, no credit card required
+- All features included: proposals, contracts, GST invoices, UPI payments, team collaboration, AI proposal drafter
+- Early access users lock in founding pricing before public launch
 - No transaction fees on payments
 
 ## Free Tools
