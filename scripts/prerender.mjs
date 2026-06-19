@@ -46,6 +46,9 @@ const ROUTES = [
   '/blog/free-client-management-software-india',
   '/blog/freelancer-billing-software-india',
   '/blog/how-to-manage-clients-freelancer-india',
+  '/blog/bonsai-zoom-acquisition-india-alternative',
+  '/blog/zoho-books-alternative-india-freelancers',
+  '/blog/refrens-vs-clearwork',
 ]
 
 // Resolve browser launch options — use @sparticuz/chromium on Vercel

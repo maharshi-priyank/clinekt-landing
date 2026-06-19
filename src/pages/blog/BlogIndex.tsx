@@ -131,6 +131,30 @@ const POSTS = [
     readTime: '9 min',
     category: 'Freelancer Tools',
   },
+  {
+    slug: 'bonsai-zoom-acquisition-india-alternative',
+    title: 'Bonsai Acquired by Zoom: What Indian Freelancers Should Do Now',
+    description: 'Zoom acquired Bonsai. For Indian freelancers this changes everything — Bonsai never supported GST or UPI anyway. Here\'s the best India alternative in 2026.',
+    date: 'June 2026',
+    readTime: '7 min',
+    category: 'Freelancer Tools',
+  },
+  {
+    slug: 'zoho-books-alternative-india-freelancers',
+    title: 'Zoho Books Alternative India — Simpler Tools for Freelancers',
+    description: 'Zoho Books is built for businesses with accountants, not solo freelancers. Compare simpler alternatives with GST invoicing, UPI payments, and proposals built in.',
+    date: 'June 2026',
+    readTime: '8 min',
+    category: 'Freelancer Tools',
+  },
+  {
+    slug: 'refrens-vs-clearwork',
+    title: 'Refrens vs ClearWork — Which Is Right for Indian Freelancers?',
+    description: 'Refrens is great for GST invoicing but stops there. ClearWork adds proposals, e-sign contracts, CRM, and WhatsApp reminders. Full feature comparison for Indian freelancers.',
+    date: 'June 2026',
+    readTime: '7 min',
+    category: 'Freelancer Tools',
+  },
 ]
 
 const CATEGORY_COLORS: Record<string, string> = {

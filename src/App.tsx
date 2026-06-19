@@ -35,6 +35,9 @@ const FreeInvoiceSoftwareIndia               = lazy(() => import('./pages/blog/F
 const FreeClientManagementSoftwareIndia      = lazy(() => import('./pages/blog/FreeClientManagementSoftwareIndia'))
 const FreelancerBillingSoftwareIndia         = lazy(() => import('./pages/blog/FreelancerBillingSoftwareIndia'))
 const HowToManageClientsFreelancerIndia      = lazy(() => import('./pages/blog/HowToManageClientsFreelancerIndia'))
+const BonsaiZoomAcquisitionIndiaAlternative  = lazy(() => import('./pages/blog/BonsaiZoomAcquisitionIndiaAlternative'))
+const ZohoBookAlternativeIndiaFreelancers    = lazy(() => import('./pages/blog/ZohoBookAlternativeIndiaFreelancers'))
+const RefrensVsClearwork                     = lazy(() => import('./pages/blog/RefrensVsClearwork'))
 
 function RouteTracker() {
   const { pathname } = useLocation()
@@ -104,6 +107,9 @@ export default function App() {
             <Route path="/blog/free-client-management-software-india"         element={<FreeClientManagementSoftwareIndia />} />
             <Route path="/blog/freelancer-billing-software-india"             element={<FreelancerBillingSoftwareIndia />} />
             <Route path="/blog/how-to-manage-clients-freelancer-india"        element={<HowToManageClientsFreelancerIndia />} />
+            <Route path="/blog/bonsai-zoom-acquisition-india-alternative"    element={<BonsaiZoomAcquisitionIndiaAlternative />} />
+            <Route path="/blog/zoho-books-alternative-india-freelancers"     element={<ZohoBookAlternativeIndiaFreelancers />} />
+            <Route path="/blog/refrens-vs-clearwork"                         element={<RefrensVsClearwork />} />
           </Routes>
         </Suspense>
         <Footer />
