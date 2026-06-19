@@ -85,6 +85,125 @@ body {
   background-size: 28px 28px;
 }
 
+/* Blog prose — styles raw HTML elements inside BlogLayout for pages that use <p>/<h2> directly */
+.prose-blog h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.prose-blog h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.prose-blog p {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.prose-blog ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+.prose-blog ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  list-style: decimal;
+}
+
+.prose-blog li {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.75;
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.prose-blog a {
+  color: #4f46e5;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-blog a:hover {
+  color: #3730a3;
+}
+
+.prose-blog strong,
+.prose-blog b {
+  font-weight: 600;
+  color: #111827;
+}
+
+.prose-blog table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin: 1.5rem 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid #f3f4f6;
+}
+
+.prose-blog thead tr {
+  background-color: #f9fafb;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.prose-blog th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}
+
+.prose-blog td {
+  padding: 0.75rem 1rem;
+  color: #374151;
+  border-bottom: 1px solid #f9fafb;
+}
+
+.prose-blog tr:last-child td {
+  border-bottom: none;
+}
+
+.prose-blog tr:hover {
+  background-color: #f9fafb;
+}
+
+.prose-blog code {
+  font-size: 0.875em;
+  background: #f3f4f6;
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  font-family: ui-monospace, monospace;
+  color: #111827;
+}
+
+.prose-blog blockquote {
+  border-left: 3px solid #e0e7ff;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: #6b7280;
+  font-style: italic;
+}
+
 /* Card hover lift */
 .card-hover {
   transition: transform 0.22s ease, box-shadow 0.22s ease;
