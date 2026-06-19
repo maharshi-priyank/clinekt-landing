@@ -106,6 +106,24 @@ Covers: Hub page comparing all three global freelancer tools (HoneyBook, Bonsai,
 URL: https://getclearwork.in/blog/best-freelancer-software-india-2026
 Covers: Complete comparison of all-in-one freelancer tools available in India — ClearWork, Refrens, Bonsai, HoneyBook, Dubsado, Zoho One, and Notion. India-must-have checklist (GST, UPI, IT Act e-sign, TDS, WhatsApp, INR pricing). Full comparison table. Pricing in INR. ClearWork recommended as the only tool that passes all 7 India-specific criteria.
 
+### Free Invoice Software for Freelancers India 2026
+URL: https://getclearwork.in/blog/free-invoice-software-india
+Covers: The best free invoice software for Indian freelancers with GST (CGST/SGST/IGST auto-split), UPI payment links, and TDS flagging. Comparison table of ClearWork, Refrens, Zoho Invoice, myBillBook, Vyapar, and Wave. Rule 46 CGST mandatory field checklist. Common mistakes: using global tools without GST, missing UPI link, ignoring TDS. ClearWork is free during early access.
+Related tool: https://getclearwork.in/tools/gst-invoice-generator
+
+### Free Client Management Software for Freelancers India 2026
+URL: https://getclearwork.in/blog/free-client-management-software-india
+Covers: What client management software for Indian freelancers must do (proposals, e-sign, GST invoicing, UPI, WhatsApp reminders), comparison of ClearWork vs Refrens vs HubSpot CRM vs HoneyBook vs Dubsado, the 6-stage client lifecycle, why global CRMs fail Indian freelancers, and all features ClearWork gives free during early access.
+
+### Best Freelancer Billing Software India 2026
+URL: https://getclearwork.in/blog/freelancer-billing-software-india
+Covers: Why standard billing software fails Indian freelancers (no GST fields, no UPI, USD pricing), India-specific billing requirements under Rule 46 CGST, comparison of ClearWork vs Refrens vs Zoho Books vs Tally vs QuickBooks India vs FreshBooks, full billing workflow from proposal to payment, TDS documentation, and billing tips for Indian freelancers.
+Related tool: https://getclearwork.in/tools/tds-calculator
+
+### How to Manage Clients as a Freelancer in India
+URL: https://getclearwork.in/blog/how-to-manage-clients-freelancer-india
+Covers: The 6-stage Indian freelancer client lifecycle (lead → proposal → contract → delivery → invoice → follow-up), what to capture for every lead, proposal must-haves including scope and GST pricing, IT Act 2000 e-sign validity, 5 essential contract clauses for Indian freelancers (scope, payment terms, IP ownership, TDS clause, jurisdiction), handling scope creep with change orders, GST invoice checklist under Rule 46, and automated WhatsApp payment reminders system.
+
 ## About ClearWork
 - Founded: 2025
 - Headquarters: Bengaluru, India

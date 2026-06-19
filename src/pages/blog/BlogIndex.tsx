@@ -95,6 +95,42 @@ const POSTS = [
     readTime: '8 min',
     category: 'Freelancer Tools',
   },
+  {
+    slug: 'free-invoice-software-india',
+    title: 'Free Invoice Software for Freelancers India 2026 — GST-Ready Options Compared',
+    description: 'The best free invoice software for Indian freelancers in 2026 — with GST (CGST/SGST/IGST), UPI payment links, and TDS support. ClearWork is free during early access with full Studio features.',
+    date: 'June 2026',
+    readTime: '7 min',
+    category: 'GST & Invoicing',
+    toolHref: '/tools/gst-invoice-generator',
+    toolLabel: 'Free GST Invoice Generator',
+  },
+  {
+    slug: 'free-client-management-software-india',
+    title: 'Free Client Management Software for Freelancers India 2026',
+    description: 'The best free client management software for Indian freelancers — proposals, contracts, GST invoices, and UPI payments in one tool. ClearWork is fully free during early access.',
+    date: 'June 2026',
+    readTime: '7 min',
+    category: 'Freelancer Tools',
+  },
+  {
+    slug: 'freelancer-billing-software-india',
+    title: 'Best Freelancer Billing Software India 2026 — GST, UPI & TDS in One Tool',
+    description: 'The best billing software for Indian freelancers — GST auto-calculation, UPI payment links, TDS tracking, and WhatsApp reminders. ClearWork is free during early access.',
+    date: 'June 2026',
+    readTime: '8 min',
+    category: 'GST & Invoicing',
+    toolHref: '/tools/tds-calculator',
+    toolLabel: 'Free TDS Calculator',
+  },
+  {
+    slug: 'how-to-manage-clients-freelancer-india',
+    title: 'How to Manage Clients as a Freelancer in India — Complete 2026 Guide',
+    description: 'A complete guide to managing freelance clients in India — from first contact to final payment. Covers proposals, contracts, GST invoices, TDS, and getting paid via UPI without chasing clients.',
+    date: 'June 2026',
+    readTime: '9 min',
+    category: 'Freelancer Tools',
+  },
 ]
 
 const CATEGORY_COLORS: Record<string, string> = {
