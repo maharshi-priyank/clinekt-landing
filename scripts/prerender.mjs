@@ -49,6 +49,8 @@ const ROUTES = [
   '/blog/bonsai-zoom-acquisition-india-alternative',
   '/blog/zoho-books-alternative-india-freelancers',
   '/blog/refrens-vs-clearwork',
+  '/about',
+  '/contact',
 ]
 
 // Resolve browser launch options — use @sparticuz/chromium on Vercel

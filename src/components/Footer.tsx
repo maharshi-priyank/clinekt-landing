@@ -11,10 +11,10 @@ const nav: Record<string, NavItem[]> = {
     { label: 'Changelog',    href: '#' },
   ],
   Company: [
-    { label: 'About',        href: '#' },
+    { label: 'About',        href: '/about' },
+    { label: 'Contact',      href: '/contact' },
     { label: 'Blog',         href: '/blog' },
-    { label: 'ProductHunt',  href: '#', external: true },
-    { label: 'LinkedIn',     href: '#', external: true },
+    { label: 'LinkedIn',     href: 'https://www.linkedin.com/company/getclearwork', external: true },
   ],
   Legal: [
     { label: 'Privacy Policy',   href: '/privacy' },

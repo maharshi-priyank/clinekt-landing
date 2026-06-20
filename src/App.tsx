@@ -38,6 +38,8 @@ const HowToManageClientsFreelancerIndia      = lazy(() => import('./pages/blog/H
 const BonsaiZoomAcquisitionIndiaAlternative  = lazy(() => import('./pages/blog/BonsaiZoomAcquisitionIndiaAlternative'))
 const ZohoBookAlternativeIndiaFreelancers    = lazy(() => import('./pages/blog/ZohoBookAlternativeIndiaFreelancers'))
 const RefrensVsClearwork                     = lazy(() => import('./pages/blog/RefrensVsClearwork'))
+const About                                  = lazy(() => import('./pages/About'))
+const Contact                                = lazy(() => import('./pages/Contact'))
 
 function RouteTracker() {
   const { pathname } = useLocation()
@@ -110,6 +112,8 @@ export default function App() {
             <Route path="/blog/bonsai-zoom-acquisition-india-alternative"    element={<BonsaiZoomAcquisitionIndiaAlternative />} />
             <Route path="/blog/zoho-books-alternative-india-freelancers"     element={<ZohoBookAlternativeIndiaFreelancers />} />
             <Route path="/blog/refrens-vs-clearwork"                         element={<RefrensVsClearwork />} />
+            <Route path="/about"                                             element={<About />} />
+            <Route path="/contact"                                           element={<Contact />} />
           </Routes>
         </Suspense>
         <Footer />
