@@ -29,23 +29,31 @@ const values = [
 const differentiators = [
   {
     icon: IndianRupee,
-    label: 'GST-native',
+    label: 'GST-native invoicing',
     detail: 'CGST/SGST/IGST auto-detected by client state. Rule 46 compliant.',
+    bg: 'bg-indigo-50',
+    color: 'text-indigo-600',
   },
   {
     icon: FileText,
     label: 'IT Act 2000 e-sign',
     detail: 'OTP-based contracts legally valid under Indian law — no DocuSign needed.',
+    bg: 'bg-emerald-50',
+    color: 'text-emerald-600',
   },
   {
     icon: Globe,
-    label: 'UPI + WhatsApp',
+    label: 'UPI payment collection',
     detail: 'Embedded UPI payment links and automated payment reminders over WhatsApp.',
+    bg: 'bg-amber-50',
+    color: 'text-amber-600',
   },
   {
     icon: Star,
-    label: 'One workflow',
+    label: 'One end-to-end workflow',
     detail: 'Lead → proposal → contract → invoice → payment in a single tool.',
+    bg: 'bg-violet-50',
+    color: 'text-violet-600',
   },
 ]
 
@@ -66,12 +74,10 @@ export default function About() {
             <Users size={28} className="text-white" />
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold mb-4 leading-tight">
-            Built by freelancers,<br className="hidden sm:block" /> for freelancers
+            India's client workflow platform
           </h1>
           <p className="text-gray-400 text-base max-w-xl mx-auto leading-relaxed">
-            ClearWork started because every Indian freelancer we knew was running their business
-            across Google Docs, WhatsApp, a broken invoice template, and three separate logins.
-            There had to be a better way.
+            Built for 15M Indian freelancers who needed GST, UPI, and e-sign in one tool — not five.
           </p>
           <div className="mt-6 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 text-xs font-semibold text-gray-300">
             <MapPin size={11} />
@@ -130,10 +136,10 @@ export default function About() {
           <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
             <h2 className="text-xl font-bold text-gray-900 mb-5">What we built differently</h2>
             <div className="grid sm:grid-cols-2 gap-4">
-              {differentiators.map(({ icon: Icon, label, detail }) => (
+              {differentiators.map(({ icon: Icon, label, detail, bg, color }) => (
                 <div key={label} className="flex items-start gap-3 p-4 rounded-xl bg-gray-50">
-                  <div className="w-9 h-9 bg-indigo-50 rounded-lg flex items-center justify-center shrink-0">
-                    <Icon size={16} className="text-indigo-600" />
+                  <div className={`w-9 h-9 ${bg} rounded-lg flex items-center justify-center shrink-0`}>
+                    <Icon size={16} className={color} />
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-gray-900">{label}</p>

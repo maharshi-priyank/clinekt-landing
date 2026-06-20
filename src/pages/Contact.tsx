@@ -1,66 +1,83 @@
-import { Link } from 'react-router-dom'
-import { Mail, MessageCircle, Briefcase, Clock, ArrowRight, HelpCircle } from 'lucide-react'
+import { useState } from 'react'
+import { Mail, Send, CheckCircle2, AlertCircle } from 'lucide-react'
 import { useSeo } from '../lib/useSeo'
 
-const channels = [
-  {
-    icon: Mail,
-    color: 'text-indigo-600',
-    bg: 'bg-indigo-50',
-    title: 'General inquiries',
-    detail: 'Questions about ClearWork, your account, or anything else.',
-    action: 'hello@getclearwork.in',
-    href: 'mailto:hello@getclearwork.in',
-  },
-  {
-    icon: MessageCircle,
-    color: 'text-emerald-600',
-    bg: 'bg-emerald-50',
-    title: 'Product support',
-    detail: 'Something not working as expected? We\'ll sort it out fast.',
-    action: 'support@getclearwork.in',
-    href: 'mailto:support@getclearwork.in',
-  },
-  {
-    icon: Briefcase,
-    color: 'text-amber-600',
-    bg: 'bg-amber-50',
-    title: 'Partnerships',
-    detail: 'CA firms, agencies, communities — let\'s talk about working together.',
-    action: 'partners@getclearwork.in',
-    href: 'mailto:partners@getclearwork.in',
-  },
-]
+const CATEGORIES = [
+  'General enquiry',
+  'Product feedback',
+  'Support',
+  'Partnership',
+  'Press',
+] as const
 
-const faqs = [
-  {
-    q: 'How long does it take to get a response?',
-    a: 'We respond to all emails within 24–48 hours on business days. Support issues are usually resolved same-day.',
-  },
-  {
-    q: 'Is ClearWork really free right now?',
-    a: 'Yes — completely free during early access. Full Studio plan, all features, no credit card required. Early access users lock in founding pricing before the public launch.',
-  },
-  {
-    q: 'I found a bug or have a feature request.',
-    a: 'Email support@getclearwork.in with the details. We log every report and share updates when the fix ships. Feature requests are reviewed weekly.',
-  },
-  {
-    q: 'Can I get a demo or walkthrough?',
-    a: 'Email hello@getclearwork.in and we\'ll set up a quick call. We\'re happy to walk through the product live and understand your workflow.',
-  },
-  {
-    q: 'How do I report a security issue?',
-    a: 'Email security@getclearwork.in directly. We treat security reports as high priority and respond within 24 hours. Please do not share vulnerability details publicly before we\'ve had a chance to address them.',
-  },
-]
+type Category = typeof CATEGORIES[number]
+
+interface FormState {
+  name: string
+  email: string
+  category: Category | ''
+  message: string
+}
+
+type Status = 'idle' | 'submitting' | 'success' | 'error'
+
+const API_BASE = (import.meta.env.VITE_API_URL as string | undefined) ?? 'http://localhost:3000'
 
 export default function Contact() {
   useSeo(
     'Contact ClearWork — Get in Touch',
-    'Contact the ClearWork team for support, partnerships, or general questions. We respond within 24–48 hours. hello@getclearwork.in',
+    'Contact the ClearWork team for support, product feedback, partnerships, or general questions. We respond within 24–48 hours.',
     'https://getclearwork.in/contact',
   )
+
+  const [form, setForm] = useState<FormState>({ name: '', email: '', category: '', message: '' })
+  const [touched, setTouched] = useState<Partial<Record<keyof FormState, boolean>>>({})
+  const [status, setStatus] = useState<Status>('idle')
+  const [submittedEmail, setSubmittedEmail] = useState('')
+
+  function validate(field: keyof FormState, value: string): string {
+    if (field === 'name') return value.trim().length < 2 ? 'Name must be at least 2 characters' : ''
+    if (field === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? '' : 'Enter a valid email address'
+    if (field === 'category') return value === '' ? 'Please select a category' : ''
+    if (field === 'message') return value.trim().length < 10 ? 'Message must be at least 10 characters' : ''
+    return ''
+  }
+
+  function getError(field: keyof FormState): string {
+    if (!touched[field]) return ''
+    return validate(field, form[field])
+  }
+
+  function handleBlur(field: keyof FormState) {
+    setTouched(t => ({ ...t, [field]: true }))
+  }
+
+  function handleChange(field: keyof FormState, value: string) {
+    setForm(f => ({ ...f, [field]: value }))
+  }
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    const allTouched: Partial<Record<keyof FormState, boolean>> = { name: true, email: true, category: true, message: true }
+    setTouched(allTouched)
+    const hasErrors = (Object.keys(form) as Array<keyof FormState>).some(f => validate(f, form[f]) !== '')
+    if (hasErrors) return
+
+    setStatus('submitting')
+    setSubmittedEmail(form.email)
+
+    try {
+      const res = await fetch(`${API_BASE}/api/v1/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      setStatus('success')
+    } catch {
+      setStatus('error')
+    }
+  }
 
   return (
     <div className="min-h-screen bg-[#F4F6FB] pt-16">
@@ -73,103 +90,147 @@ export default function Contact() {
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold mb-4">Get in touch</h1>
           <p className="text-gray-400 text-base max-w-xl mx-auto leading-relaxed">
-            We're a small, India-based team and we read every message personally.
-            Whether it's a support issue, a feature request, or just a question — reach out.
+            We read every message personally. Usually respond within 24–48 hours.
           </p>
         </div>
       </section>
 
-      {/* Response time bar */}
-      <section className="bg-white border-b border-gray-100 py-5 px-5">
-        <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-6 text-center">
-          <div className="flex items-center gap-2 text-sm text-gray-600">
-            <Clock size={15} className="text-indigo-500" />
-            <span>Response within <strong className="text-gray-900">24–48 hours</strong></span>
-          </div>
-          <div className="w-px h-4 bg-gray-200 hidden sm:block" />
-          <div className="text-sm text-gray-600">
-            Support issues resolved <strong className="text-gray-900">same day</strong> when possible
-          </div>
-          <div className="w-px h-4 bg-gray-200 hidden sm:block" />
-          <div className="text-sm text-gray-600">
-            Business hours: <strong className="text-gray-900">Mon–Fri, 10am–7pm IST</strong>
-          </div>
-        </div>
-      </section>
-
+      {/* Form section */}
       <section className="py-12 px-5">
-        <div className="max-w-3xl mx-auto space-y-5">
+        <div className="max-w-lg mx-auto">
 
-          {/* Contact channels */}
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
-            <h2 className="text-lg font-bold text-gray-900 mb-5">How to reach us</h2>
-            <div className="space-y-4">
-              {channels.map(({ icon: Icon, color, bg, title, detail, action, href }) => (
-                <a
-                  key={href}
-                  href={href}
-                  className="flex items-start gap-4 p-4 rounded-xl border border-gray-100 hover:border-indigo-100 hover:bg-indigo-50/30 transition-all group"
-                >
-                  <div className={`w-10 h-10 ${bg} rounded-xl flex items-center justify-center shrink-0`}>
-                    <Icon size={18} className={color} />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-semibold text-gray-900">{title}</p>
-                    <p className="text-xs text-gray-400 mt-0.5 leading-relaxed">{detail}</p>
-                    <p className="text-sm font-medium text-indigo-600 mt-2 group-hover:text-indigo-800 transition-colors">{action}</p>
-                  </div>
-                  <ArrowRight size={15} className="text-gray-300 group-hover:text-indigo-400 transition-colors mt-0.5 shrink-0" />
-                </a>
-              ))}
+          {status === 'success' ? (
+            <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-10 text-center">
+              <div className="flex justify-center mb-4">
+                <CheckCircle2 size={48} className="text-emerald-500" />
+              </div>
+              <h2 className="text-xl font-bold text-gray-900 mb-2">Message sent!</h2>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                We'll get back to you at{' '}
+                <span className="font-medium text-gray-700">{submittedEmail}</span>{' '}
+                within 24–48 hours.
+              </p>
             </div>
-          </div>
-
-          {/* FAQ */}
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
-            <div className="flex items-center gap-2.5 mb-5">
-              <HelpCircle size={18} className="text-indigo-500" />
-              <h2 className="text-lg font-bold text-gray-900">Common questions</h2>
-            </div>
-            <div className="space-y-4">
-              {faqs.map(({ q, a }) => (
-                <div key={q} className="border-b border-gray-50 last:border-0 pb-4 last:pb-0">
-                  <p className="text-sm font-semibold text-gray-900 mb-1.5">{q}</p>
-                  <p className="text-sm text-gray-500 leading-relaxed">{a}</p>
+          ) : (
+            <form
+              onSubmit={handleSubmit}
+              noValidate
+              className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 space-y-5"
+            >
+              {status === 'error' && (
+                <div className="flex items-start gap-2.5 bg-red-50 border border-red-100 rounded-xl p-3.5 text-sm text-red-700">
+                  <AlertCircle size={16} className="shrink-0 mt-0.5" />
+                  <span>
+                    Something went wrong. Please try again or email us at{' '}
+                    <a href="mailto:hello@getclearwork.in" className="underline font-medium">
+                      hello@getclearwork.in
+                    </a>.
+                  </span>
                 </div>
-              ))}
-            </div>
-          </div>
+              )}
 
-          {/* Social / community */}
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
-            <p className="text-sm font-semibold text-gray-900 mb-1">Find us online</p>
-            <p className="text-xs text-gray-400 mb-4">Follow product updates, release notes, and community conversations.</p>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href="https://www.linkedin.com/company/getclearwork"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-200 text-sm font-medium text-gray-700 hover:border-indigo-200 hover:text-indigo-700 transition-all"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="https://www.producthunt.com/products/clearwork"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-200 text-sm font-medium text-gray-700 hover:border-orange-200 hover:text-orange-600 transition-all"
-              >
-                Product Hunt
-              </a>
-            </div>
-          </div>
+              {/* Name + Email row */}
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
+                    Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    id="name"
+                    type="text"
+                    autoComplete="name"
+                    value={form.name}
+                    onChange={e => handleChange('name', e.target.value)}
+                    onBlur={() => handleBlur('name')}
+                    placeholder="Your name"
+                    className={`w-full rounded-xl border px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors ${getError('name') ? 'border-red-400 bg-red-50' : 'border-gray-200 bg-white'}`}
+                  />
+                  {getError('name') && <p className="mt-1 text-xs text-red-600">{getError('name')}</p>}
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
+                    Email <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    autoComplete="email"
+                    value={form.email}
+                    onChange={e => handleChange('email', e.target.value)}
+                    onBlur={() => handleBlur('email')}
+                    placeholder="you@example.com"
+                    className={`w-full rounded-xl border px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors ${getError('email') ? 'border-red-400 bg-red-50' : 'border-gray-200 bg-white'}`}
+                  />
+                  {getError('email') && <p className="mt-1 text-xs text-red-600">{getError('email')}</p>}
+                </div>
+              </div>
 
-          <p className="text-center text-xs text-gray-400 pt-2">
-            Also see our{' '}
-            <Link to="/security" className="underline hover:text-gray-700">Security & Privacy</Link>
-            {' '}page.{' '}
-            <Link to="/" className="underline hover:text-gray-700">← Back to home</Link>
-          </p>
+              {/* Category */}
+              <div>
+                <label htmlFor="category" className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Category <span className="text-red-500">*</span>
+                </label>
+                <select
+                  id="category"
+                  value={form.category}
+                  onChange={e => handleChange('category', e.target.value)}
+                  onBlur={() => handleBlur('category')}
+                  className={`w-full rounded-xl border px-3.5 py-2.5 text-sm outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors appearance-none bg-white ${getError('category') ? 'border-red-400 bg-red-50' : 'border-gray-200'} ${form.category === '' ? 'text-gray-400' : 'text-gray-900'}`}
+                >
+                  <option value="" disabled>Select a category</option>
+                  {CATEGORIES.map(c => (
+                    <option key={c} value={c}>{c}</option>
+                  ))}
+                </select>
+                {getError('category') && <p className="mt-1 text-xs text-red-600">{getError('category')}</p>}
+              </div>
+
+              {/* Message */}
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Message <span className="text-red-500">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  rows={4}
+                  value={form.message}
+                  onChange={e => handleChange('message', e.target.value)}
+                  onBlur={() => handleBlur('message')}
+                  placeholder="Tell us what's on your mind..."
+                  className={`w-full rounded-xl border px-3.5 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors resize-none ${getError('message') ? 'border-red-400 bg-red-50' : 'border-gray-200 bg-white'}`}
+                />
+                {getError('message') && <p className="mt-1 text-xs text-red-600">{getError('message')}</p>}
+              </div>
+
+              {/* Submit */}
+              <button
+                type="submit"
+                disabled={status === 'submitting'}
+                className="w-full flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold rounded-xl px-5 py-3 text-sm transition-colors"
+              >
+                {status === 'submitting' ? (
+                  <>
+                    <svg className="animate-spin h-4 w-4 text-white" viewBox="0 0 24 24" fill="none">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                    </svg>
+                    Sending…
+                  </>
+                ) : (
+                  <>
+                    <Send size={15} />
+                    Send message
+                  </>
+                )}
+              </button>
+            </form>
+          )}
+
+          {/* Email line */}
+          <div className="mt-5 flex items-center justify-center gap-2 text-xs text-gray-400">
+            <Mail size={13} />
+            <span>hello@getclearwork.in · Replies within 24–48h</span>
+          </div>
         </div>
       </section>
     </div>
