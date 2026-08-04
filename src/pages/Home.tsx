@@ -9,6 +9,7 @@ import MobileAppSection from '../components/MobileAppSection'
 import FeaturesSection from '../components/FeaturesSection'
 import EarlyAccessSection from '../components/EarlyAccessSection'
 import FounderNote from '../components/FounderNote'
+import TrustpilotSection from '../components/TrustpilotSection'
 import WaitlistSection from '../components/WaitlistSection'
 
 const HOME_SCHEMA = [
@@ -94,6 +95,7 @@ export default function Home() {
       <FeaturesSection />
       <EarlyAccessSection />
       <FounderNote />
+      <TrustpilotSection />
       <WaitlistSection />
     </main>
   )

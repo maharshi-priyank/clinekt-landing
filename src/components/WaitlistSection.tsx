@@ -39,6 +39,14 @@ export default function WaitlistSection() {
       await submitWaitlist(email)
       setSubmitted(true)
       trackWaitlistClick('waitlist_section')
+      // Ask the user for a Trustpilot review after they join the waitlist
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ;(window as any).tp?.('invitation', {
+        recipientEmail: email,
+        referenceId:    email,
+        locale:         'en-IN',
+        tags:           ['waitlist'],
+      })
     } catch {
       setError('Something went wrong. Please try again.')
     } finally {

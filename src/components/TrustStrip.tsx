@@ -56,6 +56,29 @@ export default function TrustStrip() {
               </div>
             </motion.div>
           ))}
+
+          {/* Trustpilot review badge */}
+          <motion.a
+            href="https://www.trustpilot.com/review/getclearwork.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 10 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.4, delay: badges.length * 0.06, ease }}
+            className="flex items-center gap-3 px-4 py-2.5 rounded-xl border border-white/80 shadow-sm hover:shadow-md transition-shadow"
+            style={{ background: 'rgba(255,255,255,0.65)', backdropFilter: 'blur(8px)' }}
+          >
+            <div className="w-8 h-8 rounded-lg bg-[#00b67a]/10 flex items-center justify-center shrink-0">
+              {/* Trustpilot star */}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2l2.938 6.326L22 9.274l-5 4.869 1.18 6.857L12 17.77l-6.18 3.23L7 14.143 2 9.274l7.062-.948L12 2z"/>
+              </svg>
+            </div>
+            <div>
+              <p className="text-xs font-semibold text-gray-900 leading-snug">Review us</p>
+              <p className="text-[10px] text-gray-500 mt-0.5">On Trustpilot</p>
+            </div>
+          </motion.a>
         </div>
       </div>
     </section>
