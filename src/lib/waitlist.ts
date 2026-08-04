@@ -1,37 +1,40 @@
-const BASE  = import.meta.env.VITE_SUPABASE_URL  as string | undefined
-const ANON  = import.meta.env.VITE_SUPABASE_ANON as string | undefined
-const TABLE = 'waitlist_signups'
+const SUPABASE_BASE = import.meta.env.VITE_SUPABASE_URL as string | undefined
+const SUPABASE_ANON = import.meta.env.VITE_SUPABASE_ANON as string | undefined
+const API_BASE      = (import.meta.env.VITE_API_URL as string | undefined) ?? 'http://localhost:3000'
+const TABLE         = 'waitlist_signups'
 
-function headers() {
+function supabaseHeaders() {
   return {
     'Content-Type':  'application/json',
-    'apikey':        ANON ?? '',
-    'Authorization': `Bearer ${ANON ?? ''}`,
+    'apikey':        SUPABASE_ANON ?? '',
+    'Authorization': `Bearer ${SUPABASE_ANON ?? ''}`,
   }
 }
 
+/** @deprecated Waitlist signups are no longer collected — users sign up directly */
 export async function submitWaitlist(email: string): Promise<void> {
-  if (!BASE || !ANON) {
-    await new Promise(r => setTimeout(r, 800)) // dev fallback
+  if (!SUPABASE_BASE || !SUPABASE_ANON) {
+    await new Promise(r => setTimeout(r, 800))
     return
   }
-  const res = await fetch(`${BASE}/rest/v1/${TABLE}`, {
+  const res = await fetch(`${SUPABASE_BASE}/rest/v1/${TABLE}`, {
     method:  'POST',
-    headers: { ...headers(), 'Prefer': 'return=minimal' },
+    headers: { ...supabaseHeaders(), 'Prefer': 'return=minimal' },
     body:    JSON.stringify({ email, source: 'landing', created_at: new Date().toISOString() }),
   })
-  if (!res.ok && res.status !== 409) { // 409 = duplicate email, treat as success
+  if (!res.ok && res.status !== 409) {
     throw new Error(`Supabase error ${res.status}`)
   }
 }
 
-export async function fetchWaitlistCount(): Promise<number | null> {
-  if (!BASE || !ANON) return null
-  const res = await fetch(`${BASE}/rest/v1/${TABLE}?select=id`, {
-    headers: { ...headers(), 'Prefer': 'count=exact', 'Range': '0-0' },
-  })
-  if (!res.ok) return null
-  const range = res.headers.get('Content-Range') // e.g. "0-0/247"
-  const total = range?.split('/')[1]
-  return total ? Number(total) : null
+/** Returns total registered user count from the ClearWork API */
+export async function fetchPlatformUserCount(): Promise<number | null> {
+  try {
+    const res = await fetch(`${API_BASE}/public-profiles/stats`, { cache: 'no-store' })
+    if (!res.ok) return null
+    const data = await res.json() as { userCount?: number }
+    return data.userCount ?? null
+  } catch {
+    return null
+  }
 }

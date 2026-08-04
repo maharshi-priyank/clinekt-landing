@@ -1,7 +1,6 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { ArrowRight, CheckCircle2, Zap } from 'lucide-react'
-import { submitWaitlist } from '../lib/waitlist'
 import { useWaitlistCount } from '../hooks/useWaitlistCount'
 import { trackWaitlistClick } from '../lib/analytics'
 
@@ -16,43 +15,12 @@ const perks = [
   'Early pricing locked before public launch',
 ]
 
-const FOUNDING_CAP = 100
+const SIGNUP_URL = 'https://app.getclearwork.in/signup'
 
 export default function WaitlistSection() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
-  const [email, setEmail] = useState('')
-  const [submitted, setSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
   const count = useWaitlistCount()
-
-  const spotsLeft = count !== null ? Math.max(0, FOUNDING_CAP - count) : null
-  const foundingFull = spotsLeft !== null && spotsLeft <= 0
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!email) return
-    setLoading(true)
-    setError('')
-    try {
-      await submitWaitlist(email)
-      setSubmitted(true)
-      trackWaitlistClick('waitlist_section')
-      // Ask the user for a Trustpilot review after they join the waitlist
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      ;(window as any).tp?.('invitation', {
-        recipientEmail: email,
-        referenceId:    email,
-        locale:         'en-IN',
-        tags:           ['waitlist'],
-      })
-    } catch {
-      setError('Something went wrong. Please try again.')
-    } finally {
-      setLoading(false)
-    }
-  }
 
   return (
     <section
@@ -61,7 +29,7 @@ export default function WaitlistSection() {
       style={{ background: 'linear-gradient(180deg, #f7f4f1 0%, #f0ece6 40%, #eaecef 75%, #e4ecf4 100%)' }}
       ref={ref}
     >
-      {/* Noise texture — matches Hero */}
+      {/* Noise texture */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{ backgroundImage: `url("${NOISE}")` }}
@@ -79,7 +47,7 @@ export default function WaitlistSection() {
             style={{ background: 'rgba(255,255,255,0.60)', backdropFilter: 'blur(8px)' }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            Now accepting early access signups
+            Now open — start for free
           </span>
 
           <h2 className="text-4xl md:text-6xl font-bold text-gray-950 leading-tight tracking-tight mb-5">
@@ -89,20 +57,15 @@ export default function WaitlistSection() {
           </h2>
 
           {/* Early access banner */}
-          {!foundingFull && (
-            <div
-              className="flex items-start gap-2.5 rounded-xl px-4 py-3 mb-8 border border-white/70 max-w-md mx-auto text-left"
-              style={{ background: 'rgba(255,255,255,0.55)', backdropFilter: 'blur(8px)' }}
-            >
-              <Zap size={15} className="text-emerald-500 shrink-0" />
-              <p className="text-sm text-emerald-800 font-medium text-left">
-                <strong>Early access is free:</strong> Full Studio plan at no cost while we build with you.
-                {spotsLeft !== null && spotsLeft > 0 && (
-                  <span className="ml-1 font-bold text-emerald-900">— {spotsLeft} spot{spotsLeft === 1 ? '' : 's'} left</span>
-                )}
-              </p>
-            </div>
-          )}
+          <div
+            className="flex items-start gap-2.5 rounded-xl px-4 py-3 mb-8 border border-white/70 max-w-md mx-auto text-left"
+            style={{ background: 'rgba(255,255,255,0.55)', backdropFilter: 'blur(8px)' }}
+          >
+            <Zap size={15} className="text-emerald-500 shrink-0" />
+            <p className="text-sm text-emerald-800 font-medium text-left">
+              <strong>Early access is free:</strong> Full Studio plan at no cost while we build with you.
+            </p>
+          </div>
 
           <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
             {count !== null
@@ -111,42 +74,14 @@ export default function WaitlistSection() {
             }
           </p>
 
-          {submitted ? (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.92 }} animate={{ opacity: 1, scale: 1 }}
-              className="py-10 flex flex-col items-center gap-4"
-            >
-              <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-100">
-                <CheckCircle2 size={32} className="text-emerald-600" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900">You're on the list!</h3>
-              <p className="text-gray-600">
-                We'll reach out at <strong className="text-gray-900">{email}</strong> when it's your turn.
-              </p>
-              <p className="text-sm text-gray-500">
-                Meanwhile, share with a fellow freelancer or agency — they'll thank you.
-              </p>
-            </motion.div>
-          ) : (
-            <>
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <input
-                  type="email" value={email} onChange={e => setEmail(e.target.value)}
-                  placeholder="your@email.com" required
-                  className="flex-1 px-5 py-4 rounded-2xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/60 focus:border-transparent shadow-sm text-sm border border-white/80"
-                  style={{ background: 'rgba(255,255,255,0.70)', backdropFilter: 'blur(8px)' }}
-                />
-                <button type="submit" disabled={loading}
-                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl bg-gray-950 text-white font-semibold text-sm hover:bg-gray-800 disabled:opacity-60 transition-all flex-shrink-0 shadow-sm">
-                  {loading
-                    ? <span className="w-4 h-4 rounded-full border-2 border-white/40 border-t-white animate-spin" />
-                    : <><span>Get early access</span><ArrowRight size={16} /></>
-                  }
-                </button>
-              </form>
-              {error && <p className="text-sm text-red-600 mt-2">{error}</p>}
-            </>
-          )}
+          <a
+            href={SIGNUP_URL}
+            onClick={() => trackWaitlistClick('waitlist_section')}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gray-950 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-sm"
+          >
+            Get early access
+            <ArrowRight size={16} />
+          </a>
 
           {/* Perks */}
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-6">

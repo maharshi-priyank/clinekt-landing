@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-import { fetchWaitlistCount } from '../lib/waitlist'
+import { fetchPlatformUserCount } from '../lib/waitlist'
 
 export function useWaitlistCount() {
   const [count, setCount] = useState<number | null>(null)
 
   useEffect(() => {
-    fetchWaitlistCount().then(n => { if (n !== null) setCount(n) })
+    fetchPlatformUserCount().then(n => { if (n !== null) setCount(n) })
   }, [])
 
   return count
