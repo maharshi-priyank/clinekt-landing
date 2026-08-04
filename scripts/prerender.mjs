@@ -86,6 +86,7 @@ try {
   let done = 0
   for (const route of ROUTES) {
     const page = await browser.newPage()
+    await page.evaluateOnNewDocument(() => { window.__PRERENDER__ = true })
     await page.goto(`http://localhost:${PORT}${route}`, { waitUntil: 'networkidle0' })
     await new Promise(r => setTimeout(r, RENDER_DELAY_MS))
     let html = await page.content()

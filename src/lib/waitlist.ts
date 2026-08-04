@@ -29,8 +29,13 @@ export async function submitWaitlist(email: string): Promise<void> {
 
 /** Returns total registered user count from the ClearWork API */
 export async function fetchPlatformUserCount(): Promise<number | null> {
+  // Skip during prerender — avoids Puppeteer networkidle0 timeout
+  if ((window as any).__PRERENDER__) return null
   try {
-    const res = await fetch(`${API_BASE}/public-profiles/stats`, { cache: 'no-store' })
+    const res = await fetch(`${API_BASE}/public-profiles/stats`, {
+      cache:  'no-store',
+      signal: AbortSignal.timeout(5000),
+    })
     if (!res.ok) return null
     const data = await res.json() as { userCount?: number }
     return data.userCount ?? null
