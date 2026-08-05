@@ -37,8 +37,8 @@ export async function fetchPlatformUserCount(): Promise<number | null> {
       signal: AbortSignal.timeout(5000),
     })
     if (!res.ok) return null
-    const data = await res.json() as { userCount?: number }
-    return data.userCount ?? null
+    const data = await res.json() as { data?: { userCount?: number } }
+    return data.data?.userCount ?? null
   } catch {
     return null
   }
