@@ -1,22 +1,7 @@
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
 import { CheckCircle2, ArrowRight, Sparkles } from 'lucide-react'
+import { FadeIn } from './ui/FadeIn'
 
-const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 const APP_URL = 'https://app.getclearwork.in/signup'
-
-function FadeIn({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-60px' })
-  return (
-    <motion.div ref={ref} className={className}
-      initial={{ opacity: 0, y: 24 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.55, delay, ease }}>
-      {children}
-    </motion.div>
-  )
-}
 
 const features = [
   'Proposals with open tracking & e-sign contracts',

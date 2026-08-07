@@ -1,0 +1,120 @@
+import { motion } from 'framer-motion'
+import { ArrowRight, Plus, Sparkles } from 'lucide-react'
+import { useSeo } from '../lib/useSeo'
+import PricingSection from '../components/PricingSection'
+
+const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
+const APP_URL = 'https://app.getclearwork.in/signup'
+
+const faqs = [
+  {
+    q: 'Is ClearWork really free right now?',
+    a: 'Yes. Every plan — Free, Pro, and Studio — is 100% free until we welcome our first 50 users, with full Studio-level features unlocked. No credit card required. The prices shown on this page are what plans will cost after that, so you can plan ahead.',
+  },
+  {
+    q: 'When will paid plans start?',
+    a: 'Pricing kicks in once we\'ve onboarded our first 50 users. We\'ll give everyone plenty of notice before any plan starts charging, and the freelancers and agencies who join now lock in the best terms we\'ll ever offer.',
+  },
+  {
+    q: 'Do you take a cut of my payments?',
+    a: 'No. ClearWork charges a flat monthly subscription once paid plans begin — never a percentage of what you earn. Payments you collect via UPI, card, or net banking go straight to you.',
+  },
+  {
+    q: 'Can I switch plans later?',
+    a: 'Yes, you can upgrade or downgrade anytime from your account settings. Your data, clients, and history stay exactly as they are.',
+  },
+  {
+    q: 'What\'s the difference between Pro and Studio?',
+    a: 'Pro is built for a single freelancer or consultant — up to 25 clients, one workspace for your own work. Studio adds a team seat, unlimited clients, white-labelled documents and client portal, and multi-currency invoicing — built for agencies with a small team and multiple clients to manage.',
+  },
+]
+
+export default function Pricing() {
+  useSeo(
+    'ClearWork Pricing — 100% Free Until Our First 50 Users | Plans for Freelancers & Agencies',
+    'ClearWork is 100% free until we welcome our first 50 users — Free, Pro, and Studio plans, no credit card required. See what pricing will look like after: Free \u20b90, Pro \u20b9149/mo, Studio \u20b9649/mo.',
+    'https://getclearwork.in/pricing',
+  )
+
+  return (
+    <div className="bg-white">
+      {/* ── Hero ── */}
+      <section className="relative pt-28 pb-16 overflow-hidden">
+        <div className="absolute inset-0 dot-grid opacity-[0.25] pointer-events-none" />
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-indigo-50/70 rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-3xl mx-auto px-5 relative z-10 text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-white border border-gray-200 text-gray-500 shadow-sm mb-6">
+              <Sparkles size={11} className="text-emerald-500" />
+              Pricing
+            </span>
+            <h1 className="text-5xl md:text-6xl font-extrabold text-gray-950 tracking-tight leading-[1.05]">
+              Plans for every stage.{' '}
+              <span className="gradient-text">Free until our first 50 users.</span>
+            </h1>
+            <p className="mt-5 text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
+              Free, Pro, and Studio — pick the plan that fits your business. Every plan is
+              completely free until we welcome our first 50 users, no credit card required.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Pricing cards (shared component) ── */}
+      <PricingSection />
+
+      {/* ── FAQ ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map(f => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
+      />
+      <section className="py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-5">
+          <div className="text-center mb-10">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-white border border-gray-200 text-gray-500 shadow-sm mb-5">
+              <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
+              FAQs
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">Pricing questions</h2>
+          </div>
+          <div className="space-y-3">
+            {faqs.map(f => (
+              <details key={f.q} className="group rounded-2xl border border-gray-200 bg-white p-4 sm:p-5 [&_summary]:cursor-pointer">
+                <summary className="flex items-center justify-between gap-4 list-none">
+                  <span className="text-[14.5px] font-semibold text-gray-900">{f.q}</span>
+                  <span className="text-gray-400 group-open:rotate-45 transition-transform shrink-0"><Plus size={16} /></span>
+                </summary>
+                <p className="mt-3 text-[13.5px] text-gray-600 leading-relaxed">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Closing CTA ── */}
+      <section className="py-16 bg-gray-50 border-t border-gray-100">
+        <div className="max-w-2xl mx-auto px-5 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-950 tracking-tight">
+            Start free today. Upgrade whenever you're ready.
+          </h2>
+          <a href={APP_URL}
+            className="inline-flex items-center justify-center gap-2 mt-7 px-7 py-3.5 rounded-xl bg-gray-950 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-lg shadow-gray-950/10">
+            Get started free
+            <ArrowRight size={15} />
+          </a>
+          <p className="text-xs text-gray-400 mt-3">Free until our first 50 users · No credit card needed</p>
+        </div>
+      </section>
+    </div>
+  )
+}

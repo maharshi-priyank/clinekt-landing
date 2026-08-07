@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react'
-import { motion, useScroll, useTransform, useMotionValueEvent, type MotionValue } from 'framer-motion'
+import { motion, useScroll, useTransform, useMotionValueEvent, useReducedMotion, type MotionValue } from 'framer-motion'
 import { FadeIn } from './ui/FadeIn'
 
 interface IconDef {
@@ -17,8 +17,9 @@ const ICONS: IconDef[] = [
   { label: 'Claude AI',   src: '/brand-icons/claude.svg',     fallbackBg: '#D97757', fallbackInitial: 'A', cxPct: 0.68, cyPct: 0.76, dx:  0.65, dy:  1.00 },
 ]
 
-// Scroll thresholds (section=300vh → 200vh scroll range)
-// Hub phase: visible from 0 → 0.25 (50vh hold), then scatter 0.25→0.60
+// Scroll thresholds (section=230vh — thresholds are fractions of total progress, so they
+// stay correct regardless of the section's absolute height)
+// Hub phase: visible from 0 → 0.25, then scatter 0.25→0.60
 // Campaign: TRIGGERED (not scroll-driven) once progress hits 0.38 — plays via animation
 const T = { scatterStart: 0.25, scatterEnd: 0.60, centerOut: 0.48, campaignTrigger: 0.38 }
 const GAP_CENTER = 165
@@ -52,6 +53,7 @@ function AppIcon({ def, index, scrollYProgress, vpW, vpH }: {
 }
 
 export default function HubSpokeSection() {
+  const shouldReduceMotion = useReducedMotion()
   const sectionRef = useRef<HTMLDivElement>(null)
   const stickyRef  = useRef<HTMLDivElement>(null)
   const [dims, setDims] = useState({ w: 1440, h: 900 })
@@ -96,8 +98,8 @@ export default function HubSpokeSection() {
 
   return (
     <>
-    {/* ── Mobile: static fallback (300vh scroll is unusable on phones) ── */}
-    <div className="md:hidden py-16 px-5 relative overflow-hidden" style={{ background: '#f4f2ef' }}>
+    {/* ── Mobile + reduced-motion: static fallback (scroll-jack is unusable on phones / unwanted with prefers-reduced-motion) ── */}
+    <div className={`${shouldReduceMotion ? '' : 'md:hidden'} py-16 px-5 relative overflow-hidden`} style={{ background: '#f4f2ef' }}>
       <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, #C9CDD6 1.2px, transparent 1.2px)', backgroundSize: '30px 30px', opacity: 0.28 }} />
       <div className="relative z-10 max-w-sm mx-auto">
 
@@ -133,8 +135,9 @@ export default function HubSpokeSection() {
       </div>
     </div>
 
-    {/* ── Desktop: full 300vh scroll-driven animation ── */}
-    <section ref={sectionRef} className="hidden md:block" style={{ height: '300vh' }}>
+    {/* ── Desktop: full scroll-driven animation (skipped entirely for prefers-reduced-motion) ── */}
+    {!shouldReduceMotion && (
+    <section ref={sectionRef} className="hidden md:block" style={{ height: '230vh' }}>
       <div ref={stickyRef} style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden' }}>
 
         {/* Backgrounds */}
@@ -215,6 +218,7 @@ export default function HubSpokeSection() {
 
       </div>
     </section>
+    )}
     </>
   )
 }

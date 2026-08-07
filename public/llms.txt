@@ -136,6 +136,20 @@ Covers: Why Zoho Books is overkill for solo freelancers (complex setup, accounti
 URL: https://getclearwork.in/blog/refrens-vs-clearwork
 Covers: What Refrens does well (GST invoicing, GSTR-1, free plan), where Refrens falls short (no proposals, no e-sign, no CRM, no WhatsApp reminders, upmarket pivot), full 16-row feature comparison table, who should use Refrens vs ClearWork, pricing comparison, and whether using both tools together makes sense.
 
+### How to Write a Freelance Proposal That Gets Signed (India Guide)
+URL: https://getclearwork.in/blog/how-to-write-freelance-proposal-india
+Covers: The 6-part proposal structure (context, scope, timeline, pricing, terms, next step), a full worked ₹45,000 example with GST called out explicitly, whether to quote GST-inclusive or exclusive pricing, common mistakes that reduce signed rate, and what to do the moment a client accepts — converting a proposal directly into a contract and invoice instead of retyping from scratch.
+Related tool: https://getclearwork.in/tools/quote-generator
+
+### Client Ghosted After Your Proposal? Here's How to Follow Up (India)
+URL: https://getclearwork.in/blog/freelancer-client-follow-up-india
+Covers: Why clients go quiet after a proposal (budget approval, comparing quotes, forgetting — rarely personal), the 3-touch WhatsApp follow-up timeline (day 3, day 7, day 14) with copy-paste scripts, scenario-based scripts for no response/still deciding/price objection/lost the deal, and moving from manual tracking to automated follow-up reminders.
+
+### GST for Freelancers in India: The Complete 2026 Guide
+URL: https://getclearwork.in/blog/gst-for-freelancers-india-complete-guide
+Covers: GST registration threshold (₹20L, ₹10L special-category states), when voluntary registration below the threshold makes sense, step-by-step registration process, applicable GST rates by service type, zero-rated export of services and LUT filing, CGST/SGST vs IGST overview, filing cadence (GSTR-1, GSTR-3B, QRMP scheme for quarterly filing), and common registration/filing mistakes.
+Related tool: https://getclearwork.in/tools/gst-calculator
+
 ## About ClearWork
 - Founded: 2025
 - Headquarters: Bengaluru, India

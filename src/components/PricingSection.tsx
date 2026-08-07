@@ -1,8 +1,6 @@
-import { useRef, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
-import { Check, Star, Zap } from 'lucide-react'
-
-const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
+import { useState } from 'react'
+import { Check, Sparkles, Zap } from 'lucide-react'
+import { FadeIn } from './ui/FadeIn'
 
 const APP_URL = 'https://app.getclearwork.in/signup'
 
@@ -27,34 +25,37 @@ function formatPrice(inr: number, currency: typeof CURRENCIES[number]): string {
 const plans = [
   {
     name: 'Free',
-    monthly: 0,
-    foundingPrice: null,
-    regularPrice: null,
-    desc: 'Try before you buy. No card needed.',
-    features: ['1 workspace', '3 active projects', '3 proposals / month', 'GST invoice generator', 'Basic e-sign', 'ClearWork watermark on docs', 'Community support'],
+    tagline: 'For getting started',
+    futurePrice: 0,
+    limits: ['Up to 5 clients', 'Up to 10 active projects'],
+    features: [
+      'Full lead & CRM pipeline — unlimited leads',
+      '3 proposals / month',
+      'GST invoice generator',
+      'Basic e-sign',
+      'Meetings & reminders',
+      'Community support',
+    ],
     cta: 'Get started free',
     ctaHref: APP_URL,
     ctaClass: 'bg-gray-900 text-white hover:bg-gray-800',
     highlight: false,
   },
   {
-    name: 'Solo',
-    monthly: 149,
-    foundingPrice: 149,
-    regularPrice: 299,
-    desc: 'For freelancers, consultants & solo studios.',
+    name: 'Pro',
+    tagline: 'For growing freelancers',
+    futurePrice: 149,
+    limits: ['Up to 30 clients', 'Up to 60 active projects', 'Up to 5 team members'],
     features: [
-      '2 workspaces',
-      'Up to 25 clients',
-      'Unlimited projects & leads',
-      'E-sign contract (IT Act 2000)',
+      'Unlimited proposals & leads',
+      'E-sign contracts (IT Act 2000)',
       'GST invoice + TDS flagging',
       'UPI + card payment link in invoices',
-      'Auto payment reminders',
-      'Client portal',
+      'Auto WhatsApp + email payment reminders',
+      'White-label client portal',
       'Revenue dashboard',
       'AI proposal drafter',
-      'Email support',
+      'Priority email support',
     ],
     cta: 'Get started free',
     ctaHref: APP_URL,
@@ -63,21 +64,17 @@ const plans = [
   },
   {
     name: 'Studio',
-    monthly: 349,
-    foundingPrice: 349,
-    regularPrice: 699,
-    desc: 'For growing agencies & creative teams.',
+    tagline: 'For agencies at scale',
+    futurePrice: 649,
+    limits: ['Unlimited clients', 'Unlimited projects', 'Unlimited team members'],
     features: [
-      'Everything in Solo',
-      '5 workspaces',
-      'Unlimited clients',
-      '1 team member seat',
-      'White-label documents (no "Powered by ClearWork")',
-      'White-label client portal',
+      'Everything in Pro',
+      'White-label documents — no ClearWork branding',
+      'White-label client portal on your domain',
       'Multi-currency invoicing',
-      'GST report export',
-      'AI proposal drafter',
-      'Priority email support',
+      'GST quarterly report export',
+      'Team task allocation & payouts',
+      'Dedicated priority support',
     ],
     cta: 'Get started free',
     ctaHref: APP_URL,
@@ -87,24 +84,11 @@ const plans = [
 ]
 
 const benchmarks = [
-  { name: 'ClearWork Solo', price: '₹149/mo', note: 'Full India workflow ✓', good: true },
+  { name: 'ClearWork Pro', price: '₹149/mo', note: 'Full India workflow ✓', good: true },
   { name: 'Bonsai Essential', price: '₹1,600/mo', note: 'No GST, no India support', good: false },
   { name: 'HoneyBook Starter', price: '₹3,000/mo', note: 'Blocked in India', good: false },
   { name: 'Dubsado Basic', price: '₹2,500/mo', note: 'No UPI payments, USD only', good: false },
 ]
-
-function FadeIn({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-60px' })
-  return (
-    <motion.div ref={ref} className={className}
-      initial={{ opacity: 0, y: 24 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.55, delay, ease }}>
-      {children}
-    </motion.div>
-  )
-}
 
 export default function PricingSection() {
   const [currencyCode, setCurrencyCode] = useState<CurrencyCode>('INR')
@@ -127,10 +111,10 @@ export default function PricingSection() {
             not by taking a cut of your work.
           </p>
 
-          {/* Founding badge */}
-          <div className="inline-flex items-center gap-2 mt-8 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-sm font-semibold">
-            <Star size={13} className="fill-amber-500 text-amber-500" />
-            Founding pricing active — ends Aug 31, 2026
+          {/* Free-until-50 badge */}
+          <div className="inline-flex items-center gap-2 mt-8 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-semibold">
+            <Sparkles size={13} className="text-emerald-600" />
+            100% free until our first 50 users — no credit card
           </div>
 
           {/* Currency selector */}
@@ -168,7 +152,7 @@ export default function PricingSection() {
                 {plan.highlight && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                     <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-gray-950 text-white shadow-md">
-                      <Star size={11} className="fill-white" />
+                      <Sparkles size={11} />
                       Most popular
                     </span>
                   </div>
@@ -176,32 +160,25 @@ export default function PricingSection() {
 
                 <div className="mb-5">
                   <h3 className="text-lg font-bold text-gray-900">{plan.name}</h3>
-                  <p className="text-sm text-gray-500 mt-1">{plan.desc}</p>
+                  <p className="text-sm text-gray-500 mt-1">{plan.tagline}</p>
                 </div>
 
                 <div className="mb-6">
-                  {plan.monthly === 0 ? (
+                  <div className="flex items-baseline gap-1">
                     <span className="text-4xl font-bold text-gray-900">Free</span>
+                  </div>
+                  {plan.futurePrice > 0 ? (
+                    <p className="text-xs text-gray-400 mt-1.5">
+                      <span className="line-through">{formatPrice(plan.futurePrice, currency)}/mo</span>
+                      {' '}— waived until our first 50 users
+                    </p>
                   ) : (
-                    <div>
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-4xl font-bold text-gray-900 tabular-nums">
-                          {formatPrice(plan.monthly, currency)}
-                        </span>
-                        <span className="text-gray-400 text-sm font-medium">/mo</span>
-                      </div>
-                      {plan.regularPrice && (
-                        <p className="text-xs text-gray-400 mt-1">
-                          <span className="line-through">{formatPrice(plan.regularPrice, currency)}/mo</span>
-                          {' '}after Aug 31
-                        </p>
-                      )}
-                      {currencyCode !== 'INR' && (
-                        <p className="text-[11px] text-gray-400 mt-0.5">
-                          ₹{plan.monthly.toLocaleString('en-IN')}/mo · approx.
-                        </p>
-                      )}
-                    </div>
+                    <p className="text-xs text-gray-400 mt-1.5">Free forever, no catch</p>
+                  )}
+                  {currencyCode !== 'INR' && plan.futurePrice > 0 && (
+                    <p className="text-[11px] text-gray-400 mt-0.5">
+                      ₹{plan.futurePrice.toLocaleString('en-IN')}/mo · approx. planned price
+                    </p>
                   )}
                 </div>
 
@@ -209,6 +186,16 @@ export default function PricingSection() {
                   className={`block text-center py-3 px-5 rounded-xl font-bold text-sm transition-all duration-200 mb-6 ${plan.ctaClass}`}>
                   {plan.cta}
                 </a>
+
+                {/* Usage limits — called out first, matching a plan-at-a-glance style */}
+                <ul className="space-y-2.5 pb-3 mb-3 border-b border-gray-100">
+                  {plan.limits.map(l => (
+                    <li key={l} className="flex items-start gap-2.5">
+                      <Check size={14} strokeWidth={2.5} className="flex-shrink-0 mt-0.5 text-indigo-500" />
+                      <span className="text-sm font-semibold text-gray-800">{l}</span>
+                    </li>
+                  ))}
+                </ul>
 
                 <ul className="space-y-2.5 flex-1">
                   {plan.features.map(f => (

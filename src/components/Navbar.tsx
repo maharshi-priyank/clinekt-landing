@@ -7,6 +7,7 @@ import { trackCTAClick } from '../lib/analytics'
 const links = [
   { label: 'How it works', anchor: 'how-it-works', href: null },
   { label: 'Features',     anchor: null,            href: '/features' },
+  { label: 'Pricing',      anchor: null,            href: '/pricing' },
 ]
 
 const resourceLinks = [

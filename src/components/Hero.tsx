@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion'
+import { motion, useScroll, useTransform, useMotionValue, useSpring, useReducedMotion } from 'framer-motion'
 import { CheckCircle2, ChevronRight, ArrowDown } from 'lucide-react'
 import { trackCTAClick } from '../lib/analytics'
 
@@ -7,19 +7,11 @@ const APP_REGISTER = 'https://app.getclearwork.in/signup'
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number]
 
-const stagger = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.10 } },
-}
-const item = {
-  hidden: { opacity: 0, y: 28, filter: 'blur(4px)' },
-  show:   { opacity: 1, y: 0,  filter: 'blur(0px)', transition: { duration: 0.75, ease } },
-}
-
-/* Magnetic button — cursor attraction on hover */
+/* Magnetic button — cursor attraction on hover; inert when reduced motion is requested */
 function MagneticCTA({ href, children, onClick, className }: {
   href: string; children: React.ReactNode; onClick?: () => void; className?: string
 }) {
+  const shouldReduceMotion = useReducedMotion()
   const ref = useRef<HTMLAnchorElement>(null)
   const mx = useMotionValue(0)
   const my = useMotionValue(0)
@@ -27,7 +19,7 @@ function MagneticCTA({ href, children, onClick, className }: {
   const sy = useSpring(my, { stiffness: 180, damping: 18 })
 
   function onMove(e: React.MouseEvent) {
-    if (!ref.current) return
+    if (shouldReduceMotion || !ref.current) return
     const r = ref.current.getBoundingClientRect()
     mx.set((e.clientX - (r.left + r.width / 2)) * 0.28)
     my.set((e.clientY - (r.top  + r.height / 2)) * 0.28)
@@ -54,11 +46,12 @@ function MagneticCTA({ href, children, onClick, className }: {
 function StatBadge({ children, delay = 0, className = '' }: {
   children: React.ReactNode; delay?: number; className?: string
 }) {
+  const shouldReduceMotion = useReducedMotion()
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.85, y: 12 }}
       animate={{ opacity: 1, scale: 1,    y: 0 }}
-      transition={{ duration: 0.6, delay, ease }}
+      transition={{ duration: shouldReduceMotion ? 0.25 : 0.6, delay: shouldReduceMotion ? 0 : delay, ease }}
       className={`absolute z-20 flex items-center gap-2.5 px-3.5 py-2.5 rounded-2xl
         bg-white/90 backdrop-blur-md border border-white/60
         shadow-[0_8px_32px_rgba(0,0,0,0.10)] ${className}`}
@@ -69,6 +62,7 @@ function StatBadge({ children, delay = 0, className = '' }: {
 }
 
 export default function Hero() {
+  const shouldReduceMotion = useReducedMotion()
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start start', 'end start'] })
   const dashY     = useTransform(scrollYProgress, [0, 1], [0, -80])
@@ -76,6 +70,17 @@ export default function Hero() {
   const dashOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
   const heroOpacity = useTransform(scrollYProgress, [0, 0.55], [1, 0])
   const heroY       = useTransform(scrollYProgress, [0, 0.55], [0, -40])
+
+  const stagger = {
+    hidden: {},
+    show: { transition: { staggerChildren: shouldReduceMotion ? 0 : 0.10 } },
+  }
+  const item = shouldReduceMotion
+    ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.25 } } }
+    : {
+        hidden: { opacity: 0, y: 28, filter: 'blur(4px)' },
+        show:   { opacity: 1, y: 0,  filter: 'blur(0px)', transition: { duration: 0.75, ease } },
+      }
 
   return (
     <section
@@ -92,7 +97,7 @@ export default function Hero() {
             width: '60%', height: '65%',
             background: 'radial-gradient(ellipse, rgba(99,102,241,0.22) 0%, transparent 65%)',
             filter: 'blur(80px)',
-            animation: 'mesh-1 18s ease-in-out infinite',
+            animation: shouldReduceMotion ? 'none' : 'mesh-1 18s ease-in-out infinite',
           }}
         />
         <motion.div
@@ -102,7 +107,7 @@ export default function Hero() {
             width: '50%', height: '55%',
             background: 'radial-gradient(ellipse, rgba(139,92,246,0.18) 0%, transparent 65%)',
             filter: 'blur(90px)',
-            animation: 'mesh-2 22s ease-in-out infinite',
+            animation: shouldReduceMotion ? 'none' : 'mesh-2 22s ease-in-out infinite',
           }}
         />
         <motion.div
@@ -112,7 +117,7 @@ export default function Hero() {
             width: '55%', height: '45%',
             background: 'radial-gradient(ellipse, rgba(244,114,182,0.10) 0%, transparent 65%)',
             filter: 'blur(100px)',
-            animation: 'mesh-3 15s ease-in-out infinite',
+            animation: shouldReduceMotion ? 'none' : 'mesh-3 15s ease-in-out infinite',
           }}
         />
       </div>
@@ -140,7 +145,7 @@ export default function Hero() {
 
       {/* ── Hero content ── */}
       <motion.div
-        style={{ opacity: heroOpacity, y: heroY }}
+        style={shouldReduceMotion ? {} : { opacity: heroOpacity, y: heroY }}
         className="relative z-10"
       >
         <div className="max-w-5xl mx-auto px-5 pt-28 sm:pt-36 pb-10 text-center">
@@ -162,7 +167,7 @@ export default function Hero() {
               >
                 <span
                   className="w-2 h-2 rounded-full bg-emerald-500"
-                  style={{ animation: 'glow-pulse 2.2s ease-in-out infinite' }}
+                  style={{ animation: shouldReduceMotion ? 'none' : 'glow-pulse 2.2s ease-in-out infinite' }}
                 />
                 Free for Indian freelancers & agencies · No credit card
                 <ChevronRight size={13} className="text-indigo-400 group-hover:translate-x-0.5 transition-transform" />
@@ -175,7 +180,7 @@ export default function Hero() {
               className="font-black tracking-tight text-stone-900 leading-[1.02]"
               style={{ fontSize: 'clamp(44px, 7vw, 84px)', letterSpacing: '-0.03em' }}
             >
-              Run your freelance business
+              Find clients. Win them.
               <br />
               <span
                 className="serif-accent"
@@ -188,7 +193,7 @@ export default function Hero() {
                   fontWeight: 400,
                 }}
               >
-                like a pro.
+                Get paid.
               </span>
             </motion.h1>
 
@@ -196,11 +201,12 @@ export default function Hero() {
             <motion.p
               variants={item}
               className="mt-6 text-stone-500 leading-relaxed font-normal"
-              style={{ fontSize: 'clamp(16px, 1.3vw, 19px)', maxWidth: 520 }}
+              style={{ fontSize: 'clamp(16px, 1.3vw, 19px)', maxWidth: 540 }}
             >
-              One platform for Indian freelancers and agencies — from capturing your first lead
-              to getting the project done and paid. Proposals, e-sign contracts, GST invoices,
-              UPI payments, and project tracking, all connected end to end.
+              The end-to-end business platform for Indian freelancers, consultants, and growing
+              agencies — AI-powered lead discovery <em className="text-stone-400 font-normal not-italic">(coming soon)</em>,
+              tracked proposals, e-sign contracts, GST invoices, and UPI payments, all connected
+              in one place.
             </motion.p>
 
             {/* CTAs */}
@@ -245,7 +251,7 @@ export default function Hero() {
         {/* ── Dashboard showcase ── */}
         <div className="relative z-10 max-w-5xl mx-auto px-5 pb-0">
           <motion.div
-            style={{ y: dashY, scale: dashScale, opacity: dashOpacity }}
+            style={shouldReduceMotion ? {} : { y: dashY, scale: dashScale, opacity: dashOpacity }}
             className="relative"
           >
             {/* Glow behind dashboard */}
@@ -293,7 +299,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 48, scale: 0.96 }}
               animate={{ opacity: 1, y: 0,  scale: 1 }}
-              transition={{ duration: 1.0, delay: 0.55, ease }}
+              transition={{ duration: shouldReduceMotion ? 0.3 : 1.0, delay: shouldReduceMotion ? 0 : 0.55, ease }}
               className="relative rounded-t-2xl overflow-hidden"
               style={{
                 boxShadow: '0 -4px 80px rgba(99,102,241,0.14), 0 -2px 0 rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.06)',

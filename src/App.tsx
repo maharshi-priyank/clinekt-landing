@@ -18,6 +18,7 @@ const InvoiceNumberGenerator     = lazy(() => import('./pages/tools/InvoiceNumbe
 const ToolsIndex                 = lazy(() => import('./pages/ToolsIndex'))
 const Security                   = lazy(() => import('./pages/Security'))
 const FeaturesPage               = lazy(() => import('./pages/Features'))
+const PricingPage                = lazy(() => import('./pages/Pricing'))
 const Privacy                    = lazy(() => import('./pages/Privacy'))
 const Terms                      = lazy(() => import('./pages/Terms'))
 const BlogIndex                  = lazy(() => import('./pages/blog/BlogIndex'))
@@ -38,6 +39,9 @@ const HowToManageClientsFreelancerIndia      = lazy(() => import('./pages/blog/H
 const BonsaiZoomAcquisitionIndiaAlternative  = lazy(() => import('./pages/blog/BonsaiZoomAcquisitionIndiaAlternative'))
 const ZohoBookAlternativeIndiaFreelancers    = lazy(() => import('./pages/blog/ZohoBookAlternativeIndiaFreelancers'))
 const RefrensVsClearwork                     = lazy(() => import('./pages/blog/RefrensVsClearwork'))
+const FreelanceProposalGuideIndia            = lazy(() => import('./pages/blog/FreelanceProposalGuideIndia'))
+const ClientFollowUpGuideIndia               = lazy(() => import('./pages/blog/ClientFollowUpGuideIndia'))
+const GstFreelancersCompleteGuideIndia       = lazy(() => import('./pages/blog/GstFreelancersCompleteGuideIndia'))
 const About                                  = lazy(() => import('./pages/About'))
 const Contact                                = lazy(() => import('./pages/Contact'))
 
@@ -94,6 +98,7 @@ export default function App() {
             <Route path="/privacy"                             element={<Privacy />} />
             <Route path="/terms"                               element={<Terms />} />
             <Route path="/features"                            element={<FeaturesPage />} />
+            <Route path="/pricing"                              element={<PricingPage />} />
             <Route path="/blog"                                element={<BlogIndex />} />
             <Route path="/blog/how-to-create-gst-invoice-india"        element={<GstInvoiceGuide />} />
             <Route path="/blog/is-e-signature-legal-india"            element={<ESignatureLegalIndia />} />
@@ -112,6 +117,9 @@ export default function App() {
             <Route path="/blog/bonsai-zoom-acquisition-india-alternative"    element={<BonsaiZoomAcquisitionIndiaAlternative />} />
             <Route path="/blog/zoho-books-alternative-india-freelancers"     element={<ZohoBookAlternativeIndiaFreelancers />} />
             <Route path="/blog/refrens-vs-clearwork"                         element={<RefrensVsClearwork />} />
+            <Route path="/blog/how-to-write-freelance-proposal-india"        element={<FreelanceProposalGuideIndia />} />
+            <Route path="/blog/freelancer-client-follow-up-india"            element={<ClientFollowUpGuideIndia />} />
+            <Route path="/blog/gst-for-freelancers-india-complete-guide"     element={<GstFreelancersCompleteGuideIndia />} />
             <Route path="/about"                                             element={<About />} />
             <Route path="/contact"                                           element={<Contact />} />
           </Routes>

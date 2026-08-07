@@ -6,6 +6,34 @@ import { trackBlogRead } from '../../lib/analytics'
 
 const POSTS = [
   {
+    slug: 'how-to-write-freelance-proposal-india',
+    title: 'How to Write a Freelance Proposal That Gets Signed (India Guide)',
+    description: 'A 6-part structure for freelance proposals that actually get signed in India — with a real worked example, GST-clear pricing, and what to do the moment a client says yes.',
+    date: 'August 2026',
+    readTime: '9 min',
+    category: 'Proposals & Contracts',
+    toolHref: '/tools/quote-generator',
+    toolLabel: 'Free Quote Generator',
+  },
+  {
+    slug: 'freelancer-client-follow-up-india',
+    title: "Client Ghosted After Your Proposal? Here's How to Follow Up (India)",
+    description: 'Most freelancers lose deals from silence, not rejection. A 3-touch WhatsApp follow-up system for Indian freelancers, with copy-paste scripts that actually get replies.',
+    date: 'August 2026',
+    readTime: '8 min',
+    category: 'Client Management',
+  },
+  {
+    slug: 'gst-for-freelancers-india-complete-guide',
+    title: 'GST for Freelancers in India: The Complete 2026 Guide',
+    description: 'Do you need GST registration as a freelancer? Thresholds, rates, filing deadlines, and common mistakes — the complete 2026 guide for Indian freelancers and consultants.',
+    date: 'August 2026',
+    readTime: '11 min',
+    category: 'GST & Invoicing',
+    toolHref: '/tools/gst-calculator',
+    toolLabel: 'Free GST Calculator',
+  },
+  {
     slug: 'how-to-create-gst-invoice-india',
     title: 'How to Create a GST Invoice in India: Complete Guide for Freelancers',
     description: 'Step-by-step guide to creating GST-compliant invoices as a freelancer. Covers mandatory fields, CGST/SGST/IGST, SAC codes, due dates, and common mistakes.',
@@ -158,10 +186,12 @@ const POSTS = [
 ]
 
 const CATEGORY_COLORS: Record<string, string> = {
-  'GST & Invoicing':   'bg-indigo-50 text-indigo-700',
-  'Legal & Contracts': 'bg-emerald-50 text-emerald-700',
-  'Tax & TDS':         'bg-amber-50 text-amber-700',
-  'Freelancer Tools':  'bg-violet-50 text-violet-700',
+  'GST & Invoicing':      'bg-indigo-50 text-indigo-700',
+  'Legal & Contracts':    'bg-emerald-50 text-emerald-700',
+  'Tax & TDS':            'bg-amber-50 text-amber-700',
+  'Freelancer Tools':     'bg-violet-50 text-violet-700',
+  'Proposals & Contracts': 'bg-sky-50 text-sky-700',
+  'Client Management':    'bg-rose-50 text-rose-700',
 }
 
 export default function BlogIndex() {

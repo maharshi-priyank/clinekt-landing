@@ -3,10 +3,13 @@ import { useSchemaOrg } from '../lib/useSchemaOrg'
 import { useScrollDepth } from '../hooks/useScrollDepth'
 import Hero from '../components/Hero'
 import TrustStrip from '../components/TrustStrip'
+import StatStrip from '../components/StatStrip'
+import LeadFinderSection from '../components/LeadFinderSection'
 import HubSpokeSection from '../components/HubSpokeSection'
 import HowItWorks from '../components/HowItWorks'
-import MobileAppSection from '../components/MobileAppSection'
 import FeaturesSection from '../components/FeaturesSection'
+import AhaMoments from '../components/AhaMoments'
+import MobileAppSection from '../components/MobileAppSection'
 import EarlyAccessSection from '../components/EarlyAccessSection'
 import FounderNote from '../components/FounderNote'
 import TrustpilotSection from '../components/TrustpilotSection'
@@ -20,7 +23,7 @@ const HOME_SCHEMA = [
     'applicationCategory': 'BusinessApplication',
     'operatingSystem': 'Web',
     'url': 'https://getclearwork.in/',
-    'description': 'All-in-one client management software for Indian freelancers, consultants, and agencies. Proposals, contracts, GST invoices, UPI payments, and e-sign — one place, zero spreadsheets.',
+    'description': 'End-to-end business platform for Indian freelancers, consultants, and agencies. Tracked proposals, e-sign contracts, GST invoices, UPI payments — one place, zero spreadsheets.',
     'offers': {
       '@type': 'Offer',
       'price': '0',
@@ -46,7 +49,7 @@ const HOME_SCHEMA = [
     'name': 'ClearWork',
     'url': 'https://getclearwork.in/',
     'logo': 'https://getclearwork.in/og-image.png',
-    'description': 'India-first client management platform for freelancers, consultants, and growing agencies.',
+    'description': 'India-first, end-to-end business platform for freelancers, consultants, and growing agencies — from winning clients to getting paid.',
     'foundingDate': '2025',
     'address': {
       '@type': 'PostalAddress',
@@ -80,19 +83,21 @@ export default function Home() {
   useScrollDepth('home')
   useSchemaOrg(HOME_SCHEMA)
   useSeo(
-    'ClearWork — Free Client CRM for Freelancers, Consultants & Agencies | Free during Early Access',
-    'ClearWork is completely free during early access. Proposals, contracts, GST invoices, and payments — all in one place. Built for India with GST, UPI, and OTP e-sign. No credit card required.',
+    'ClearWork — Find Clients, Win Them, Get Paid | Free for Freelancers & Agencies',
+    'ClearWork is the end-to-end business platform for Indian freelancers and agencies — AI lead discovery (early access), tracked proposals, e-sign contracts, GST invoices, and UPI payments. Free during early access, no credit card required.',
     'https://getclearwork.in/',
   )
   return (
     <main>
       <Hero />
       <TrustStrip />
+      <StatStrip />
+      <LeadFinderSection />
       <HubSpokeSection />
-      {/* <FeaturePillars /> */}
       <HowItWorks />
-      <MobileAppSection />
       <FeaturesSection />
+      <AhaMoments />
+      <MobileAppSection />
       <EarlyAccessSection />
       <FounderNote />
       <TrustpilotSection />
