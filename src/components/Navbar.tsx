@@ -16,6 +16,7 @@ const resourceLinks = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
+  const [onDark, setOnDark] = useState(false)
   const [open, setOpen] = useState(false)
   const [resourcesOpen, setResourcesOpen] = useState(false)
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false)
@@ -28,8 +29,20 @@ export default function Navbar() {
   const loginHref    = 'https://app.getclearwork.in/login'
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 10)
-    window.addEventListener('scroll', fn)
+    const fn = () => {
+      const y = window.scrollY
+      setScrolled(y > 10)
+      // Detect when navbar is over the dark WaitlistSection / footer gradient
+      const waitlist = document.getElementById('waitlist')
+      if (waitlist) {
+        const top = waitlist.getBoundingClientRect().top + y
+        // dark zone: from waitlist start to waitlist end + 64px gradient ramp
+        const darkEnd = top + waitlist.offsetHeight + 64
+        setOnDark(y + 40 >= top && y + 40 < darkEnd)
+      }
+    }
+    window.addEventListener('scroll', fn, { passive: true })
+    fn()
     return () => window.removeEventListener('scroll', fn)
   }, [])
 
@@ -51,9 +64,11 @@ export default function Navbar() {
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? 'px-4 pt-3' : ''}`}
     >
       {/* Pill appears on scroll; transparent at top */}
-      <div className={`flex items-center justify-between transition-all duration-500 ${
+      <div className={`flex items-center justify-between transition-all duration-300 ${
         scrolled
-          ? 'max-w-5xl mx-auto px-6 h-[58px] rounded-2xl bg-white/92 backdrop-blur-2xl shadow-lg shadow-gray-900/10 border border-gray-200/80'
+          ? onDark
+            ? 'max-w-5xl mx-auto px-6 h-[58px] rounded-2xl bg-white/10 backdrop-blur-2xl shadow-lg shadow-black/20 border border-white/12'
+            : 'max-w-5xl mx-auto px-6 h-[58px] rounded-2xl bg-white/92 backdrop-blur-2xl shadow-lg shadow-gray-900/10 border border-gray-200/80'
           : 'max-w-6xl mx-auto px-6 h-[68px]'
       }`}>
 
@@ -67,12 +82,18 @@ export default function Navbar() {
           {links.map(l => l.href
             ? (
               <Link key={l.label} to={l.href}
-                className={`px-4 py-2 text-sm font-medium rounded-full transition-all ${pathname === l.href ? 'text-gray-900 bg-gray-100' : 'text-gray-600 hover:text-gray-900 hover:bg-black/5'}`}>
+                className={`px-4 py-2 text-sm font-medium rounded-full transition-all ${
+                  onDark
+                    ? 'text-white/70 hover:text-white hover:bg-white/10'
+                    : pathname === l.href ? 'text-gray-900 bg-gray-100' : 'text-gray-600 hover:text-gray-900 hover:bg-black/5'
+                }`}>
                 {l.label}
               </Link>
             ) : (
               <a key={l.anchor!} href={hrefFor(l.anchor!)}
-                className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-black/5 rounded-full transition-all">
+                className={`px-4 py-2 text-sm font-medium rounded-full transition-all ${
+                  onDark ? 'text-white/70 hover:text-white hover:bg-white/10' : 'text-gray-600 hover:text-gray-900 hover:bg-black/5'
+                }`}>
                 {l.label}
               </a>
             )
@@ -82,7 +103,11 @@ export default function Navbar() {
           <div ref={resourcesRef} className="relative">
             <button
               onClick={() => setResourcesOpen(v => !v)}
-              className={`flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-full transition-all ${resourcesOpen ? 'text-gray-900 bg-gray-100' : 'text-gray-600 hover:text-gray-900 hover:bg-black/5'}`}
+              className={`flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-full transition-all ${
+                onDark
+                  ? resourcesOpen ? 'text-white bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/10'
+                  : resourcesOpen ? 'text-gray-900 bg-gray-100' : 'text-gray-600 hover:text-gray-900 hover:bg-black/5'
+              }`}
             >
               Resources
               <ChevronDown size={13} className={`transition-transform duration-200 ${resourcesOpen ? 'rotate-180' : ''}`} />
@@ -124,12 +149,18 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-2 shrink-0">
-          <a href={loginHref} className="text-sm font-medium text-gray-600 hover:text-gray-900 px-4 py-2 rounded-full hover:bg-black/5 transition-all">
+          <a href={loginHref} className={`text-sm font-medium px-4 py-2 rounded-full transition-all ${
+            onDark ? 'text-white/60 hover:text-white hover:bg-white/10' : 'text-gray-600 hover:text-gray-900 hover:bg-black/5'
+          }`}>
             Sign in
           </a>
           <a href={registerHref}
             onClick={() => trackCTAClick('get_started', 'navbar')}
-            className="inline-flex items-center gap-1.5 text-sm font-semibold px-5 py-2.5 rounded-full bg-gray-950 text-white hover:bg-gray-800 shadow-sm transition-all">
+            className={`inline-flex items-center gap-1.5 text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm transition-all ${
+              onDark
+                ? 'bg-white text-stone-950 hover:bg-stone-100'
+                : 'bg-gray-950 text-white hover:bg-gray-800'
+            }`}>
             Get started free
             <ArrowRight size={14} />
           </a>

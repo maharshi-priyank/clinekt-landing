@@ -85,10 +85,10 @@ const steps: Step[] = [
   {
     id: 'automate',
     icon: TrendingUp,
-    category: 'Automations',
-    title: 'Automate follow-ups',
-    desc: 'Set up WhatsApp + email reminders for overdue invoices, auto-send onboarding forms after signing — all in a visual builder.',
-    pills: ['WhatsApp reminders', 'Email sequences', 'Visual builder', 'Auto-onboarding'],
+    category: 'Automations & Projects',
+    title: 'Track the project, automate the rest',
+    desc: 'Group all docs, time entries, and expenses under one project — see profit per engagement. Set WhatsApp + email reminders so overdue invoices chase themselves.',
+    pills: ['Project profit view', 'WhatsApp reminders', 'Auto-onboarding', 'Visual builder'],
     screenshot: '/screenshots/screenshot-automation.png',
     caption: 'Automation builder — Lead Follow-up flow',
     accentBg: 'bg-orange-50',
@@ -111,8 +111,9 @@ function StepCard({ step, index, total }: { step: Step; index: number; total: nu
         ref={ref}
         initial={{ opacity: 0, y: 56 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="grid grid-cols-1 lg:grid-cols-2 rounded-2xl border border-gray-100 overflow-hidden bg-white shadow-[0_2px_24px_rgba(0,0,0,0.07)] hover:shadow-[0_4px_36px_rgba(0,0,0,0.11)] transition-shadow duration-300"
+        whileHover={{ boxShadow: '0 8px 48px rgba(0,0,0,0.11)' }}
+        transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+        className="grid grid-cols-1 lg:grid-cols-2 rounded-2xl border border-stone-100 overflow-hidden bg-white shadow-[0_2px_20px_rgba(0,0,0,0.06)]"
       >
         {/* ── Left: text ── */}
         <div className="flex flex-col justify-center px-8 py-11 lg:px-12 lg:py-14">
@@ -121,16 +122,17 @@ function StepCard({ step, index, total }: { step: Step; index: number; total: nu
               <step.icon size={11} strokeWidth={2.5} />
               {step.category}
             </span>
-            <span className="ml-auto text-xs font-bold text-gray-200 tabular-nums">
+            <span className="ml-auto text-xs font-bold text-stone-200 tabular-nums">
               {String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
             </span>
           </div>
 
-          <h3 className="text-2xl lg:text-[28px] font-bold text-gray-900 tracking-tight leading-snug mb-4">
+          <h3 className="text-2xl lg:text-[28px] font-bold text-stone-900 tracking-tight leading-snug mb-4"
+              style={{ letterSpacing: '-0.02em' }}>
             {step.title}
           </h3>
 
-          <p className="text-gray-500 text-[15px] leading-relaxed mb-7 max-w-xs">
+          <p className="text-stone-500 text-[15px] leading-relaxed mb-7 max-w-xs">
             {step.desc}
           </p>
 
@@ -138,7 +140,7 @@ function StepCard({ step, index, total }: { step: Step; index: number; total: nu
             {step.pills.map(pill => (
               <span
                 key={pill}
-                className="text-[12px] font-medium text-gray-600 bg-gray-50 border border-gray-200 rounded-full px-3 py-1"
+                className="text-[12px] font-medium text-stone-600 bg-stone-50 border border-stone-200 rounded-full px-3 py-1"
               >
                 {pill}
               </span>
@@ -147,7 +149,10 @@ function StepCard({ step, index, total }: { step: Step; index: number; total: nu
         </div>
 
         {/* ── Right: dark device frame + screenshot ── */}
-        <div className="bg-[#111111] flex items-end justify-center px-6 pt-8 pb-0 overflow-hidden min-h-[300px]">
+        <div
+          className="flex items-end justify-center px-6 pt-8 pb-0 overflow-hidden min-h-[300px]"
+          style={{ background: 'linear-gradient(160deg, #141414 0%, #0D0D0D 100%)' }}
+        >
           <div className="w-full rounded-t-xl overflow-hidden border border-white/[0.06] shadow-2xl">
             <div className="flex items-center gap-1.5 px-3 py-2 bg-[#1C1C1E]">
               <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
@@ -175,23 +180,32 @@ function StepCard({ step, index, total }: { step: Step; index: number; total: nu
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-[#F9FAFB]">
+    <section id="how-it-works" style={{ background: '#F5F4F1' }}>
 
       {/* Header */}
       <div className="max-w-6xl mx-auto px-5 lg:px-8 pt-24 pb-16">
-        <div className="text-center">
-          <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-white border border-gray-200 text-gray-500 shadow-sm mb-5">
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-white border border-stone-200 text-stone-500 shadow-sm mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
-            The workflow
+            End to end workflow
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
-            Lead to payment.{' '}
-            <span className="gradient-text">In one tool.</span>
+          <h2
+            className="font-black text-stone-950 tracking-tight"
+            style={{ fontSize: 'clamp(30px, 4.5vw, 52px)', letterSpacing: '-0.025em' }}
+          >
+            Prospect to paid.{' '}
+            <span className="gradient-text font-medium">One workspace.</span>
           </h2>
-          <p className="text-gray-500 text-lg mt-4 max-w-md mx-auto">
-            Six steps. Zero switching between apps.
+          <p className="text-stone-500 text-lg mt-4 max-w-md mx-auto">
+            Six connected steps. Zero app switching. Built end to end for India.
           </p>
-        </div>
+        </motion.div>
       </div>
 
       {/* Sticky stack */}
