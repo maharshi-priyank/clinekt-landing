@@ -62,8 +62,8 @@ function asDeductions(input: Input): OldRegimeDeductions {
 
 export default function IncomeTaxCalculator() {
   useSeo(
-    'Income Tax Calculator FY 2025-26 — Old vs New Regime | ClearWork',
-    'Calculate income tax for FY 2025-26 (AY 2026-27). Compare old and new regime side-by-side. Free, instant, no signup. Built for Indian freelancers and salaried professionals.',
+    'Tax Calculator for Freelancers India — FY 2025-26 Old vs New Regime | ClearWork',
+    'Free tax calculator for freelancers in India — FY 2025-26 (AY 2026-27), old vs new regime compared side-by-side. Instant, no signup. Also works for salaried professionals.',
     'https://getclearwork.in/tools/income-tax-calculator',
   )
   useEffect(() => { trackToolUsed('income_tax_calculator') }, [])

@@ -7,8 +7,8 @@ import { useScrollDepth } from '../../hooks/useScrollDepth'
 import { trackBlogRead } from '../../lib/analytics'
 
 const meta: BlogMeta = {
-  title: 'Is E-Signature Legal in India? Everything Freelancers Need to Know',
-  description: 'E-signatures are fully legal in India under the IT Act 2000. Learn which contracts they cover, which they don\'t, how OTP-based signing works, and what makes your digital contract enforceable.',
+  title: 'Is E-Signature (Including DocuSign) Legal in India? Full Guide',
+  description: 'E-signatures — including DocuSign and OTP-based e-sign — are legal in India under the IT Act 2000. Learn which contracts they cover, which they don\'t, and what makes a digital contract enforceable.',
   date: 'June 2026',
   datePublished: '2026-06-14',
   readTime: '7 min',
@@ -209,6 +209,12 @@ export default function ESignatureLegalIndia() {
         cta="Generate a legally-worded freelance contract with IP protection, payment terms, and confidentiality clause. Send for OTP e-signature. Free, no signup."
       />
 
+      <Callout type="info">
+        Comparing e-sign tools? See how ClearWork's{' '}
+        <a href="/e-signature-software" className="underline font-medium">digital signature software</a>{' '}
+        stacks up against DocuSign, PandaDoc, and Adobe Sign for Indian freelancers.
+      </Callout>
+
       <H2>Practical Tips for Freelancers</H2>
 
       <UL items={[
@@ -221,6 +227,10 @@ export default function ESignatureLegalIndia() {
       ]} />
 
       <FAQ items={[
+        {
+          q: 'Is DocuSign legal in India?',
+          a: 'Yes — DocuSign is legally usable in India, and signatures made through it are recognised under the IT Act 2000 the same way any compliant e-signature platform is, provided the signing method meets the Act\'s authentication requirements. The bigger practical question for most freelancers is cost and fit: DocuSign is priced and built for enterprise contract workflows, and platforms with OTP/Aadhaar-based e-sign built specifically for Indian freelance contracts are usually simpler and cheaper for a single freelancer or small agency.',
+        },
         {
           q: 'Can I use WhatsApp to send a contract and get approval?',
           a: 'WhatsApp acceptance (e.g. "Yes I agree, seen 10:32am") technically constitutes acceptance under the Indian Contract Act. But in a dispute, it\'s hard to prove the exact terms that were agreed to. Always send a formal document with a proper e-sign — it takes two minutes and is far stronger evidence.',

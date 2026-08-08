@@ -1,10 +1,50 @@
+import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Clock, Calendar } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { ArrowRight, Clock, Calendar, Search, X, FileQuestion } from 'lucide-react'
 import { useSeo } from '../../lib/useSeo'
 import { useScrollDepth } from '../../hooks/useScrollDepth'
 import { trackBlogRead } from '../../lib/analytics'
 
+const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
+
 const POSTS = [
+  {
+    slug: 'gst-number-format-explained',
+    title: 'GST Number Format Explained: How to Read a GSTIN (With Examples)',
+    description: 'What does a GST number look like? Full breakdown of the 15-character GSTIN format, a worked example, state codes, how to spot a fake GSTIN, and sample numbers for testing.',
+    date: 'August 2026',
+    readTime: '7 min',
+    category: 'GST & Invoicing',
+    toolHref: '/tools/gst-invoice-generator',
+    toolLabel: 'Free GST Invoice Generator',
+  },
+  {
+    slug: 'how-to-get-freelance-clients-india',
+    title: 'How to Get Freelance Clients in India: 15 Proven Channels (2026)',
+    description: 'The 15 channels Indian freelancers actually use to land clients in 2026 — warm referrals, LinkedIn, Google Maps outreach, cold email, and which freelance platforms are worth your time.',
+    date: 'August 2026',
+    readTime: '10 min',
+    category: 'Client Acquisition',
+  },
+  {
+    slug: 'retainer-vs-project-pricing-agencies-india',
+    title: 'Monthly Retainer vs Project Pricing: Which Is Better for Your Agency?',
+    description: 'Retainer vs project pricing for Indian agencies — cash flow, margins, and client fit compared, plus the 60/40 hybrid model most profitable agencies actually run.',
+    date: 'August 2026',
+    readTime: '9 min',
+    category: 'Agency Operations',
+  },
+  {
+    slug: 'freelance-invoice-format-india',
+    title: 'Freelance Invoice Format India: What to Include (GST or Not)',
+    description: 'Not every Indian freelancer needs a GST invoice. Here\'s the correct invoice format whether you\'re GST-registered or not, with every mandatory field and a downloadable-style example.',
+    date: 'August 2026',
+    readTime: '8 min',
+    category: 'GST & Invoicing',
+    toolHref: '/tools/gst-invoice-generator',
+    toolLabel: 'Free GST Invoice Generator',
+  },
   {
     slug: 'how-to-write-freelance-proposal-india',
     title: 'How to Write a Freelance Proposal That Gets Signed (India Guide)',
@@ -186,12 +226,78 @@ const POSTS = [
 ]
 
 const CATEGORY_COLORS: Record<string, string> = {
-  'GST & Invoicing':      'bg-indigo-50 text-indigo-700',
-  'Legal & Contracts':    'bg-emerald-50 text-emerald-700',
-  'Tax & TDS':            'bg-amber-50 text-amber-700',
-  'Freelancer Tools':     'bg-violet-50 text-violet-700',
+  'GST & Invoicing':       'bg-indigo-50 text-indigo-700',
+  'Legal & Contracts':     'bg-emerald-50 text-emerald-700',
+  'Tax & TDS':             'bg-amber-50 text-amber-700',
+  'Freelancer Tools':      'bg-violet-50 text-violet-700',
   'Proposals & Contracts': 'bg-sky-50 text-sky-700',
-  'Client Management':    'bg-rose-50 text-rose-700',
+  'Client Management':     'bg-rose-50 text-rose-700',
+  'Client Acquisition':    'bg-orange-50 text-orange-700',
+  'Agency Operations':     'bg-teal-50 text-teal-700',
+}
+
+const CATEGORIES = ['All', ...Array.from(new Set(POSTS.map(p => p.category)))]
+
+const grid = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.04 } },
+}
+const card = {
+  hidden: { opacity: 0, y: 16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease } },
+}
+
+function PostCard({ post, featured = false }: { post: typeof POSTS[0]; featured?: boolean }) {
+  return (
+    <Link
+      to={`/blog/${post.slug}`}
+      className={`group flex flex-col h-full bg-white border border-gray-100 rounded-2xl transition-all duration-200 hover:border-indigo-200 hover:shadow-[0_8px_28px_rgba(0,0,0,0.07)] hover:-translate-y-0.5 ${
+        featured ? 'p-8 sm:p-9' : 'p-6'
+      }`}
+    >
+      <div className="flex items-center gap-2.5 mb-4">
+        <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${CATEGORY_COLORS[post.category] ?? 'bg-gray-100 text-gray-600'}`}>
+          {post.category}
+        </span>
+        {featured && (
+          <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-gray-950 text-white">Latest</span>
+        )}
+      </div>
+
+      <h2 className={`font-bold text-gray-900 leading-snug group-hover:text-indigo-700 transition-colors ${
+        featured ? 'text-2xl sm:text-3xl mb-3' : 'text-lg mb-2'
+      }`}>
+        {post.title}
+      </h2>
+
+      <p className={`text-gray-500 leading-relaxed ${featured ? 'text-[15px] mb-6 max-w-2xl' : 'text-[14px] mb-4 line-clamp-2 flex-1'}`}>
+        {post.description}
+      </p>
+
+      <div className="flex items-center justify-between gap-4 mt-auto">
+        <div className="flex items-center gap-4 text-xs text-gray-400">
+          <span className="flex items-center gap-1.5">
+            <Calendar size={12} />
+            {post.date}
+          </span>
+          <span className="flex items-center gap-1.5">
+            <Clock size={12} />
+            {post.readTime} read
+          </span>
+        </div>
+        <ArrowRight
+          size={16}
+          className="text-gray-300 group-hover:text-indigo-500 group-hover:translate-x-1 transition-all shrink-0"
+        />
+      </div>
+
+      {post.toolLabel && (
+        <p className="text-indigo-500 text-xs font-medium mt-3">
+          Includes: {post.toolLabel}
+        </p>
+      )}
+    </Link>
+  )
 }
 
 export default function BlogIndex() {
@@ -203,69 +309,116 @@ export default function BlogIndex() {
   useScrollDepth('blog')
   trackBlogRead('blog')
 
+  const [query, setQuery] = useState('')
+  const [activeCategory, setActiveCategory] = useState('All')
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase()
+    return POSTS.filter(p => {
+      const matchesCategory = activeCategory === 'All' || p.category === activeCategory
+      const matchesQuery = q === '' || p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q)
+      return matchesCategory && matchesQuery
+    })
+  }, [query, activeCategory])
+
+  const isFiltering = query.trim() !== '' || activeCategory !== 'All'
+  const featuredPost = !isFiltering ? filtered[0] : null
+  const gridPosts = featuredPost ? filtered.slice(1) : filtered
+
   return (
     <div className="bg-white min-h-screen">
       {/* Header */}
       <div className="bg-gray-50 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto px-5 py-12 md:py-16">
+        <div className="max-w-5xl mx-auto px-5 py-12 md:py-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-3">Blog</h1>
           <p className="text-lg text-gray-500 max-w-xl">
-            Practical guides on GST invoicing, contracts, and getting paid — written for
-            Indian freelancers and small agencies.
+            Practical guides on getting clients, pricing, GST invoicing, and contracts —
+            written for Indian freelancers and small agencies.
           </p>
         </div>
       </div>
 
-      {/* Posts */}
-      <div className="max-w-4xl mx-auto px-5 py-12">
-        <div className="space-y-6">
-          {POSTS.map(post => (
-            <Link
-              key={post.slug}
-              to={`/blog/${post.slug}`}
-              className="group block bg-white border border-gray-100 rounded-2xl p-7 hover:border-indigo-100 hover:shadow-sm transition-all"
-            >
-              <div className="flex items-start justify-between gap-6">
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${CATEGORY_COLORS[post.category] ?? 'bg-gray-100 text-gray-600'}`}>
-                      {post.category}
-                    </span>
-                  </div>
+      <div className="max-w-5xl mx-auto px-5 py-10 md:py-12">
 
-                  <h2 className="text-xl font-bold text-gray-900 mb-2 leading-snug group-hover:text-indigo-700 transition-colors">
-                    {post.title}
-                  </h2>
+        {/* Search + category filters */}
+        <div className="mb-10 space-y-4">
+          <div className="relative max-w-md">
+            <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+            <input
+              type="text"
+              value={query}
+              onChange={e => setQuery(e.target.value)}
+              placeholder="Search articles..."
+              aria-label="Search blog articles"
+              className="w-full pl-10 pr-9 py-3 rounded-xl border border-gray-200 bg-white text-sm text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+            />
+            {query && (
+              <button
+                type="button"
+                onClick={() => setQuery('')}
+                aria-label="Clear search"
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors"
+              >
+                <X size={14} />
+              </button>
+            )}
+          </div>
 
-                  <p className="text-gray-500 text-[15px] leading-relaxed mb-4 line-clamp-2">
-                    {post.description}
-                  </p>
-
-                  <div className="flex items-center gap-5 text-sm text-gray-400">
-                    <span className="flex items-center gap-1.5">
-                      <Calendar size={12} />
-                      {post.date}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <Clock size={12} />
-                      {post.readTime} read
-                    </span>
-                    {post.toolLabel && (
-                      <span className="text-indigo-400 text-xs font-medium">
-                        Includes: {post.toolLabel}
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                <ArrowRight
-                  size={20}
-                  className="text-gray-300 group-hover:text-indigo-400 group-hover:translate-x-1 transition-all mt-1 shrink-0"
-                />
-              </div>
-            </Link>
-          ))}
+          <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
+            {CATEGORIES.map(cat => (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setActiveCategory(cat)}
+                aria-pressed={activeCategory === cat}
+                className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
+                  activeCategory === cat
+                    ? 'bg-gray-950 text-white'
+                    : 'bg-white border border-gray-200 text-gray-600 hover:border-gray-400 hover:text-gray-900'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
+
+        {/* Results */}
+        {filtered.length === 0 ? (
+          <div className="flex flex-col items-center justify-center text-center py-20 px-5 rounded-2xl border border-dashed border-gray-200">
+            <FileQuestion size={32} className="text-gray-300 mb-4" />
+            <p className="text-gray-700 font-semibold mb-1">No articles found</p>
+            <p className="text-gray-400 text-sm mb-5">Try a different search term or category.</p>
+            <button
+              type="button"
+              onClick={() => { setQuery(''); setActiveCategory('All') }}
+              className="text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors"
+            >
+              Clear filters
+            </button>
+          </div>
+        ) : (
+          <motion.div
+            key={`${query}-${activeCategory}`}
+            variants={grid}
+            initial="hidden"
+            animate="show"
+          >
+            {featuredPost && (
+              <motion.div variants={card} className="mb-6">
+                <PostCard post={featuredPost} featured />
+              </motion.div>
+            )}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {gridPosts.map(post => (
+                <motion.div key={post.slug} variants={card} className="h-full">
+                  <PostCard post={post} />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
       </div>
     </div>
   )

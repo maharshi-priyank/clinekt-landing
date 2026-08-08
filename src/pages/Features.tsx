@@ -64,7 +64,7 @@ const MODULES = [
     color: 'purple',
     label: 'E-sign Contracts',
     tagline: 'Legally binding in seconds',
-    desc: 'Convert your proposal into a contract in one click. Client signs via OTP-based e-signature — valid under IT Act 2000. No DocuSign account, no printing, no scanning.',
+    desc: 'Contract management built for freelancers — convert your proposal into a contract in one click, track every signature, and store the full history. Client signs via OTP-based e-signature — valid under IT Act 2000. No DocuSign account, no printing, no scanning.',
     features: [
       { icon: PenLine,    text: 'Auto-populate contract from accepted proposal' },
       { icon: Shield,     text: 'OTP e-signature — legally valid under IT Act 2000' },
@@ -254,8 +254,8 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 export default function Features() {
   useSeo(
-    'ClearWork Features — Proposal Builder, E-sign Contracts, GST Invoicing & Client CRM',
-    'Everything ClearWork offers: smart proposal builder, OTP e-sign contracts, GST-compliant invoicing, UPI & card payments, project CRM, and WhatsApp automations. Replace your Notion + Zapier + DocuSign stack — or switch from Dubsado, HoneyBook, or Bonsai — with one tool built for freelancers and agencies.',
+    'ClearWork Features — Contract Management, Proposals, GST Invoicing & Client CRM',
+    'Everything ClearWork offers: contract management software with OTP e-sign, smart proposal builder, GST-compliant invoicing, UPI & card payments, project CRM, and WhatsApp automations — one tool built for freelancers and agencies.',
     'https://getclearwork.in/features',
   )
   return (

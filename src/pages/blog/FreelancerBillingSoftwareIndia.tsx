@@ -7,8 +7,8 @@ import { useScrollDepth } from '../../hooks/useScrollDepth'
 import { trackBlogRead } from '../../lib/analytics'
 
 const meta: BlogMeta = {
-  title: 'Best Freelancer Billing Software India 2026 — GST & UPI',
-  description: 'Best billing software for Indian freelancers — GST auto-calc, UPI payment links, TDS tracking, and WhatsApp reminders. ClearWork is free during early access.',
+  title: 'GST Billing Software for Freelancers — Best Options 2026',
+  description: 'The best GST billing software for Indian freelancers — GST auto-calc, UPI payment links, TDS tracking, and WhatsApp reminders. ClearWork is free during early access.',
   date: 'June 2026',
   datePublished: '2026-06-19',
   readTime: '8 min',

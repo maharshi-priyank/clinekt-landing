@@ -7,8 +7,8 @@ import { useScrollDepth } from '../../hooks/useScrollDepth'
 import { trackBlogRead } from '../../lib/analytics'
 
 const meta: BlogMeta = {
-  title: 'Free Client Management Software for Freelancers India 2026',
-  description: 'Best free client management software for Indian freelancers — proposals, contracts, GST invoices, UPI payments. ClearWork is free during early access.',
+  title: 'Best Client Management Software for Freelancers (Free) 2026',
+  description: 'The best client management software for Indian freelancers — proposals, contracts, GST invoices, UPI payments, all free during early access. Full comparison inside.',
   date: 'June 2026',
   datePublished: '2026-06-19',
   readTime: '7 min',

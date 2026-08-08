@@ -7,8 +7,8 @@ import { useScrollDepth } from '../../hooks/useScrollDepth'
 import { trackBlogRead } from '../../lib/analytics'
 
 const meta: BlogMeta = {
-  title: 'How to Create a GST Invoice in India: Complete Guide for Freelancers',
-  description: 'Step-by-step guide to creating GST-compliant invoices as a freelancer. Covers mandatory fields, CGST/SGST/IGST, SAC codes, due dates, and common mistakes.',
+  title: 'GST Invoice Format in India: How to Create One (Complete Guide)',
+  description: 'The correct GST invoice format for Indian freelancers — every mandatory field, CGST/SGST/IGST split, SAC codes, due dates, and common mistakes, with a worked example.',
   date: 'June 2026',
   datePublished: '2026-06-14',
   readTime: '8 min',

@@ -19,6 +19,9 @@ const ToolsIndex                 = lazy(() => import('./pages/ToolsIndex'))
 const Security                   = lazy(() => import('./pages/Security'))
 const FeaturesPage               = lazy(() => import('./pages/Features'))
 const PricingPage                = lazy(() => import('./pages/Pricing'))
+const ESignatureSoftwarePage     = lazy(() => import('./pages/ESignatureSoftware'))
+const CrmForSmallBusinessPage    = lazy(() => import('./pages/CrmForSmallBusiness'))
+const ContractManagementSoftwarePage = lazy(() => import('./pages/ContractManagementSoftware'))
 const Privacy                    = lazy(() => import('./pages/Privacy'))
 const Terms                      = lazy(() => import('./pages/Terms'))
 const BlogIndex                  = lazy(() => import('./pages/blog/BlogIndex'))
@@ -42,6 +45,10 @@ const RefrensVsClearwork                     = lazy(() => import('./pages/blog/R
 const FreelanceProposalGuideIndia            = lazy(() => import('./pages/blog/FreelanceProposalGuideIndia'))
 const ClientFollowUpGuideIndia               = lazy(() => import('./pages/blog/ClientFollowUpGuideIndia'))
 const GstFreelancersCompleteGuideIndia       = lazy(() => import('./pages/blog/GstFreelancersCompleteGuideIndia'))
+const HowToGetFreelanceClientsIndia          = lazy(() => import('./pages/blog/HowToGetFreelanceClientsIndia'))
+const RetainerVsProjectPricingIndia          = lazy(() => import('./pages/blog/RetainerVsProjectPricingIndia'))
+const FreelanceInvoiceFormatIndia            = lazy(() => import('./pages/blog/FreelanceInvoiceFormatIndia'))
+const GstNumberFormatExplained               = lazy(() => import('./pages/blog/GstNumberFormatExplained'))
 const About                                  = lazy(() => import('./pages/About'))
 const Contact                                = lazy(() => import('./pages/Contact'))
 
@@ -99,6 +106,9 @@ export default function App() {
             <Route path="/terms"                               element={<Terms />} />
             <Route path="/features"                            element={<FeaturesPage />} />
             <Route path="/pricing"                              element={<PricingPage />} />
+            <Route path="/e-signature-software"                 element={<ESignatureSoftwarePage />} />
+            <Route path="/crm-for-small-business"                element={<CrmForSmallBusinessPage />} />
+            <Route path="/contract-management-software"          element={<ContractManagementSoftwarePage />} />
             <Route path="/blog"                                element={<BlogIndex />} />
             <Route path="/blog/how-to-create-gst-invoice-india"        element={<GstInvoiceGuide />} />
             <Route path="/blog/is-e-signature-legal-india"            element={<ESignatureLegalIndia />} />
@@ -120,6 +130,10 @@ export default function App() {
             <Route path="/blog/how-to-write-freelance-proposal-india"        element={<FreelanceProposalGuideIndia />} />
             <Route path="/blog/freelancer-client-follow-up-india"            element={<ClientFollowUpGuideIndia />} />
             <Route path="/blog/gst-for-freelancers-india-complete-guide"     element={<GstFreelancersCompleteGuideIndia />} />
+            <Route path="/blog/how-to-get-freelance-clients-india"           element={<HowToGetFreelanceClientsIndia />} />
+            <Route path="/blog/retainer-vs-project-pricing-agencies-india"   element={<RetainerVsProjectPricingIndia />} />
+            <Route path="/blog/freelance-invoice-format-india"               element={<FreelanceInvoiceFormatIndia />} />
+            <Route path="/blog/gst-number-format-explained"                  element={<GstNumberFormatExplained />} />
             <Route path="/about"                                             element={<About />} />
             <Route path="/contact"                                           element={<Contact />} />
           </Routes>

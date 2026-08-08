@@ -52,8 +52,8 @@ function loadDraft(): InvoiceInput {
 
 export default function GstInvoiceGenerator() {
   useSeo(
-    'Free GST Invoice Generator (India) — CGST/SGST/IGST auto-split | ClearWork',
-    'Generate a GST-compliant invoice PDF in seconds. Free, no signup. Auto CGST/SGST/IGST split by state. Built for Indian freelancers and small businesses.',
+    'Online Invoice Generator — Free GST Billing Software (India) | ClearWork',
+    'Free online invoice generator with GST billing built in — auto CGST/SGST/IGST split by state, PDF in seconds, no signup. Built for Indian freelancers and small businesses.',
     'https://getclearwork.in/tools/gst-invoice-generator',
   )
   useEffect(() => { trackToolUsed('gst_invoice_generator') }, [])

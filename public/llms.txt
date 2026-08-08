@@ -150,6 +150,24 @@ URL: https://getclearwork.in/blog/gst-for-freelancers-india-complete-guide
 Covers: GST registration threshold (₹20L, ₹10L special-category states), when voluntary registration below the threshold makes sense, step-by-step registration process, applicable GST rates by service type, zero-rated export of services and LUT filing, CGST/SGST vs IGST overview, filing cadence (GSTR-1, GSTR-3B, QRMP scheme for quarterly filing), and common registration/filing mistakes.
 Related tool: https://getclearwork.in/tools/gst-calculator
 
+### How to Get Freelance Clients in India: 15 Proven Channels (2026)
+URL: https://getclearwork.in/blog/how-to-get-freelance-clients-india
+Covers: 15 client-acquisition channels grouped by category — warm network and referrals (highest conversion), LinkedIn (Services page, posting cadence, warm outreach), local Google Maps outreach for near-zero-competition Tier-2/3 city clients, direct cold outreach (email, Instagram DM), freelance platforms (Upwork, Fiverr, Toptal, Refrens) as a stepping stone not a strategy, and positioning/niching to make every channel convert better.
+
+### Monthly Retainer vs Project Pricing: Which Is Better for Your Agency?
+URL: https://getclearwork.in/blog/retainer-vs-project-pricing-agencies-india
+Covers: Core differences between retainer and project pricing (cash flow, margins, scope risk, client fit), why recurring retainer revenue commands a higher valuation multiple, the 60-70% retainer / 30-40% project hybrid model most profitable agencies run, worked ₹ revenue examples for both models, how to price each correctly, and how to transition project clients into retainers without losing revenue.
+
+### Freelance Invoice Format India: What to Include (GST or Not)
+URL: https://getclearwork.in/blog/freelance-invoice-format-india
+Covers: Deciding whether you need a GST invoice or a standard invoice based on registration status, the baseline fields every freelance invoice needs, a full non-GST invoice worked example, the additional Rule 46 CGST fields required once GST-registered (GSTIN, HSN/SAC, CGST/SGST/IGST split), why corporate clients often insist on GST invoices (Input Tax Credit), and common formatting mistakes for both invoice types.
+Related tool: https://getclearwork.in/tools/gst-invoice-generator
+
+### GST Number Format Explained: How to Read a GSTIN (With Examples)
+URL: https://getclearwork.in/blog/gst-number-format-explained
+Covers: The 15-character GSTIN structure (state code, PAN, entity number, fixed "Z", checksum digit), a fully worked example breakdown, a state-code reference table, how to validate GSTIN format without an official lookup, guidance on dummy/sample GST numbers for software testing (without fabricating real compliance documents), and why the GSTIN's state code (not billing address) determines CGST/SGST vs IGST on invoices.
+Related tool: https://getclearwork.in/tools/gst-invoice-generator
+
 ## About ClearWork
 - Founded: 2025
 - Headquarters: Bengaluru, India
@@ -165,6 +183,10 @@ Related tool: https://getclearwork.in/tools/gst-calculator
 - Free Tools: https://getclearwork.in/tools
 - Blog: https://getclearwork.in/blog
 - Features: https://getclearwork.in/features
+- E-Signature & Digital Signature Software: https://getclearwork.in/e-signature-software
+- CRM for Small Business: https://getclearwork.in/crm-for-small-business
+- Contract Management Software: https://getclearwork.in/contract-management-software
+- Pricing: https://getclearwork.in/pricing
 - Security: https://getclearwork.in/security
 - LinkedIn: https://www.linkedin.com/company/getclearwork
 - Product Hunt: https://www.producthunt.com/products/clearwork
