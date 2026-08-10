@@ -263,14 +263,14 @@ export default function About() {
             </div>
           </FadeIn>
 
-          {/* ── Early access note ── */}
+          {/* ── Get started note ── */}
           <FadeIn delay={0.26}>
             <div className="bg-indigo-600 rounded-2xl p-7 text-white">
-              <h2 className="text-lg font-bold mb-2">We're in early access</h2>
+              <h2 className="text-lg font-bold mb-2">We're just getting started</h2>
               <p className="text-indigo-200 text-sm leading-relaxed mb-5">
-                ClearWork is 100% free until we welcome our first 50 users — full Studio plan,
-                every feature, no credit card. We're building this with real freelancers and
-                agencies before public launch, and every piece of feedback shapes the roadmap.
+                ClearWork is live today — a genuinely free plan to get started, no credit card,
+                with Pro and Studio plans when you're ready to grow. We're building this with
+                real freelancers and agencies, and every piece of feedback shapes the roadmap.
               </p>
               <a
                 href="https://app.getclearwork.in/signup"

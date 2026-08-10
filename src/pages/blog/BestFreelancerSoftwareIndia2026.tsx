@@ -66,11 +66,11 @@ export default function BestFreelancerSoftwareIndia2026() {
       </p>
       <p>
         It's the only tool on this list that satisfies all 7 jobs and passes the India compliance
-        checklist (see below). The Solo plan is ₹149/month at the current founding price — there's also
-        a permanent free plan for freelancers just getting started.
+        checklist (see below). The Pro plan is ₹149/month — there's also a permanent free plan for
+        freelancers just getting started.
       </p>
       <p><strong>Best for:</strong> Indian freelancers and agencies who need GST compliance + full workflow.</p>
-      <p><strong>Price:</strong> Free plan · ₹149/mo (Solo) · ₹349/mo (Studio)</p>
+      <p><strong>Price:</strong> Free plan · ₹149/mo (Pro) · ₹649/mo (Studio)</p>
 
       <h3>2. Refrens — Best Free GST Invoicing Tool</h3>
 
@@ -208,7 +208,7 @@ export default function BestFreelancerSoftwareIndia2026() {
           </thead>
           <tbody>
             {[
-              ['ClearWork', '✓ Permanent', '₹149/mo (founding)', '✓ Full'],
+              ['ClearWork', '✓ Permanent', '₹149/mo (Pro)', '✓ Full'],
               ['Refrens', '✓ Permanent', '~₹499/mo', '✓ Invoicing only'],
               ['Bonsai', '✗', '~₹1,400/mo ($17)', '✗ No GST/UPI'],
               ['HoneyBook', '✗', '~₹1,580/mo ($19)', '✗ Not available'],
@@ -227,10 +227,10 @@ export default function BestFreelancerSoftwareIndia2026() {
       </div>
 
       <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-6 my-8">
-        <p className="text-sm font-semibold text-indigo-800 mb-2">ClearWork founding price — locked for early users</p>
+        <p className="text-sm font-semibold text-indigo-800 mb-2">ClearWork pricing — simple and permanent</p>
         <p className="text-sm text-indigo-700">
-          The ₹149/month Solo plan is a founding price available to users who sign up before the price
-          increases. Once locked, it doesn't change — even as the product grows.
+          Free plan up to 5 clients, Pro at ₹149/month for up to 30 clients, and Studio at ₹649/month
+          for unlimited clients and a team. No transaction fees, cancel anytime.
         </p>
         <a
           href="https://app.getclearwork.in/signup"

@@ -84,8 +84,8 @@ export default function ZohoBookAlternativeIndiaFreelancers() {
           ['Bank reconciliation', '✓', '✗'],
           ['Inventory management', '✓', '✗'],
           ['Setup time', '1–3 days', '15 minutes'],
-          ['Free plan', '1 user, basic limits', 'Full Studio plan, all features'],
-          ['Paid pricing', '₹749–₹7,999/mo', 'Free during early access'],
+          ['Free plan', '1 user, basic limits', 'Up to 5 clients, full CRM & GST invoicing'],
+          ['Paid pricing', '₹749–₹7,999/mo', '₹149/mo Pro · ₹649/mo Studio'],
         ]}
       />
 
@@ -128,8 +128,8 @@ export default function ZohoBookAlternativeIndiaFreelancers() {
       </P>
 
       <Callout type="info">
-        <strong>ClearWork is free during early access.</strong> Full Studio plan — proposals, contracts, GST invoices, UPI payments, WhatsApp reminders,
-        client portal, project management — at no cost. No credit card.{' '}
+        <strong>Start on ClearWork's Free plan</strong> — proposals, contracts, GST invoices, UPI payments, and a client
+        portal for up to 5 clients, no credit card. WhatsApp reminders and unlimited clients come with Pro (₹149/mo).{' '}
         <a href="https://app.getclearwork.in/signup" className="text-indigo-700 font-semibold hover:underline">Sign up at app.getclearwork.in →</a>
       </Callout>
 
@@ -138,7 +138,7 @@ export default function ZohoBookAlternativeIndiaFreelancers() {
       <Table
         headers={['Tool', 'GST invoicing', 'UPI payments', 'Proposals + CRM', 'Best for', 'Price']}
         rows={[
-          ['ClearWork', '✓ Full', '✓', '✓ Full', 'Solo freelancers, full workflow', 'Free (early access)'],
+          ['ClearWork', '✓ Full', '✓', '✓ Full', 'Solo freelancers, full workflow', 'Free · ₹149/mo Pro'],
           ['Refrens', '✓ Full', '✓', '✗', 'GST invoicing only', 'Free (invoicing)'],
           ['QuickBooks India', '✓ Full', '✓', '✗', 'Small businesses with accountant', '~₹1,500/mo'],
           ['FreshBooks', 'Partial (no India GST)', '✗', '✓', 'US/EU freelancers', '$19/mo'],
@@ -155,7 +155,7 @@ export default function ZohoBookAlternativeIndiaFreelancers() {
       <FAQ items={[
         {
           q: 'Is Zoho Books free for freelancers?',
-          a: 'Zoho Books has a free plan, but it\'s limited to 1,000 invoices/year and basic features. For freelancers who need multi-user access, WhatsApp reminders, or advanced automation, you\'ll need a paid plan starting at ₹749/month. ClearWork\'s early access plan gives you the full feature set at no cost.',
+          a: 'Zoho Books has a free plan, but it\'s limited to 1,000 invoices/year and basic features. For freelancers who need multi-user access, WhatsApp reminders, or advanced automation, you\'ll need a paid plan starting at ₹749/month. ClearWork\'s Free plan covers proposals, contracts, and GST invoicing for up to 5 clients at no cost, with Pro at ₹149/month for WhatsApp reminders and unlimited proposals.',
         },
         {
           q: 'Does ClearWork handle GST like Zoho Books?',

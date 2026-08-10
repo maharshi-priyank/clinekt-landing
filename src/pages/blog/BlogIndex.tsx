@@ -166,7 +166,7 @@ const POSTS = [
   {
     slug: 'free-invoice-software-india',
     title: 'Free Invoice Software for Freelancers India 2026 — GST-Ready Options Compared',
-    description: 'The best free invoice software for Indian freelancers in 2026 — with GST (CGST/SGST/IGST), UPI payment links, and TDS support. ClearWork is free during early access with full Studio features.',
+    description: 'The best free invoice software for Indian freelancers in 2026 — with GST (CGST/SGST/IGST) and UPI payment links. ClearWork\u2019s Free plan costs nothing, ever.',
     date: 'June 2026',
     readTime: '7 min',
     category: 'GST & Invoicing',
@@ -176,7 +176,7 @@ const POSTS = [
   {
     slug: 'free-client-management-software-india',
     title: 'Free Client Management Software for Freelancers India 2026',
-    description: 'The best free client management software for Indian freelancers — proposals, contracts, GST invoices, and UPI payments in one tool. ClearWork is fully free during early access.',
+    description: 'The best free client management software for Indian freelancers — proposals, contracts, GST invoices, and UPI payments in one tool. Free plan available, no credit card.',
     date: 'June 2026',
     readTime: '7 min',
     category: 'Freelancer Tools',
@@ -184,7 +184,7 @@ const POSTS = [
   {
     slug: 'freelancer-billing-software-india',
     title: 'Best Freelancer Billing Software India 2026 — GST, UPI & TDS in One Tool',
-    description: 'The best billing software for Indian freelancers — GST auto-calculation, UPI payment links, TDS tracking, and WhatsApp reminders. ClearWork is free during early access.',
+    description: 'The best billing software for Indian freelancers — GST auto-calculation, UPI payment links, TDS tracking, and WhatsApp reminders. Free plan available, Pro from \u20b9149/mo.',
     date: 'June 2026',
     readTime: '8 min',
     category: 'GST & Invoicing',

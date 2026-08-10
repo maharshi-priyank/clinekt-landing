@@ -221,8 +221,8 @@ export default function HowToManageClientsFreelancerIndia() {
       />
 
       <Callout type="info">
-        <strong>ClearWork is free during early access</strong> — full Studio plan, all six stages covered,
-        no credit card. Sign up at{' '}
+        <strong>ClearWork's Free plan covers all six stages</strong> — no credit card, up to 5 clients.
+        Sign up at{' '}
         <a href="https://app.getclearwork.in/signup" className="text-indigo-700 font-semibold hover:underline">app.getclearwork.in →</a>
       </Callout>
 

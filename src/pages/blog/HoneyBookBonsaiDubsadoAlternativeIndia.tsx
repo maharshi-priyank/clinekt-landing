@@ -162,7 +162,7 @@ export default function HoneyBookBonsaiDubsadoAlternativeIndia() {
               ['Stripe payment link (not available in India)', 'UPI / Razorpay payment link embedded directly in invoice'],
               ['DocuSign or basic e-sign (US law)', 'OTP-based e-sign valid under IT Act 2000 Second Schedule'],
               ['Email payment reminder', 'WhatsApp reminder at 3, 7, 14 days overdue — sent automatically'],
-              ['$17–$20/month in USD', '₹149/month (founding price) — free plan available'],
+              ['$17–$20/month in USD', '₹149/month (Pro) — free plan also available'],
               ['No TDS awareness', 'TDS flag on invoice — shows client when 10% TDS (194J) will be deducted'],
             ].map(([global, cw], i) => (
               <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}>
@@ -177,9 +177,9 @@ export default function HoneyBookBonsaiDubsadoAlternativeIndia() {
       <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-6 my-8">
         <p className="text-sm font-semibold text-indigo-800 mb-1">ClearWork Pricing</p>
         <ul className="text-sm text-indigo-700 space-y-1">
-          <li><strong>Free plan:</strong> 3 active projects, 3 proposals/month, basic invoicing — no credit card</li>
-          <li><strong>Solo:</strong> ₹149/month — unlimited proposals, contracts, GST invoices, UPI payments</li>
-          <li><strong>Studio:</strong> ₹349/month — team seats, multi-currency, priority support</li>
+          <li><strong>Free:</strong> up to 5 clients, 10 projects, 3 proposals/month — no credit card</li>
+          <li><strong>Pro:</strong> ₹149/month — up to 30 clients, unlimited proposals, contracts, GST invoices, UPI payments</li>
+          <li><strong>Studio:</strong> ₹649/month — unlimited clients, team seats, multi-currency, priority support</li>
         </ul>
         <a
           href="https://app.getclearwork.in/signup"

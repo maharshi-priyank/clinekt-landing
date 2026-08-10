@@ -8,7 +8,7 @@ import { trackBlogRead } from '../../lib/analytics'
 
 const meta: BlogMeta = {
   title: 'Refrens vs ClearWork — India Freelancer Comparison 2026',
-  description: 'Refrens is great for GST invoicing but has no proposals, e-sign, or CRM. ClearWork covers the full workflow. Free during early access. Compare now.',
+  description: 'Refrens is great for GST invoicing but has no proposals, e-sign, or CRM. ClearWork covers the full workflow, free to start. Compare now.',
   date: 'June 2026',
   datePublished: '2026-06-19',
   readTime: '7 min',
@@ -29,7 +29,7 @@ export default function RefrensVsClearwork() {
         ClearWork covers the full client workflow: proposals with open tracking, OTP e-sign contracts under IT Act 2000,
         GST invoices, UPI payments, and automated WhatsApp reminders. If you only need to invoice,
         Refrens is excellent and free. If you need to win clients and get paid faster, ClearWork does both —
-        and it's completely free during early access.
+        and its Free plan is genuinely free forever for up to 5 clients.
       </P>
 
       <H2>What Refrens Does Well</H2>
@@ -91,7 +91,7 @@ export default function RefrensVsClearwork() {
           ['AI proposal drafter', '✗', '✓'],
           ['CA / accountant integrations', '✓', '✗'],
           ['Best for', 'GST compliance, SMEs, CAs', 'Full freelance workflow'],
-          ['Price (India)', 'Free (invoicing only)', 'Free (full — early access)'],
+          ['Price (India)', 'Free (invoicing only)', 'Free · ₹149/mo Pro · ₹649/mo Studio'],
         ]}
       />
 
@@ -118,17 +118,17 @@ export default function RefrensVsClearwork() {
       <Table
         headers={['Plan', 'Refrens', 'ClearWork']}
         rows={[
-          ['Free', 'Yes — invoicing only, no CRM/proposals', 'Yes — full Studio plan, all features'],
-          ['Paid (starter)', 'Paid tiers for advanced features', 'Free during early access'],
+          ['Free', 'Yes — invoicing only, no CRM/proposals', 'Yes — up to 5 clients, full CRM & GST invoicing'],
+          ['Paid (starter)', 'Paid tiers for advanced features', '₹149/mo Pro · ₹649/mo Studio'],
           ['Credit card required', 'No (free tier)', 'No'],
-          ['Early access lock-in', 'N/A', '✓ Early users lock in founding pricing'],
         ]}
       />
 
       <P>
         Both tools have free options, but they cover different ground.
         Refrens' free plan is genuinely useful if invoicing is your only need.
-        ClearWork's early access gives you the full workflow — proposals, contracts, invoicing, payment collection, reminders — at no cost.
+        ClearWork's free plan gives you the full workflow — proposals, contracts, invoicing, payment collection — at no
+        cost up to 5 clients, with Pro and Studio available as you grow.
       </P>
 
       <H2>Can You Use Both Refrens and ClearWork Together?</H2>
@@ -147,8 +147,8 @@ export default function RefrensVsClearwork() {
       </P>
 
       <Callout type="info">
-        <strong>ClearWork is free during early access.</strong> Full Studio plan — proposals, contracts, GST invoices,
-        UPI payments, WhatsApp reminders, client portal, project management — at no cost, no credit card.{' '}
+        <strong>ClearWork's Free plan costs nothing, ever.</strong> Proposals, contracts, GST invoices, UPI payments,
+        and a client portal — up to 5 clients, no credit card. Pro (₹149/mo) and Studio (₹649/mo) remove the limits.{' '}
         <a href="https://app.getclearwork.in/signup" className="text-indigo-700 font-semibold hover:underline">Sign up at app.getclearwork.in →</a>
       </Callout>
 
@@ -167,7 +167,7 @@ export default function RefrensVsClearwork() {
         },
         {
           q: 'Which is better for a solo freelancer vs a small agency?',
-          a: 'For a solo freelancer: ClearWork covers the full workflow at no cost during early access. For a small agency with 2–5 team members: ClearWork\'s Studio plan includes team features — shared client pipeline, task assignment, and team-level project management. Refrens is better suited for agencies that need accounting-level multi-entity reporting.',
+          a: 'For a solo freelancer: ClearWork\'s Free plan covers the full workflow at no cost for up to 5 clients, with Pro (₹149/mo) once you grow past that. For a small agency with 2–5 team members: ClearWork\'s Studio plan (₹649/mo) includes team features — shared client pipeline, task assignment, and team-level project management. Refrens is better suited for agencies that need accounting-level multi-entity reporting.',
         },
         {
           q: 'Does ClearWork work for non-GST-registered freelancers?',

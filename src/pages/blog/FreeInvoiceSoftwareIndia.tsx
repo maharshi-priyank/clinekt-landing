@@ -8,7 +8,7 @@ import { trackBlogRead } from '../../lib/analytics'
 
 const meta: BlogMeta = {
   title: 'Free Invoice Software for Freelancers India 2026 | GST-Ready',
-  description: 'Best free invoice software for Indian freelancers — GST (CGST/SGST/IGST), UPI payment links, TDS support. ClearWork is completely free during early access.',
+  description: 'Best free invoice software for Indian freelancers — GST (CGST/SGST/IGST) and UPI payment links, free forever. TDS flagging and more on paid plans from \u20b9149/mo.',
   date: 'June 2026',
   datePublished: '2026-06-19',
   readTime: '7 min',
@@ -29,7 +29,8 @@ export default function FreeInvoiceSoftwareIndia() {
         auto-calculate CGST/SGST/IGST based on the client's state, include a UPI payment link so clients can pay instantly,
         and flag TDS deductions under Section 194J or 194C. In 2026,{' '}
         <a href="https://app.getclearwork.in/signup" className="text-indigo-600 hover:underline">ClearWork</a> is
-        the only free option that handles all three — and it's fully free during early access, no credit card required.
+        the only free option that handles GST and UPI at no cost, no credit card required — with TDS flagging
+        available on the ₹149/month Pro plan.
       </P>
 
       <H2>What "Free" Actually Means for Invoice Software in India</H2>
@@ -52,7 +53,7 @@ export default function FreeInvoiceSoftwareIndia() {
       <Table
         headers={['Tool', 'GST auto-split', 'UPI payment link', 'TDS flagging', 'Invoice limit', 'Watermark', 'Cost']}
         rows={[
-          ['ClearWork', '✓ CGST/SGST/IGST', '✓ Via Razorpay', '✓ 194J/194C', 'Unlimited', 'None', 'Free (early access)'],
+          ['ClearWork', '✓ CGST/SGST/IGST', '✓ Via Razorpay', '✓ 194J/194C (Pro)', 'Unlimited (up to 5 clients on Free)', 'None', 'Free · ₹149/mo Pro'],
           ['Refrens', '✓ CGST/SGST/IGST', '✓ UPI link', '✗ No flagging', 'Unlimited (free)', 'Refrens branding', 'Free tier available'],
           ['Zoho Invoice', '✓ GST', '✓ Payment gateway', '✗ No flagging', '1,000/year free', 'Zoho branding', 'Free under limit'],
           ['myBillBook', '✓ GST', '✓ UPI', '✗', 'Limited', 'Watermark', 'Free tier limited'],
@@ -63,8 +64,8 @@ export default function FreeInvoiceSoftwareIndia() {
 
       <Callout type="tip">
         <strong>What makes ClearWork different:</strong> It combines GST invoicing with proposals, contracts,
-        client portal, and payment reminders in a single tool — not just invoicing in isolation. During early
-        access, the full Studio plan (normally ₹349/mo) is free for everyone.
+        client portal, and payment reminders in a single tool — not just invoicing in isolation. The Free plan
+        covers GST invoicing and UPI payments at no cost; Pro (₹149/mo) adds TDS flagging and WhatsApp reminders.
       </Callout>
 
       <H2>How to Create a Free GST Invoice in India with ClearWork</H2>
@@ -97,7 +98,7 @@ export default function FreeInvoiceSoftwareIndia() {
       <UL items={[
         <><strong>You have 5+ active clients simultaneously:</strong> You'll want pipeline tracking, automated reminders, and a client portal so clients aren't emailing you for their invoice copies.</>,
         <><strong>You need proposals before invoices:</strong> Freelancers who send proposals, get them signed as contracts, then convert to invoices need an all-in-one tool — not a standalone invoicing app.</>,
-        <><strong>You want white-label documents:</strong> Agency owners who don't want "Powered by [Tool]" on their invoices need a paid plan on most tools. ClearWork removes this at no cost during early access.</>,
+        <><strong>You want white-label documents:</strong> Agency owners who don't want "Powered by [Tool]" on their invoices need ClearWork's Studio plan (₹649/mo), which removes ClearWork branding entirely.</>,
         <><strong>You have recurring retainer clients:</strong> Monthly retainers benefit from recurring invoice automation — auto-generated and auto-sent on a schedule.</>,
       ]} />
 
@@ -147,9 +148,9 @@ export default function FreeInvoiceSoftwareIndia() {
       </P>
 
       <Callout type="info">
-        <strong>ClearWork is free during early access.</strong> Sign up at{' '}
+        <strong>ClearWork's Free plan costs nothing.</strong> Sign up at{' '}
         <a href="https://app.getclearwork.in/signup" className="text-indigo-700 font-semibold hover:underline">app.getclearwork.in</a>{' '}
-        — full Studio plan, no credit card, unlimited invoices with GST, UPI payment links, and TDS flagging.
+        — no credit card, GST invoicing and UPI payment links included. TDS flagging comes with Pro (₹149/mo).
       </Callout>
 
       <FAQ items={[
@@ -159,11 +160,11 @@ export default function FreeInvoiceSoftwareIndia() {
         },
         {
           q: 'Can I send invoices with UPI payment links for free?',
-          a: 'Yes. ClearWork includes a UPI + card payment link on every invoice at no cost during early access. There are no transaction fees charged by ClearWork (the payment gateway may charge a small processing fee).',
+          a: 'Yes. ClearWork includes a UPI + card payment link on every invoice on every plan, including Free. There are no transaction fees charged by ClearWork (the payment gateway may charge a small processing fee).',
         },
         {
           q: 'What is the best free invoice software for Indian freelancers?',
-          a: 'ClearWork is the most complete free option in 2026 — it combines GST invoicing, UPI payment links, TDS flagging, proposals, contracts, and a client portal. It\'s fully free during early access. Refrens is a strong free alternative for invoicing-only needs.',
+          a: 'ClearWork is the most complete free option in 2026 for freelancers with up to 5 clients — it combines GST invoicing, UPI payment links, proposals, contracts, and a client portal at no cost. TDS flagging and unlimited clients are on the ₹149/mo Pro plan. Refrens is a strong free alternative for invoicing-only needs.',
         },
         {
           q: 'Do I need GST registration to use GST invoice software?',

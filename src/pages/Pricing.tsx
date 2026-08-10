@@ -8,16 +8,16 @@ const APP_URL = 'https://app.getclearwork.in/signup'
 
 const faqs = [
   {
-    q: 'Is ClearWork really free right now?',
-    a: 'Yes. Every plan — Free, Pro, and Studio — is 100% free until we welcome our first 50 users, with full Studio-level features unlocked. No credit card required. The prices shown on this page are what plans will cost after that, so you can plan ahead.',
+    q: 'Is ClearWork really free to start?',
+    a: 'Yes. The Free plan is free forever — up to 5 clients and 10 active projects, with the full lead & CRM pipeline, GST invoicing, and basic e-sign included. No credit card required. Upgrade to Pro or Studio only when you outgrow those limits.',
   },
   {
-    q: 'When will paid plans start?',
-    a: 'Pricing kicks in once we\'ve onboarded our first 50 users. We\'ll give everyone plenty of notice before any plan starts charging, and the freelancers and agencies who join now lock in the best terms we\'ll ever offer.',
+    q: 'What happens when I hit the Free plan limits?',
+    a: 'You\'ll be prompted to upgrade to Pro (₹149/mo) or Studio (₹649/mo) once you pass 5 clients or 10 active projects. Your existing data is never locked or deleted — you just can\'t add more until you upgrade.',
   },
   {
     q: 'Do you take a cut of my payments?',
-    a: 'No. ClearWork charges a flat monthly subscription once paid plans begin — never a percentage of what you earn. Payments you collect via UPI, card, or net banking go straight to you.',
+    a: 'No. ClearWork charges a flat monthly subscription — never a percentage of what you earn. Payments you collect via UPI, card, or net banking go straight to you.',
   },
   {
     q: 'Can I switch plans later?',
@@ -25,14 +25,14 @@ const faqs = [
   },
   {
     q: 'What\'s the difference between Pro and Studio?',
-    a: 'Pro is built for a single freelancer or consultant — up to 25 clients, one workspace for your own work. Studio adds a team seat, unlimited clients, white-labelled documents and client portal, and multi-currency invoicing — built for agencies with a small team and multiple clients to manage.',
+    a: 'Pro (₹149/mo) is built for a single freelancer or consultant — up to 30 clients, 60 projects, and 5 team members. Studio (₹649/mo) removes the limits entirely — unlimited clients, projects, and team members — and adds white-labelled documents, a white-labelled client portal, and multi-currency invoicing, built for agencies managing multiple clients.',
   },
 ]
 
 export default function Pricing() {
   useSeo(
-    'ClearWork Pricing — 100% Free Until Our First 50 Users | Plans for Freelancers & Agencies',
-    'ClearWork is 100% free until we welcome our first 50 users — Free, Pro, and Studio plans, no credit card required. See what pricing will look like after: Free \u20b90, Pro \u20b9149/mo, Studio \u20b9649/mo.',
+    'ClearWork Pricing — Free, Pro & Studio Plans | For Freelancers & Agencies',
+    'Simple ClearWork pricing: Free (\u20b90, up to 5 clients), Pro (\u20b9149/mo, up to 30 clients), and Studio (\u20b9649/mo, unlimited clients & team members). No credit card required to start, no transaction fees, ever.',
     'https://getclearwork.in/pricing',
   )
 
@@ -50,11 +50,11 @@ export default function Pricing() {
             </span>
             <h1 className="text-5xl md:text-6xl font-extrabold text-gray-950 tracking-tight leading-[1.05]">
               Plans for every stage.{' '}
-              <span className="gradient-text">Free until our first 50 users.</span>
+              <span className="gradient-text">Start free, upgrade when ready.</span>
             </h1>
             <p className="mt-5 text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
-              Free, Pro, and Studio — pick the plan that fits your business. Every plan is
-              completely free until we welcome our first 50 users, no credit card required.
+              Free, Pro, and Studio — pick the plan that fits your business. Start on the Free
+              plan with no credit card, and upgrade only when you outgrow it.
             </p>
           </motion.div>
         </div>
@@ -112,7 +112,7 @@ export default function Pricing() {
             Get started free
             <ArrowRight size={15} />
           </a>
-          <p className="text-xs text-gray-400 mt-3">Free until our first 50 users · No credit card needed</p>
+          <p className="text-xs text-gray-400 mt-3">Free plan forever · No credit card needed</p>
         </div>
       </section>
     </div>

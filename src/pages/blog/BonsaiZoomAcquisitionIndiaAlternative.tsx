@@ -8,7 +8,7 @@ import { trackBlogRead } from '../../lib/analytics'
 
 const meta: BlogMeta = {
   title: 'Bonsai Acquired by Zoom: Best India Alternative 2026',
-  description: 'Zoom acquired Bonsai in 2026. Indian freelancers need an alternative with GST, UPI, and IT Act e-sign. ClearWork is free during early access.',
+  description: 'Zoom acquired Bonsai in 2026. Indian freelancers need an alternative with GST, UPI, and IT Act e-sign. ClearWork has a free plan, with Pro from \u20b9149/mo.',
   date: 'June 2026',
   datePublished: '2026-06-19',
   readTime: '7 min',
@@ -113,14 +113,14 @@ export default function BonsaiZoomAcquisitionIndiaAlternative() {
           ['Lead CRM / pipeline', '✓', '✓ Kanban pipeline'],
           ['Client portal', '✓', '✓ No client login needed'],
           ['Project management', '✓', '✓'],
-          ['INR pricing', '✗ (USD only)', '✓ Free during early access'],
+          ['INR pricing', '✗ (USD only)', '✓ Free plan, then ₹149–₹649/mo'],
         ]}
       />
 
       <Callout type="info">
-        <strong>ClearWork is completely free during early access</strong> — full Studio plan, every feature, no credit card required.
+        <strong>ClearWork's Free plan costs nothing</strong> — no credit card required, up to 5 clients.
         Compared to Bonsai's $9–$19/month (~₹750–₹1,600) for a tool that doesn't handle Indian taxes,
-        switching now saves you money immediately.{' '}
+        switching now saves you money immediately, and Pro is still just ₹149/month when you outgrow Free.{' '}
         <a href="https://app.getclearwork.in/signup" className="text-indigo-700 font-semibold hover:underline">Sign up at app.getclearwork.in →</a>
       </Callout>
 
@@ -147,7 +147,7 @@ export default function BonsaiZoomAcquisitionIndiaAlternative() {
       <Table
         headers={['Tool', 'India payments', 'GST invoicing', 'Proposals + CRM', 'Price (India)']}
         rows={[
-          ['ClearWork', '✓ UPI + card', '✓ Full', '✓ Full workflow', 'Free (early access)'],
+          ['ClearWork', '✓ UPI + card', '✓ Full', '✓ Full workflow', 'Free · ₹149–₹649/mo'],
           ['HoneyBook', '✗ Not in India', '✗', '✓', 'Not available'],
           ['Dubsado', '✗ Not in India', '✗', '✓', 'Not available'],
           ['Refrens', '✓ UPI', '✓ Full', '✗ Invoicing only', 'Free (invoicing only)'],
@@ -177,7 +177,7 @@ export default function BonsaiZoomAcquisitionIndiaAlternative() {
         },
         {
           q: 'Is ClearWork free to use?',
-          a: 'Yes — ClearWork is completely free during early access. The full Studio plan (all features: proposals, contracts, GST invoices, UPI payments, client portal, WhatsApp reminders) is available at no cost, no credit card required. Early access users lock in founding pricing before the public launch.',
+          a: 'Yes — ClearWork\'s Free plan (proposals, contracts, GST invoices, UPI payments, client portal, up to 5 clients) is free forever, no credit card required. Pro (₹149/mo) and Studio (₹649/mo) remove the client/project limits and add WhatsApp reminders, team seats, and white-labelling.',
         },
         {
           q: 'Can I use ClearWork if I\'m not GST-registered?',

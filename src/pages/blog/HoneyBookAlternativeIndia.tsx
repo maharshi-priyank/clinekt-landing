@@ -30,7 +30,7 @@ export default function HoneyBookAlternativeIndia() {
         account and accept payments through it — the platform is US-only. The closest India-ready alternative
         is <a href="https://getclearwork.in" className="text-indigo-600 hover:underline">ClearWork</a> —
         built from the ground up for Indian freelancers with GST invoicing, UPI payments, OTP e-sign contracts,
-        and WhatsApp reminders. Pricing starts at ₹149/month (founding price).
+        and WhatsApp reminders. Free plan available, with Pro at ₹149/month.
       </P>
 
       <H2>Is HoneyBook Available in India?</H2>
@@ -114,9 +114,9 @@ export default function HoneyBookAlternativeIndia() {
 
       <H3>India Pricing</H3>
       <P>
-        ClearWork's founding plan is <strong>₹149/month</strong> for Solo (unlimited proposals, contracts,
-        GST invoices, UPI payments) and <strong>₹349/month</strong> for Studio (adds team seats and
-        white-label). A free plan is available with 3 projects and 3 proposals/month — no credit card required.
+        ClearWork's Pro plan is <strong>₹149/month</strong> (up to 30 clients, unlimited proposals, contracts,
+        GST invoices, UPI payments) and <strong>₹649/month</strong> for Studio (unlimited clients, team seats, and
+        white-label). A free plan is available with 5 clients and 10 projects — no credit card required.
         Compare this to HoneyBook at $16/month (~₹1,340/month) — you'd pay 9x more for software that
         doesn't even work in India.
       </P>

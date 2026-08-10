@@ -10,7 +10,7 @@ import HowItWorks from '../components/HowItWorks'
 import FeaturesSection from '../components/FeaturesSection'
 import AhaMoments from '../components/AhaMoments'
 import MobileAppSection from '../components/MobileAppSection'
-import EarlyAccessSection from '../components/EarlyAccessSection'
+import PricingSection from '../components/PricingSection'
 import FounderNote from '../components/FounderNote'
 import TrustpilotSection from '../components/TrustpilotSection'
 import WaitlistSection from '../components/WaitlistSection'
@@ -24,12 +24,11 @@ const HOME_SCHEMA = [
     'operatingSystem': 'Web',
     'url': 'https://getclearwork.in/',
     'description': 'End-to-end business platform for Indian freelancers, consultants, and agencies. Tracked proposals, e-sign contracts, GST invoices, UPI payments — one place, zero spreadsheets.',
-    'offers': {
-      '@type': 'Offer',
-      'price': '0',
-      'priceCurrency': 'INR',
-      'description': 'Free during early access',
-    },
+    'offers': [
+      { '@type': 'Offer', 'name': 'Free',   'price': '0',   'priceCurrency': 'INR', 'description': 'Up to 5 clients, 10 active projects' },
+      { '@type': 'Offer', 'name': 'Pro',    'price': '149', 'priceCurrency': 'INR', 'description': 'Up to 30 clients, 60 projects, 5 team members' },
+      { '@type': 'Offer', 'name': 'Studio', 'price': '649', 'priceCurrency': 'INR', 'description': 'Unlimited clients, projects, and team members' },
+    ],
     'featureList': [
       'GST invoicing with CGST/SGST/IGST auto-split',
       'OTP e-sign contracts valid under IT Act 2000',
@@ -84,7 +83,7 @@ export default function Home() {
   useSchemaOrg(HOME_SCHEMA)
   useSeo(
     'ClearWork — Find Clients, Win Them, Get Paid | Free for Freelancers & Agencies',
-    'ClearWork is the end-to-end business platform for Indian freelancers and agencies — AI lead discovery (early access), tracked proposals, e-sign contracts, GST invoices, and UPI payments. Free during early access, no credit card required.',
+    'ClearWork is the end-to-end business platform for Indian freelancers and agencies — tracked proposals, e-sign contracts, GST invoices, UPI payments, and AI-powered lead discovery. Free plan available, no credit card required.',
     'https://getclearwork.in/',
   )
   return (
@@ -98,7 +97,7 @@ export default function Home() {
       <FeaturesSection />
       <AhaMoments />
       <MobileAppSection />
-      <EarlyAccessSection />
+      <PricingSection />
       <FounderNote />
       <TrustpilotSection />
       <WaitlistSection />

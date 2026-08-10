@@ -17,7 +17,7 @@ const flow = [
 ]
 
 const perks = [
-  'Free during early access',
+  'Free plan forever',
   'No credit card required',
   'GST + UPI + e-sign built-in',
 ]
@@ -68,7 +68,7 @@ export default function WaitlistSection() {
               className="w-1.5 h-1.5 rounded-full bg-emerald-400"
               style={{ animation: 'glow-pulse 2.2s ease-in-out infinite' }}
             />
-            Now open · 100% free during early access
+            Now live · Free plan, no credit card
           </span>
 
           {/* Workflow strip — shows the end-to-end promise */}
@@ -156,7 +156,7 @@ export default function WaitlistSection() {
             {[
               { val: count !== null && count > 50 ? `${count.toLocaleString('en-IN')}+` : '150+', label: 'freelancers & agencies' },
               { val: '5+',   label: 'tools replaced' },
-              { val: '₹0',   label: 'cost right now' },
+              { val: '₹0',   label: 'to get started' },
             ].map((s, i) => (
               <div
                 key={s.label}

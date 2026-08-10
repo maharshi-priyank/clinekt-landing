@@ -8,7 +8,7 @@ import { trackBlogRead } from '../../lib/analytics'
 
 const meta: BlogMeta = {
   title: 'Best Client Management Software for Freelancers (Free) 2026',
-  description: 'The best client management software for Indian freelancers — proposals, contracts, GST invoices, UPI payments, all free during early access. Full comparison inside.',
+  description: 'The best client management software for Indian freelancers — proposals, contracts, GST invoices, UPI payments. Free plan available, paid plans from ₹149/mo. Full comparison inside.',
   date: 'June 2026',
   datePublished: '2026-06-19',
   readTime: '7 min',
@@ -30,7 +30,8 @@ export default function FreeClientManagementSoftwareIndia() {
         collect UPI payments, and send WhatsApp reminders when clients go quiet. In 2026, most tools
         that do all this charge ₹1,400–₹3,000/month or are US-only.{' '}
         <a href="https://app.getclearwork.in/signup" className="text-indigo-600 hover:underline">ClearWork</a>{' '}
-        covers the full workflow and is free during early access.
+        covers the full workflow, with a genuinely free plan to start and paid plans from ₹149/month
+        as you grow.
       </P>
 
       <H2>What Is Client Management Software for Freelancers?</H2>
@@ -55,7 +56,7 @@ export default function FreeClientManagementSoftwareIndia() {
       <Table
         headers={['Tool', 'Proposals', 'E-sign contracts', 'GST invoicing', 'UPI payments', 'WhatsApp reminders', 'Cost']}
         rows={[
-          ['ClearWork', '✓ With open tracking', '✓ IT Act 2000', '✓ CGST/SGST/IGST', '✓ Via Razorpay', '✓ Auto at 3/7/14d', 'Free (early access)'],
+          ['ClearWork', '✓ With open tracking', '✓ IT Act 2000', '✓ CGST/SGST/IGST', '✓ Via Razorpay', '✓ Auto at 3/7/14d', 'Free · ₹149/mo Pro'],
           ['Refrens', '✓ Basic', '✗ No e-sign', '✓ GST invoicing', '✓ UPI', '✗', 'Free tier (invoicing only)'],
           ['HubSpot CRM', '✗ No proposals', '✗', '✗ No GST', '✗ No UPI', '✗', 'Free CRM only'],
           ['Notion', '✗ Manual setup', '✗', '✗', '✗', '✗', 'Free but no automation'],
@@ -121,42 +122,43 @@ export default function FreeClientManagementSoftwareIndia() {
         <><strong>Team-first design:</strong> Most CRMs are designed for sales teams — pipelines, lead assignments, manager dashboards. Solo freelancers need a client-centric view, not a deal-centric one.</>,
       ]} />
 
-      <H2>Free Client Management Features ClearWork Gives You During Early Access</H2>
+      <H2>What's Actually Free vs. Paid on ClearWork</H2>
 
       <P>
-        During early access, every ClearWork account gets the full Studio plan at zero cost:
+        ClearWork's Free plan is a genuinely usable starting point, not a crippled trial — and Pro/Studio
+        unlock the limits once you're managing more clients:
       </P>
 
       <Table
-        headers={['Feature', 'What you get free']}
+        headers={['Feature', 'Free', 'Pro (₹149/mo)', 'Studio (₹649/mo)']}
         rows={[
-          ['Leads & pipeline', 'Unlimited leads, custom stages, notes, and follow-up dates'],
-          ['Clients', 'Unlimited client profiles with GSTIN, TDS setting, contact history'],
-          ['Proposals', 'Unlimited proposals, open-tracking, section-level time analytics, one-click accept'],
-          ['Contracts', 'Convert proposals to contracts, OTP e-sign under IT Act 2000'],
-          ['Invoices', 'Unlimited GST invoices — CGST/SGST/IGST auto-split, SAC codes, PDF'],
-          ['Payments', 'UPI + card payment link on every invoice via Razorpay'],
-          ['Reminders', 'Auto WhatsApp reminders at 3, 7, 14 days overdue'],
-          ['Client portal', 'Shareable link per client — documents, invoices, project status'],
-          ['Team', '1 team member seat — invite a collaborator or VA'],
-          ['AI drafter', 'AI proposal generation from project brief'],
+          ['Clients', 'Up to 5', 'Up to 30', 'Unlimited'],
+          ['Active projects', 'Up to 10', 'Up to 60', 'Unlimited'],
+          ['Leads & pipeline', 'Unlimited', 'Unlimited', 'Unlimited'],
+          ['Proposals', '3/month', 'Unlimited', 'Unlimited'],
+          ['Contracts (OTP e-sign)', 'Basic', 'IT Act 2000', 'IT Act 2000'],
+          ['GST invoices + UPI payments', '✓', '✓ + TDS flagging', '✓ + multi-currency'],
+          ['WhatsApp reminders', '✗', '✓', '✓'],
+          ['Client portal', '✓', '✓ White-label', '✓ White-label + own domain'],
+          ['Team members', '—', 'Up to 5', 'Unlimited'],
+          ['AI proposal drafter', '✗', '✓', '✓'],
         ]}
       />
 
       <Callout type="info">
-        <strong>ClearWork is free during early access</strong> — no credit card, no trial limit, no invoice watermark.
-        Sign up at{' '}
+        <strong>The Free plan has no credit card and no time limit</strong> — it's free for as long as you
+        stay within 5 clients and 10 projects. Sign up at{' '}
         <a href="https://app.getclearwork.in/signup" className="text-indigo-700 font-semibold hover:underline">app.getclearwork.in</a>.
       </Callout>
 
       <FAQ items={[
         {
           q: 'What is the best free CRM for Indian freelancers?',
-          a: 'ClearWork is the most complete free option in 2026 — it covers the full client workflow from lead to final payment with GST invoicing, UPI payments, and WhatsApp reminders. HubSpot CRM is good for contact management but has no invoicing or India-specific features.',
+          a: 'ClearWork is the most complete free option in 2026 for freelancers with up to 5 clients — it covers the full client workflow from lead to final payment with GST invoicing and UPI payments. HubSpot CRM is good for contact management but has no invoicing or India-specific features.',
         },
         {
           q: 'Can free client management software handle GST invoicing?',
-          a: 'Most free CRMs cannot — they\'re designed for sales pipelines, not invoicing. ClearWork is purpose-built for freelancers and generates fully GST-compliant invoices (CGST/SGST/IGST auto-split) for free during early access.',
+          a: 'Most free CRMs cannot — they\'re designed for sales pipelines, not invoicing. ClearWork\'s Free plan generates fully GST-compliant invoices (CGST/SGST/IGST auto-split) at no cost, with no client limit on invoicing itself.',
         },
         {
           q: 'Is a client portal necessary for freelancers?',
@@ -164,11 +166,11 @@ export default function FreeClientManagementSoftwareIndia() {
         },
         {
           q: 'Does free client management software support UPI payments?',
-          a: 'ClearWork supports UPI payment collection via Razorpay — embedded directly in every invoice. Most global CRM tools (HubSpot, Pipedrive, Notion) do not support UPI at all.',
+          a: 'ClearWork supports UPI payment collection via Razorpay — embedded directly in every invoice, on every plan including Free. Most global CRM tools (HubSpot, Pipedrive, Notion) do not support UPI at all.',
         },
         {
-          q: 'How long will ClearWork remain free?',
-          a: 'ClearWork is free during early access while the team builds and improves the product with real user feedback. Early access users lock in founding pricing before the public launch. Check getclearwork.in for the latest pricing status.',
+          q: 'When do I need to upgrade from the Free plan?',
+          a: 'Once you pass 5 clients or 10 active projects, or need WhatsApp reminders, a white-label portal, or a team seat, you\'ll want Pro (₹149/mo) or Studio (₹649/mo). Your existing data is never deleted if you stay on Free — you just can\'t add more until you upgrade.',
         },
       ]} />
 

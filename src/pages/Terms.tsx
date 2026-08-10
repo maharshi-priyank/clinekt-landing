@@ -73,7 +73,7 @@ const sections: Section[] = [
         </div>
         <div>
           <h3 className="text-base font-semibold text-gray-800 mb-1">4.2 Paid Plans</h3>
-          <p>Paid plans (Solo, Studio) are billed monthly or annually in Indian Rupees (INR). All prices are inclusive of applicable taxes unless stated otherwise. Founding pricing is available for a limited time as indicated on the pricing page.</p>
+          <p>Paid plans (Pro, Studio) are billed monthly in Indian Rupees (INR). All prices are inclusive of applicable taxes unless stated otherwise, as indicated on the pricing page.</p>
         </div>
         <div>
           <h3 className="text-base font-semibold text-gray-800 mb-1">4.3 Renewals and Cancellations</h3>

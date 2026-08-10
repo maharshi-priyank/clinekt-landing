@@ -102,8 +102,8 @@ export default function RefrensAlternativeIndia() {
           ['Client portal', '✗ Not available', '✓ No-login client link'],
           ['AI proposal drafter', '✗', '✓'],
           ['TDS tracking (194J/194C)', 'Basic', '✓ Per-client TDS flag'],
-          ['Free plan', '✓ Yes', '✓ Yes (3 projects)'],
-          ['Paid plan price', '₹1,499–₹3,999/yr', '₹149/mo (founding)'],
+          ['Free plan', '✓ Yes', '✓ Yes (5 clients, 10 projects)'],
+          ['Paid plan price', '₹1,499–₹3,999/yr', '₹149/mo (Pro) · ₹649/mo (Studio)'],
         ]}
       />
 

@@ -62,8 +62,8 @@ export default function BonsaiAlternativeIndia() {
 
       <H3>USD Pricing — 9x More Expensive</H3>
       <P>
-        Bonsai's cheapest plan is $17/month (~₹1,400/month at current rates). ClearWork's founding
-        Solo plan is ₹149/month — about 9x cheaper. Both cover proposals, contracts, and invoicing.
+        Bonsai's cheapest plan is $17/month (~₹1,400/month at current rates). ClearWork's Pro
+        plan is ₹149/month — about 9x cheaper. Both cover proposals, contracts, and invoicing.
         For Indian freelancers, paying $17/month for software that doesn't support GST or UPI is
         a poor deal.
       </P>
@@ -92,8 +92,8 @@ export default function BonsaiAlternativeIndia() {
           ['E-sign contracts', '✓ (not IT Act 2000)', '✓ OTP e-sign, IT Act 2000 valid'],
           ['TDS tracking', '✗ Not applicable', '✓ 194J and 194C per client'],
           ['WhatsApp reminders', '✗ Email only', '✓ Auto at 3/7/14 days overdue'],
-          ['Monthly price (INR)', '~₹1,400 ($17)', '₹149 (founding price)'],
-          ['Free plan', '✓ Limited (7-day trial)', '✓ Free forever (3 projects)'],
+          ['Monthly price (INR)', '~₹1,400 ($17)', '₹149/mo (Pro)'],
+          ['Free plan', '✓ Limited (7-day trial)', '✓ Free forever (5 clients, 10 projects)'],
           ['INR invoicing', '✓ Manual entry', '✓ Native INR with GST'],
           ['Proposal tracking', '✓ Open alerts', '✓ Real-time open + section views'],
           ['Client portal', '✓', '✓'],
@@ -134,7 +134,7 @@ export default function BonsaiAlternativeIndia() {
         },
         {
           q: 'Is ClearWork cheaper than Bonsai?',
-          a: 'Yes — significantly. Bonsai\'s starter plan is $17/month (approximately ₹1,400/month). ClearWork\'s founding Solo plan is ₹149/month. Both cover proposals, contracts, and invoicing. ClearWork also has a free forever plan (3 projects, 3 proposals/month) that Bonsai doesn\'t offer beyond a trial period.',
+          a: 'Yes — significantly. Bonsai\'s starter plan is $17/month (approximately ₹1,400/month). ClearWork\'s Pro plan is ₹149/month. Both cover proposals, contracts, and invoicing. ClearWork also has a free forever plan (5 clients, 10 projects, 3 proposals/month) that Bonsai doesn\'t offer beyond a trial period.',
         },
         {
           q: 'Does ClearWork have time tracking like Bonsai?',

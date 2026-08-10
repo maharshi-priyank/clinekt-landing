@@ -8,7 +8,7 @@ import { trackBlogRead } from '../../lib/analytics'
 
 const meta: BlogMeta = {
   title: 'GST Billing Software for Freelancers — Best Options 2026',
-  description: 'The best GST billing software for Indian freelancers — GST auto-calc, UPI payment links, TDS tracking, and WhatsApp reminders. ClearWork is free during early access.',
+  description: 'The best GST billing software for Indian freelancers — GST auto-calc, UPI payment links, TDS tracking, and WhatsApp reminders. Free plan available, Pro from \u20b9149/mo.',
   date: 'June 2026',
   datePublished: '2026-06-19',
   readTime: '8 min',
@@ -29,7 +29,8 @@ export default function FreelancerBillingSoftwareIndia() {
         GST calculation (CGST/SGST for intra-state, IGST for inter-state), UPI payment collection, and TDS
         documentation under Section 194J and 194C. In 2026,{' '}
         <a href="https://app.getclearwork.in/signup" className="text-indigo-600 hover:underline">ClearWork</a>{' '}
-        is the most complete billing tool for Indian freelancers — and it's completely free during early access.
+        is the most complete billing tool for Indian freelancers — free to start, with paid plans from ₹149/month
+        as you grow.
       </P>
 
       <H2>Why Standard Billing Software Fails Indian Freelancers</H2>
@@ -100,7 +101,7 @@ export default function FreelancerBillingSoftwareIndia() {
       <Table
         headers={['Tool', 'GST (Rule 46)', 'UPI payments', 'TDS tracking', 'Proposals', 'WhatsApp reminders', 'Price']}
         rows={[
-          ['ClearWork', '✓ Full compliance', '✓ Razorpay', '✓ 194J/194C', '✓ With tracking', '✓ Auto 3/7/14d', 'Free (early access)'],
+          ['ClearWork', '✓ Full compliance', '✓ Razorpay', '✓ 194J/194C', '✓ With tracking', '✓ Auto 3/7/14d', 'Free · ₹149/mo Pro'],
           ['Refrens', '✓ GST invoicing', '✓ UPI', '✗', '✓ Basic', '✗', 'Free (invoicing only)'],
           ['Zoho Books', '✓ GST', '✓ UPI', '✓ TDS', '✓ Estimates', '✗', '₹749/mo (starter)'],
           ['Tally Prime', '✓ GST', '✓ UPI', '✓ TDS', '✗', '✗', '₹4,500/year'],
@@ -151,8 +152,8 @@ export default function FreelancerBillingSoftwareIndia() {
       ]} />
 
       <Callout type="info">
-        <strong>ClearWork is free during early access.</strong> Full billing workflow — proposals, contracts, GST invoices,
-        UPI payments, and WhatsApp reminders — at no cost. No credit card.{' '}
+        <strong>Start free, no credit card.</strong> GST invoicing and UPI payments are on every plan, including Free.
+        WhatsApp reminders, TDS flagging, and the client portal unlock on Pro (₹149/mo).{' '}
         <a href="https://app.getclearwork.in/signup" className="text-indigo-700 font-semibold hover:underline">Sign up at app.getclearwork.in →</a>
       </Callout>
 

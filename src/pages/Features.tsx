@@ -276,9 +276,9 @@ export default function Features() {
               ClearWork replaces 6+ tools with one platform built for freelancers, studios, and agencies worldwide — GST-ready, payment gateway-connected, and designed to get out of your way.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
-              <a href="/#waitlist"
+              <a href="https://app.getclearwork.in/signup"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gray-950 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-lg shadow-gray-950/10">
-                Join the waitlist — free
+                Get started free
                 <ArrowRight size={15} />
               </a>
               <a href="/#how-it-works"
@@ -439,12 +439,12 @@ export default function Features() {
               {/* Footer CTA */}
               <div className="px-5 py-4 bg-indigo-600/20 border-t border-indigo-500/20 flex items-center justify-between gap-4 flex-wrap">
                 <div>
-                  <p className="text-sm font-bold text-white">All of this — from ₹699/month.</p>
+                  <p className="text-sm font-bold text-white">All of this — from ₹649/month.</p>
                   <p className="text-xs text-indigo-300 mt-0.5">DocuSign alone costs ₹1,800/mo. Zapier starts at ₹1,600/mo.</p>
                 </div>
-                <a href="/#waitlist"
+                <a href="https://app.getclearwork.in/signup"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-gray-900 text-sm font-bold hover:bg-gray-100 transition-colors shrink-0">
-                  Get early access
+                  Get started free
                   <ArrowRight size={14} />
                 </a>
               </div>
@@ -571,9 +571,9 @@ export default function Features() {
               Join freelancers and agencies worldwide. Free plan available — no credit card needed.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
-              <a href="/#waitlist"
+              <a href="https://app.getclearwork.in/signup"
                 className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gray-950 text-white font-semibold hover:bg-gray-800 transition-all shadow-lg shadow-gray-950/10">
-                Join the waitlist — it's free
+                Get started — it's free
                 <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a href="/#pricing"

@@ -26,7 +26,7 @@ const plans = [
   {
     name: 'Free',
     tagline: 'For getting started',
-    futurePrice: 0,
+    price: 0,
     limits: ['Up to 5 clients', 'Up to 10 active projects'],
     features: [
       'Full lead & CRM pipeline — unlimited leads',
@@ -44,7 +44,7 @@ const plans = [
   {
     name: 'Pro',
     tagline: 'For growing freelancers',
-    futurePrice: 149,
+    price: 149,
     limits: ['Up to 30 clients', 'Up to 60 active projects', 'Up to 5 team members'],
     features: [
       'Unlimited proposals & leads',
@@ -57,7 +57,7 @@ const plans = [
       'AI proposal drafter',
       'Priority email support',
     ],
-    cta: 'Get started free',
+    cta: 'Start Pro',
     ctaHref: APP_URL,
     ctaClass: 'bg-gray-950 text-white hover:bg-gray-800 shadow-sm',
     highlight: true,
@@ -65,7 +65,7 @@ const plans = [
   {
     name: 'Studio',
     tagline: 'For agencies at scale',
-    futurePrice: 649,
+    price: 649,
     limits: ['Unlimited clients', 'Unlimited projects', 'Unlimited team members'],
     features: [
       'Everything in Pro',
@@ -76,7 +76,7 @@ const plans = [
       'Team task allocation & payouts',
       'Dedicated priority support',
     ],
-    cta: 'Get started free',
+    cta: 'Start Studio',
     ctaHref: APP_URL,
     ctaClass: 'bg-white border border-gray-200 text-gray-900 hover:bg-gray-50 hover:border-gray-300',
     highlight: false,
@@ -111,10 +111,10 @@ export default function PricingSection() {
             not by taking a cut of your work.
           </p>
 
-          {/* Free-until-50 badge */}
+          {/* Free plan badge */}
           <div className="inline-flex items-center gap-2 mt-8 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-semibold">
             <Sparkles size={13} className="text-emerald-600" />
-            100% free until our first 50 users — no credit card
+            Start free, no credit card needed
           </div>
 
           {/* Currency selector */}
@@ -165,19 +165,17 @@ export default function PricingSection() {
 
                 <div className="mb-6">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-gray-900">Free</span>
+                    <span className="text-4xl font-bold text-gray-900">
+                      {plan.price > 0 ? formatPrice(plan.price, currency) : 'Free'}
+                    </span>
+                    {plan.price > 0 && <span className="text-sm text-gray-400 font-medium">/mo</span>}
                   </div>
-                  {plan.futurePrice > 0 ? (
-                    <p className="text-xs text-gray-400 mt-1.5">
-                      <span className="line-through">{formatPrice(plan.futurePrice, currency)}/mo</span>
-                      {' '}— waived until our first 50 users
-                    </p>
-                  ) : (
-                    <p className="text-xs text-gray-400 mt-1.5">Free forever, no catch</p>
-                  )}
-                  {currencyCode !== 'INR' && plan.futurePrice > 0 && (
+                  <p className="text-xs text-gray-400 mt-1.5">
+                    {plan.price > 0 ? 'Billed monthly, cancel anytime' : 'Free forever, no catch'}
+                  </p>
+                  {currencyCode !== 'INR' && plan.price > 0 && (
                     <p className="text-[11px] text-gray-400 mt-0.5">
-                      ₹{plan.futurePrice.toLocaleString('en-IN')}/mo · approx. planned price
+                      ₹{plan.price.toLocaleString('en-IN')}/mo · billed in INR
                     </p>
                   )}
                 </div>
