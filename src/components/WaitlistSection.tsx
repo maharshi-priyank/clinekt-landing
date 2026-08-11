@@ -41,7 +41,7 @@ export default function WaitlistSection() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 80% 55% at 50% 40%, rgba(79,70,229,0.16) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse 80% 55% at 50% 40%, rgba(255,255,255,0.12) 0%, transparent 70%)',
         }}
       />
 
@@ -102,7 +102,7 @@ export default function WaitlistSection() {
               className="serif-accent"
               style={{
                 fontSize: 'clamp(38px, 6.2vw, 75px)',
-                background: 'linear-gradient(135deg, #C7D2FE 0%, #A5B4FC 50%, #818CF8 100%)',
+                background: 'linear-gradient(135deg, #FFFFFF 0%, #D4D4D8 50%, #A1A1AA 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -155,8 +155,8 @@ export default function WaitlistSection() {
             style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
           >
             {[
-              { val: count !== null && count > 50 ? `${count.toLocaleString('en-IN')}+` : '150+', label: 'freelancers & agencies' },
-              { val: '5+',   label: 'tools replaced' },
+              { val: count !== null ? `${count.toLocaleString('en-IN')}+` : null, label: 'freelancers & agencies' },
+              { val: '6+',   label: 'tools replaced' },
               { val: '₹0',   label: 'to get started' },
             ].map((s, i) => (
               <div
@@ -164,12 +164,18 @@ export default function WaitlistSection() {
                 className="text-center px-4"
                 style={i > 0 ? { borderLeft: '1px solid rgba(255,255,255,0.07)' } : {}}
               >
-                <div
-                  className="font-black text-white"
-                  style={{ fontSize: 'clamp(24px, 3.5vw, 40px)', letterSpacing: '-0.025em' }}
-                >
-                  {s.val}
-                </div>
+                {s.val !== null ? (
+                  <div
+                    className="font-black text-white"
+                    style={{ fontSize: 'clamp(24px, 3.5vw, 40px)', letterSpacing: '-0.025em' }}
+                  >
+                    {s.val}
+                  </div>
+                ) : (
+                  <div className="h-[clamp(24px,3.5vw,40px)] flex items-center justify-center">
+                    <div className="h-5 w-12 rounded-md bg-white/10 animate-pulse" />
+                  </div>
+                )}
                 <div className="text-xs text-white/30 mt-1.5 font-medium">{s.label}</div>
               </div>
             ))}

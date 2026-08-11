@@ -27,6 +27,7 @@ const plans = [
     name: 'Free',
     tagline: 'For getting started',
     price: 0,
+    regularPrice: 0,
     limits: ['Up to 5 clients', 'Up to 10 active projects'],
     features: [
       'Full lead & CRM pipeline — unlimited leads',
@@ -45,6 +46,7 @@ const plans = [
     name: 'Pro',
     tagline: 'For growing freelancers',
     price: 149,
+    regularPrice: 249,
     limits: ['Up to 30 clients', 'Up to 60 active projects', 'Up to 5 team members'],
     features: [
       'Unlimited proposals & leads',
@@ -66,6 +68,7 @@ const plans = [
     name: 'Studio',
     tagline: 'For agencies at scale',
     price: 649,
+    regularPrice: 799,
     limits: ['Unlimited clients', 'Unlimited projects', 'Unlimited team members'],
     features: [
       'Everything in Pro',
@@ -95,7 +98,7 @@ export default function PricingSection() {
   const currency = CURRENCIES.find(c => c.code === currencyCode)!
 
   return (
-    <section id="pricing" className="py-24 bg-gray-50">
+    <section id="pricing" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-5">
         <FadeIn className="text-center mb-12">
           <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-white border border-gray-200 text-gray-500 shadow-sm mb-5">
@@ -107,15 +110,21 @@ export default function PricingSection() {
             <span className="gradient-text">Priced for any business.</span>
           </h2>
           <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
-            Pro starts at ₹149/month — less than the cost of a single takeaway lunch — so solo
-            freelancers and small agencies can afford the same workflow bigger studios use.
-            No transaction fees on your earnings, ever.
+            Pro is on an early access offer at ₹149/month (regular price ₹249) — less than the cost
+            of a single takeaway lunch — so solo freelancers and small agencies can afford the same
+            workflow bigger studios use. No transaction fees on your earnings, ever.
           </p>
 
           {/* Trial badge */}
           <div className="inline-flex items-center gap-2 mt-8 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-semibold">
             <Sparkles size={13} className="text-emerald-600" />
             Every new account gets a free 15-day Pro trial — no credit card needed
+          </div>
+
+          {/* Early access offer badge */}
+          <div className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-sm font-semibold">
+            <Sparkles size={13} className="text-amber-600" />
+            Early Access Offer — save on Pro & Studio while it lasts
           </div>
 
           {/* Currency selector */}
@@ -165,14 +174,24 @@ export default function PricingSection() {
                 </div>
 
                 <div className="mb-6">
-                  <div className="flex items-baseline gap-1">
+                  {plan.regularPrice > plan.price && (
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10.5px] font-bold bg-amber-50 text-amber-700 border border-amber-200 mb-2">
+                      Early Access Offer
+                    </span>
+                  )}
+                  <div className="flex items-baseline gap-2">
                     <span className="text-4xl font-bold text-gray-900">
                       {plan.price > 0 ? formatPrice(plan.price, currency) : 'Free'}
                     </span>
                     {plan.price > 0 && <span className="text-sm text-gray-400 font-medium">/mo</span>}
+                    {plan.regularPrice > plan.price && (
+                      <span className="text-base text-gray-400 line-through">{formatPrice(plan.regularPrice, currency)}</span>
+                    )}
                   </div>
                   <p className="text-xs text-gray-400 mt-1.5">
-                    {plan.price > 0 ? 'Billed monthly, cancel anytime' : 'Free forever, no catch'}
+                    {plan.regularPrice > plan.price
+                      ? `Regular price ${formatPrice(plan.regularPrice, currency)}/mo — save while early access lasts`
+                      : plan.price > 0 ? 'Billed monthly, cancel anytime' : 'Free forever, no catch'}
                   </p>
                   {plan.name === 'Pro' && (
                     <p className="text-xs text-indigo-600 font-semibold mt-1">First 15 days free</p>

@@ -18,7 +18,11 @@ const faqs = [
   },
   {
     q: 'What happens when I hit the Free plan limits?',
-    a: 'You\'ll be prompted to upgrade to Pro (₹149/mo) or Studio (₹649/mo) once you pass 5 clients or 10 active projects. Your existing data is never locked or deleted — you just can\'t add more until you upgrade.',
+    a: 'You\'ll be prompted to upgrade to Pro (₹149/mo early access price, regular ₹249/mo) or Studio (₹649/mo early access price, regular ₹799/mo) once you pass 5 clients or 10 active projects. Your existing data is never locked or deleted — you just can\'t add more until you upgrade.',
+  },
+  {
+    q: 'What is the "Early Access Offer" pricing?',
+    a: 'Pro and Studio are regularly priced at ₹249/mo and ₹799/mo. As part of our early access launch, both are currently available at a discounted ₹149/mo and ₹649/mo. This offer applies for as long as it\'s shown on this page — subscribe now to get today\'s rate.',
   },
   {
     q: 'Do you take a cut of my payments?',
@@ -36,8 +40,8 @@ const faqs = [
 
 export default function Pricing() {
   useSeo(
-    'ClearWork Pricing — Free 15-Day Pro Trial, Then Free, Pro & Studio Plans',
-    'Every new ClearWork account gets a free 15-day trial of Pro. Then choose Free (\u20b90, up to 5 clients), Pro (\u20b9149/mo, up to 30 clients), or Studio (\u20b9649/mo, unlimited). No credit card required, no transaction fees, ever.',
+    'ClearWork Pricing — Early Access Offer on Pro & Studio Plans',
+    'Free plan (\u20b90, up to 5 clients), Pro (\u20b9149/mo early access, regular \u20b9249/mo), or Studio (\u20b9649/mo early access, regular \u20b9799/mo). Every account also gets a free 15-day Pro trial. No credit card required.',
     'https://getclearwork.in/pricing',
   )
 
@@ -55,11 +59,11 @@ export default function Pricing() {
             </span>
             <h1 className="text-5xl md:text-6xl font-extrabold text-gray-950 tracking-tight leading-[1.05]">
               Free 15-day Pro trial.{' '}
-              <span className="gradient-text">Then pick what fits.</span>
+              <span className="gradient-text">Early access pricing on the rest.</span>
             </h1>
             <p className="mt-5 text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
               Every new account starts with full Pro access for 15 days — no credit card.
-              Don't upgrade? You're automatically moved to the Free plan, no action needed.
+              Pro and Studio are also on an early access offer right now, below their regular price.
             </p>
           </motion.div>
         </div>
