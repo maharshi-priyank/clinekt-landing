@@ -27,7 +27,7 @@ interface FormState {
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
-const API_BASE = (import.meta.env.VITE_API_URL as string | undefined) ?? 'http://localhost:3000'
+import { API_BASE } from '../lib/api'
 
 const channels = [
   {
@@ -143,7 +143,7 @@ export default function Contact() {
     setSubmittedEmail(form.email)
 
     try {
-      const res = await fetch(`${API_BASE}/api/v1/contact`, {
+      const res = await fetch(`${API_BASE}/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),

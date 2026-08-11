@@ -1,6 +1,7 @@
+import { API_BASE } from './api'
+
 const SUPABASE_BASE = import.meta.env.VITE_SUPABASE_URL as string | undefined
 const SUPABASE_ANON = import.meta.env.VITE_SUPABASE_ANON as string | undefined
-const API_BASE      = (import.meta.env.VITE_API_URL as string | undefined) ?? 'http://localhost:3000'
 const TABLE         = 'waitlist_signups'
 
 function supabaseHeaders() {
