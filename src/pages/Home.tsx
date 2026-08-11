@@ -26,7 +26,7 @@ const HOME_SCHEMA = [
     'description': 'End-to-end business platform for Indian freelancers, consultants, and agencies. Tracked proposals, e-sign contracts, GST invoices, UPI payments — one place, zero spreadsheets.',
     'offers': [
       { '@type': 'Offer', 'name': 'Free',   'price': '0',   'priceCurrency': 'INR', 'description': 'Up to 5 clients, 10 active projects' },
-      { '@type': 'Offer', 'name': 'Pro',    'price': '149', 'priceCurrency': 'INR', 'description': 'Up to 30 clients, 60 projects, 5 team members' },
+      { '@type': 'Offer', 'name': 'Pro',    'price': '149', 'priceCurrency': 'INR', 'description': 'Up to 30 clients, 60 projects, 5 team members. New accounts get a free 15-day trial.' },
       { '@type': 'Offer', 'name': 'Studio', 'price': '649', 'priceCurrency': 'INR', 'description': 'Unlimited clients, projects, and team members' },
     ],
     'featureList': [
@@ -83,7 +83,7 @@ export default function Home() {
   useSchemaOrg(HOME_SCHEMA)
   useSeo(
     'ClearWork — Find Clients, Win Them, Get Paid | Free for Freelancers & Agencies',
-    'ClearWork is the end-to-end business platform for Indian freelancers and agencies — tracked proposals, e-sign contracts, GST invoices, UPI payments, and AI-powered lead discovery. Free plan available, no credit card required.',
+    'ClearWork is the end-to-end business platform for Indian freelancers and agencies — tracked proposals, e-sign contracts, GST invoices, UPI payments, and AI-powered lead discovery. Free 15-day Pro trial, no credit card required.',
     'https://getclearwork.in/',
   )
   return (

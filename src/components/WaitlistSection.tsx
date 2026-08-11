@@ -17,7 +17,7 @@ const flow = [
 ]
 
 const perks = [
-  'Free plan forever',
+  '15-day free Pro trial',
   'No credit card required',
   'GST + UPI + e-sign built-in',
 ]
@@ -68,7 +68,7 @@ export default function WaitlistSection() {
               className="w-1.5 h-1.5 rounded-full bg-emerald-400"
               style={{ animation: 'glow-pulse 2.2s ease-in-out infinite' }}
             />
-            Now live · Free plan, no credit card
+            Now live · Free 15-day Pro trial
           </span>
 
           {/* Workflow strip — shows the end-to-end promise */}
@@ -134,7 +134,7 @@ export default function WaitlistSection() {
               bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-[15px]
               shadow-[0_4px_24px_rgba(245,158,11,0.25)] transition-colors duration-200"
           >
-            Start for free — no card needed
+            Start your free 15-day trial
             <ArrowRight size={16} />
           </motion.a>
 

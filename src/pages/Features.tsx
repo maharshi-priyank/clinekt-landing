@@ -278,7 +278,7 @@ export default function Features() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <a href="https://app.getclearwork.in/signup"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gray-950 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-lg shadow-gray-950/10">
-                Get started free
+                Start free trial
                 <ArrowRight size={15} />
               </a>
               <a href="/#how-it-works"
@@ -561,19 +561,19 @@ export default function Features() {
           <FadeIn>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 border border-indigo-100 text-indigo-600 mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse" />
-              Early access open
+              15-day free Pro trial
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
               Ready to run your{' '}
               <span className="gradient-text">business properly?</span>
             </h2>
             <p className="mt-5 text-gray-500 text-base max-w-lg mx-auto leading-relaxed">
-              Join freelancers and agencies worldwide. Free plan available — no credit card needed.
+              Join freelancers and agencies worldwide. Free 15-day Pro trial — no credit card needed.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <a href="https://app.getclearwork.in/signup"
                 className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gray-950 text-white font-semibold hover:bg-gray-800 transition-all shadow-lg shadow-gray-950/10">
-                Get started — it's free
+                Start free trial
                 <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a href="/#pricing"

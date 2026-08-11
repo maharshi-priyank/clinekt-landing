@@ -14,7 +14,7 @@ const items = [
   { icon: Users,       label: 'White-label client portal', color: 'text-violet-600', bg: 'bg-violet-50' },
   { icon: Wallet,      label: 'Zero transaction fees',     color: 'text-teal-600', bg: 'bg-teal-50' },
   { icon: CheckCircle2,label: 'No credit card needed',     color: 'text-green-600', bg: 'bg-green-50' },
-  { icon: Star,        label: 'Free plan forever',          color: 'text-yellow-600', bg: 'bg-yellow-50' },
+  { icon: Star,        label: '15-day free Pro trial',       color: 'text-yellow-600', bg: 'bg-yellow-50' },
   { icon: Globe,       label: 'Built for India',           color: 'text-pink-600', bg: 'bg-pink-50' },
 ]
 

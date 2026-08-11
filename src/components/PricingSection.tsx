@@ -36,7 +36,7 @@ const plans = [
       'Meetings & reminders',
       'Community support',
     ],
-    cta: 'Get started free',
+    cta: 'Start free trial',
     ctaHref: APP_URL,
     ctaClass: 'bg-gray-900 text-white hover:bg-gray-800',
     highlight: false,
@@ -57,7 +57,7 @@ const plans = [
       'AI proposal drafter',
       'Priority email support',
     ],
-    cta: 'Start Pro',
+    cta: 'Start free trial',
     ctaHref: APP_URL,
     ctaClass: 'bg-gray-950 text-white hover:bg-gray-800 shadow-sm',
     highlight: true,
@@ -76,7 +76,7 @@ const plans = [
       'Team task allocation & payouts',
       'Dedicated priority support',
     ],
-    cta: 'Start Studio',
+    cta: 'Start free trial',
     ctaHref: APP_URL,
     ctaClass: 'bg-white border border-gray-200 text-gray-900 hover:bg-gray-50 hover:border-gray-300',
     highlight: false,
@@ -111,10 +111,10 @@ export default function PricingSection() {
             not by taking a cut of your work.
           </p>
 
-          {/* Free plan badge */}
+          {/* Trial badge */}
           <div className="inline-flex items-center gap-2 mt-8 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-semibold">
             <Sparkles size={13} className="text-emerald-600" />
-            Start free, no credit card needed
+            Every new account gets a free 15-day Pro trial — no credit card needed
           </div>
 
           {/* Currency selector */}
@@ -173,6 +173,9 @@ export default function PricingSection() {
                   <p className="text-xs text-gray-400 mt-1.5">
                     {plan.price > 0 ? 'Billed monthly, cancel anytime' : 'Free forever, no catch'}
                   </p>
+                  {plan.name === 'Pro' && (
+                    <p className="text-xs text-indigo-600 font-semibold mt-1">First 15 days free</p>
+                  )}
                   {currencyCode !== 'INR' && plan.price > 0 && (
                     <p className="text-[11px] text-gray-400 mt-0.5">
                       ₹{plan.price.toLocaleString('en-IN')}/mo · billed in INR
@@ -208,6 +211,15 @@ export default function PricingSection() {
             </FadeIn>
           ))}
         </div>
+
+        {/* Trial explainer */}
+        <FadeIn delay={0.15}>
+          <p className="text-center text-sm text-gray-500 mb-10 max-w-2xl mx-auto">
+            Sign up and every account starts with a <strong className="text-gray-700">free 15-day trial of Pro</strong> —
+            no credit card, nothing to cancel. If you don't upgrade, you're automatically moved to the Free plan above
+            once the trial ends.
+          </p>
+        </FadeIn>
 
         {/* Benchmark comparison */}
         <FadeIn delay={0.2}>

@@ -8,8 +8,12 @@ const APP_URL = 'https://app.getclearwork.in/signup'
 
 const faqs = [
   {
+    q: 'Do I get a free trial?',
+    a: 'Yes. Every new account automatically starts with a 15-day free trial of the Pro plan — full access, no credit card required, nothing to set up. If you don\'t upgrade to a paid plan before the trial ends, you\'re automatically moved to the Free plan — no action needed on your part, and you\'re never charged without opting in.',
+  },
+  {
     q: 'Is ClearWork really free to start?',
-    a: 'Yes. The Free plan is free forever — up to 5 clients and 10 active projects, with the full lead & CRM pipeline, GST invoicing, and basic e-sign included. No credit card required. Upgrade to Pro or Studio only when you outgrow those limits.',
+    a: 'Yes. After your 15-day Pro trial, the Free plan is free forever — up to 5 clients and 10 active projects, with the full lead & CRM pipeline, GST invoicing, and basic e-sign included. No credit card required at any point unless you choose to upgrade.',
   },
   {
     q: 'What happens when I hit the Free plan limits?',
@@ -31,8 +35,8 @@ const faqs = [
 
 export default function Pricing() {
   useSeo(
-    'ClearWork Pricing — Free, Pro & Studio Plans | For Freelancers & Agencies',
-    'Simple ClearWork pricing: Free (\u20b90, up to 5 clients), Pro (\u20b9149/mo, up to 30 clients), and Studio (\u20b9649/mo, unlimited clients & team members). No credit card required to start, no transaction fees, ever.',
+    'ClearWork Pricing — Free 15-Day Pro Trial, Then Free, Pro & Studio Plans',
+    'Every new ClearWork account gets a free 15-day trial of Pro. Then choose Free (\u20b90, up to 5 clients), Pro (\u20b9149/mo, up to 30 clients), or Studio (\u20b9649/mo, unlimited). No credit card required, no transaction fees, ever.',
     'https://getclearwork.in/pricing',
   )
 
@@ -49,12 +53,12 @@ export default function Pricing() {
               Pricing
             </span>
             <h1 className="text-5xl md:text-6xl font-extrabold text-gray-950 tracking-tight leading-[1.05]">
-              Plans for every stage.{' '}
-              <span className="gradient-text">Start free, upgrade when ready.</span>
+              Free 15-day Pro trial.{' '}
+              <span className="gradient-text">Then pick what fits.</span>
             </h1>
             <p className="mt-5 text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
-              Free, Pro, and Studio — pick the plan that fits your business. Start on the Free
-              plan with no credit card, and upgrade only when you outgrow it.
+              Every new account starts with full Pro access for 15 days — no credit card.
+              Don't upgrade? You're automatically moved to the Free plan, no action needed.
             </p>
           </motion.div>
         </div>
@@ -105,14 +109,14 @@ export default function Pricing() {
       <section className="py-16 bg-gray-50 border-t border-gray-100">
         <div className="max-w-2xl mx-auto px-5 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-950 tracking-tight">
-            Start free today. Upgrade whenever you're ready.
+            Try Pro free for 15 days. Upgrade whenever you're ready.
           </h2>
           <a href={APP_URL}
             className="inline-flex items-center justify-center gap-2 mt-7 px-7 py-3.5 rounded-xl bg-gray-950 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-lg shadow-gray-950/10">
-            Get started free
+            Start free trial
             <ArrowRight size={15} />
           </a>
-          <p className="text-xs text-gray-400 mt-3">Free plan forever · No credit card needed</p>
+          <p className="text-xs text-gray-400 mt-3">15-day free Pro trial · Then Free plan forever · No credit card needed</p>
         </div>
       </section>
     </div>
