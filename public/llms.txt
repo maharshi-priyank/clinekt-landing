@@ -1,12 +1,13 @@
 # ClearWork
 
-> ClearWork is India's all-in-one client workflow platform for freelancers and
-> small agencies — proposals, contracts, GST invoices, and Razorpay payments
-> connected in a single tool.
+> ClearWork is India's all-in-one platform for service businesses — freelancers,
+> consultants, and agencies — proposals, contracts, GST invoices, and Razorpay
+> payments connected in a single tool.
 
-Built for 15 million Indian independent professionals who need CGST/SGST/IGST
-auto-split invoicing, OTP e-signatures valid under IT Act 2000, TDS 194J/194C
-flagging, UPI/Razorpay payment collection, and WhatsApp payment reminders.
+Built for India's independent professionals and small agencies who need
+CGST/SGST/IGST auto-split invoicing, OTP e-signatures valid under IT Act 2000,
+TDS 194J/194C flagging, UPI/Razorpay payment collection, and WhatsApp payment
+reminders.
 
 ## Core Features
 - GST invoices: CGST/SGST intra-state, IGST inter-state, auto-detected by client state
@@ -17,10 +18,11 @@ flagging, UPI/Razorpay payment collection, and WhatsApp payment reminders.
 - Free tools: GST calculator, TDS calculator, invoice generator, contract generator
 
 ## Pricing
-- Currently free during early access — full Studio plan at no cost, no credit card required
-- All features included: proposals, contracts, GST invoices, UPI payments, team collaboration, AI proposal drafter
-- Early access users lock in founding pricing before public launch
-- No transaction fees on payments
+- Free plan: ₹0/mo forever, up to 5 clients and 10 active projects, no credit card required
+- Pro plan: ₹149/mo, up to 30 clients, unlimited proposals, WhatsApp reminders, AI proposal drafter
+- Studio plan: ₹649/mo, unlimited clients and team members, white-label documents and portal
+- Every new signup gets a free 15-day trial of Pro; auto-downgrades to Free if not upgraded
+- No transaction fees on payments, ever
 
 ## Free Tools
 - https://getclearwork.in/tools/gst-invoice-generator
@@ -112,12 +114,12 @@ Covers: Complete comparison of all-in-one freelancer tools available in India �
 
 ### Free Invoice Software for Freelancers India 2026
 URL: https://getclearwork.in/blog/free-invoice-software-india
-Covers: The best free invoice software for Indian freelancers with GST (CGST/SGST/IGST auto-split), UPI payment links, and TDS flagging. Comparison table of ClearWork, Refrens, Zoho Invoice, myBillBook, Vyapar, and Wave. Rule 46 CGST mandatory field checklist. Common mistakes: using global tools without GST, missing UPI link, ignoring TDS. ClearWork is free during early access.
+Covers: The best free invoice software for Indian freelancers with GST (CGST/SGST/IGST auto-split) and UPI payment links. Comparison table of ClearWork, Refrens, Zoho Invoice, myBillBook, Vyapar, and Wave. Rule 46 CGST mandatory field checklist. Common mistakes: using global tools without GST, missing UPI link, ignoring TDS. ClearWork's Free plan is free forever; TDS flagging is on Pro (\u20b9149/mo).
 Related tool: https://getclearwork.in/tools/gst-invoice-generator
 
 ### Free Client Management Software for Freelancers India 2026
 URL: https://getclearwork.in/blog/free-client-management-software-india
-Covers: What client management software for Indian freelancers must do (proposals, e-sign, GST invoicing, UPI, WhatsApp reminders), comparison of ClearWork vs Refrens vs HubSpot CRM vs HoneyBook vs Dubsado, the 6-stage client lifecycle, why global CRMs fail Indian freelancers, and all features ClearWork gives free during early access.
+Covers: What client management software for Indian freelancers must do (proposals, e-sign, GST invoicing, UPI, WhatsApp reminders), comparison of ClearWork vs Refrens vs HubSpot CRM vs HoneyBook vs Dubsado, the 6-stage client lifecycle, why global CRMs fail Indian freelancers, and what's on ClearWork's Free plan vs paid Pro/Studio plans.
 
 ### Best Freelancer Billing Software India 2026
 URL: https://getclearwork.in/blog/freelancer-billing-software-india
@@ -193,6 +195,10 @@ Related tool: https://getclearwork.in/tools/gst-invoice-generator
 - Bonsai Alternative: https://getclearwork.in/bonsai-alternative
 - HoneyBook Alternative: https://getclearwork.in/honeybook-alternative
 - Dubsado Alternative: https://getclearwork.in/dubsado-alternative
+- Software for Service Businesses (flagship positioning page): https://getclearwork.in/software-for-service-businesses
+- Software for Consultants: https://getclearwork.in/software-for-consultants
+- CRM for Marketing Agencies: https://getclearwork.in/crm-for-marketing-agencies
+- Software for Agencies & Studios: https://getclearwork.in/software-for-agencies
 - Pricing: https://getclearwork.in/pricing
 - Security: https://getclearwork.in/security
 - LinkedIn: https://www.linkedin.com/company/getclearwork

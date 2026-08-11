@@ -118,9 +118,10 @@ export default function WaitlistSection() {
             className="text-white/45 leading-relaxed mb-10"
             style={{ fontSize: 'clamp(15px, 1.2vw, 18px)', maxWidth: 520 }}
           >
-            Stop juggling 5+ tools. ClearWork is the all-in-one business platform for Indian freelancers
-            and agencies — from capturing your first lead to getting the project done and paid.
-            Proposals, e-sign contracts, GST invoices, UPI payments, and project tracking, all connected.
+            Stop juggling 5+ tools. ClearWork is the all-in-one platform for service businesses in
+            India — freelancers, consultants, and agencies — from capturing your first lead to
+            getting the project done and paid. Proposals, e-sign contracts, GST invoices, UPI
+            payments, and project tracking, all connected.
           </p>
 
           {/* CTA */}

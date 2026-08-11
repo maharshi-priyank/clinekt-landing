@@ -25,6 +25,10 @@ const ContractManagementSoftwarePage = lazy(() => import('./pages/ContractManage
 const BonsaiAlternativePage      = lazy(() => import('./pages/BonsaiAlternative'))
 const HoneyBookAlternativePage   = lazy(() => import('./pages/HoneyBookAlternative'))
 const DubsadoAlternativePage     = lazy(() => import('./pages/DubsadoAlternative'))
+const SoftwareForServiceBusinessesPage = lazy(() => import('./pages/SoftwareForServiceBusinesses'))
+const SoftwareForConsultantsPage       = lazy(() => import('./pages/SoftwareForConsultants'))
+const CrmForMarketingAgenciesPage      = lazy(() => import('./pages/CrmForMarketingAgencies'))
+const SoftwareForAgenciesPage          = lazy(() => import('./pages/SoftwareForAgencies'))
 const Privacy                    = lazy(() => import('./pages/Privacy'))
 const Terms                      = lazy(() => import('./pages/Terms'))
 const BlogIndex                  = lazy(() => import('./pages/blog/BlogIndex'))
@@ -116,6 +120,10 @@ export default function App() {
             <Route path="/bonsai-alternative"                    element={<BonsaiAlternativePage />} />
             <Route path="/honeybook-alternative"                 element={<HoneyBookAlternativePage />} />
             <Route path="/dubsado-alternative"                   element={<DubsadoAlternativePage />} />
+            <Route path="/software-for-service-businesses"       element={<SoftwareForServiceBusinessesPage />} />
+            <Route path="/software-for-consultants"              element={<SoftwareForConsultantsPage />} />
+            <Route path="/crm-for-marketing-agencies"            element={<CrmForMarketingAgenciesPage />} />
+            <Route path="/software-for-agencies"                 element={<SoftwareForAgenciesPage />} />
             <Route path="/blog"                                element={<BlogIndex />} />
             <Route path="/blog/how-to-create-gst-invoice-india"        element={<GstInvoiceGuide />} />
             <Route path="/blog/is-e-signature-legal-india"            element={<ESignatureLegalIndia />} />

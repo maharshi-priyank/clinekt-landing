@@ -255,7 +255,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 export default function Features() {
   useSeo(
     'ClearWork Features — Contract Management, Proposals, GST Invoicing & Client CRM',
-    'Everything ClearWork offers: contract management software with OTP e-sign, smart proposal builder, GST-compliant invoicing, UPI & card payments, project CRM, and WhatsApp automations — one tool built for freelancers and agencies.',
+    'Everything ClearWork offers: contract management software with OTP e-sign, smart proposal builder, GST-compliant invoicing, UPI & card payments, project CRM, and WhatsApp automations — one tool built for service businesses of every kind.',
     'https://getclearwork.in/features',
   )
   return (
@@ -273,7 +273,7 @@ export default function Features() {
               <span className="gradient-text">Nothing they don't.</span>
             </h1>
             <p className="mt-5 text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
-              ClearWork replaces 6+ tools with one platform built for freelancers, studios, and agencies worldwide — GST-ready, payment gateway-connected, and designed to get out of your way.
+              ClearWork replaces 6+ tools with one platform built for service businesses — freelancers, studios, and agencies of every kind — GST-ready, payment gateway-connected, and designed to get out of your way.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <a href="https://app.getclearwork.in/signup"

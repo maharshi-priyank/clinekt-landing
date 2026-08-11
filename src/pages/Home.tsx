@@ -23,7 +23,7 @@ const HOME_SCHEMA = [
     'applicationCategory': 'BusinessApplication',
     'operatingSystem': 'Web',
     'url': 'https://getclearwork.in/',
-    'description': 'End-to-end business platform for Indian freelancers, consultants, and agencies. Tracked proposals, e-sign contracts, GST invoices, UPI payments — one place, zero spreadsheets.',
+    'description': 'The all-in-one platform for service businesses in India — freelancers, consultants, and agencies. Tracked proposals, e-sign contracts, GST invoices, UPI payments — one place, zero spreadsheets.',
     'offers': [
       { '@type': 'Offer', 'name': 'Free',   'price': '0',   'priceCurrency': 'INR', 'description': 'Up to 5 clients, 10 active projects' },
       { '@type': 'Offer', 'name': 'Pro',    'price': '149', 'priceCurrency': 'INR', 'description': 'Up to 30 clients, 60 projects, 5 team members. New accounts get a free 15-day trial.' },
@@ -48,7 +48,7 @@ const HOME_SCHEMA = [
     'name': 'ClearWork',
     'url': 'https://getclearwork.in/',
     'logo': 'https://getclearwork.in/og-image.png',
-    'description': 'India-first, end-to-end business platform for freelancers, consultants, and growing agencies — from winning clients to getting paid.',
+    'description': 'India-first, all-in-one platform for service businesses — freelancers, consultants, and agencies — from winning clients to getting paid.',
     'foundingDate': '2025',
     'address': {
       '@type': 'PostalAddress',
@@ -82,8 +82,8 @@ export default function Home() {
   useScrollDepth('home')
   useSchemaOrg(HOME_SCHEMA)
   useSeo(
-    'ClearWork — Find Clients, Win Them, Get Paid | Free for Freelancers & Agencies',
-    'ClearWork is the end-to-end business platform for Indian freelancers and agencies — tracked proposals, e-sign contracts, GST invoices, UPI payments, and AI-powered lead discovery. Free 15-day Pro trial, no credit card required.',
+    'ClearWork — All-in-One Platform for Service Businesses in India',
+    'ClearWork is the all-in-one platform for service businesses — freelancers, consultants, and agencies — with tracked proposals, e-sign contracts, GST invoices, UPI payments, and AI-powered lead discovery. Free 15-day Pro trial, no credit card required.',
     'https://getclearwork.in/',
   )
   return (

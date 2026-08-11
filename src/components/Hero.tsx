@@ -203,8 +203,8 @@ Free 15-day Pro trial · No credit card needed
               className="mt-6 text-stone-500 leading-relaxed font-normal"
               style={{ fontSize: 'clamp(16px, 1.3vw, 19px)', maxWidth: 540 }}
             >
-              The end-to-end business platform for Indian freelancers, consultants, and growing
-              agencies — AI-powered lead discovery <em className="text-stone-400 font-normal not-italic">(coming soon)</em>,
+              The all-in-one platform for service businesses in India — freelancers, consultants,
+              and agencies. AI-powered lead discovery <em className="text-stone-400 font-normal not-italic">(coming soon)</em>,
               tracked proposals, e-sign contracts, GST invoices, and UPI payments, all connected
               in one place.
             </motion.p>

@@ -23,7 +23,7 @@ const values = [
     color: 'text-indigo-600',
     bg: 'bg-indigo-50',
     title: 'Built for how the work actually happens',
-    body: 'Every decision — GST fields, UPI links, OTP e-sign, WhatsApp reminders — is made for how freelancers and agencies actually run their business, not adapted from a template built for someone else.',
+    body: 'Every decision — GST fields, UPI links, OTP e-sign, WhatsApp reminders — is made for how service businesses actually run, not adapted from a template built for someone else.',
   },
   {
     icon: Zap,
@@ -107,8 +107,9 @@ export default function About() {
             wished existed.
           </h1>
           <p className="text-white/50 text-lg max-w-xl mx-auto leading-relaxed">
-            Not another CRM. A system that actively helps freelancers and agencies
-            find clients, win them, deliver great work, and get paid — with less effort.
+            Not another CRM. A system that actively helps service businesses — freelancers,
+            consultants, and agencies — find clients, win them, deliver great work, and get
+            paid, with less effort.
           </p>
         </motion.div>
       </section>

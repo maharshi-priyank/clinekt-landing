@@ -1,13 +1,23 @@
 import { useState, useEffect, useRef } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ArrowRight, ChevronDown, BookOpen, Wrench } from 'lucide-react'
+import {
+  Menu, X, ArrowRight, ChevronDown, BookOpen, Wrench,
+  Briefcase, Megaphone, Palette, LayoutGrid,
+} from 'lucide-react'
 import { trackCTAClick } from '../lib/analytics'
 
 const links = [
   { label: 'How it works', anchor: 'how-it-works', href: null },
   { label: 'Features',     anchor: null,            href: '/features' },
   { label: 'Pricing',      anchor: null,            href: '/pricing' },
+]
+
+const solutionLinks = [
+  { label: 'For Service Businesses', href: '/software-for-service-businesses', icon: LayoutGrid, desc: 'The all-in-one platform, for every industry' },
+  { label: 'For Consultants',        href: '/software-for-consultants',        icon: Briefcase,  desc: 'Proposals, TDS-aware invoicing & CRM' },
+  { label: 'For Marketing Agencies', href: '/crm-for-marketing-agencies',      icon: Megaphone,  desc: 'Retainers, client portals & team tasks' },
+  { label: 'For Agencies & Studios', href: '/software-for-agencies',           icon: Palette,    desc: 'Design, IT & creative studios' },
 ]
 
 const resourceLinks = [
@@ -19,6 +29,9 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [onDark, setOnDark] = useState(false)
   const [open, setOpen] = useState(false)
+  const [solutionsOpen, setSolutionsOpen] = useState(false)
+  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false)
+  const solutionsRef = useRef<HTMLDivElement>(null)
   const [resourcesOpen, setResourcesOpen] = useState(false)
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false)
   const resourcesRef = useRef<HTMLDivElement>(null)
@@ -49,6 +62,9 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
+      if (solutionsRef.current && !solutionsRef.current.contains(e.target as Node)) {
+        setSolutionsOpen(false)
+      }
       if (resourcesRef.current && !resourcesRef.current.contains(e.target as Node)) {
         setResourcesOpen(false)
       }
@@ -99,6 +115,53 @@ export default function Navbar() {
               </a>
             )
           )}
+
+          {/* Solutions dropdown */}
+          <div ref={solutionsRef} className="relative">
+            <button
+              onClick={() => setSolutionsOpen(v => !v)}
+              className={`flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-full transition-all ${
+                onDark
+                  ? solutionsOpen ? 'text-white bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/10'
+                  : solutionsOpen ? 'text-gray-900 bg-gray-100' : 'text-gray-600 hover:text-gray-900 hover:bg-black/5'
+              }`}
+            >
+              Solutions
+              <ChevronDown size={13} className={`transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            <AnimatePresence>
+              {solutionsOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 6, scale: 0.97 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 6, scale: 0.97 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white rounded-2xl shadow-xl shadow-gray-900/10 border border-gray-100 overflow-hidden z-50"
+                >
+                  {solutionLinks.map(s => {
+                    const Icon = s.icon
+                    return (
+                      <Link
+                        key={s.href}
+                        to={s.href}
+                        onClick={() => setSolutionsOpen(false)}
+                        className="flex items-start gap-3 px-4 py-3.5 hover:bg-gray-50 transition-colors group"
+                      >
+                        <div className="mt-0.5 w-7 h-7 rounded-lg bg-indigo-50 flex items-center justify-center shrink-0 group-hover:bg-indigo-100 transition-colors">
+                          <Icon size={14} className="text-indigo-600" />
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-gray-900">{s.label}</p>
+                          <p className="text-xs text-gray-400 mt-0.5">{s.desc}</p>
+                        </div>
+                      </Link>
+                    )
+                  })}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
           {/* Resources dropdown */}
           <div ref={resourcesRef} className="relative">
@@ -196,6 +259,42 @@ export default function Navbar() {
                   </a>
                 )
               )}
+
+              {/* Mobile Solutions */}
+              <button
+                onClick={() => setMobileSolutionsOpen(v => !v)}
+                className="flex items-center justify-between px-4 py-3 text-gray-700 font-medium hover:text-gray-900 hover:bg-gray-50 rounded-full transition-all"
+              >
+                Solutions
+                <ChevronDown size={14} className={`transition-transform duration-200 ${mobileSolutionsOpen ? 'rotate-180' : ''}`} />
+              </button>
+              <AnimatePresence>
+                {mobileSolutionsOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pl-4 flex flex-col gap-0.5 pb-1">
+                      {solutionLinks.map(s => {
+                        const Icon = s.icon
+                        return (
+                          <Link
+                            key={s.href}
+                            to={s.href}
+                            onClick={() => { setOpen(false); setMobileSolutionsOpen(false) }}
+                            className="flex items-center gap-2.5 px-4 py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-xl transition-all"
+                          >
+                            <Icon size={14} className="text-indigo-500" />
+                            <span className="text-sm font-medium">{s.label}</span>
+                          </Link>
+                        )
+                      })}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {/* Mobile Resources */}
               <button
