@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, MessageSquare, FileText, IndianRupee, Globe, CheckCircle2, X, Plus } from 'lucide-react'
+import { ArrowRight, MessageSquare, FileText, IndianRupee, Globe, CheckCircle2, X, Plus, Coffee, TrendingDown, Users } from 'lucide-react'
 import { useSeo } from '../lib/useSeo'
 import { FadeIn } from '../components/ui/FadeIn'
 
@@ -17,12 +17,18 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 const comparison = [
   { label: 'Built for', clearwork: 'Service businesses — freelancers, agencies, consultants', others: 'High-volume sales teams (calling, dialing)' },
-  { label: 'Price', clearwork: '₹149/mo, unlimited leads', others: '₹500-3,000/user/month' },
+  { label: 'Price', clearwork: '₹0–₹149/mo, unlimited leads', others: '₹500–₹3,000/user/month' },
   { label: 'Proposals built in', clearwork: true, others: false },
   { label: 'GST invoicing built in', clearwork: true, others: false },
   { label: 'UPI payment collection', clearwork: true, others: false },
   { label: 'Client portal', clearwork: true, others: false },
   { label: 'Telephony / auto-dialer', clearwork: false, others: true },
+]
+
+const affordability = [
+  { icon: IndianRupee, stat: '₹149/mo', label: 'Full Pro plan — less than ₹5 a day' },
+  { icon: TrendingDown, stat: '10–20×', label: 'Cheaper than Zoho CRM, HubSpot, or Freshsales per seat' },
+  { icon: Users, stat: '₹0', label: 'Free plan forever for up to 5 clients — no card, ever' },
 ]
 
 const features = [
@@ -47,14 +53,18 @@ const faqs = [
   },
   {
     q: 'Can I use this CRM for free?',
-    a: 'Yes — ClearWork is 100% free until we welcome our first 50 users, with no credit card required and no feature limits during that period.',
+    a: 'Yes. Every new signup starts with a free 15-day trial of the Pro plan — full features, no credit card. If you don\'t upgrade, you\'re automatically moved to the Free plan (up to 5 clients, unlimited leads) — for free, forever, with no card required at any point.',
+  },
+  {
+    q: 'How is ClearWork so much cheaper than Zoho CRM or HubSpot?',
+    a: 'Zoho and HubSpot charge per-seat pricing built around large sales teams with dozens of features you\'ll never touch — dialers, territory management, advanced reporting. ClearWork is built specifically for the workflow small service businesses actually use: leads → proposals → contracts → invoices → payment. By not building (or charging for) enterprise sales-team features, we can price Pro at ₹149/month flat — no per-seat markup for the first 5 team members.',
   },
 ]
 
 export default function CrmForSmallBusiness() {
   useSeo(
-    'CRM for Small Business — Built for Service Businesses | ClearWork',
-    'A CRM for small businesses that actually run on proposals and invoices, not cold calls. Free lead pipeline, proposal tracking, GST invoicing, and UPI payments in one place.',
+    'Affordable CRM for Small Business — ₹149/mo, Free to Start | ClearWork',
+    'An affordable CRM for small business — ₹149/month, 10\u201320\u00d7 cheaper than Zoho or HubSpot. Free plan forever, plus a 15-day free Pro trial. Proposals, GST invoicing, and UPI payments built in.',
     'https://getclearwork.in/crm-for-small-business',
   )
 
@@ -67,21 +77,22 @@ export default function CrmForSmallBusiness() {
         <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-indigo-50/70 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto px-5 lg:px-8 relative z-10 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
-            <SectionLabel>CRM for small business</SectionLabel>
+            <SectionLabel>Affordable CRM for small business</SectionLabel>
             <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-950 tracking-tight leading-[1.05]">
-              A CRM built for{' '}
+              An affordable CRM built for{' '}
               <span className="gradient-text">service businesses,</span>{' '}
               not sales floors.
             </h1>
             <p className="mt-5 text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
-              Most small-business CRMs are built for cold-calling teams. If your business actually
-              runs on proposals, contracts, and invoices — freelancing, consulting, agency work —
-              ClearWork tracks your real pipeline end to end, free.
+              Most small-business CRMs are priced and built for cold-calling teams. ClearWork tracks
+              the pipeline service businesses actually run — leads → proposals → contracts → invoices
+              → payment — starting free, with Pro at just ₹149/month. Priced so any freelancer,
+              consultant, or small agency can afford it.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <a href={APP_URL}
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gray-950 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-lg shadow-gray-950/10">
-                Get started free
+                Start free trial
                 <ArrowRight size={15} />
               </a>
               <a href="#compare"
@@ -111,6 +122,35 @@ export default function CrmForSmallBusiness() {
                   </div>
                   <h3 className="font-bold text-gray-900 mb-1.5">{title}</h3>
                   <p className="text-sm text-gray-500 leading-relaxed">{body}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Affordability ── */}
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto px-5 lg:px-8">
+          <FadeIn className="text-center mb-12">
+            <SectionLabel>Priced for any business</SectionLabel>
+            <h2 className="mt-5 text-3xl md:text-4xl font-bold text-gray-950 tracking-tight">
+              So affordable, every small business can afford it.
+            </h2>
+            <p className="mt-4 text-gray-500 max-w-xl mx-auto flex items-center justify-center gap-1.5">
+              <Coffee size={15} className="text-amber-600 shrink-0" />
+              ₹149/month is less than the price of two cups of coffee — for your entire CRM, proposals, and invoicing.
+            </p>
+          </FadeIn>
+          <div className="grid sm:grid-cols-3 gap-5">
+            {affordability.map(({ icon: Icon, stat, label }, i) => (
+              <FadeIn key={label} delay={i * 0.08}>
+                <div className="h-full bg-white rounded-2xl border border-gray-100 shadow-sm p-6 text-center">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center mx-auto mb-4">
+                    <Icon size={18} className="text-emerald-600" />
+                  </div>
+                  <p className="text-3xl font-extrabold text-gray-950 tracking-tight">{stat}</p>
+                  <p className="text-sm text-gray-500 mt-2 leading-relaxed">{label}</p>
                 </div>
               </FadeIn>
             ))}
@@ -210,10 +250,10 @@ export default function CrmForSmallBusiness() {
           </h2>
           <a href={APP_URL}
             className="inline-flex items-center justify-center gap-2 mt-7 px-7 py-3.5 rounded-xl bg-gray-950 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-lg shadow-gray-950/10">
-            Get started free
+            Start free trial
             <ArrowRight size={15} />
           </a>
-          <p className="text-xs text-gray-400 mt-3">Free until our first 50 users · No credit card needed</p>
+          <p className="text-xs text-gray-400 mt-3">15-day free Pro trial · Then free forever · No credit card needed</p>
         </div>
       </section>
     </div>

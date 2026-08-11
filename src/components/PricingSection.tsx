@@ -104,11 +104,12 @@ export default function PricingSection() {
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
             Simple pricing.{' '}
-            <span className="gradient-text">No surprises.</span>
+            <span className="gradient-text">Priced for any business.</span>
           </h2>
           <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
-            No transaction fees on your earnings. We earn from subscriptions —
-            not by taking a cut of your work.
+            Pro starts at ₹149/month — less than the cost of a single takeaway lunch — so solo
+            freelancers and small agencies can afford the same workflow bigger studios use.
+            No transaction fees on your earnings, ever.
           </p>
 
           {/* Trial badge */}
