@@ -22,6 +22,9 @@ const PricingPage                = lazy(() => import('./pages/Pricing'))
 const ESignatureSoftwarePage     = lazy(() => import('./pages/ESignatureSoftware'))
 const CrmForSmallBusinessPage    = lazy(() => import('./pages/CrmForSmallBusiness'))
 const ContractManagementSoftwarePage = lazy(() => import('./pages/ContractManagementSoftware'))
+const BonsaiAlternativePage      = lazy(() => import('./pages/BonsaiAlternative'))
+const HoneyBookAlternativePage   = lazy(() => import('./pages/HoneyBookAlternative'))
+const DubsadoAlternativePage     = lazy(() => import('./pages/DubsadoAlternative'))
 const Privacy                    = lazy(() => import('./pages/Privacy'))
 const Terms                      = lazy(() => import('./pages/Terms'))
 const BlogIndex                  = lazy(() => import('./pages/blog/BlogIndex'))
@@ -32,6 +35,7 @@ const FreelanceContractGuide     = lazy(() => import('./pages/blog/FreelanceCont
 const TaxRegimeGuide               = lazy(() => import('./pages/blog/TaxRegimeGuide'))
 const HoneyBookAlternativeIndia              = lazy(() => import('./pages/blog/HoneyBookAlternativeIndia'))
 const BonsaiAlternativeIndia                 = lazy(() => import('./pages/blog/BonsaiAlternativeIndia'))
+const DubsadoAlternativeIndia                = lazy(() => import('./pages/blog/DubsadoAlternativeIndia'))
 const RefrensAlternativeIndia                = lazy(() => import('./pages/blog/RefrensAlternativeIndia'))
 const HoneyBookBonsaiDubsadoAlternativeIndia = lazy(() => import('./pages/blog/HoneyBookBonsaiDubsadoAlternativeIndia'))
 const BestFreelancerSoftwareIndia2026        = lazy(() => import('./pages/blog/BestFreelancerSoftwareIndia2026'))
@@ -109,6 +113,9 @@ export default function App() {
             <Route path="/e-signature-software"                 element={<ESignatureSoftwarePage />} />
             <Route path="/crm-for-small-business"                element={<CrmForSmallBusinessPage />} />
             <Route path="/contract-management-software"          element={<ContractManagementSoftwarePage />} />
+            <Route path="/bonsai-alternative"                    element={<BonsaiAlternativePage />} />
+            <Route path="/honeybook-alternative"                 element={<HoneyBookAlternativePage />} />
+            <Route path="/dubsado-alternative"                   element={<DubsadoAlternativePage />} />
             <Route path="/blog"                                element={<BlogIndex />} />
             <Route path="/blog/how-to-create-gst-invoice-india"        element={<GstInvoiceGuide />} />
             <Route path="/blog/is-e-signature-legal-india"            element={<ESignatureLegalIndia />} />
@@ -117,6 +124,7 @@ export default function App() {
             <Route path="/blog/old-vs-new-tax-regime-freelancer-india" element={<TaxRegimeGuide />} />
             <Route path="/blog/honeybook-alternative-india"                      element={<HoneyBookAlternativeIndia />} />
             <Route path="/blog/bonsai-alternative-india"                       element={<BonsaiAlternativeIndia />} />
+            <Route path="/blog/dubsado-alternative-india"                      element={<DubsadoAlternativeIndia />} />
             <Route path="/blog/refrens-alternative-india"                      element={<RefrensAlternativeIndia />} />
             <Route path="/blog/honeybook-bonsai-dubsado-alternative-india"     element={<HoneyBookBonsaiDubsadoAlternativeIndia />} />
             <Route path="/blog/best-freelancer-software-india-2026"            element={<BestFreelancerSoftwareIndia2026 />} />

@@ -94,7 +94,7 @@ export default function ESignatureSoftware() {
               </a>
             </div>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6">
-              {['IT Act 2000 compliant', 'No client login needed', 'Free until our first 50 users'].map(t => (
+              {['IT Act 2000 compliant', 'No client login needed', '15-day free Pro trial'].map(t => (
                 <span key={t} className="flex items-center gap-1.5 text-sm text-gray-400">
                   <CheckCircle2 size={12} className="text-emerald-500" strokeWidth={2.5} />
                   {t}
@@ -246,7 +246,7 @@ export default function ESignatureSoftware() {
             Get started free
             <ArrowRight size={15} />
           </a>
-          <p className="text-xs text-gray-400 mt-3">Free until our first 50 users · No credit card needed</p>
+          <p className="text-xs text-gray-400 mt-3">15-day free Pro trial · Then free forever · No credit card needed</p>
           <p className="text-sm text-gray-400 mt-6">
             Need more than signing? See our full{' '}
             <a href="/contract-management-software" className="text-indigo-600 font-medium hover:underline">contract management software</a>.

@@ -140,6 +140,14 @@ const POSTS = [
     category: 'Freelancer Tools',
   },
   {
+    slug: 'dubsado-alternative-india',
+    title: 'Dubsado Alternative India — Why Indian Freelancers Need More Than Dubsado',
+    description: 'Dubsado has no GST invoicing, no UPI payments, and costs ~$20/mo (₹1,660). ClearWork is the India-ready alternative — free plan forever, Pro at ₹149/mo.',
+    date: 'August 2026',
+    readTime: '6 min',
+    category: 'Freelancer Tools',
+  },
+  {
     slug: 'refrens-alternative-india',
     title: 'Refrens Alternative India — ClearWork vs Refrens Compared (2026)',
     description: 'Refrens is excellent for invoicing but has no proposals, no e-sign contracts, no CRM, and no client portal. ClearWork covers the full freelance workflow in one tool.',

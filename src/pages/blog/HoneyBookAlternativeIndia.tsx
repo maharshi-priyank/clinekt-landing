@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom'
 import BlogLayout, {
-  H2, H3, P, Callout, Table, UL, ToolCTA, FAQ,
+  H2, H3, P, Callout, Table, UL, FAQ,
   type BlogMeta,
 } from '../../components/BlogLayout'
 import { useSeo } from '../../lib/useSeo'
@@ -121,11 +122,19 @@ export default function HoneyBookAlternativeIndia() {
         doesn't even work in India.
       </P>
 
-      <ToolCTA
-        href="https://getclearwork.in"
-        toolName="Try ClearWork Free"
-        cta="Free plan — 3 projects, 3 proposals, GST invoicing. No credit card. Takes 2 minutes to set up."
-      />
+      <div className="my-10 bg-gradient-to-br from-indigo-50 to-white border border-indigo-100 rounded-2xl px-7 py-7">
+        <p className="text-xs font-semibold uppercase tracking-wider text-indigo-400 mb-1">Full Comparison</p>
+        <h3 className="text-xl font-bold text-gray-900 mb-2">See the Full HoneyBook vs. ClearWork Comparison</h3>
+        <p className="text-gray-500 text-sm mb-5">
+          Side-by-side feature comparison, pricing, and migration steps — see exactly what changes when you switch.
+        </p>
+        <Link
+          to="/honeybook-alternative"
+          className="inline-flex items-center gap-2 bg-indigo-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors"
+        >
+          Compare ClearWork vs. HoneyBook →
+        </Link>
+      </div>
 
       <H2>How to Switch from HoneyBook to ClearWork</H2>
 

@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, FileText, Shield, Bell, RefreshCw, CheckCircle2, X, Plus } from 'lucide-react'
+import {
+  ArrowRight, IndianRupee, Receipt, FileSignature, MessageCircle, CheckCircle2, X, Plus, Zap, Shield,
+} from 'lucide-react'
 import { useSeo } from '../lib/useSeo'
 import { FadeIn } from '../components/ui/FadeIn'
 
@@ -16,50 +18,47 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 }
 
 const comparison = [
-  { label: 'Built for', clearwork: 'Freelancers & small agencies', others: 'Enterprise legal/procurement teams' },
-  { label: 'Price', clearwork: '₹149/mo, unlimited contracts', others: '$7-700+/user/month' },
-  { label: 'Setup time', clearwork: 'Minutes', others: 'Weeks (implementation team)' },
-  { label: 'Auto-fills from proposal', clearwork: true, others: false },
-  { label: 'OTP e-sign, IT Act 2000', clearwork: true, others: 'Varies' },
-  { label: 'Converts to invoice in 1 click', clearwork: true, others: false },
-  { label: 'AI clause-risk analysis', clearwork: false, others: true },
+  { label: 'Price', clearwork: '₹149/mo (Pro), free plan forever', others: '$20/mo (~₹1,660), free trial only' },
+  { label: 'Payment gateway', clearwork: 'Razorpay — UPI, cards, net banking', others: 'Stripe/PayPal — no UPI' },
+  { label: 'GST invoicing (CGST/SGST/IGST)', clearwork: true, others: false },
+  { label: 'E-sign valid under IT Act 2000', clearwork: true, others: false },
+  { label: 'TDS tracking (194J/194C)', clearwork: true, others: false },
+  { label: 'WhatsApp payment reminders', clearwork: true, others: false },
+  { label: 'Lead CRM / pipeline', clearwork: true, others: true },
+  { label: 'Client portal', clearwork: true, others: true },
 ]
 
-const features = [
-  { icon: FileText, title: 'Every contract starts from a won proposal', body: 'Scope, price, and timeline carry over automatically — nothing retyped, no mismatch between what was agreed and what\'s signed.' },
-  { icon: Shield, title: 'OTP e-signature, legally valid in India', body: 'Your client signs from any device via a one-time password — no account, no app, valid under the IT Act 2000.' },
-  { icon: Bell, title: 'Track every contract\'s status in one place', body: 'Sent, viewed, signed, or overdue — see exactly where every client agreement stands without digging through email.' },
-  { icon: RefreshCw, title: 'Scope changes become a real amendment', body: 'When a client asks for more, a change order updates the contract and generates the extra invoice — instead of scope creep nobody signed off on.' },
+const reasons = [
+  { icon: IndianRupee, title: 'GST invoicing that actually complies', body: "Dubsado's invoices have no GSTIN field, no CGST/SGST/IGST split, no SAC codes. ClearWork auto-calculates the right tax split for every invoice under Rule 46 of the CGST Rules 2017." },
+  { icon: Receipt, title: 'UPI payments, not Stripe/PayPal only', body: 'Dubsado collects payment via Stripe and PayPal — no UPI support. Every ClearWork invoice has a UPI + card payment link via Razorpay, so clients pay in one tap.' },
+  { icon: FileSignature, title: 'E-sign that holds up in Indian courts', body: "Dubsado's e-signature isn't validated under India's IT Act 2000. ClearWork's OTP-based e-sign is legally enforceable under the IT Act 2000's Second Schedule." },
+  { icon: MessageCircle, title: 'A genuinely free plan, not just a trial', body: "Dubsado's free tier is a 3-client trial with no time limit but hard usage caps. ClearWork's Free plan is free forever — up to 5 clients and 10 projects, no credit card, no expiry." },
 ]
 
 const faqs = [
   {
-    q: 'Is this the same as enterprise contract lifecycle management (CLM) software?',
-    a: 'No — enterprise CLM tools like Icertis or Ironclad are built for legal and procurement teams managing hundreds of vendor contracts, with pricing to match ($7-700+ per user/month). ClearWork is contract management scoped to what a freelancer or small agency actually needs: creating, signing, tracking, and amending client service agreements — at a flat ₹149/mo.',
+    q: 'Does Dubsado work for Indian freelancers?',
+    a: 'Dubsado is usable in India, but it has real gaps: no GST invoicing (CGST/SGST/IGST), no UPI payment collection, and its e-signature isn\'t validated under India\'s IT Act 2000. Most Indian freelancers using Dubsado still need a separate invoicing tool for tax compliance.',
   },
   {
-    q: 'How does a contract get created?',
-    a: 'It\'s auto-generated the moment a client accepts your proposal — scope, pricing, and timeline are pre-filled, so you\'re reviewing and sending, not drafting from scratch.',
+    q: 'How does ClearWork pricing compare to Dubsado?',
+    a: "Dubsado's paid plan starts around $20/month (~₹1,660). ClearWork's Pro plan is ₹149/month — about 11x cheaper — and includes a free plan forever for up to 5 clients, which goes further than Dubsado's trial-style free tier.",
   },
   {
-    q: 'What happens when a client wants to change the scope mid-project?',
-    a: 'You issue a change order — it updates the contract terms and can generate an additional invoice for the extra work, so scope changes are documented and billed instead of silently absorbed.',
+    q: 'Can I import my Dubsado clients and forms into ClearWork?',
+    a: 'You can export your client list from Dubsado as a CSV and import it into ClearWork. Recreating your proposal and invoice templates takes about 15–20 minutes since ClearWork\'s builder is visual.',
   },
   {
-    q: 'Is the e-signature on these contracts legally binding?',
-    a: 'Yes — signatures are OTP-based and valid under the IT Act 2000 (Second Schedule), with a full audit trail (timestamp, IP address, OTP confirmation) stored with the signed document.',
-  },
-  {
-    q: 'Can I store and search past contracts?',
-    a: 'Yes — every signed contract is stored against the client\'s record, searchable anytime, alongside the proposal and invoices that came from it.',
+    q: 'Is ClearWork as customizable as Dubsado?',
+    a: "Dubsado is known for deep workflow customization (forms, canned emails, scheduling). ClearWork trades some of that flexibility for a workflow that's pre-built around India-specific needs — GST, UPI, IT Act e-sign, WhatsApp reminders — so there's less to configure before you can start invoicing.",
   },
 ]
 
-export default function ContractManagementSoftware() {
+export default function DubsadoAlternative() {
   useSeo(
-    'Contract Management Software for Freelancers & Agencies | ClearWork',
-    'Contract management software built for freelancers and small agencies — auto-generate from your proposal, e-sign under IT Act 2000, track status, and convert to invoice in one click.',
-    'https://getclearwork.in/contract-management-software',
+    'Dubsado Alternative for India — GST, UPI & Free Plan | ClearWork',
+    'The Dubsado alternative built for India \u2014 GST invoicing, UPI payments, and IT Act 2000 e-sign, from \u20b90/mo. About 11x cheaper than Dubsado.',
+    'https://getclearwork.in/dubsado-alternative',
   )
 
   return (
@@ -71,20 +70,20 @@ export default function ContractManagementSoftware() {
         <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-indigo-50/70 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto px-5 lg:px-8 relative z-10 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
-            <SectionLabel>Contract management software</SectionLabel>
+            <SectionLabel>Dubsado alternative</SectionLabel>
             <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-950 tracking-tight leading-[1.05]">
-              Contract management,{' '}
-              <span className="gradient-text">sized for freelancers.</span>
+              The Dubsado alternative{' '}
+              <span className="gradient-text">built for India.</span>
             </h1>
             <p className="mt-5 text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
-              Enterprise CLM tools are built for legal teams managing hundreds of vendor
-              contracts. You're signing client agreements. ClearWork auto-generates,
-              e-signs, tracks, and invoices off the same contract — for ₹149/mo.
+              Dubsado is a solid tool for US-based creatives billing in USD via Stripe or PayPal.
+              ClearWork covers the same lead-to-payment workflow, with GST invoicing, UPI payments,
+              and IT Act 2000 e-sign — at about a tenth of the price.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <a href={APP_URL}
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gray-950 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-lg shadow-gray-950/10">
-                Get started free
+                Start free trial
                 <ArrowRight size={15} />
               </a>
               <a href="#compare"
@@ -92,21 +91,29 @@ export default function ContractManagementSoftware() {
                 See how it compares
               </a>
             </div>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6">
+              {['~11x cheaper than Dubsado', 'GST + UPI built-in', '15-day free Pro trial'].map(t => (
+                <span key={t} className="flex items-center gap-1.5 text-sm text-gray-400">
+                  <CheckCircle2 size={12} className="text-emerald-500" strokeWidth={2.5} />
+                  {t}
+                </span>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* ── Features ── */}
+      {/* ── Why switch ── */}
       <section className="py-20 bg-gray-50/60 border-y border-gray-100">
         <div className="max-w-5xl mx-auto px-5 lg:px-8">
           <FadeIn className="text-center mb-14">
-            <SectionLabel>The full lifecycle</SectionLabel>
+            <SectionLabel>Why freelancers switch from Dubsado</SectionLabel>
             <h2 className="mt-5 text-3xl md:text-4xl font-bold text-gray-950 tracking-tight">
-              From draft to signed to invoiced — one record.
+              Same workflow. Built for India, priced for India.
             </h2>
           </FadeIn>
           <div className="grid sm:grid-cols-2 gap-5">
-            {features.map(({ icon: Icon, title, body }, i) => (
+            {reasons.map(({ icon: Icon, title, body }, i) => (
               <FadeIn key={title} delay={i * 0.06}>
                 <div className="h-full bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
                   <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center mb-4">
@@ -125,12 +132,12 @@ export default function ContractManagementSoftware() {
       <section id="compare" className="py-20">
         <div className="max-w-4xl mx-auto px-5 lg:px-8">
           <FadeIn className="text-center mb-12">
-            <SectionLabel>The difference</SectionLabel>
+            <SectionLabel>Head to head</SectionLabel>
             <h2 className="mt-5 text-3xl md:text-4xl font-bold text-gray-950 tracking-tight">
-              vs. Icertis, Ironclad & DocuSign CLM
+              ClearWork vs. Dubsado
             </h2>
             <p className="mt-4 text-gray-500 max-w-xl mx-auto">
-              Excellent for enterprise legal ops. Overkill and overpriced for a freelance business.
+              Similar customization philosophy. Very different price tag and India readiness.
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
@@ -138,9 +145,9 @@ export default function ContractManagementSoftware() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-gray-50 border-b border-gray-100">
-                    <th className="text-left px-5 py-4 font-semibold text-gray-500 text-xs uppercase tracking-wide">Factor</th>
+                    <th className="text-left px-5 py-4 font-semibold text-gray-500 text-xs uppercase tracking-wide">Feature</th>
                     <th className="text-left px-5 py-4 font-semibold text-indigo-600 text-xs uppercase tracking-wide">ClearWork</th>
-                    <th className="text-left px-5 py-4 font-semibold text-gray-400 text-xs uppercase tracking-wide">Enterprise CLM tools</th>
+                    <th className="text-left px-5 py-4 font-semibold text-gray-400 text-xs uppercase tracking-wide">Dubsado</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -170,6 +177,27 @@ export default function ContractManagementSoftware() {
         </div>
       </section>
 
+      {/* ── Trust strip ── */}
+      <section className="py-16 bg-gray-950">
+        <div className="max-w-4xl mx-auto px-5 text-center">
+          <FadeIn>
+            <div className="flex flex-wrap justify-center gap-3">
+              {[
+                { icon: IndianRupee, label: '₹149/mo vs $20/mo' },
+                { icon: Zap, label: 'Migrate in under an hour' },
+                { icon: Shield, label: 'IT Act 2000 e-sign' },
+                { icon: MessageCircle, label: 'WhatsApp reminders' },
+              ].map(({ icon: Icon, label }) => (
+                <span key={label} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/80 text-sm font-medium">
+                  <Icon size={14} className="text-indigo-300" />
+                  {label}
+                </span>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <script
         type="application/ld+json"
@@ -185,7 +213,7 @@ export default function ContractManagementSoftware() {
           }),
         }}
       />
-      <section className="py-20 bg-gray-50 border-t border-gray-100">
+      <section className="py-20 bg-white">
         <div className="max-w-2xl mx-auto px-5">
           <FadeIn className="text-center mb-10">
             <SectionLabel>FAQs</SectionLabel>
@@ -206,20 +234,22 @@ export default function ContractManagementSoftware() {
       </section>
 
       {/* ── Closing CTA ── */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50 border-t border-gray-100">
         <div className="max-w-2xl mx-auto px-5 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-950 tracking-tight">
-            Manage your first contract today.
+            Switch from Dubsado in under an hour.
           </h2>
           <a href={APP_URL}
             className="inline-flex items-center justify-center gap-2 mt-7 px-7 py-3.5 rounded-xl bg-gray-950 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-lg shadow-gray-950/10">
-            Get started free
+            Start free trial
             <ArrowRight size={15} />
           </a>
           <p className="text-xs text-gray-400 mt-3">15-day free Pro trial · Then free forever · No credit card needed</p>
           <p className="text-sm text-gray-400 mt-6">
-            Just need the signature step? See our{' '}
-            <a href="/e-signature-software" className="text-indigo-600 font-medium hover:underline">e-sign software</a>.
+            Also comparing other tools?{' '}
+            <a href="/bonsai-alternative" className="text-indigo-600 font-medium hover:underline">Bonsai alternative</a>{' '}
+            ·{' '}
+            <a href="/honeybook-alternative" className="text-indigo-600 font-medium hover:underline">HoneyBook alternative</a>
           </p>
         </div>
       </section>

@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom'
 import BlogLayout, {
-  H2, H3, P, Callout, Table, UL, ToolCTA, FAQ,
+  H2, H3, P, Callout, Table, UL, FAQ,
   type BlogMeta,
 } from '../../components/BlogLayout'
 import { useSeo } from '../../lib/useSeo'
@@ -117,11 +118,19 @@ export default function BonsaiAlternativeIndia() {
         <><strong>Run one full workflow as a test:</strong> Create a proposal, get it e-signed as a contract, and raise a GST invoice with a UPI payment link. The end-to-end workflow takes under 10 minutes to complete.</>,
       ]} />
 
-      <ToolCTA
-        href="https://getclearwork.in"
-        toolName="Try ClearWork Free"
-        cta="Free plan with GST invoicing, proposals, and e-sign. No credit card. Set up in 2 minutes."
-      />
+      <div className="my-10 bg-gradient-to-br from-indigo-50 to-white border border-indigo-100 rounded-2xl px-7 py-7">
+        <p className="text-xs font-semibold uppercase tracking-wider text-indigo-400 mb-1">Full Comparison</p>
+        <h3 className="text-xl font-bold text-gray-900 mb-2">See the Full Bonsai vs. ClearWork Comparison</h3>
+        <p className="text-gray-500 text-sm mb-5">
+          Side-by-side feature comparison, pricing, and migration steps — see exactly what changes when you switch.
+        </p>
+        <Link
+          to="/bonsai-alternative"
+          className="inline-flex items-center gap-2 bg-indigo-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors"
+        >
+          Compare ClearWork vs. Bonsai →
+        </Link>
+      </div>
 
       <FAQ items={[
         {
