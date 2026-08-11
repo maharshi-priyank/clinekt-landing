@@ -20,7 +20,7 @@ export default function TrustpilotSection() {
   }, [])
 
   return (
-    <section ref={ref} className="py-16 px-5" style={{ background: '#f7f4f1' }}>
+    <section ref={ref} className="py-16 px-5" style={{ background: '#FFFFFF' }}>
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

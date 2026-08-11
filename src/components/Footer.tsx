@@ -37,9 +37,9 @@ function FooterLink({ item }: { item: NavItem }) {
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#FAFAF9' }}>
+    <footer style={{ background: '#FFFFFF' }}>
       {/* Hard architectural break from dark section — intentional, modern */}
-      <div style={{ height: 1, background: '#E5E0D8' }} />
+      <div style={{ height: 1, background: '#E4E4E7' }} />
 
       <div className="max-w-6xl mx-auto px-5 pt-14 pb-10">
 

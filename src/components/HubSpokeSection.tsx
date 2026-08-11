@@ -99,7 +99,7 @@ export default function HubSpokeSection() {
   return (
     <>
     {/* ── Mobile + reduced-motion: static fallback (scroll-jack is unusable on phones / unwanted with prefers-reduced-motion) ── */}
-    <div className={`${shouldReduceMotion ? '' : 'md:hidden'} py-16 px-5 relative overflow-hidden`} style={{ background: '#f4f2ef' }}>
+    <div className={`${shouldReduceMotion ? '' : 'md:hidden'} py-16 px-5 relative overflow-hidden`} style={{ background: '#FFFFFF' }}>
       <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, #C9CDD6 1.2px, transparent 1.2px)', backgroundSize: '30px 30px', opacity: 0.28 }} />
       <div className="relative z-10 max-w-sm mx-auto">
 
@@ -121,7 +121,7 @@ export default function HubSpokeSection() {
 
         <FadeIn delay={0.18} className="text-center mb-8">
           <h2 style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 900, fontSize: 36, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.0, margin: 0 }}>
-            Say hi to{' '}<span style={{ color: '#4F46E5' }}>ClearWork.</span>
+            Say hi to{' '}<span style={{ color: '#000000' }}>ClearWork.</span>
           </h2>
           <p style={{ marginTop: 8, fontSize: 14, color: '#6B7280' }}>Your client management platform.</p>
         </FadeIn>
@@ -141,9 +141,9 @@ export default function HubSpokeSection() {
       <div ref={stickyRef} style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden' }}>
 
         {/* Backgrounds */}
-        <div style={{ position: 'absolute', inset: 0, background: '#f4f2ef' }} />
+        <div style={{ position: 'absolute', inset: 0, background: '#FFFFFF' }} />
         <div style={{ position: 'absolute', inset: 0, zIndex: 1, backgroundImage: 'radial-gradient(circle, #C9CDD6 1.2px, transparent 1.2px)', backgroundSize: '30px 30px', opacity: 0.28 }} />
-        <div style={{ position: 'absolute', zIndex: 1, left: '50%', top: '50%', transform: 'translate(-50%,-50%)', width: '55vw', height: '55vw', maxWidth: 800, maxHeight: 800, borderRadius: '50%', background: 'radial-gradient(circle, rgba(230,235,255,0.55) 0%, rgba(245,247,255,0.25) 50%, transparent 70%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', zIndex: 1, left: '50%', top: '50%', transform: 'translate(-50%,-50%)', width: '55vw', height: '55vw', maxWidth: 800, maxHeight: 800, borderRadius: '50%', background: 'radial-gradient(circle, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.03) 50%, transparent 70%)', pointerEvents: 'none' }} />
         {/* Soft edge vignette — reduced opacity so edge icons stay visible */}
         <div style={{ position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none', background: 'radial-gradient(ellipse 95% 90% at 50% 50%, transparent 45%, rgba(249,250,251,0.55) 100%)' }} />
 
@@ -171,7 +171,7 @@ export default function HubSpokeSection() {
         {!campaignVisible && (
           <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', zIndex: 12, pointerEvents: 'none' }}>
             <motion.div style={{ opacity: centerOpacity, y: centerY, textAlign: 'center' }}>
-              <div style={{ position: 'absolute', width: 330, height: 330, borderRadius: '50%', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', background: 'radial-gradient(circle, rgba(237,240,255,1) 0%, rgba(242,244,255,0.75) 40%, transparent 72%)', pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', width: 330, height: 330, borderRadius: '50%', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', background: 'radial-gradient(circle, rgba(244,244,245,1) 0%, rgba(250,250,250,0.75) 40%, transparent 72%)', pointerEvents: 'none' }} />
               <div style={{ position: 'relative', zIndex: 1, maxWidth: 260, margin: '0 auto', padding: '0 8px' }}>
                 <p style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 400, fontSize: 'clamp(19px, 2vw, 26px)', color: '#111827', lineHeight: 1.38, letterSpacing: '-0.025em', margin: 0 }}>
                   Your work is spread across{' '}
@@ -194,7 +194,7 @@ export default function HubSpokeSection() {
           >
             <h2 style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 900, fontSize: 'clamp(32px, 4.5vw, 62px)', color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.0, margin: 0 }}>
               Say hi to{' '}
-              <span style={{ color: '#4F46E5' }}>ClearWork.</span>
+              <span style={{ color: '#000000' }}>ClearWork.</span>
             </h2>
             <p style={{ marginTop: 8, fontFamily: '"DM Sans", sans-serif', fontSize: 'clamp(13px, 1vw, 15px)', color: '#6B7280', fontWeight: 400 }}>
               Your client management platform.
@@ -208,7 +208,7 @@ export default function HubSpokeSection() {
             transition={{ duration: 0.80, ease: [0.22, 1, 0.36, 1], delay: 0.10 }}
             style={{ width: 'min(920px, 90vw)', transformOrigin: 'bottom center' }}
           >
-            <div style={{ position: 'absolute', inset: '-16px -24px', borderRadius: 36, background: 'radial-gradient(ellipse at 50% 70%, rgba(99,102,241,0.10) 0%, transparent 65%)', filter: 'blur(14px)', pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: '-16px -24px', borderRadius: 36, background: 'radial-gradient(ellipse at 50% 70%, rgba(0,0,0,0.08) 0%, transparent 65%)', filter: 'blur(14px)', pointerEvents: 'none' }} />
             <div style={{ borderRadius: '16px 16px 0 0', overflow: 'hidden', boxShadow: '0 -4px 60px rgba(15,23,42,0.12), 0 0 0 1px rgba(0,0,0,0.06)', position: 'relative' }}>
               <img src="/screenshots/dashboard-reveal.png" alt="ClearWork dashboard" style={{ width: '100%', display: 'block', maxHeight: '62vh', objectFit: 'cover', objectPosition: 'top' }} loading="lazy" />
             </div>

@@ -12,10 +12,10 @@
 
 /* ─── Design Tokens ─────────────────────────────────────────────── */
 :root {
-  /* Backgrounds */
-  --bg:           #FAFAF9;
-  --bg-alt:       #F5F4F1;
-  --bg-subtle:    #EFEDE9;
+  /* Backgrounds — EXPERIMENTAL plain white (was creamish/warm) */
+  --bg:           #FFFFFF;
+  --bg-alt:       #FFFFFF;
+  --bg-subtle:    #F7F7F7;
   --bg-dark:      #0C0A09;
   --bg-dark-2:    #131110;
 
@@ -25,13 +25,13 @@
   --text-3:       #A8A29E;
   --text-inv:     #FAFAF9;
 
-  /* Brand */
-  --brand:        #4F46E5;
-  --brand-hover:  #4338CA;
-  --brand-light:  #EEF2FF;
-  --brand-muted:  #E0E7FF;
-  --brand-dark:   #312E81;
-  --brand-glow:   rgba(99, 102, 241, 0.25);
+  /* Brand — EXPERIMENTAL black & white theme (local only) */
+  --brand:        #18181B;
+  --brand-hover:  #000000;
+  --brand-light:  #FAFAFA;
+  --brand-muted:  #E4E4E7;
+  --brand-dark:   #000000;
+  --brand-glow:   rgba(0, 0, 0, 0.18);
 
   /* Accent — warm gold (India-first premium) */
   --gold:         #D97706;
@@ -94,9 +94,9 @@ body {
   font-weight: 400;
 }
 
-/* Gradient text — rich indigo-violet */
+/* Gradient text — EXPERIMENTAL black & white (was indigo-violet) */
 .gradient-text {
-  background: linear-gradient(135deg, #4338CA 0%, #4F46E5 45%, #7C3AED 100%);
+  background: linear-gradient(135deg, #000000 0%, #27272A 55%, #52525B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -108,7 +108,7 @@ body {
   100% { background-position:  300% center; }
 }
 .shimmer-text {
-  background: linear-gradient(90deg, #4338CA 0%, #6366F1 25%, #A78BFA 50%, #6366F1 75%, #4338CA 100%);
+  background: linear-gradient(90deg, #000000 0%, #3F3F46 25%, #A1A1AA 50%, #3F3F46 75%, #000000 100%);
   background-size: 300% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -249,11 +249,11 @@ body {
   padding-left: 0.25rem;
 }
 .prose-blog a {
-  color: #4f46e5;
+  color: #18181B;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-.prose-blog a:hover { color: #3730a3; }
+.prose-blog a:hover { color: #000000; }
 .prose-blog strong,
 .prose-blog b { font-weight: 600; color: #111827; }
 .prose-blog table {
@@ -287,7 +287,7 @@ body {
   color: #111827;
 }
 .prose-blog blockquote {
-  border-left: 3px solid #e0e7ff;
+  border-left: 3px solid #E4E4E7;
   padding-left: 1rem;
   margin: 1.5rem 0;
   color: #6b7280;

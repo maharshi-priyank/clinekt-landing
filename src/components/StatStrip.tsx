@@ -50,7 +50,7 @@ export default function StatStrip() {
     <section
       ref={ref}
       className="relative py-12"
-      style={{ background: 'linear-gradient(180deg, #F5F3F0 0%, #F4F2EF 100%)' }}
+      style={{ background: '#FFFFFF' }}
     >
       <div className="max-w-5xl mx-auto px-5">
         <motion.p

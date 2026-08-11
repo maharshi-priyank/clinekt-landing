@@ -49,7 +49,7 @@ export default function LeadFinderSection() {
       <div className="absolute inset-0 grid-dark pointer-events-none opacity-50" />
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(79,70,229,0.18) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(255,255,255,0.14) 0%, transparent 70%)' }}
       />
 
       <div className="relative z-10 max-w-5xl mx-auto px-5">

@@ -86,7 +86,7 @@ export default function Hero() {
     <section
       ref={containerRef}
       className="relative overflow-hidden"
-      style={{ background: 'linear-gradient(160deg, #EEF2FF 0%, #F5F3FF 28%, #FAF8FF 55%, #FAFAF9 100%)' }}
+      style={{ background: '#FFFFFF' }}
     >
       {/* ── Animated mesh orbs ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -95,7 +95,7 @@ export default function Hero() {
           style={{
             top: '-15%', left: '-10%',
             width: '60%', height: '65%',
-            background: 'radial-gradient(ellipse, rgba(99,102,241,0.22) 0%, transparent 65%)',
+            background: 'radial-gradient(ellipse, rgba(0,0,0,0.14) 0%, transparent 65%)',
             filter: 'blur(80px)',
             animation: shouldReduceMotion ? 'none' : 'mesh-1 18s ease-in-out infinite',
           }}
@@ -105,7 +105,7 @@ export default function Hero() {
           style={{
             top: '-5%', right: '-8%',
             width: '50%', height: '55%',
-            background: 'radial-gradient(ellipse, rgba(139,92,246,0.18) 0%, transparent 65%)',
+            background: 'radial-gradient(ellipse, rgba(0,0,0,0.10) 0%, transparent 65%)',
             filter: 'blur(90px)',
             animation: shouldReduceMotion ? 'none' : 'mesh-2 22s ease-in-out infinite',
           }}
@@ -127,7 +127,7 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(99,102,241,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.06) 1px, transparent 1px)',
+            'linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)',
           backgroundSize: '52px 52px',
         }}
       />
@@ -162,7 +162,7 @@ export default function Hero() {
                 onClick={() => trackCTAClick('early_access_badge', 'hero')}
                 className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full
                   border border-indigo-200/80 bg-white/70 backdrop-blur-sm
-                  shadow-[0_2px_12px_rgba(99,102,241,0.12)]
+                  shadow-[0_2px_12px_rgba(0,0,0,0.10)]
                   text-sm font-medium text-indigo-800 hover:bg-white/90 transition-all duration-200 group"
               >
                 <span
@@ -186,7 +186,7 @@ Free 15-day Pro trial · No credit card needed
                 className="serif-accent"
                 style={{
                   fontSize: 'clamp(46px, 7.2vw, 87px)',
-                  background: 'linear-gradient(135deg, #4338CA 0%, #4F46E5 45%, #7C3AED 100%)',
+                  background: 'linear-gradient(135deg, #000000 0%, #27272A 45%, #52525B 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -259,7 +259,7 @@ Free 15-day Pro trial · No credit card needed
               className="absolute pointer-events-none"
               style={{
                 inset: '-24px -32px 0',
-                background: 'radial-gradient(ellipse at 50% 80%, rgba(99,102,241,0.18) 0%, transparent 65%)',
+                background: 'radial-gradient(ellipse at 50% 80%, rgba(0,0,0,0.12) 0%, transparent 65%)',
                 filter: 'blur(24px)',
               }}
             />
@@ -302,7 +302,7 @@ Free 15-day Pro trial · No credit card needed
               transition={{ duration: shouldReduceMotion ? 0.3 : 1.0, delay: shouldReduceMotion ? 0 : 0.55, ease }}
               className="relative rounded-t-2xl overflow-hidden"
               style={{
-                boxShadow: '0 -4px 80px rgba(99,102,241,0.14), 0 -2px 0 rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.06)',
+                boxShadow: '0 -4px 80px rgba(0,0,0,0.12), 0 -2px 0 rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.06)',
               }}
             >
               {/* Mac-style titlebar */}

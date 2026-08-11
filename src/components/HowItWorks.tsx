@@ -180,7 +180,7 @@ function StepCard({ step, index, total }: { step: Step; index: number; total: nu
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" style={{ background: '#F5F4F1' }}>
+    <section id="how-it-works" style={{ background: '#FFFFFF' }}>
 
       {/* Header */}
       <div className="max-w-6xl mx-auto px-5 lg:px-8 pt-24 pb-16">

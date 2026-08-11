@@ -24,7 +24,7 @@ export default function MobileAppSection() {
   const scale = useSpring(rawScale, { stiffness: 80, damping: 20 })
 
   return (
-    <section ref={sectionRef} className="py-24 overflow-hidden" style={{ background: '#f8f6f3' }}>
+    <section ref={sectionRef} className="py-24 overflow-hidden" style={{ background: '#FFFFFF' }}>
       <div className="max-w-4xl mx-auto px-5">
 
         {/* Eyebrow */}

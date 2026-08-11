@@ -39,13 +39,13 @@ export default function TrustStrip() {
   return (
     <section
       className="relative overflow-hidden py-9"
-      style={{ background: 'linear-gradient(180deg, #FAFAF9 0%, #F5F3F0 100%)' }}
+      style={{ background: '#FFFFFF' }}
     >
       {/* Top + bottom fades to bleed softly */}
       <div className="absolute inset-y-0 left-0 w-16 z-10 pointer-events-none"
-        style={{ background: 'linear-gradient(90deg, #F5F3F0 0%, transparent 100%)' }} />
+        style={{ background: 'linear-gradient(90deg, #FFFFFF 0%, transparent 100%)' }} />
       <div className="absolute inset-y-0 right-0 w-16 z-10 pointer-events-none"
-        style={{ background: 'linear-gradient(-90deg, #F5F3F0 0%, transparent 100%)' }} />
+        style={{ background: 'linear-gradient(-90deg, #FFFFFF 0%, transparent 100%)' }} />
 
       {/* Label row */}
       <p className="text-center text-[11px] font-semibold text-stone-400 uppercase tracking-[0.14em] mb-5">
