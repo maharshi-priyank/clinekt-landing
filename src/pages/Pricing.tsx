@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Plus, Sparkles } from 'lucide-react'
 import { useSeo } from '../lib/useSeo'
 import PricingSection from '../components/PricingSection'
+import AffordabilitySection from '../components/AffordabilitySection'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 const APP_URL = 'https://app.getclearwork.in/signup'
@@ -66,6 +67,9 @@ export default function Pricing() {
 
       {/* ── Pricing cards (shared component) ── */}
       <PricingSection />
+
+      {/* ── Affordability ── */}
+      <AffordabilitySection className="py-20 bg-gray-50/60 border-y border-gray-100" />
 
       {/* ── FAQ ── */}
       <script
