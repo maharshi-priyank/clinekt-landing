@@ -88,15 +88,31 @@ switching deadline 31 July 2026, and when old regime still makes sense
 (HRA > ₹2L or total deductions > ₹3.75L).
 Related tool: https://getclearwork.in/tools/income-tax-calculator
 
-### HoneyBook Alternative India
-URL: https://getclearwork.in/blog/honeybook-alternative-india
-Covers: HoneyBook is not available in India — its Stripe payment gateway doesn't support Indian bank accounts. This page explains why HoneyBook fails for Indian freelancers (no GST, no UPI, USD-only pricing) and compares ClearWork as the India-ready alternative with GST invoicing, UPI payments, OTP e-sign, and pricing from ₹149/month.
+### HoneyBook Alternative India (comparison page)
+URL: https://getclearwork.in/alternatives/honeybook-alternative-india
+Covers: Primary HoneyBook alternative page for India — why HoneyBook fails (no UPI, no GST, Stripe-only, USD pricing), pain points, ClearWork feature fit, honest comparison to Dubsado/Bonsai/Refrens/Clienter, feature table, pricing, and FAQ schema. Canonical URL for "HoneyBook alternative India" searches.
 
-### Bonsai Alternative India
+### HoneyBook Alternative India (blog deep-dive)
+URL: https://getclearwork.in/blog/honeybook-alternative-india
+Covers: Long-form blog explaining why HoneyBook is not available in India — Stripe payment gateway doesn't support Indian bank accounts. Why HoneyBook fails for Indian freelancers (no GST, no UPI, USD-only pricing) and compares ClearWork as the India-ready alternative with GST invoicing, UPI payments, OTP e-sign, and pricing from ₹149/month.
+
+### Alternatives Hub
+URL: https://getclearwork.in/alternatives
+Covers: Index of all ClearWork comparison pages — HoneyBook, Bonsai, Dubsado, Refrens, and roundup blog posts for Indian service businesses.
+
+### Bonsai Alternative India (comparison page)
+URL: https://getclearwork.in/alternatives/bonsai-alternative-india
+Covers: Primary Bonsai alternative page for India — GST invoicing, UPI, IT Act e-sign, feature comparison vs Bonsai, and rupee pricing from ₹149/mo vs Bonsai's ~₹1,400/mo USD plan.
+
+### Bonsai Alternative India (blog deep-dive)
 URL: https://getclearwork.in/blog/bonsai-alternative-india
 Covers: Bonsai has no GST auto-calculation, no UPI payment integration, and costs ~₹1,400/month in USD pricing. This page compares Bonsai vs ClearWork for Indian freelancers across GST invoicing, UPI payments, TDS tracking, WhatsApp reminders, IT Act 2000 e-sign, and pricing — ClearWork at ₹149/month vs Bonsai at ~₹1,400/month.
 
-### Dubsado Alternative India
+### Dubsado Alternative India (comparison page)
+URL: https://getclearwork.in/alternatives/dubsado-alternative-india
+Covers: Primary Dubsado alternative page for India — GST invoicing, UPI, simpler setup than Dubsado, and rupee pricing from free plan / ₹149/mo Pro vs Dubsado's ~₹1,660/mo USD plan.
+
+### Dubsado Alternative India (blog deep-dive)
 URL: https://getclearwork.in/blog/dubsado-alternative-india
 Covers: Dubsado has no GST invoicing, no UPI payment collection, and costs ~₹1,660/month in USD pricing. This page compares Dubsado vs ClearWork for Indian freelancers across GST invoicing, UPI payments, TDS tracking, WhatsApp reminders, IT Act 2000 e-sign, and pricing — ClearWork free plan / ₹149/month Pro vs Dubsado at ~₹1,660/month.
 
@@ -192,9 +208,10 @@ Related tool: https://getclearwork.in/tools/gst-invoice-generator
 - E-Signature & Digital Signature Software: https://getclearwork.in/e-signature-software
 - CRM for Small Business: https://getclearwork.in/crm-for-small-business
 - Contract Management Software: https://getclearwork.in/contract-management-software
-- Bonsai Alternative: https://getclearwork.in/bonsai-alternative
-- HoneyBook Alternative: https://getclearwork.in/honeybook-alternative
-- Dubsado Alternative: https://getclearwork.in/dubsado-alternative
+- Alternatives Hub: https://getclearwork.in/alternatives
+- HoneyBook Alternative India: https://getclearwork.in/alternatives/honeybook-alternative-india
+- Bonsai Alternative India: https://getclearwork.in/alternatives/bonsai-alternative-india
+- Dubsado Alternative India: https://getclearwork.in/alternatives/dubsado-alternative-india
 - Software for Service Businesses (flagship positioning page): https://getclearwork.in/software-for-service-businesses
 - Software for Consultants: https://getclearwork.in/software-for-consultants
 - CRM for Marketing Agencies: https://getclearwork.in/crm-for-marketing-agencies

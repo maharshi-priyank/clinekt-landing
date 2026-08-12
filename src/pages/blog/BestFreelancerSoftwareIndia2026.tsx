@@ -266,8 +266,12 @@ export default function BestFreelancerSoftwareIndia2026() {
       <div className="mt-10 p-6 bg-gray-50 rounded-2xl border border-gray-100">
         <p className="text-sm font-semibold text-gray-900 mb-1">Compare specific tools</p>
         <ul className="text-sm space-y-1">
-          <li><Link to="/blog/honeybook-alternative-india" className="text-indigo-600 hover:underline">HoneyBook Alternative India — detailed breakdown</Link></li>
-          <li><Link to="/blog/bonsai-alternative-india" className="text-indigo-600 hover:underline">Bonsai Alternative India — full comparison</Link></li>
+          <li><Link to="/alternatives/honeybook-alternative-india" className="text-indigo-600 hover:underline">HoneyBook Alternative India — comparison page</Link></li>
+          <li><Link to="/blog/honeybook-alternative-india" className="text-indigo-600 hover:underline">HoneyBook Alternative India — detailed blog guide</Link></li>
+          <li><Link to="/alternatives/bonsai-alternative-india" className="text-indigo-600 hover:underline">Bonsai Alternative India — comparison page</Link></li>
+          <li><Link to="/blog/bonsai-alternative-india" className="text-indigo-600 hover:underline">Bonsai Alternative India — detailed blog guide</Link></li>
+          <li><Link to="/alternatives/dubsado-alternative-india" className="text-indigo-600 hover:underline">Dubsado Alternative India — comparison page</Link></li>
+          <li><Link to="/blog/dubsado-alternative-india" className="text-indigo-600 hover:underline">Dubsado Alternative India — detailed blog guide</Link></li>
           <li><Link to="/blog/refrens-alternative-india" className="text-indigo-600 hover:underline">Refrens Alternative India — ClearWork vs Refrens</Link></li>
           <li><Link to="/blog/honeybook-bonsai-dubsado-alternative-india" className="text-indigo-600 hover:underline">HoneyBook vs Bonsai vs Dubsado — complete India comparison</Link></li>
         </ul>

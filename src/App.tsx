@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from 'react'
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { trackPageview } from './lib/analytics'
 import Lenis from 'lenis'
 import Navbar from './components/Navbar'
@@ -24,6 +24,7 @@ const CrmForSmallBusinessPage    = lazy(() => import('./pages/CrmForSmallBusines
 const ContractManagementSoftwarePage = lazy(() => import('./pages/ContractManagementSoftware'))
 const BonsaiAlternativePage      = lazy(() => import('./pages/BonsaiAlternative'))
 const HoneyBookAlternativePage   = lazy(() => import('./pages/HoneyBookAlternative'))
+const AlternativesIndexPage      = lazy(() => import('./pages/AlternativesIndex'))
 const DubsadoAlternativePage     = lazy(() => import('./pages/DubsadoAlternative'))
 const SoftwareForServiceBusinessesPage = lazy(() => import('./pages/SoftwareForServiceBusinesses'))
 const SoftwareForConsultantsPage       = lazy(() => import('./pages/SoftwareForConsultants'))
@@ -117,9 +118,13 @@ export default function App() {
             <Route path="/e-signature-software"                 element={<ESignatureSoftwarePage />} />
             <Route path="/crm-for-small-business"                element={<CrmForSmallBusinessPage />} />
             <Route path="/contract-management-software"          element={<ContractManagementSoftwarePage />} />
-            <Route path="/bonsai-alternative"                    element={<BonsaiAlternativePage />} />
-            <Route path="/honeybook-alternative"                 element={<HoneyBookAlternativePage />} />
-            <Route path="/dubsado-alternative"                   element={<DubsadoAlternativePage />} />
+            <Route path="/alternatives"                            element={<AlternativesIndexPage />} />
+            <Route path="/alternatives/honeybook-alternative-india" element={<HoneyBookAlternativePage />} />
+            <Route path="/honeybook-alternative"                 element={<Navigate to="/alternatives/honeybook-alternative-india" replace />} />
+            <Route path="/alternatives/bonsai-alternative-india"  element={<BonsaiAlternativePage />} />
+            <Route path="/alternatives/dubsado-alternative-india" element={<DubsadoAlternativePage />} />
+            <Route path="/bonsai-alternative"                    element={<Navigate to="/alternatives/bonsai-alternative-india" replace />} />
+            <Route path="/dubsado-alternative"                   element={<Navigate to="/alternatives/dubsado-alternative-india" replace />} />
             <Route path="/software-for-service-businesses"       element={<SoftwareForServiceBusinessesPage />} />
             <Route path="/software-for-consultants"              element={<SoftwareForConsultantsPage />} />
             <Route path="/crm-for-marketing-agencies"            element={<CrmForMarketingAgenciesPage />} />

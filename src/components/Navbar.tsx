@@ -34,9 +34,10 @@ const solutionSections: { title: string; links: SimpleLink[] }[] = [
   {
     title: 'Compare',
     links: [
-      { label: 'Bonsai Alternative',    href: '/bonsai-alternative' },
-      { label: 'HoneyBook Alternative', href: '/honeybook-alternative' },
-      { label: 'Dubsado Alternative',   href: '/dubsado-alternative' },
+      { label: 'All Alternatives',      href: '/alternatives' },
+      { label: 'HoneyBook Alternative', href: '/alternatives/honeybook-alternative-india' },
+      { label: 'Bonsai Alternative',    href: '/alternatives/bonsai-alternative-india' },
+      { label: 'Dubsado Alternative',   href: '/alternatives/dubsado-alternative-india' },
     ],
   },
 ]
@@ -64,9 +65,10 @@ const resourceSections: { title: string; links: SimpleLink[] }[] = [
   {
     title: 'Compare',
     links: [
-      { label: 'Bonsai Alternative',    href: '/bonsai-alternative' },
-      { label: 'HoneyBook Alternative', href: '/honeybook-alternative' },
-      { label: 'Dubsado Alternative',   href: '/dubsado-alternative' },
+      { label: 'All Alternatives',      href: '/alternatives' },
+      { label: 'HoneyBook Alternative', href: '/alternatives/honeybook-alternative-india' },
+      { label: 'Bonsai Alternative',    href: '/alternatives/bonsai-alternative-india' },
+      { label: 'Dubsado Alternative',   href: '/alternatives/dubsado-alternative-india' },
     ],
   },
 ]

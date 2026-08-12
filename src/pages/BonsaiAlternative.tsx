@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
   ArrowRight, IndianRupee, Receipt, FileSignature, MessageCircle, CheckCircle2, X, Plus, Zap, Shield,
@@ -7,6 +8,7 @@ import { FadeIn } from '../components/ui/FadeIn'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 const APP_URL = 'https://app.getclearwork.in/signup'
+const CANONICAL = 'https://getclearwork.in/alternatives/bonsai-alternative-india'
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -58,14 +60,24 @@ export default function BonsaiAlternative() {
   useSeo(
     'Bonsai Alternative for India — GST, UPI & IT Act E-Sign | ClearWork',
     'The best Bonsai alternative for Indian freelancers. GST invoicing, UPI payments, and IT Act 2000 e-sign — from \u20b90/mo, 9x cheaper than Bonsai\u2019s $17/mo plan.',
-    'https://getclearwork.in/bonsai-alternative',
+    CANONICAL,
   )
 
   return (
     <div className="bg-white">
 
+      <nav aria-label="Breadcrumb" className="max-w-4xl mx-auto px-5 lg:px-8 pt-24 pb-2">
+        <ol className="flex flex-wrap items-center gap-1.5 text-xs text-gray-400">
+          <li><Link to="/" className="hover:text-gray-600">Home</Link></li>
+          <li>/</li>
+          <li><Link to="/alternatives" className="hover:text-gray-600">Alternatives</Link></li>
+          <li>/</li>
+          <li className="text-gray-600 font-medium">Bonsai Alternative India</li>
+        </ol>
+      </nav>
+
       {/* ── Hero ── */}
-      <section className="relative pt-28 pb-20 overflow-hidden">
+      <section className="relative pb-20 overflow-hidden">
         <div className="absolute inset-0 dot-grid opacity-[0.25] pointer-events-none" />
         <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-indigo-50/70 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto px-5 lg:px-8 relative z-10 text-center">
@@ -247,9 +259,11 @@ export default function BonsaiAlternative() {
           <p className="text-xs text-gray-400 mt-3">15-day free Pro trial · Then free forever · No credit card needed</p>
           <p className="text-sm text-gray-400 mt-6">
             Also comparing other tools?{' '}
-            <a href="/honeybook-alternative" className="text-indigo-600 font-medium hover:underline">HoneyBook alternative</a>{' '}
+            <Link to="/alternatives/honeybook-alternative-india" className="text-indigo-600 font-medium hover:underline">HoneyBook alternative</Link>{' '}
             ·{' '}
-            <a href="/dubsado-alternative" className="text-indigo-600 font-medium hover:underline">Dubsado alternative</a>
+            <Link to="/alternatives/dubsado-alternative-india" className="text-indigo-600 font-medium hover:underline">Dubsado alternative</Link>
+            {' · '}
+            <Link to="/alternatives" className="text-indigo-600 font-medium hover:underline">All alternatives</Link>
           </p>
         </div>
       </section>

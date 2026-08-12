@@ -129,7 +129,7 @@ export default function HoneyBookAlternativeIndia() {
           Side-by-side feature comparison, pricing, and migration steps — see exactly what changes when you switch.
         </p>
         <Link
-          to="/honeybook-alternative"
+          to="/alternatives/honeybook-alternative-india"
           className="inline-flex items-center gap-2 bg-indigo-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors"
         >
           Compare ClearWork vs. HoneyBook →

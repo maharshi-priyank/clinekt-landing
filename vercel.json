@@ -8,6 +8,21 @@
       "has": [{ "type": "host", "value": "www.getclearwork.in" }],
       "destination": "https://getclearwork.in/:path*",
       "permanent": true
+    },
+    {
+      "source": "/honeybook-alternative",
+      "destination": "/alternatives/honeybook-alternative-india",
+      "permanent": true
+    },
+    {
+      "source": "/bonsai-alternative",
+      "destination": "/alternatives/bonsai-alternative-india",
+      "permanent": true
+    },
+    {
+      "source": "/dubsado-alternative",
+      "destination": "/alternatives/dubsado-alternative-india",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -26,9 +41,10 @@
     { "source": "/e-signature-software",                "destination": "/index.html" },
     { "source": "/crm-for-small-business",               "destination": "/index.html" },
     { "source": "/contract-management-software",         "destination": "/index.html" },
-    { "source": "/bonsai-alternative",                  "destination": "/index.html" },
-    { "source": "/honeybook-alternative",               "destination": "/index.html" },
-    { "source": "/dubsado-alternative",                 "destination": "/index.html" },
+    { "source": "/alternatives",                        "destination": "/index.html" },
+    { "source": "/alternatives/honeybook-alternative-india", "destination": "/index.html" },
+    { "source": "/alternatives/bonsai-alternative-india",  "destination": "/index.html" },
+    { "source": "/alternatives/dubsado-alternative-india", "destination": "/index.html" },
     { "source": "/software-for-service-businesses",     "destination": "/index.html" },
     { "source": "/software-for-consultants",            "destination": "/index.html" },
     { "source": "/crm-for-marketing-agencies",          "destination": "/index.html" },
