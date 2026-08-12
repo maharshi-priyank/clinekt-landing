@@ -1,6 +1,7 @@
 {
   "env": {
-    "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true"
+    "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true",
+    "VITE_API_URL": "https://rupway-backend.fly.dev/api/v1"
   },
   "redirects": [
     {
