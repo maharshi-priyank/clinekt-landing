@@ -56,7 +56,7 @@ export default function Footer() {
             <p className="text-stone-500 text-sm leading-relaxed" style={{ maxWidth: 220 }}>
               The all-in-one workspace for Indian freelancers and agencies — run your business like a pro, end to end.
             </p>
-            <div className="mt-5 flex items-center gap-2">
+            <div className="mt-5 flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full
                 bg-amber-50 border border-amber-100 text-xs font-semibold text-amber-700">
                 <MapPin size={10} />
@@ -64,6 +64,9 @@ export default function Footer() {
                 <Heart size={10} className="fill-current text-rose-500" />
                 in India
               </span>
+              <a href="https://launchstag.com/p/tool-1785871992824" target="_blank" rel="noopener noreferrer">
+                <img src="https://launchstag.com/badge-light.svg" alt="Featured on Launchstag" width="99" height="31" />
+              </a>
             </div>
           </div>
 
