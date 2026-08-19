@@ -37,7 +37,7 @@ const plans = [
       'Meetings & reminders',
       'Community support',
     ],
-    cta: 'Start free trial',
+    cta: 'Get started — it\'s free',
     ctaHref: APP_URL,
     ctaClass: 'bg-gray-900 text-white hover:bg-gray-800',
     highlight: false,
@@ -59,7 +59,7 @@ const plans = [
       'AI proposal drafter',
       'Priority email support',
     ],
-    cta: 'Start free trial',
+    cta: 'Try free for 15 days',
     ctaHref: APP_URL,
     ctaClass: 'bg-gray-950 text-white hover:bg-gray-800 shadow-sm',
     highlight: true,
@@ -79,7 +79,7 @@ const plans = [
       'Team task allocation & payouts',
       'Dedicated priority support',
     ],
-    cta: 'Start free trial',
+    cta: 'Try free for 15 days',
     ctaHref: APP_URL,
     ctaClass: 'bg-white border border-gray-200 text-gray-900 hover:bg-gray-50 hover:border-gray-300',
     highlight: false,
@@ -193,9 +193,7 @@ export default function PricingSection() {
                       ? `Regular price ${formatPrice(plan.regularPrice, currency)}/mo — save while early access lasts`
                       : plan.price > 0 ? 'Billed monthly, cancel anytime' : 'Free forever, no catch'}
                   </p>
-                  {plan.name === 'Pro' && (
-                    <p className="text-xs text-indigo-600 font-semibold mt-1">First 15 days free</p>
-                  )}
+
                   {currencyCode !== 'INR' && plan.price > 0 && (
                     <p className="text-[11px] text-gray-400 mt-0.5">
                       ₹{plan.price.toLocaleString('en-IN')}/mo · billed in INR
