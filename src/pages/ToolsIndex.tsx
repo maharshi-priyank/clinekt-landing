@@ -125,25 +125,25 @@ export default function ToolsIndex() {
   ]))
 
   return (
-    <div className="min-h-screen bg-[#F4F6FB] pt-16">
+    <div className="min-h-screen bg-[#F4F6FB]">
 
       {/* ── Hero ────────────────────────────────────────────────────────── */}
-      <section className="bg-[#101828] text-white py-14 px-4">
+      <section className="bg-white border-b border-gray-100 pt-28 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-xs font-medium mb-5">
-            <Wrench size={12} className="text-white/70" />
+          <div className="inline-flex items-center gap-2 bg-gray-100 border border-gray-200 rounded-full px-4 py-1.5 text-xs font-semibold text-gray-500 mb-5">
+            <Wrench size={12} className="text-gray-400" />
             Free Tools
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold mb-4 leading-tight">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-950 mb-4 leading-tight">
             Free Tools for Freelancers &amp; Agencies
           </h1>
-          <p className="text-gray-400 text-base max-w-xl mx-auto">
+          <p className="text-gray-500 text-base max-w-xl mx-auto">
             Eight free, browser-based tools to handle GST invoicing, contracts, tax calculations, and pricing — no signup, no data sent to servers.
           </p>
-          <div className="flex flex-wrap justify-center gap-3 mt-6 text-sm text-gray-400">
+          <div className="flex flex-wrap justify-center gap-3 mt-6 text-sm text-gray-500">
             {TRUST_ITEMS.map(t => (
               <span key={t} className="flex items-center gap-1.5">
-                <CheckCircle2 size={13} className="text-emerald-400" strokeWidth={2.5} />
+                <CheckCircle2 size={13} className="text-emerald-500" strokeWidth={2.5} />
                 {t}
               </span>
             ))}
@@ -161,29 +161,37 @@ export default function ToolsIndex() {
                 <Link
                   key={tool.href}
                   to={tool.href}
-                  className="group bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200 transition-all flex flex-col"
+                  className={`group relative bg-white rounded-2xl p-6 border transition-all duration-200 flex flex-col hover:-translate-y-0.5 ${
+                    tool.popular
+                      ? 'border-gray-200 shadow-md hover:shadow-lg hover:border-gray-300'
+                      : 'border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200'
+                  }`}
                 >
-                  <div className="flex items-start justify-between mb-3">
-                    <div className={`w-10 h-10 rounded-xl ${tool.iconBg} flex items-center justify-center`}>
-                      <Icon size={18} className={tool.iconColor} strokeWidth={1.75} />
-                    </div>
-                    <div className="flex items-center gap-2">
-                      {tool.popular && (
-                        <span className="text-[10px] font-semibold bg-amber-50 text-amber-600 border border-amber-200 rounded-full px-2 py-0.5">
-                          Popular
-                        </span>
-                      )}
-                      <ArrowUpRight size={16} className="text-gray-300 group-hover:text-gray-600 transition-colors" />
-                    </div>
+                  {tool.popular && (
+                    <span className="absolute top-4 right-4 text-[10px] font-bold bg-amber-50 text-amber-600 border border-amber-200 rounded-full px-2 py-0.5">
+                      Popular
+                    </span>
+                  )}
+
+                  <div className={`w-12 h-12 rounded-2xl ${tool.iconBg} flex items-center justify-center mb-4`}>
+                    <Icon size={22} className={tool.iconColor} strokeWidth={1.75} />
                   </div>
+
                   <h2 className="font-bold text-gray-900 mb-2 text-[15px] leading-snug">{tool.title}</h2>
-                  <p className="text-sm text-gray-500 leading-relaxed flex-1">{tool.desc}</p>
-                  <div className="flex flex-wrap gap-1.5 mt-4">
-                    {tool.tags.map(tag => (
-                      <span key={tag} className="text-[11px] font-medium bg-gray-50 text-gray-500 border border-gray-100 rounded-full px-2 py-0.5">
-                        {tag}
-                      </span>
-                    ))}
+                  <p className="text-[13px] text-gray-500 leading-relaxed flex-1">{tool.desc}</p>
+
+                  <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-50">
+                    <div className="flex flex-wrap gap-1.5">
+                      {tool.tags.map(tag => (
+                        <span key={tag} className="text-[11px] font-medium bg-gray-50 text-gray-500 border border-gray-100 rounded-full px-2 py-0.5">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <ArrowUpRight
+                      size={15}
+                      className="text-gray-300 group-hover:text-gray-700 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all shrink-0"
+                    />
                   </div>
                 </Link>
               )
@@ -195,20 +203,20 @@ export default function ToolsIndex() {
       {/* ── Why we built these ──────────────────────────────────────────── */}
       <section className="py-12 px-4 bg-white border-t border-gray-100">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Built for Freelancers &amp; Service Businesses</h2>
-          <p className="text-gray-500 text-center text-sm leading-relaxed max-w-xl mx-auto mb-8">
-            Every tool here is designed specifically for the Indian freelance context — GST slabs, TDS sections, Indian numbering (lakh/crore), and the Income Tax rules for FY 2025-26.
-          </p>
-          <div className="grid sm:grid-cols-3 gap-6 text-center">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">Built for the Indian freelance context</h2>
+            <p className="text-gray-500 text-sm leading-relaxed max-w-lg mx-auto">
+              Every tool uses Indian GST slabs, TDS sections, lakh/crore numbering, and FY 2025-26 Income Tax rules — not generic global calculators.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-4">
             {STATS.map(({ num, label, Icon }) => (
-              <div key={label} className="p-5 bg-gray-50 rounded-2xl">
-                <div className="flex justify-center mb-2">
-                  <div className="w-9 h-9 rounded-xl bg-gray-200 flex items-center justify-center">
-                    <Icon size={16} className="text-gray-600" strokeWidth={1.75} />
-                  </div>
+              <div key={label} className="flex flex-col items-center p-6 bg-[#F4F6FB] rounded-2xl text-center">
+                <div className="w-10 h-10 rounded-xl bg-white border border-gray-200 shadow-sm flex items-center justify-center mb-4">
+                  <Icon size={18} className="text-gray-700" strokeWidth={1.75} />
                 </div>
-                <p className="text-2xl font-bold text-gray-900">{num}</p>
-                <p className="text-sm text-gray-500 mt-1">{label}</p>
+                <p className="text-3xl font-bold text-gray-900 mb-1">{num}</p>
+                <p className="text-sm text-gray-500">{label}</p>
               </div>
             ))}
           </div>

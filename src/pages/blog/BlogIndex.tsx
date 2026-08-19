@@ -256,51 +256,94 @@ const card = {
 }
 
 function PostCard({ post, featured = false }: { post: typeof POSTS[0]; featured?: boolean }) {
+  const categoryColor = CATEGORY_COLORS[post.category] ?? 'bg-gray-100 text-gray-600'
+
+  if (featured) {
+    return (
+      <Link
+        to={`/blog/${post.slug}`}
+        className="group flex flex-col bg-[#101828] rounded-2xl overflow-hidden transition-all duration-200 hover:shadow-[0_12px_36px_rgba(0,0,0,0.18)] hover:-translate-y-0.5"
+      >
+        <div className="p-7 sm:p-9 flex flex-col h-full">
+          <div className="flex items-center gap-2.5 mb-5">
+            <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${categoryColor}`}>
+              {post.category}
+            </span>
+            <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-white/15 text-white/80">Latest</span>
+          </div>
+
+          <h2 className="font-bold text-white text-xl sm:text-2xl md:text-3xl leading-snug mb-3 group-hover:text-white/90 transition-colors">
+            {post.title}
+          </h2>
+
+          <p className="text-gray-400 text-[15px] leading-relaxed mb-6 max-w-2xl flex-1">
+            {post.description}
+          </p>
+
+          <div className="flex items-center justify-between gap-4 mt-auto">
+            <div className="flex items-center gap-4 text-xs text-gray-500">
+              <span className="flex items-center gap-1.5">
+                <Calendar size={12} />
+                {post.date}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Clock size={12} />
+                {post.readTime} read
+              </span>
+            </div>
+            <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/60 group-hover:text-white/90 group-hover:gap-2 transition-all">
+              Read article <ArrowRight size={13} />
+            </span>
+          </div>
+
+          {post.toolLabel && (
+            <div className="mt-4 pt-4 border-t border-white/10">
+              <p className="text-xs text-indigo-400 font-medium">Includes: {post.toolLabel}</p>
+            </div>
+          )}
+        </div>
+      </Link>
+    )
+  }
+
   return (
     <Link
       to={`/blog/${post.slug}`}
-      className={`group flex flex-col h-full bg-white border border-gray-100 rounded-2xl transition-all duration-200 hover:border-indigo-200 hover:shadow-[0_8px_28px_rgba(0,0,0,0.07)] hover:-translate-y-0.5 ${
-        featured ? 'p-8 sm:p-9' : 'p-6'
-      }`}
+      className="group flex flex-col h-full bg-white border border-gray-100 rounded-2xl p-6 transition-all duration-200 hover:border-gray-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:-translate-y-0.5"
     >
-      <div className="flex items-center gap-2.5 mb-4">
-        <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${CATEGORY_COLORS[post.category] ?? 'bg-gray-100 text-gray-600'}`}>
+      <div className="mb-3">
+        <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${categoryColor}`}>
           {post.category}
         </span>
-        {featured && (
-          <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-gray-950 text-white">Latest</span>
-        )}
       </div>
 
-      <h2 className={`font-bold text-gray-900 leading-snug group-hover:text-indigo-700 transition-colors ${
-        featured ? 'text-2xl sm:text-3xl mb-3' : 'text-lg mb-2'
-      }`}>
+      <h2 className="font-bold text-gray-900 text-[15px] leading-snug mb-2 group-hover:text-indigo-700 transition-colors">
         {post.title}
       </h2>
 
-      <p className={`text-gray-500 leading-relaxed ${featured ? 'text-[15px] mb-6 max-w-2xl' : 'text-[14px] mb-4 line-clamp-2 flex-1'}`}>
+      <p className="text-[13px] text-gray-500 leading-relaxed mb-4 line-clamp-2 flex-1">
         {post.description}
       </p>
 
-      <div className="flex items-center justify-between gap-4 mt-auto">
-        <div className="flex items-center gap-4 text-xs text-gray-400">
-          <span className="flex items-center gap-1.5">
-            <Calendar size={12} />
+      <div className="flex items-center justify-between gap-4 mt-auto pt-3 border-t border-gray-50">
+        <div className="flex items-center gap-3 text-[11px] text-gray-400">
+          <span className="flex items-center gap-1">
+            <Calendar size={11} />
             {post.date}
           </span>
-          <span className="flex items-center gap-1.5">
-            <Clock size={12} />
-            {post.readTime} read
+          <span className="flex items-center gap-1">
+            <Clock size={11} />
+            {post.readTime}
           </span>
         </div>
         <ArrowRight
-          size={16}
+          size={15}
           className="text-gray-300 group-hover:text-indigo-500 group-hover:translate-x-1 transition-all shrink-0"
         />
       </div>
 
       {post.toolLabel && (
-        <p className="text-indigo-500 text-xs font-medium mt-3">
+        <p className="text-indigo-500 text-[11px] font-medium mt-2.5">
           Includes: {post.toolLabel}
         </p>
       )}
@@ -334,14 +377,18 @@ export default function BlogIndex() {
   const gridPosts = featuredPost ? filtered.slice(1) : filtered
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-[#F4F6FB] min-h-screen">
       {/* Header */}
-      <div className="bg-gray-50 border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-5 py-12 md:py-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-3">Blog</h1>
-          <p className="text-lg text-gray-500 max-w-xl">
-            Practical guides on getting clients, pricing, GST invoicing, and contracts —
-            written for Indian freelancers and small agencies.
+      <div className="bg-white border-b border-gray-100">
+        <div className="max-w-5xl mx-auto px-5 pt-28 pb-12 md:pb-16">
+          <span className="inline-flex items-center gap-1.5 bg-gray-100 text-gray-500 text-xs font-semibold rounded-full px-3 py-1 mb-5">
+            {POSTS.length} articles
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-950 mb-3 leading-tight">
+            Guides for Indian freelancers
+          </h1>
+          <p className="text-base text-gray-500 max-w-xl leading-relaxed">
+            Practical, India-specific guides on GST invoicing, e-sign contracts, TDS, tax, and getting clients — no fluff.
           </p>
         </div>
       </div>
@@ -358,7 +405,7 @@ export default function BlogIndex() {
               onChange={e => setQuery(e.target.value)}
               placeholder="Search articles..."
               aria-label="Search blog articles"
-              className="w-full pl-10 pr-9 py-3 rounded-xl border border-gray-200 bg-white text-sm text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+              className="w-full pl-10 pr-9 py-3 rounded-xl border border-gray-200 bg-white text-sm text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors shadow-sm"
             />
             {query && (
               <button
@@ -373,21 +420,27 @@ export default function BlogIndex() {
           </div>
 
           <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
-            {CATEGORIES.map(cat => (
-              <button
-                key={cat}
-                type="button"
-                onClick={() => setActiveCategory(cat)}
-                aria-pressed={activeCategory === cat}
-                className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
-                  activeCategory === cat
-                    ? 'bg-gray-950 text-white'
-                    : 'bg-white border border-gray-200 text-gray-600 hover:border-gray-400 hover:text-gray-900'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
+            {CATEGORIES.map(cat => {
+              const colorClass = cat !== 'All' ? (CATEGORY_COLORS[cat] ?? '') : ''
+              const isActive = activeCategory === cat
+              return (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => setActiveCategory(cat)}
+                  aria-pressed={isActive}
+                  className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
+                    isActive
+                      ? cat === 'All'
+                        ? 'bg-gray-950 text-white shadow-sm'
+                        : `${colorClass} shadow-sm ring-1 ring-inset ring-current/20`
+                      : 'bg-white border border-gray-200 text-gray-600 hover:border-gray-400 hover:text-gray-900'
+                  }`}
+                >
+                  {cat}
+                </button>
+              )
+            })}
           </div>
         </div>
 

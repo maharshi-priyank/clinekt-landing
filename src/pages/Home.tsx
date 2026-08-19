@@ -7,6 +7,7 @@ import StatStrip from '../components/StatStrip'
 import LeadFinderSection from '../components/LeadFinderSection'
 import HubSpokeSection from '../components/HubSpokeSection'
 import HowItWorks from '../components/HowItWorks'
+import ClientJourneySection from '../components/ClientJourneySection'
 import FeaturesSection from '../components/FeaturesSection'
 import AhaMoments from '../components/AhaMoments'
 import MobileAppSection from '../components/MobileAppSection'
@@ -94,6 +95,7 @@ export default function Home() {
       <LeadFinderSection />
       <HubSpokeSection />
       <HowItWorks />
+      <ClientJourneySection />
       <FeaturesSection />
       <AhaMoments />
       <MobileAppSection />
