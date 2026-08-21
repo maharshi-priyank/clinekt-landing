@@ -1,0 +1,158 @@
+Complete Test Journey — "Samay Innovation Website Design"
+Your persona: Maharshi, a freelance web designer
+Client: Priya Nair, Co-founder @ Samay Innovation, Mumbai
+Project: 5-page website design + development — ₹35,000 + GST
+
+Phase 1 — Lead Capture & Pipeline
+Step 1.1 — Lead via intake form
+* Go to Settings → Integrations → Lead Form
+* Copy the form link (/q/:token) and open it in an incognito window
+* Fill: Name = Priya Nair, Company = Samay Innovation, Email = priya@samayinnovation.com, Phone = 9876543210, Service = Website Design, Budget = 35000, Source = Instagram
+* Submit → verify lead appears in /leads Pipeline under ENQUIRY column
+Step 1.2 — Lead in pipeline (kanban)
+* Open /leads → confirm the Priya card shows in ENQUIRY
+* Click the card → verify Lead Detail page loads with all fields filled
+* Log an activity: type = CALL, note = "Initial call done, they need 5-page website, deadline end of Sept"
+* Verify activity appears in the feed with timestamp
+Step 1.3 — Move through stages
+* On the detail page, click stage strip → move to PROPOSAL_SENT
+* Set Follow-up date to 3 days from now
+* Verify kanban reflects the move
+Step 1.4 — Schedule call
+* Click "Schedule Call" → verify Google Meet link is generated
+* Confirm meeting appears in /calendar
+
+Phase 2 — Convert & Proposal
+Step 2.1 — Convert lead to client
+* On Lead Detail → click "Convert to Client"
+* Verify Contact record created at /contacts with stage = CLIENT
+* Verify lead shows a "Won / Converted" banner
+* Move lead stage to WON
+Step 2.2 — Create proposal (AI draft)
+* Go to /proposals/new → choose "Draft with AI"
+* Describe: "5-page website design for a Mumbai startup — Home, About, Services, Portfolio, Contact. ₹35,000 + 18% GST. 6-week timeline."
+* Verify AI fills Cover intro, Scope items, Pricing, Timeline
+* Switch to each tab and check:
+    * Cover — intro text populated, whyUs field present
+    * Scope — at least 3 scope items, deliverables list
+    * Pricing — line items with rates, GST type = IGST (inter-state: Pune → Mumbai), total = ₹35,000 base
+    * Timeline — milestones with weeks
+    * Terms — default terms populated
+    * Credibility — blank (fill in 1 case study manually)
+* Set validUntil = 7 days from now
+* Set contactId = Priya Nair / Samay Innovation
+* Click Send → status changes to SENT, copy the public link
+Step 2.3 — Client views proposal
+* Open proposal link (/p/:slug) in incognito
+* Verify all sections render, pricing shows ₹35,000 + ₹6,300 GST = ₹41,300
+* Verify OPENED status appears in your proposals list (real-time or on refresh)
+Step 2.4 — Client accepts
+* Click Accept on the proposal page as client
+* Verify proposal status → ACCEPTED
+* Verify automation triggers: "Accepted → Auto-Create Contract" draft appears in /contracts
+
+Phase 3 — Contract & E-Sign
+Step 3.1 — Review auto-created contract
+* Open the auto-created contract draft
+* Verify scope/deliverables/pricing carried over from proposal
+* Add signer details: Name = Priya Nair, Email = priya@samayinnovation.com, Phone = 9876543210
+* Add 1 payment schedule milestone: 50% upfront = ₹20,650 due today
+* Add a clause: "Client to provide all brand assets within 5 business days of signing"
+Step 3.2 — Send for e-sign
+* Click Send for Signing → status = SENT
+* Copy the signing link (/sign/:id)
+Step 3.3 — Client signs via OTP
+* Open signing link in incognito
+* Verify full contract renders
+* Enter phone/email → receive OTP
+* Enter correct OTP → verify SIGNED status + audit trail shows timestamp
+* Verify on your end: contract status = SIGNED, download available
+Step 3.4 — Auto-invoice creation
+* Verify automation "Signed → Auto-Create Invoice" fires → draft invoice appears in /invoices
+
+Phase 4 — Project Setup
+Step 4.1 — Create project
+* Go to /projects → New Project
+* Name = Samay Innovation — Website, Contact = Priya Nair
+* Budget = ₹35,000, Start = today, End = 6 weeks out
+* Status = ACTIVE
+* Verify project card appears
+Step 4.2 — Tasks tab
+* Open project → Tasks tab
+* Create a task board: columns = To Do, In Progress, Review, Done
+* Add tasks: Wireframes, Homepage Design, Inner Pages, Dev Handoff, Client Review Round 1
+* Move Wireframes to In Progress
+Step 4.3 — Team tab
+* Add yourself (or a team member) to the project
+* Verify they appear in the team list
+Step 4.4 — Post an update
+* Go to Updates tab → compose: "Wireframes for Home + About are ready. Please review and share feedback by Friday."
+* Post update
+* Open client portal (from Contact page → Portal link) → verify update is visible to client
+Step 4.5 — Log time
+* Go to Time & Expenses tab → log: 4 hours on Homepage Design
+* Toggle shareRateWithClient → verify hours appear in client portal
+Step 4.6 — Add expense
+* Log expense: Stock photos — ₹800 against this project
+* Verify it appears in the P&L on Overview tab
+
+Phase 5 — Client Portal (client-side testing)
+Open /portal/:token in incognito as Priya:
+Step 5.1 — Overview tab
+* Verify: welcome message, active projects count = 1, pending actions (pending invoice), updates feed shows your update
+Step 5.2 — Project detail in portal
+* Click into the project
+* Check all sub-tabs:
+    * Updates — your update is visible
+    * Contracts — signed contract card shown
+    * Proposals — accepted proposal shown
+    * Invoices — draft invoice visible (or sent if you sent it)
+    * Time & Expenses — hours logged visible
+Step 5.3 — Raise a change request (client)
+* In portal → Approvals tab → Raise Change Request
+* Title = "Add a Testimonials section to Homepage", details filled
+* Verify it appears in your project's Change Requests tab in the app
+Step 5.4 — Respond to change request (freelancer)
+* In app → Change Requests tab → open the request
+* Respond: type = APPROVED, note = "Will add this as an additional ₹3,000 milestone"
+Step 5.5 — Messages
+* Send a message from portal → verify it appears in /inbox in the app
+* Reply from app → verify client sees it in portal
+
+Phase 6 — Invoice & Payment
+Step 6.1 — Edit and send invoice
+* Open the auto-created invoice draft
+* Line items: Website Design & Development — ₹35,000, HSN = 998314, GST = 18% IGST
+* TDS = 10% (194J, professional services)
+* Due date = 7 days from now
+* Link to the signed contract
+* Send → status = SENT, client gets email with invoice link
+Step 6.2 — Client views invoice
+* Open invoice link (/invoice/:id) in incognito
+* Verify: line items, GST breakup (IGST ₹6,300), TDS deduction shown, total ₹41,300 - TDS ₹3,500 = net ₹37,800
+* Verify status → VIEWED
+Step 6.3 — Record partial payment
+* Client pays 50% upfront → in app, click Record Payment on invoice
+* Amount = ₹20,650 → status = PARTIAL
+Step 6.4 — Test overdue automation
+* Change due date to yesterday → verify invoice shows OVERDUE
+* Check Automations are on → confirm "Day 3 Overdue" automation would trigger (or manually trigger if testable)
+Step 6.5 — Record final payment
+* Record remaining ₹17,150 → invoice status = PAID
+* Verify "Thank-You on Payment" automation fires
+* Verify Overview tab in project shows ₹35,000 invoiced, ₹0 outstanding
+
+Phase 7 — Project Completion & Review
+Step 7.1 — Request sign-off
+* In project → click "Request Sign-off" (only active when all invoices paid)
+* Verify button is available, status shows PENDING
+* In client portal → Approvals tab → sign-off card appears
+Step 7.2 — Client approves sign-off
+* In portal → click Approve
+* Verify project shows green "Client signed off" banner in app
+* Mark project status → COMPLETED
+Step 7.3 — Client review
+* Go to Contact page → send review request (generates /review/:token link)
+* Open in incognito as client
+* Submit: 5 stars, "Maharshi delivered exactly what we needed — on time, professional, and responsive."
+* Verify review appears on your public profile (/u/:username)
