@@ -28,13 +28,13 @@ const plans = [
     tagline: 'For getting started',
     price: 0,
     regularPrice: 0,
-    limits: ['Up to 5 clients', 'Up to 10 active projects'],
+    limits: ['Up to 2 active clients', 'Up to 10 active projects'],
     features: [
       'Full lead & CRM pipeline — unlimited leads',
       '3 proposals / month',
       'GST invoice generator',
-      'Basic e-sign',
       'Meetings & reminders',
+      '"Powered by ClearWork" branding on docs',
       'Community support',
     ],
     cta: 'Get started — it\'s free',
@@ -44,12 +44,12 @@ const plans = [
   },
   {
     name: 'Pro',
-    tagline: 'For growing freelancers',
-    price: 149,
+    tagline: 'For solo freelancers',
+    price: 249,
     regularPrice: 249,
-    limits: ['Up to 30 clients', 'Up to 60 active projects', 'Up to 5 team members'],
+    limits: ['Unlimited clients', 'Unlimited projects', '1 seat — just you'],
     features: [
-      'Unlimited proposals & leads',
+      'Unlimited proposals, invoices & leads',
       'E-sign contracts (IT Act 2000)',
       'GST invoice + TDS flagging',
       'UPI + card payment link in invoices',
@@ -67,16 +67,16 @@ const plans = [
   {
     name: 'Studio',
     tagline: 'For agencies at scale',
-    price: 649,
+    price: 799,
     regularPrice: 799,
     limits: ['Unlimited clients', 'Unlimited projects', 'Unlimited team members'],
     features: [
       'Everything in Pro',
       'White-label documents — no ClearWork branding',
       'White-label client portal on your domain',
+      'Custom domain for client portal',
       'Multi-currency invoicing',
-      'GST quarterly report export',
-      'Team task allocation & payouts',
+      'Team roles & task allocation',
       'Dedicated priority support',
     ],
     cta: 'Try free for 15 days',
@@ -87,7 +87,7 @@ const plans = [
 ]
 
 const benchmarks = [
-  { name: 'ClearWork Pro', price: '₹149/mo', note: 'Full India workflow ✓', good: true },
+  { name: 'ClearWork Pro', price: '₹249/mo', note: 'Full India workflow ✓', good: true },
   { name: 'Bonsai Essential', price: '₹1,600/mo', note: 'No GST, no India support', good: false },
   { name: 'HoneyBook Starter', price: '₹3,000/mo', note: 'Blocked in India', good: false },
   { name: 'Dubsado Basic', price: '₹2,500/mo', note: 'No UPI payments, USD only', good: false },
@@ -110,21 +110,14 @@ export default function PricingSection() {
             <span className="gradient-text">Priced for any business.</span>
           </h2>
           <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
-            Pro is on an early access offer at ₹149/month (regular price ₹249) — less than the cost
-            of a single takeaway lunch — so solo freelancers and small agencies can afford the same
-            workflow bigger studios use. No transaction fees on your earnings, ever.
+            Pro is ₹249/month — less than the cost of a single takeaway lunch — so solo freelancers
+            can afford the same workflow bigger studios use. No transaction fees on your earnings, ever.
           </p>
 
           {/* Trial badge */}
           <div className="inline-flex items-center gap-2 mt-8 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-semibold">
             <Sparkles size={13} className="text-emerald-600" />
             Every new account gets a free 15-day Pro trial — no credit card needed
-          </div>
-
-          {/* Early access offer badge */}
-          <div className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-sm font-semibold">
-            <Sparkles size={13} className="text-amber-600" />
-            Early Access Offer — save on Pro & Studio while it lasts
           </div>
 
           {/* Currency selector */}
@@ -189,9 +182,7 @@ export default function PricingSection() {
                     )}
                   </div>
                   <p className="text-xs text-gray-400 mt-1.5">
-                    {plan.regularPrice > plan.price
-                      ? `Regular price ${formatPrice(plan.regularPrice, currency)}/mo — save while early access lasts`
-                      : plan.price > 0 ? 'Billed monthly, cancel anytime' : 'Free forever, no catch'}
+                    {plan.price > 0 ? 'Billed monthly, cancel anytime' : 'Free forever, no catch'}
                   </p>
 
                   {currencyCode !== 'INR' && plan.price > 0 && (

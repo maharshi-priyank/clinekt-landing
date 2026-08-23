@@ -14,15 +14,11 @@ const faqs = [
   },
   {
     q: 'Is ClearWork really free to start?',
-    a: 'Yes. After your 15-day Pro trial, the Free plan is free forever — up to 5 clients and 10 active projects, with the full lead & CRM pipeline, GST invoicing, and basic e-sign included. No credit card required at any point unless you choose to upgrade.',
+    a: 'Yes. After your 15-day Pro trial, the Free plan is free forever — up to 2 active clients and 10 projects, with the full lead & CRM pipeline and GST invoicing included. No credit card required at any point unless you choose to upgrade.',
   },
   {
     q: 'What happens when I hit the Free plan limits?',
-    a: 'You\'ll be prompted to upgrade to Pro (₹149/mo early access price, regular ₹249/mo) or Studio (₹649/mo early access price, regular ₹799/mo) once you pass 5 clients or 10 active projects. Your existing data is never locked or deleted — you just can\'t add more until you upgrade.',
-  },
-  {
-    q: 'What is the "Early Access Offer" pricing?',
-    a: 'Pro and Studio are regularly priced at ₹249/mo and ₹799/mo. As part of our early access launch, both are currently available at a discounted ₹149/mo and ₹649/mo. This offer applies for as long as it\'s shown on this page — subscribe now to get today\'s rate.',
+    a: 'You\'ll be prompted to upgrade to Pro (₹249/mo) or Studio (₹799/mo) once you exceed 2 active clients. Your existing data is never locked or deleted — you just can\'t add more until you upgrade.',
   },
   {
     q: 'Do you take a cut of my payments?',
@@ -34,13 +30,13 @@ const faqs = [
   },
   {
     q: 'What\'s the difference between Pro and Studio?',
-    a: 'Pro (₹149/mo) is built for a single freelancer or consultant — up to 30 clients, 60 projects, and 5 team members. Studio (₹649/mo) removes the limits entirely — unlimited clients, projects, and team members — and adds white-labelled documents, a white-labelled client portal, and multi-currency invoicing, built for agencies managing multiple clients.',
+    a: 'Pro (₹249/mo) is built for a solo freelancer or consultant — unlimited clients, projects, and leads with a single seat. Studio (₹799/mo) is for agencies: unlimited team members, a white-labelled client portal on your own domain, multi-currency invoicing, and team role management.',
   },
 ]
 
 export default function Pricing() {
   useSeo(
-    'ClearWork Pricing — Early Access Offer on Pro & Studio Plans',
+    'ClearWork Pricing — Free, Pro & Studio Plans',
     'Free plan (\u20b90, up to 5 clients), Pro (\u20b9149/mo early access, regular \u20b9249/mo), or Studio (\u20b9649/mo early access, regular \u20b9799/mo). Every account also gets a free 15-day Pro trial. No credit card required.',
     'https://getclearwork.in/pricing',
   )
@@ -59,11 +55,11 @@ export default function Pricing() {
             </span>
             <h1 className="text-5xl md:text-6xl font-extrabold text-gray-950 tracking-tight leading-[1.05]">
               Free 15-day Pro trial.{' '}
-              <span className="gradient-text">Early access pricing on the rest.</span>
+              <span className="gradient-text">Simple pricing after that.</span>
             </h1>
             <p className="mt-5 text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
               Every new account starts with full Pro access for 15 days — no credit card.
-              Pro and Studio are also on an early access offer right now, below their regular price.
+              Then pick the plan that fits: Free, Pro (₹249/mo), or Studio (₹799/mo).
             </p>
           </motion.div>
         </div>
