@@ -169,7 +169,7 @@ export default function Hero() {
                   className="w-2 h-2 rounded-full bg-emerald-500"
                   style={{ animation: shouldReduceMotion ? 'none' : 'glow-pulse 2.2s ease-in-out infinite' }}
                 />
-Free forever · 15-day Pro trial included
+Free forever · No credit card required
                 <ChevronRight size={13} className="text-indigo-400 group-hover:translate-x-0.5 transition-transform" />
               </a>
             </motion.div>
@@ -238,7 +238,7 @@ Free forever · 15-day Pro trial included
 
             {/* Trust micro-row */}
             <motion.div variants={item} className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6">
-              {['Free forever', 'No credit card needed', 'GST · UPI · e-sign built-in'].map(t => (
+              {['Free. No card required.', 'Upgrade anytime.', 'GST · UPI · e-sign built-in'].map(t => (
                 <span key={t} className="flex items-center gap-1.5 text-sm text-stone-400">
                   <CheckCircle2 size={12} className="text-emerald-500" strokeWidth={2.5} />
                   {t}
