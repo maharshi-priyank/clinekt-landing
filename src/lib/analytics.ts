@@ -4,6 +4,7 @@ declare global {
   interface Window {
     gtag: (...args: unknown[]) => void
     dataLayer: unknown[]
+    oaiq: (...args: unknown[]) => void
   }
 }
 
@@ -12,8 +13,15 @@ function gtag(...args: unknown[]) {
   window.gtag(...args)
 }
 
+// OpenAI Ads Manager measurement pixel — https://developers.openai.com/ads/measurement-pixel
+function oaiq(...args: unknown[]) {
+  if (typeof window === 'undefined' || !window.oaiq) return
+  window.oaiq(...args)
+}
+
 export function trackPageview(path: string) {
   gtag('config', GA_ID, { page_path: path })
+  oaiq('measure', 'page_viewed', { type: 'contents' })
 }
 
 export function trackEvent(name: string, params?: Record<string, unknown>) {
@@ -24,10 +32,18 @@ export function trackEvent(name: string, params?: Record<string, unknown>) {
 
 export function trackWaitlistClick(location: string) {
   trackEvent('waitlist_click', { location })
+  oaiq('measure', 'lead_created', { type: 'customer_action' })
 }
 
 export function trackCTAClick(label: string, location?: string) {
   trackEvent('cta_click', { label, location })
+}
+
+// Fire only for CTAs that link straight to the app signup page — this is
+// the actual conversion signal OpenAI Ads should optimize toward.
+export function trackSignupClick(label: string, location?: string) {
+  trackEvent('cta_click', { label, location })
+  oaiq('measure', 'lead_created', { type: 'customer_action' })
 }
 
 export function trackToolUsed(toolName: string) {

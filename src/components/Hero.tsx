@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform, useMotionValue, useSpring, useReducedMotion } from 'framer-motion'
 import { CheckCircle2, ChevronRight, ArrowDown } from 'lucide-react'
-import { trackCTAClick } from '../lib/analytics'
+import { trackSignupClick } from '../lib/analytics'
 
 const APP_REGISTER = 'https://app.getclearwork.in/signup'
 
@@ -159,7 +159,7 @@ export default function Hero() {
             <motion.div variants={item} className="mb-8">
               <a
                 href={APP_REGISTER}
-                onClick={() => trackCTAClick('early_access_badge', 'hero')}
+                onClick={() => trackSignupClick('early_access_badge', 'hero')}
                 className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full
                   border border-indigo-200/80 bg-white/70 backdrop-blur-sm
                   shadow-[0_2px_12px_rgba(0,0,0,0.10)]
@@ -213,7 +213,7 @@ Free forever · No credit card required
             <motion.div variants={item} className="mt-9 flex flex-wrap justify-center gap-3">
               <MagneticCTA
                 href={APP_REGISTER}
-                onClick={() => trackCTAClick('hero_cta', 'hero')}
+                onClick={() => trackSignupClick('hero_cta', 'hero')}
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5
                   rounded-full bg-stone-950 text-white font-semibold text-sm
                   hover:bg-stone-800 transition-colors duration-200

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react'
-import { trackCTAClick } from '../lib/analytics'
+import { trackSignupClick } from '../lib/analytics'
 
 const links = [
   { label: 'How it works', anchor: 'how-it-works', href: null },
@@ -266,7 +266,7 @@ export default function Navbar() {
             Sign in
           </a>
           <a href={registerHref}
-            onClick={() => trackCTAClick('get_started', 'navbar')}
+            onClick={() => trackSignupClick('get_started', 'navbar')}
             className={`inline-flex items-center gap-1.5 text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm transition-all ${
               onDark && !megaOpen
                 ? 'bg-white text-stone-950 hover:bg-stone-100'
@@ -430,7 +430,7 @@ export default function Navbar() {
               </AnimatePresence>
 
               <div className="mt-2 pt-3 border-t border-gray-100">
-                <a href={registerHref} onClick={() => { setOpen(false); trackCTAClick('get_started', 'navbar_mobile') }}
+                <a href={registerHref} onClick={() => { setOpen(false); trackSignupClick('get_started', 'navbar_mobile') }}
                   className="flex items-center justify-center gap-1.5 font-semibold px-5 py-3 rounded-full bg-gray-950 text-white">
                   Get started free <ArrowRight size={14} />
                 </a>
